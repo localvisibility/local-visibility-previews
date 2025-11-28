@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>APERÇU - Hôtel Novotel Paris les Halles | Local Visibility</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --white: #ffffff; --black: #1a1a1a; --gray-600: #757575; --gold: #b8860b; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); line-height: 1.8; }
+    
+    .preview-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 10000; background: #c41e3a; color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+    .preview-banner a { background: white; color: #c41e3a; padding: 8px 20px; text-decoration: none; font-weight: 600; border-radius: 2px; }
+    
+    .navbar { position: fixed; top: 44px; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eee; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--black); text-decoration: none; }
+    .nav-cta { background: var(--black); color: white; padding: 12px 24px; text-decoration: none; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; }
+    
+    .hero { min-height: 100vh; padding-top: 44px; display: flex; align-items: center; justify-content: center; position: relative; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+    .hero-content { position: relative; z-index: 1; text-align: center; max-width: 800px; padding: 40px; color: white; }
+    .hero-subtitle { font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: #d4a84b; margin-bottom: 20px; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 400; margin-bottom: 24px; }
+    .hero-rating { display: inline-flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.15); padding: 12px 24px; border-radius: 50px; }
+    .hero-stars { color: #f1c40f; }
+    .hero-cta { display: inline-block; background: white; color: var(--black); padding: 16px 40px; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-top: 32px; }
+    
+    section { padding: 100px 5%; }
+    .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 12px; display: block; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; }
+    
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .intro-image { position: relative; }
+    .intro-image img { width: 100%; height: 450px; object-fit: cover; }
+    .photo-badge { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.75); color: var(--gold); padding: 6px 12px; font-size: 9px; font-weight: 600; letter-spacing: 1px; }
+    .intro-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 24px; }
+    .intro-content p { color: var(--gray-600); margin-bottom: 20px; }
+    .intro-stats { display: flex; gap: 40px; margin-top: 40px; padding-top: 40px; border-top: 1px solid #eee; }
+    .intro-stat-value { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); }
+    .intro-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-600); }
+    
+    .features-section { background: #f8f6f3; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
+    .feature-card { background: white; padding: 40px 32px; text-align: center; border: 1px solid #eee; }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 20px; }
+    .feature-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 12px; }
+    .feature-card p { color: var(--gray-600); font-size: 14px; }
+    
+    .gallery-section { padding: 0; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .gallery-item { position: relative; aspect-ratio: 1; overflow: hidden; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.7); color: var(--gold); padding: 4px 8px; font-size: 8px; font-weight: 600; }
+    
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
+    .review-card { background: #fafafa; padding: 40px; text-align: center; border: 1px solid #eee; }
+    .review-stars { color: var(--gold); font-size: 16px; margin-bottom: 20px; }
+    .review-text { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--gray-600); margin-bottom: 24px; }
+    .review-author { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: #9e9e9e; }
+    
+    .info-section { background: var(--black); color: white; }
+    .info-section .section-title { color: white; }
+    .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; max-width: 1100px; margin: 0 auto; }
+    .info-item h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 16px; }
+    .info-item p { color: rgba(255,255,255,0.8); }
+    .info-item a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    
+    .cta-section { background: linear-gradient(135deg, #2d5a3d 0%, #1a472a 100%); color: white; text-align: center; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 16px; }
+    .cta-pricing { background: rgba(0,0,0,0.25); display: inline-block; padding: 32px 56px; margin: 32px 0; }
+    .cta-price-old { text-decoration: line-through; opacity: 0.5; }
+    .cta-price { font-family: 'Cormorant Garamond', serif; font-size: 3rem; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-btn { padding: 16px 32px; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; }
+    .cta-btn-primary { background: white; color: var(--black); }
+    .cta-btn-secondary { border: 1px solid rgba(255,255,255,0.4); color: white; }
+    
+    footer { background: white; border-top: 1px solid #eee; padding: 48px 5%; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; display: block; margin-bottom: 16px; }
+    footer p { color: var(--gray-600); font-size: 13px; }
+    footer a { color: var(--gold); }
+    
+    @media (max-width: 1024px) {
+      .intro-grid, .features-grid, .reviews-grid { grid-template-columns: 1fr; max-width: 500px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .info-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .preview-banner { flex-direction: column; gap: 10px; text-align: center; }
+      .navbar { top: 72px; }
+      section { padding: 70px 5%; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <div style="position:fixed;bottom:20px;left:20px;background:#ff6b6b;color:white;padding:10px 20px;border-radius:5px;z-index:99999;font-size:12px;">🧪 TEST - Cet établissement a déjà un site</div>
+  
+  <div class="preview-banner">
+    <span>⚠️ APERÇU — Site créé pour <strong>Hôtel Novotel Paris les Halles</strong> par Local Visibility</span>
+    <a href="#commander">Obtenir ce site — 480€</a>
+  </div>
+
+  <nav class="navbar">
+    <a href="#" class="logo">Hôtel Novotel Paris les Halles</a>
+    <a href="tel:01 42 21 31 31" class="nav-cta">Réserver</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU5yF4Gzvxcfpp6uqzhrurc9zsVhscpbQB2FUWMSWhoyy-flUsXyZGgAVnX5mGrwDFFpXqXwguMYB2c1D1PAyUjiWnECCFIk86NLgTx2ySVftrBHF370yoJdkwVEm_R1D3pMDtD305MpQ3AYkV8WGCrs1Wu8s2cpiB7PoAGGmSA6eIDByErADGCO6Qkxfyz5yerxGgrfRDuTHjJhtKN9bo8245XhPg0-JXja_TwaJDz0vZyKdpa8JWPJv7P6anEkRk9TsouPc-IAOw8UwWp5gZd8GyB2xg3nGr2f48AcjBuoHg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">Paris</p>
+      <h1 class="hero-title">Une Oasis de Sérénité au Coeur de Paris</h1>
+      <p>Découvrez le Novotel Paris les Halles, votre refuge en plein centre-ville.</p>
+      <div class="hero-rating">
+        <span class="hero-stars">★★★★½</span>
+        <span>4.6/5 · 6000 avis Google</span>
+      </div>
+      <a href="#contact" class="hero-cta">Nous contacter</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="intro-grid">
+      <div class="intro-image">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU4VSpJ8i4pmlasMQducZOH139N-77vP7VUB5WV0TzRQwccPY_jm8tWFRaQ3lC7zt4lkAKhVxUMxs6DtfQdbl_0BPnIrPi00ZuvxlbUhU-dS407dRrlU8VIWcvG-lGgOUagX65G6V3dXjKBRNI-VGCfvUK6BiEdzszaosMj_kdrVAo-Ce3Gmj2d_hoBtcvINDo_GYIIAXVM8B_H9rEV00uNS8izeZMO-h2eUZ4V9PcJjYySvvzuGLP_UGnjjC5icaDmXhs5kyhu7ZOA4zQ-gM1bY2gXW593-FxRt7LpLSuhuPg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles">
+        <div class="photo-badge">📸 PHOTO GOOGLE</div>
+      </div>
+      <div class="intro-content">
+        <span class="section-label">Bienvenue au Novotel Paris les Halles</span>
+        <h2>Hôtel Novotel Paris les Halles</h2>
+        <p>Niché au cœur du quartier historique des Halles, notre hôtel vous offre un havre de paix dans la ville lumière. Laissez-vous charmer par notre accueil chaleureux, nos chambres confortables et notre excellente cuisine. Une expérience parisienne inoubliable vous attend.</p>
+        <div class="intro-stats">
+          <div><div class="intro-stat-value">4.6</div><div class="intro-stat-label">Note Google</div></div>
+          <div><div class="intro-stat-value">6000</div><div class="intro-stat-label">Avis</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🍽️</div><h3>Restaurant Gastronomique</h3><p>Savourez des plats raffinés dans notre restaurant étoilé.</p></div><div class="feature-card"><div class="feature-icon">⭐</div><h3>Hébergement de Luxe</h3><p>Séjournez dans des chambres élégantes et spacieuses.</p></div><div class="feature-card"><div class="feature-icon">📍</div><h3>Emplacement Idéal</h3><p>À quelques pas des principales attractions parisiennes.</p></div>
+    </div>
+  </section>
+
+  
+  <section class="gallery-section" id="galerie">
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU5yF4Gzvxcfpp6uqzhrurc9zsVhscpbQB2FUWMSWhoyy-flUsXyZGgAVnX5mGrwDFFpXqXwguMYB2c1D1PAyUjiWnECCFIk86NLgTx2ySVftrBHF370yoJdkwVEm_R1D3pMDtD305MpQ3AYkV8WGCrs1Wu8s2cpiB7PoAGGmSA6eIDByErADGCO6Qkxfyz5yerxGgrfRDuTHjJhtKN9bo8245XhPg0-JXja_TwaJDz0vZyKdpa8JWPJv7P6anEkRk9TsouPc-IAOw8UwWp5gZd8GyB2xg3nGr2f48AcjBuoHg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles"><div class="gallery-badge">📸 GOOGLE</div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU4VSpJ8i4pmlasMQducZOH139N-77vP7VUB5WV0TzRQwccPY_jm8tWFRaQ3lC7zt4lkAKhVxUMxs6DtfQdbl_0BPnIrPi00ZuvxlbUhU-dS407dRrlU8VIWcvG-lGgOUagX65G6V3dXjKBRNI-VGCfvUK6BiEdzszaosMj_kdrVAo-Ce3Gmj2d_hoBtcvINDo_GYIIAXVM8B_H9rEV00uNS8izeZMO-h2eUZ4V9PcJjYySvvzuGLP_UGnjjC5icaDmXhs5kyhu7ZOA4zQ-gM1bY2gXW593-FxRt7LpLSuhuPg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles"><div class="gallery-badge">📸 GOOGLE</div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU4kINnQmhwDqTQyk5wC0oQXVXwsDhFqNpdhHDOJAcS3SsrH4W3bYIzVePcQUWEo4p773NQfg14i7IdW5uI8TEMgyjGz5QBx_1BUVfGA7Qnd98mo1AtHuCFL7YuJdolk9kwKh2BWlLti8fwXD7gB-_9mWMG7TtVy3RCZu0f54pM1UpIRqIbqpNM6xjsMKmPSm0RwK-NAgXgCM7JfDKyy2PNK5VxgR46Cxb4_mcTHpOGow5V_r0YkqZW7lYCwnQIi--TBJdx8TB7mawdF2QEpl3hTUEDgli7rj5YWXbZi9d_4Ug&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles"><div class="gallery-badge">📸 GOOGLE</div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU79Hd7-tjhlzjD9JrFcllTQA6WiOa_NDoefmVyAHiPI0wt8q_1OOaFSjmxoMGiI69nUc96atTxKS7ItrwqtE8GrmIAU5_NwHHmXF5fsikxHhjr1cWWpLJGIVQkIvZ8-CTAA4Y61DaFYTgFHqPP1M63j6B1bWmooB3FnjPYVYLjgKjmIsYUELcgILTf02k-oKSHp2cw-sSNZEUL14Ov6DXOwB3_ic9xYLv-8j_XBbNMtz9gYaiZdHmmOryQAE9wE5xB3p78ZMURCXHYd88WzrKDJxG8UP8ghBA8F36tK-Trwcw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles"><div class="gallery-badge">📸 GOOGLE</div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU6QbNfpjWGuSjRZ96ybnzgBZGHciT0KZKcu6U6QYjVm7u8OU7ibM_hLUAGvHLuGZJCdKWRJpstWRLm1bH6eJXkMMw2pbhcV-EagYGYUQEN2DOfspg90LEQGphOlG8yVsZDLCoqKMJWQWEVn4bFEPE6JortsnanTVeFE5zIllwCiSsoyL_LcTKwWGBCV34GP12mVw9QPbeOiNeQ1wYSvyFhftcaHA57orcJoYZ_X48m5evn2kUqeJbFZ1K0Mo26FDHLyishDL1ms9EHjdLC412P7tmzU2WrUrMJ-4TauaePLtg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles"><div class="gallery-badge">📸 GOOGLE</div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU5WDWOmiaDjhHJ-FF3KPFkn2EOWQ5p_oZH2VvU9bLyzA6tqygi-K32yD0yGT5cGRoI-twnAy0Xc13BCLVX7S0BYREk4yqbWac8Mm_iOyJya4CJOSnCr7T68OFIPOFl40Z-0WF28d_mW7ubq5HKBk2N9EB5OzC2sNCs9u7xc9Ar-u2tgvoFP-vlcCXdvqAZX5HYLsFYacOYy47f_wZmV68spROd7Kj7CHHUaEmKkkstY9kgCQNOja6uKmgrvbzfV0nm4QZZnY5ARJfopV7T5yaarx1am7kLtrFGGnFrVAW1Zxw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles"><div class="gallery-badge">📸 GOOGLE</div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU7wlcpRw7tEXS0w-kWu8P3qLvazXtXpe3_pY2w1XjIbR5ztHz30_rYlfcOkMU4r393_DORnALI-Lr70UMOJG14TG35TPrBtUn60CL21355OLrpqROEe3JD94HQIsPNpRyfWt4XrZJscHfYlfbFPnXUVrHrOMcEcEO3gwr9zXTjoXCnsWkp0jCN_GNXy0QhiLt3Nu7S0HiEShfnntnj4ApKTgQQKSbw2lB1iIjg8tXdBDkGgFLXthbjykr-o1PVGk9rMMhFw7CAuGEGkyV6XnT1W2dvPnhHc4djZRzbl67bscA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles"><div class="gallery-badge">📸 GOOGLE</div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU49FrXgDBNNUpLiCLZPOBMACnwUYjVabceVqHCkI3XXDDoOWrKpBMVtMbvVNyHBbhA_Vfb_lDlIMbg_ykf2McL4UBcBLRE5SuhsVgPdroWjHe1qLCny5kymfZysDyOLLQ5MaMRqk323irDBlAefnpMF-scc4hYBP0AwMTB2qqSqVaafOUPEyzIhNrLbbz3VAoHRKsfQlvPyALDWROP1pzNARkERi7RYpiEZVNI27DUXZz7eqD9HNTJ0FE3jwXZsT1QuE5BFbF31iFp4wM_1dHSODReg1XfoYb-izH8n6a5ZHw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Hôtel Novotel Paris les Halles"><div class="gallery-badge">📸 GOOGLE</div></div>
+    </div>
+  </section>
+
+  
+  <section id="avis">
+    <div style="text-align:center; margin-bottom:60px;"><span class="section-label">Témoignages</span><h2 class="section-title">Ce que nos clients disent</h2></div>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Nous avons passé un excellent séjour! Merci a la Guest relations pour son accueil et son sourire tout au long de notre séjour. Les attention et cadeaux dans la chambre nous ont énormément touché ! Le "</p><span class="review-author">Leyan Frederic — Google</span></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"J’ai passé un merveilleux séjour à l’Hôtel Novotel Paris Les Halles. L’emplacement est tout simplement parfait, en plein cœur de Paris, à proximité des principaux sites touristiques et très bien desse"</p><span class="review-author">Anthony Verhaghe — Google</span></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"A l'occasion d'un soirée client (80 pax) que j'ai organisé au sein de l'Atelier H du Novotel, j'ai collaboré avec Basile et Thibaud avec grand plaisir.
+J'avais choisi ce lieu pour son côté central, él"</p><span class="review-author">Marketing Digital Freeland — Google</span></div>
+    </div>
+  </section>
+
+  <section class="info-section" id="contact">
+    <div style="text-align:center; margin-bottom:60px;"><span class="section-label">Informations</span><h2 class="section-title">Nous trouver</h2></div>
+    <div class="info-grid">
+      <div class="info-item"><h3>Adresse</h3><p>8 Pl. Marguerite de Navarre, 75001 Paris, France</p></div>
+      <div class="info-item"><h3>Téléphone</h3><p><a href="tel:01 42 21 31 31">01 42 21 31 31</a></p></div>
+      <div class="info-item"><h3>Horaires</h3><p>Nous contacter</p></div>
+      <div class="info-item"><h3>Itinéraire</h3><p><a href="https://maps.google.com/?cid=1505405979572992547" target="_blank">Google Maps →</a></p></div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="commander">
+    <h2>Ce site peut être le vôtre</h2>
+    <p>Site professionnel créé sur-mesure pour Hôtel Novotel Paris les Halles</p>
+    <div class="cta-pricing">
+      <div class="cta-price-old">990€</div>
+      <div class="cta-price">480€ <small>TTC</small></div>
+      <div style="font-size:13px;opacity:0.7;margin-top:8px;">Paiement unique · Sans abonnement</div>
+    </div>
+    <div class="cta-buttons">
+      <a href="tel:07 80 95 49 13" class="cta-btn cta-btn-primary">📞 Appeler</a>
+      <a href="https://wa.me/33780954913" class="cta-btn cta-btn-secondary" target="_blank">💬 WhatsApp</a>
+      <a href="mailto:contact@local-visibility.com" class="cta-btn cta-btn-secondary">📧 Email</a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Hôtel Novotel Paris les Halles</span>
+    <p>Site créé par <a href="https://local-visibility.com">Local Visibility</a></p>
+  </footer>
+</body>
+</html>
