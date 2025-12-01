@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Comfort Aparthotel Marseille Prado | Hotel Marseille</title>
+<meta name="description" content="Bienvenue dans un havre de paix au cœur de Marseille">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--gold:#c9a227;--gold-light:#d4af37;--gold-dark:#a68523;--black:#1a1a1a;--dark:#2d2d2d;--gray:#6b6b6b;--light:#f8f6f3;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Montserrat",sans-serif;font-weight:300;color:var(--dark);line-height:1.7}
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,26,26,.95);backdrop-filter:blur(10px);padding:.75rem 2rem;display:flex;justify-content:space-between;align-items:center;transform:translateY(-100%);transition:transform .4s}
+.booking-bar.visible{transform:translateY(0)}
+.booking-bar .logo{font-family:"Playfair Display",serif;font-size:1.2rem;color:var(--gold)}
+.booking-bar nav{display:flex;gap:2rem}
+.booking-bar nav a{color:var(--white);text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;transition:color .3s}
+.booking-bar nav a:hover{color:var(--gold)}
+.booking-bar .btn-book{background:var(--gold);color:var(--black);padding:.75rem 1.5rem;border:none;font-weight:600;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.booking-bar .btn-book:hover{background:var(--gold-light)}
+.hero{position:relative;height:100vh;min-height:700px;display:flex;align-items:center;justify-content:center}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AWn5SU5N7X42P7eEhYDhlGUviMA8Km7gEW2ZLpw2fUey_JgxylP3IA5Mjv2A193W-uV7zBssKfvqZ4DP6eeoPgJiUBP21BoyNVn25fOq21ojMsSkUpxLb2fcpsp7xLDBJlBLa7MSaphPNyK331qt1PGtfgmmVntXTxxLx1nFoIIHDwx44eyKAfIPgxTeKkBUi8jwsCnDIU9riDezJckK2nXJbyGXA56H_ecAcXZsw1cFBJM0hOLKVdpFfWX41IQVOL0pzRrM-phks0HKY2thYVwexuNvbbUpisi0_R8uqcFtL5uPSQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.5))}
+.hero-content{position:relative;text-align:center;color:var(--white);padding:2rem;max-width:900px}
+.hero-tagline{font-size:.9rem;font-weight:500;letter-spacing:4px;color:var(--gold);margin-bottom:1.5rem}
+.hero-title{font-family:"Playfair Display",serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:400;line-height:1.2;margin-bottom:1.5rem}
+.hero-subtitle{font-family:"Cormorant Garamond",serif;font-size:1.2rem;opacity:.9;max-width:600px;margin:0 auto 2rem}
+.hero-rating{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:2rem}
+.hero-rating .stars{color:var(--gold);font-size:1.2rem}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);padding:1rem 2.5rem;text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;transition:all .3s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 10px 30px rgba(201,162,39,.3)}
+.btn-secondary{background:transparent;color:var(--white);padding:1rem 2.5rem;text-decoration:none;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);transition:all .3s}
+.btn-secondary:hover{background:var(--white);color:var(--black)}
+.scroll-indicator{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);color:var(--white);font-size:1.5rem;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+section{padding:6rem 2rem}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}
+.section-tagline{font-size:.8rem;font-weight:500;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:1rem}
+.section-title{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;margin-bottom:1rem}
+.container{max-width:1400px;margin:0 auto}
+.about{background:var(--light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-image{position:relative}
+.about-image img{width:100%;height:500px;object-fit:cover}
+.about-image::after{content:"";position:absolute;top:2rem;left:2rem;right:-2rem;bottom:-2rem;border:2px solid var(--gold);z-index:-1}
+.about-content h2{font-family:"Playfair Display",serif;font-size:2.5rem;margin-bottom:1.5rem}
+.about-content p{color:var(--gray);margin-bottom:1.5rem;font-size:1.05rem;line-height:1.8}
+.about-quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.4rem;color:var(--gold-dark);border-left:3px solid var(--gold);padding-left:1.5rem;margin:2rem 0}
+.rooms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.room-card{background:var(--white);box-shadow:0 10px 40px rgba(0,0,0,.08);overflow:hidden;transition:transform .4s,box-shadow .4s}
+.room-card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(0,0,0,.15)}
+.room-image{position:relative;height:240px;overflow:hidden}
+.room-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.room-card:hover .room-image img{transform:scale(1.1)}
+.room-price{position:absolute;bottom:1rem;right:1rem;background:var(--black);color:var(--white);padding:.6rem 1rem;display:flex;flex-direction:column;align-items:flex-end}
+.room-price .price-label{font-size:.65rem;opacity:.7}
+.room-price strong{color:var(--gold);font-size:1.3rem}
+.room-price .price-night{font-size:.65rem;opacity:.7}
+.room-capacity{position:absolute;top:1rem;right:1rem;background:var(--gold);color:var(--black);padding:.4rem .7rem;font-size:.8rem;font-weight:600}
+.room-content{padding:1.5rem}
+.room-content h3{font-family:"Playfair Display",serif;font-size:1.3rem;margin-bottom:.75rem;color:var(--black)}
+.room-size,.room-bed{color:var(--gray);font-size:.9rem;margin-bottom:.4rem}
+.room-size i,.room-bed i{color:var(--gold);margin-right:.5rem;width:16px}
+.room-features{list-style:none;margin:1rem 0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.room-features li{font-size:.85rem;color:var(--gray)}
+.room-features i{color:var(--gold);margin-right:.4rem;font-size:.75rem}
+.btn-room{display:block;width:100%;background:var(--black);color:var(--white);padding:.9rem;border:none;font-size:.8rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.btn-room:hover{background:var(--gold);color:var(--black)}
+.restaurant{background:var(--black);color:var(--white)}
+.restaurant .section-tagline{color:var(--gold)}
+.restaurant-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.restaurant-image img{width:100%;height:450px;object-fit:cover}
+.restaurant-content h3{font-family:"Playfair Display",serif;font-size:2.5rem;margin-bottom:.5rem}
+.restaurant-content .cuisine{color:var(--gold);font-size:1rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.5rem}
+.restaurant-content p{color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.8}
+.spa{background:var(--light)}
+.spa-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.spa-image img{width:100%;height:400px;object-fit:cover}
+.spa-content h3{font-family:"Playfair Display",serif;font-size:2.5rem;margin-bottom:1rem}
+.spa-content>p{color:var(--gray);margin-bottom:1.5rem;font-size:1.05rem}
+.spa-treatments{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.spa-item{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--white);font-size:.95rem}
+.spa-item i{color:var(--gold)}
+.reviews{background:var(--white)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
+.review-card{background:var(--light);padding:2rem}
+.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+.review-header img{width:50px;height:50px;border-radius:50%;object-fit:cover}
+.review-header h4{font-size:1rem;margin-bottom:.25rem}
+.review-rating{color:var(--gold);font-size:.85rem}
+.review-time{font-size:.8rem;color:var(--gray)}
+.review-text{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1rem;line-height:1.7}
+.cta{background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AWn5SU5N7X42P7eEhYDhlGUviMA8Km7gEW2ZLpw2fUey_JgxylP3IA5Mjv2A193W-uV7zBssKfvqZ4DP6eeoPgJiUBP21BoyNVn25fOq21ojMsSkUpxLb2fcpsp7xLDBJlBLa7MSaphPNyK331qt1PGtfgmmVntXTxxLx1nFoIIHDwx44eyKAfIPgxTeKkBUi8jwsCnDIU9riDezJckK2nXJbyGXA56H_ecAcXZsw1cFBJM0hOLKVdpFfWX41IQVOL0pzRrM-phks0HKY2thYVwexuNvbbUpisi0_R8uqcFtL5uPSQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed;color:var(--white);text-align:center;padding:8rem 2rem}
+.cta h2{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem}
+.cta p{font-family:"Cormorant Garamond",serif;font-size:1.2rem;opacity:.9;margin-bottom:2rem}
+.contact{background:var(--black);color:var(--white)}
+.contact .section-title{color:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.contact-item i{color:var(--gold);font-size:1.2rem;margin-top:.2rem}
+.contact-item a{color:var(--white);text-decoration:none;transition:color .3s}
+.contact-item a:hover{color:var(--gold)}
+.contact-map iframe{width:100%;height:350px;border:0;filter:grayscale(100%);transition:filter .3s}
+.contact-map:hover iframe{filter:grayscale(0)}
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:2rem;font-size:.85rem}
+footer a{color:var(--gold);text-decoration:none}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(5px);z-index:2000;display:none;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);max-width:480px;width:90%;max-height:90vh;overflow-y:auto;animation:modalIn .4s}
+@keyframes modalIn{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:1rem;right:1rem;background:0 0;border:none;font-size:1.5rem;cursor:pointer;color:var(--gray)}
+.modal-header{background:var(--black);color:var(--white);padding:1.5rem 2rem;text-align:center;position:relative}
+.modal-header h3{font-family:"Playfair Display",serif;font-size:1.4rem;margin-bottom:.3rem}
+.modal-header p{color:var(--gold);font-size:.9rem}
+.modal-body{padding:1.5rem 2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.85rem;font-weight:500;margin-bottom:.4rem;color:var(--dark)}
+.form-group input,.form-group select{width:100%;padding:.9rem;border:1px solid #ddd;font-family:inherit;font-size:.95rem;transition:border-color .3s}
+.form-group input:focus,.form-group select:focus{outline:0;border-color:var(--gold)}
+.form-submit{width:100%;background:var(--gold);color:var(--black);padding:1rem;border:none;font-size:.9rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;margin-top:.5rem;transition:background .3s}
+.form-submit:hover{background:var(--gold-light)}
+.form-note{text-align:center;font-size:.75rem;color:var(--gray);margin-top:1rem}
+.loading-state,.success-state{display:none;text-align:center;padding:3rem 2rem}
+.loading-state.active,.success-state.active{display:block}
+.loading-spinner{width:50px;height:50px;border:3px solid var(--light);border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.5rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-state h4,.success-state h4{font-family:"Playfair Display",serif;font-size:1.3rem;margin-bottom:.5rem}
+.loading-state p,.success-state p{color:var(--gray);font-size:.95rem}
+.success-icon{width:70px;height:70px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+.success-icon i{font-size:2rem;color:var(--white)}
+.success-state p{margin-bottom:1.5rem}
+@media (max-width:992px){.booking-bar nav{display:none}.about-grid,.restaurant-grid,.spa-grid,.contact-grid{grid-template-columns:1fr}.about-image::after{display:none}.form-row{grid-template-columns:1fr}}
+@media (max-width:768px){.hero-buttons{flex-direction:column;align-items:center}.rooms-grid,.reviews-grid{grid-template-columns:1fr}section{padding:4rem 1.5rem}}
+</style>
+</head>
+<body>
+<div class="booking-bar" id="bookingBar">
+<div class="logo">Comfort Aparthotel Marseille Prado</div>
+<nav>
+<a href="#about">L'Hotel</a>
+<a href="#rooms">Chambres</a>
+<a href="#restaurant">Restaurant</a>
+<a href="#spa">Bien-etre</a>
+<a href="#contact">Contact</a>
+</nav>
+<button class="btn-book" onclick="openBooking()">Reserver</button>
+</div>
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content" data-aos="fade-up">
+<p class="hero-tagline">VOTRE OASIS DE LUXE</p>
+<h1 class="hero-title">Vivre l'élégance méditerranéenne</h1>
+<p class="hero-subtitle">Bienvenue dans un havre de paix au cœur de Marseille</p>
+<div class="hero-rating">
+<div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>
+<span><strong>3.6</strong>/5 - 848 avis</span>
+</div>
+<div class="hero-buttons">
+<button class="btn-primary" onclick="openBooking()">Verifier les disponibilites</button>
+<a href="#rooms" class="btn-secondary">Nos chambres</a>
+</div>
+</div>
+<div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<section class="about" id="about">
+<div class="container">
+<div class="about-grid">
+<div class="about-image" data-aos="fade-right">
+<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AWn5SU5A9cEZOBZ_ywgVZf02wRAcjF7sgQDG_y30dIE0mRKWNZendqilCuSNqVlLEWQgG1CT3odJRxfuPgGMsQtgQfG-xRNCyHNrMDgHScv7n4Q9dRC4AWNtKfn_mOa8S2OFjutIsbpKIFvBTDT0cabCC8RNTsGJMq9uMAzQzbp5jARYoSvpeXfKFrKKLokuMdQuenVt7xtSzyMFkb8aa6B3oKvCqVNy3Vi7vEL9mw3Q00Fim4uMr0YikJMzF4nV8gCerzUc_iJHittJZ3Fm-ojglo1B6A3590i6MR_dWnQ9enBbIg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Comfort Aparthotel Marseille Prado" loading="lazy">
+</div>
+<div class="about-content" data-aos="fade-left">
+<p class="section-tagline">Bienvenue</p>
+<h2>Votre séjour exceptionnel</h2>
+<p>Plongez dans un univers d'un raffinement absolu au Comfort Aparthotel Marseille Prado. Nos appartements spacieux et luxueusement aménagés vous offrent un confort incomparable pour des vacances inoubliables.</p>
+<blockquote class="about-quote">"« Un écrin de luxe au cœur de la cité phocéenne »"</blockquote>
+<button class="btn-primary" onclick="openBooking()">Reserver</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="rooms" id="rooms">
+<div class="container">
+<div class="section-header" data-aos="fade-up">
+<p class="section-tagline">Hebergement</p>
+<h2 class="section-title">Nos Chambres & Suites</h2>
+</div>
+<div class="rooms-grid">
+<div class="room-card" data-aos="fade-up" data-aos-delay="0">
+    <div class="room-image">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AWn5SU5A9cEZOBZ_ywgVZf02wRAcjF7sgQDG_y30dIE0mRKWNZendqilCuSNqVlLEWQgG1CT3odJRxfuPgGMsQtgQfG-xRNCyHNrMDgHScv7n4Q9dRC4AWNtKfn_mOa8S2OFjutIsbpKIFvBTDT0cabCC8RNTsGJMq9uMAzQzbp5jARYoSvpeXfKFrKKLokuMdQuenVt7xtSzyMFkb8aa6B3oKvCqVNy3Vi7vEL9mw3Q00Fim4uMr0YikJMzF4nV8gCerzUc_iJHittJZ3Fm-ojglo1B6A3590i6MR_dWnQ9enBbIg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Chambre Double" loading="lazy">
+      <div class="room-price">
+        <span class="price-label">A partir de</span>
+        <strong>95 &euro;</strong>
+        <span class="price-night">/nuit</span>
+      </div>
+      <div class="room-capacity"><i class="fas fa-user"></i> 2</div>
+    </div>
+    <div class="room-content">
+      <h3>Chambre Double</h3>
+      <p class="room-size"><i class="fas fa-expand-arrows-alt"></i> 18 m²</p><p class="room-bed"><i class="fas fa-bed"></i> Lit double</p>
+      <ul class="room-features"><li><i class="fas fa-check"></i> Wi-Fi gratuit</li><li><i class="fas fa-check"></i> Television ecran plat</li><li><i class="fas fa-check"></i> Climatisation</li><li><i class="fas fa-check"></i> Salle de bain privee</li></ul>
+      <button class="btn-room" onclick="openBooking('Chambre Double', 95)">Reserver</button>
+    </div>
+  </div><div class="room-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="room-image">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AWn5SU6KNP1a9_szibPhc9Qe4-Ir8ZrJ4fAaxTCheH5gUWqi72Eov3e0cxobP2Qlf0ke8cZ44ZdIjk6mChP8mcOh_stNO77hIh6aVTtTxO6MrWJYfg-Dxi_RaDJY0pXL_7yymtHlMGcOHZTQJsUS78Tav1lrP4ae3zDF2PkQ9hsu4l0etmaZeCidewLyvZLqNXlT1slH6EaMMZm_icXZ8tnZvUweo27bv0UPe5lw1xd_OsMKjFdOIn21fzmUBQPQLc0cxNrgAHT-vwxCgs7Wgw-QN0V8JhMnQKEwvChPU-76oBOc4w&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Chambre Premium" loading="lazy">
+      <div class="room-price">
+        <span class="price-label">A partir de</span>
+        <strong>125 &euro;</strong>
+        <span class="price-night">/nuit</span>
+      </div>
+      <div class="room-capacity"><i class="fas fa-user"></i> 2</div>
+    </div>
+    <div class="room-content">
+      <h3>Chambre Premium</h3>
+      <p class="room-size"><i class="fas fa-expand-arrows-alt"></i> 24 m²</p><p class="room-bed"><i class="fas fa-bed"></i> Lit queen-size</p>
+      <ul class="room-features"><li><i class="fas fa-check"></i> Wi-Fi gratuit</li><li><i class="fas fa-check"></i> Minibar</li><li><i class="fas fa-check"></i> Coffre-fort</li><li><i class="fas fa-check"></i> Vue degagee</li><li><i class="fas fa-check"></i> Amenities premium</li></ul>
+      <button class="btn-room" onclick="openBooking('Chambre Premium', 125)">Reserver</button>
+    </div>
+  </div><div class="room-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="room-image">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AWn5SU71_7X0CpOVLMaOpYXV2wl8hrj5L0fhtXI3eh7bLnWFcV3SL8M7SApCRlZle1jcCgGdIVTHPISG1LEB-huk9yQGebu_Acs6XB-EjyVjrlTfptZwnEZT7hbWzFfJFHaG75nD1XAVQ9jWl3toxhTd9tohLtv4gYN6Ojfw2JWBd0NKCL6Qdx76qRQVTXA4qxhetHg-ZPzzJt3qLBH7wEHT7VwlIFGaCLY7YmLmj3MVFUzyP-3bHsKNs6ljS0AjuSpP16sH7ApqS2pdcNpOTTQgJm9s2pwKxb0XSOFwDcT8qZ9r5Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Chambre Executive" loading="lazy">
+      <div class="room-price">
+        <span class="price-label">A partir de</span>
+        <strong>165 &euro;</strong>
+        <span class="price-night">/nuit</span>
+      </div>
+      <div class="room-capacity"><i class="fas fa-user"></i> 3</div>
+    </div>
+    <div class="room-content">
+      <h3>Chambre Executive</h3>
+      <p class="room-size"><i class="fas fa-expand-arrows-alt"></i> 30 m²</p><p class="room-bed"><i class="fas fa-bed"></i> Lit king-size</p>
+      <ul class="room-features"><li><i class="fas fa-check"></i> Wi-Fi gratuit</li><li><i class="fas fa-check"></i> Balcon ou terrasse</li><li><i class="fas fa-check"></i> Baignoire</li><li><i class="fas fa-check"></i> Machine Nespresso</li><li><i class="fas fa-check"></i> Peignoirs</li></ul>
+      <button class="btn-room" onclick="openBooking('Chambre Executive', 165)">Reserver</button>
+    </div>
+  </div><div class="room-card" data-aos="fade-up" data-aos-delay="300">
+    <div class="room-image">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AWn5SU6HTQl0eEmxcmOgdId9BptJYpjfoUR98FeDupoX0Ah146bkYMTB9ivZIqJhB_Xoh9og70OKNBjajaVqcaa6zOP7E_acg59eZPSo2L3hOQD0Ro37hFdVhufQ-wizDUROBMExhXRVvbv8EssvleNaaJB3srDSVYpoxgbMb9yp-A0HO31WI86cUlxXLJiyIuiH_Pk8jC4o732JJEAmI-LTIdvSP6pZsSAL0NUj-SEMQ5w2_vvhP472ifScsYEL3BQb7UgSmuiygbVph36ZnnvtSXjaLH05JzukDmb8yPH0UiYvnw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Suite Prestige" loading="lazy">
+      <div class="room-price">
+        <span class="price-label">A partir de</span>
+        <strong>220 &euro;</strong>
+        <span class="price-night">/nuit</span>
+      </div>
+      <div class="room-capacity"><i class="fas fa-user"></i> 4</div>
+    </div>
+    <div class="room-content">
+      <h3>Suite Prestige</h3>
+      <p class="room-size"><i class="fas fa-expand-arrows-alt"></i> 42 m²</p><p class="room-bed"><i class="fas fa-bed"></i> Lit king-size</p>
+      <ul class="room-features"><li><i class="fas fa-check"></i> Salon separe</li><li><i class="fas fa-check"></i> Vue panoramique</li><li><i class="fas fa-check"></i> Baignoire balneo</li><li><i class="fas fa-check"></i> Room service 24h</li><li><i class="fas fa-check"></i> Champagne offert</li></ul>
+      <button class="btn-room" onclick="openBooking('Suite Prestige', 220)">Reserver</button>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="restaurant" id="restaurant">
+<div class="container">
+<div class="restaurant-grid">
+<div class="restaurant-image" data-aos="fade-right">
+<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AWn5SU5f2TNzW15ZQDykmMLjVgxG69Vrwj88iUABojO5mXsQnrAT61hrDcOqa5At2EZQwKRElrpPnX-6qSbPoCECEsX18ghmJ6l5L4Iak-jVcmxFUzF15NTG8EYP48iQk5bp0kRiWMsCf13drpSPYf8rpJewfSzao3VL1LdN_GG02_xKpQQ2csQ40IAmRvxjRAcJGPD0zQd46cbIVFMLdS9Tnj8UiXBtdVvgQjjTCKUUo4KMJzwbn0VpBku4y0LOm9Tf40QA-58SP5uc8WtS9hXvL9e6_wc7MOmVl6yD6KM_BDRYdw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Restaurant" loading="lazy">
+</div>
+<div class="restaurant-content" data-aos="fade-left">
+<p class="section-tagline">Gastronomie</p>
+<h3>Le Mas des Oliviers</h3>
+<p class="cuisine">Gastronomie provençale</p>
+<p>Savourez une cuisine authentique et savoureuse dans un cadre chic et intimiste.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="spa" id="spa">
+<div class="container">
+<div class="spa-grid">
+<div class="spa-content" data-aos="fade-right">
+<p class="section-tagline">Bien-etre</p>
+<h3>Spa des Délices</h3>
+<p>Ressourcez-vous dans notre oasis de bien-être, où massages, soins du visage et hammam vous attendent pour une expérience de détente absolue.</p>
+<div class="spa-treatments">
+<div class="spa-item"><i class="fas fa-spa"></i> Massage relaxant</div><div class="spa-item"><i class="fas fa-spa"></i> Soin visage</div><div class="spa-item"><i class="fas fa-spa"></i> Hammam</div><div class="spa-item"><i class="fas fa-spa"></i> Sauna</div>
+</div>
+</div>
+<div class="spa-image" data-aos="fade-left">
+<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AWn5SU6NMNeumgifCX-oxpwOndvPkLkSVAtNZ_DePhd45u17WAl7oRn-Evd3Pe_kkQhC8So_SwDuFxoU1ctyUZovb2nDJ3Hsw-rqrrrp2O8rThi9LKiPx7AmWhhYyY1ITsLNDYueZFJ2mIqUVjuX3RO8am9lSMtn0gSkRaldACkC4Dkn6zaeLsgi4RapFREOO75xcNu8myVJE5B7xPGBNU9z6uM25D8kfHG7xeQRNZStyYBBDNN5ikCP5RQxKQC-SIgusJ1urR3cG-1yBgyexiwiDcdXvymqhr0GaTV-l0qhqn1S3w&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Spa" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="reviews">
+<div class="container">
+<div class="section-header" data-aos="fade-up">
+<p class="section-tagline">Temoignages</p>
+<h2 class="section-title">Avis de nos clients</h2>
+</div>
+<div class="reviews-grid">
+<div class="review-card" data-aos="fade-up" data-aos-delay="0">
+    <div class="review-header">
+      <img src="https://lh3.googleusercontent.com/a/ACg8ocKv5FsX1BamcXD9Lsu9n-f6oUAmF2LsDTqtfGQ1ZqZ-kUcXsA=s128-c0x00000000-cc-rp-mo-ba3" alt="Natalia Panicheva">
+      <div>
+        <h4>Natalia Panicheva</h4>
+        <div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <span class="review-time">il y a 2 mois</span>
+      </div>
+    </div>
+    <p class="review-text">"L’hôtel est tout simplement magnifique ! Le personnel est aux petits soins et toujours prêt à aider. Tout est d’une propreté irréprochable. Le seul détail un peu surprenant : pas de sèche-cheveux dans la chambre… étrange pour un hôtel en bord de mer, surtout quand on doit se lave"</p>
+  </div><div class="review-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="review-header">
+      <img src="https://lh3.googleusercontent.com/a/ACg8ocKFirL-1JWiLfII73RIX3QZSj3K59_pEe1kDd0xGY13VR8nYw=s128-c0x00000000-cc-rp-mo-ba5" alt="Olga Faure">
+      <div>
+        <h4>Olga Faure</h4>
+        <div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <span class="review-time">il y a 2 semaines</span>
+      </div>
+    </div>
+    <p class="review-text">"Un aparthotel sympa très bien situé au calme, mais pas loin des plages de Prada, le centre nautique, le stade Velodrome ainsi que les arrêts de transport en commun pour aller au centre ville: le Vieux port et la place Catalan. Les chambres avec terrace ne sont pas tout à fait neu"</p>
+  </div><div class="review-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="review-header">
+      <img src="https://lh3.googleusercontent.com/a/ACg8ocKQxMMw0LmEtqm_bAZ4ubMcbEJFbgx7MAbd8eZzczl2bYidEA=s128-c0x00000000-cc-rp-mo-ba3" alt="Nawel">
+      <div>
+        <h4>Nawel</h4>
+        <div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <span class="review-time">il y a un mois</span>
+      </div>
+    </div>
+    <p class="review-text">"Tout s'est déroulé à la perfection, le personnel est au petit soins, toujours réactifs et souriant ( notamment Hadira).
+Tout était au top: propreté dans la résidence.literie confortable, parking souterrain pratique, et surtout une accessibilité aux plages.
+C'est un endroit exclus"</p>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section class="cta">
+<div data-aos="fade-up">
+<h2>Réservez votre séjour</h2>
+<p>Vivez l'expérience Comfort Aparthotel Marseille Prado</p>
+<button class="btn-primary" onclick="openBooking()">Verifier les disponibilites</button>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+<div class="contact-grid">
+<div data-aos="fade-right">
+<p class="section-tagline">Contact</p>
+<h2 class="section-title">Nous Contacter</h2>
+<div class="contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<div>Ilot Valbel, 46 Imp. des Mousses, 13008 Marseille, France</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<div><a href="tel:0491229700">04 91 22 97 00</a></div>
+</div>
+<div class="contact-item">
+<i class="fas fa-map"></i>
+<div><a href="https://maps.google.com/?cid=4249103554613477387" target="_blank">Google Maps</a></div>
+</div>
+</div>
+<div class="contact-map" data-aos="fade-left">
+<iframe src="https://maps.google.com/maps?q=43.2645931,5.3759843&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>Site par <a href="https://local-visibility.com" target="_blank">Local Visibility</a> | <a href="https://wa.me/33780954913">Contact</a></p>
+</footer>
+
+<div class="modal-overlay" id="bookingModal">
+<div class="modal">
+<button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+<div class="modal-header">
+<h3>Reservation</h3>
+<p id="selectedRoom">Comfort Aparthotel Marseille Prado</p>
+</div>
+<div class="modal-body">
+<form id="bookingForm" onsubmit="submitBooking(event)">
+<div class="form-row">
+<div class="form-group">
+<label>Arrivee</label>
+<input type="date" id="checkin" required>
+</div>
+<div class="form-group">
+<label>Depart</label>
+<input type="date" id="checkout" required>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Chambres</label>
+<select id="nb_rooms">
+<option value="1">1 chambre</option>
+<option value="2">2 chambres</option>
+<option value="3">3 chambres</option>
+</select>
+</div>
+<div class="form-group">
+<label>Voyageurs</label>
+<select id="adults">
+<option value="1">1 adulte</option>
+<option value="2" selected>2 adultes</option>
+<option value="3">3 adultes</option>
+<option value="4">4 adultes</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label>Nom</label>
+<input type="text" id="guest_name" placeholder="Votre nom" required>
+</div>
+<div class="form-group">
+<label>Email</label>
+<input type="email" id="guest_email" placeholder="email@exemple.com" required>
+</div>
+<div class="form-group">
+<label>Telephone</label>
+<input type="tel" id="guest_phone" placeholder="06 00 00 00 00" required>
+</div>
+<button type="submit" class="form-submit">Verifier la disponibilite</button>
+<p class="form-note"><i class="fas fa-lock"></i> Donnees securisees</p>
+</form>
+<div class="loading-state" id="loadingState">
+<div class="loading-spinner"></div>
+<h4>Verification...</h4>
+<p>Consultation des disponibilites</p>
+</div>
+<div class="success-state" id="successState">
+<div class="success-icon"><i class="fas fa-check"></i></div>
+<h4>Demande envoyee!</h4>
+<p>Nous vous contactons rapidement.</p>
+<a href="tel:0491229700" class="btn-primary"><i class="fas fa-phone"></i> Appeler</a>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({duration:800,once:true,offset:100});
+var bar=document.getElementById('bookingBar');
+window.addEventListener('scroll',function(){bar.classList.toggle('visible',window.scrollY>500)});
+var today=new Date().toISOString().split('T')[0];
+document.getElementById('checkin').min=today;
+document.getElementById('checkin').addEventListener('change',function(){var d=new Date(this.value);d.setDate(d.getDate()+1);document.getElementById('checkout').min=d.toISOString().split('T')[0]});
+function openBooking(room,price){document.getElementById('bookingModal').classList.add('active');document.body.style.overflow='hidden';document.getElementById('selectedRoom').textContent=room?(room+(price?' - '+price+' EUR/nuit':'')):"Comfort Aparthotel Marseille Prado";}
+function closeBooking(){document.getElementById('bookingModal').classList.remove('active');document.body.style.overflow='';document.getElementById('bookingForm').style.display='block';document.getElementById('loadingState').classList.remove('active');document.getElementById('successState').classList.remove('active');}
+function submitBooking(e){e.preventDefault();document.getElementById('bookingForm').style.display='none';document.getElementById('loadingState').classList.add('active');setTimeout(function(){document.getElementById('loadingState').classList.remove('active');document.getElementById('successState').classList.add('active');},2500);}
+document.getElementById('bookingModal').onclick=function(e){if(e.target===this)closeBooking();};
+</script>
+</body>
+</html>
