@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Manoir de Collonges - COSI WORK | Collonges-au-Mont-d'Or</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--white:#fff;--off-white:#fafafa;--cream:#f8f6f3;--black:#1a1a1a;--dark:#2d2d2d;--gray-100:#f5f5f5;--gray-200:#eee;--gray-300:#e0e0e0;--gray-500:#9e9e9e;--gray-600:#757575;--gray-700:#616161;--gold:#b8860b;--gold-light:#d4a84b;--accent:#c41e3a}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--black);line-height:1.8;font-size:15px}
+    img{display:block;max-width:100%;height:auto}
+    
+    .preview-banner{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--accent);color:var(--white);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px}
+    .preview-banner strong{font-weight:600}
+    .preview-banner a{background:var(--white);color:var(--accent);padding:8px 20px;text-decoration:none;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-radius:2px;transition:.3s;white-space:nowrap}
+    .preview-banner a:hover{background:var(--black);color:var(--white)}
+    
+    .navbar{position:fixed;top:44px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--gray-200);padding:16px 5%;display:flex;justify-content:space-between;align-items:center;transition:.3s}
+    .navbar.scrolled{padding:12px 5%;box-shadow:0 2px 20px rgba(0,0,0,.08)}
+    .logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:var(--black);text-decoration:none;letter-spacing:1px}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{color:var(--gray-700);text-decoration:none;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;transition:.3s}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-buttons{display:flex;gap:12px;align-items:center}
+    .nav-btn-call{display:flex;align-items:center;background:var(--accent);color:var(--white);padding:10px 18px;text-decoration:none;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-radius:3px;transition:.3s}
+    .nav-btn-call:hover{background:#a01830;transform:translateY(-1px)}
+    .nav-cta{background:var(--black);color:var(--white);padding:10px 20px;text-decoration:none;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;transition:.3s}
+    .nav-cta:hover{background:var(--gold)}
+    .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+    .menu-toggle span{width:24px;height:2px;background:var(--black)}
+    
+    .hero{min-height:100vh;padding-top:44px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;z-index:0}
+    .hero-bg img{width:100%;height:100%;object-fit:cover}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3),rgba(0,0,0,.5))}
+    .hero-content{position:relative;z-index:1;text-align:center;max-width:850px;padding:40px 24px;color:var(--white)}
+    .hero-subtitle{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:4px;color:var(--gold-light);margin-bottom:20px}
+    .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:400;line-height:1.1;letter-spacing:2px;margin-bottom:24px}
+    .hero-description{font-size:16px;font-weight:300;max-width:550px;margin:0 auto 40px;line-height:1.8;opacity:.9}
+    .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .hero-cta{display:inline-block;background:var(--white);color:var(--black);padding:16px 40px;text-decoration:none;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:2px;transition:.3s}
+    .hero-cta:hover{background:var(--gold);color:var(--white)}
+    .hero-cta-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;border:2px solid rgba(255,255,255,.6);color:var(--white);padding:14px 32px;text-decoration:none;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:2px;transition:.3s}
+    .hero-cta-secondary:hover{background:rgba(255,255,255,.1);border-color:var(--white)}
+    
+    section{padding:100px 5%}
+    .container{max-width:1100px;margin:0 auto}
+    .section-header{text-align:center;margin-bottom:60px}
+    .section-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--gold);margin-bottom:12px;display:block}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:400;color:var(--black);letter-spacing:1px}
+    
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .intro-image{position:relative;overflow:hidden}
+    .intro-image img{width:100%;height:500px;object-fit:cover}
+    .intro-image::before{content:'';position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;border:2px solid var(--gold);z-index:-1}
+    .photo-badge{position:absolute;bottom:16px;right:16px;background:rgba(0,0,0,.8);color:var(--gold-light);padding:8px 16px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+    .intro-content{padding:20px 0}
+    .intro-content .section-label{text-align:left}
+    .intro-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;margin-bottom:24px;line-height:1.3;color:var(--black)}
+    .intro-content p{color:var(--gray-700);margin-bottom:20px;line-height:1.9}
+    .intro-speciality{background:var(--cream);padding:16px 20px;border-left:3px solid var(--gold);font-style:italic;color:var(--gray-700);margin:24px 0}
+    .intro-stats{display:flex;gap:40px;margin-top:40px;padding-top:40px;border-top:1px solid var(--gray-200)}
+    .intro-stat{text-align:center}
+    .intro-stat-value{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:var(--gold);line-height:1}
+    .intro-stat-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gray-600);margin-top:8px}
+    
+    .features-section{background:var(--cream)}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+    .feature-card{background:var(--white);border:1px solid var(--gray-300);padding:48px 32px;text-align:center;transition:.3s}
+    .feature-card:hover{border-color:var(--gold);box-shadow:0 15px 50px rgba(0,0,0,.1);transform:translateY(-5px)}
+    .feature-icon{font-size:2.5rem;margin-bottom:20px}
+    .feature-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;margin-bottom:12px;color:var(--black)}
+    .feature-card p{color:var(--gray-600);font-size:14px;line-height:1.7}
+    
+    .gallery-section{padding:0}
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .gallery-item{position:relative;aspect-ratio:1;overflow:hidden}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.6s}
+    .gallery-item:hover img{transform:scale(1.1)}
+    
+    .reviews-section{background:var(--off-white)}
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+    .review-card{background:var(--white);padding:40px;text-align:center;border:1px solid var(--gray-200);position:relative}
+    .review-card::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:5rem;color:var(--gold);opacity:.2;position:absolute;top:10px;left:20px;line-height:1}
+    .review-stars{color:var(--gold);font-size:18px;letter-spacing:3px;margin-bottom:20px}
+    .review-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;line-height:1.8;color:var(--gray-700);margin-bottom:24px}
+    .review-author{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--black)}
+    .review-source{font-size:11px;color:var(--gray-500);margin-top:4px}
+    
+    .reservation-section{background:linear-gradient(135deg,var(--black),var(--dark));color:var(--white);text-align:center}
+    .reservation-section .section-title{color:var(--white)}
+    .reservation-content{max-width:600px;margin:0 auto}
+    .reservation-content>p{color:rgba(255,255,255,.8);margin-bottom:32px;font-size:16px}
+    .reservation-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:40px;border-radius:4px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .form-group{text-align:left}
+    .form-group.full{grid-column:1/-1}
+    .form-group label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gold-light);margin-bottom:8px}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;font-size:14px;font-family:inherit;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);color:var(--white);border-radius:2px;transition:.3s}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.4)}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+    .form-group select option{background:var(--black);color:var(--white)}
+    .form-submit{width:100%;padding:16px;margin-top:24px;background:var(--gold);color:var(--white);border:none;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:.3s}
+    .form-submit:hover{background:var(--gold-light)}
+    .form-note{margin-top:16px;font-size:12px;color:rgba(255,255,255,.5)}
+    .form-note a{color:var(--gold)}
+    
+    .contact-section{background:var(--white);position:relative;overflow:hidden}
+    .contact-wrapper{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+    .contact-info{background:var(--black);color:var(--white);padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+    .contact-info h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;margin-bottom:16px;color:var(--white)}
+    .contact-info>p{color:rgba(255,255,255,.6);margin-bottom:48px;font-size:15px}
+    .contact-list{list-style:none}
+    .contact-list li{display:flex;align-items:flex-start;gap:20px;margin-bottom:32px}
+    .contact-list li:last-child{margin-bottom:0}
+    .contact-icon-wrap{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .contact-item-content{padding-top:2px}
+    .contact-item-content h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--gold-light);margin-bottom:8px}
+    .contact-item-content p,.contact-item-content a{color:rgba(255,255,255,.9);text-decoration:none;font-size:15px;line-height:1.7}
+    .contact-item-content a:hover{color:var(--gold)}
+    .contact-map{position:relative;background:var(--gray-100)}
+    .contact-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .map-overlay{position:absolute;bottom:24px;left:24px;right:24px;background:var(--white);padding:20px 24px;box-shadow:0 10px 40px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .map-overlay p{font-size:13px;color:var(--gray-700);margin:0}
+    .map-overlay a{background:var(--accent);color:var(--white);padding:10px 20px;text-decoration:none;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;transition:.3s}
+    .map-overlay a:hover{background:#a01830}
+    
+    .cta-section{background:linear-gradient(135deg,#2d5a3d,#1a472a);color:var(--white);text-align:center}
+    .cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:400;margin-bottom:16px}
+    .cta-section>.container>p{opacity:.9;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
+    .cta-pricing{background:rgba(0,0,0,.25);display:inline-block;padding:32px 56px;margin-bottom:32px;border-radius:4px}
+    .cta-price-old{font-size:1.1rem;text-decoration:line-through;opacity:.5}
+    .cta-price{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:400;line-height:1.2}
+    .cta-price small{font-size:1rem}
+    .cta-price-note{font-size:13px;opacity:.7;margin-top:8px}
+    .cta-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .cta-btn{padding:16px 32px;text-decoration:none;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;transition:.3s}
+    .cta-btn-primary{background:var(--white);color:var(--black)}
+    .cta-btn-primary:hover{background:var(--gold);color:var(--white)}
+    .cta-btn-secondary{background:transparent;border:1px solid rgba(255,255,255,.4);color:var(--white)}
+    .cta-btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6)}
+    
+    footer{background:var(--black);color:var(--white);padding:60px 5% 40px;text-align:center}
+    .footer-logo{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;letter-spacing:2px;color:var(--white);display:block;margin-bottom:24px}
+    .footer-links{display:flex;justify-content:center;gap:32px;margin-bottom:24px;flex-wrap:wrap}
+    .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:1px;transition:.3s}
+    .footer-links a:hover{color:var(--gold)}
+    .footer-divider{width:60px;height:1px;background:rgba(255,255,255,.2);margin:32px auto}
+    footer p{color:rgba(255,255,255,.5);font-size:13px}
+    footer a{color:var(--gold);text-decoration:none}
+    
+    @media(max-width:1024px){
+      .nav-links{display:none}.menu-toggle{display:flex}
+      .intro-grid,.contact-wrapper{grid-template-columns:1fr}
+      .intro-image{order:-1}.intro-image::before{display:none}.intro-image img{height:350px}
+      .intro-stats{justify-content:center}
+      .features-grid,.reviews-grid{grid-template-columns:1fr;max-width:450px;margin:0 auto}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .form-row{grid-template-columns:1fr}
+      .contact-info{padding:60px 40px;order:2}
+      .contact-map{min-height:350px;order:1}
+      .map-overlay{position:relative;bottom:auto;left:auto;right:auto;margin:0}
+    }
+    @media(max-width:768px){
+      .preview-banner{flex-direction:column;gap:10px;text-align:center;padding:10px 16px}
+      .navbar{top:72px;padding:12px 5%}
+      .nav-buttons{gap:8px}.nav-btn-call{padding:8px 12px;font-size:10px}
+      .logo{font-size:1.2rem}
+      .hero{padding-top:72px}
+      section{padding:70px 5%}
+      .intro-image img{height:280px}
+      .intro-stats{flex-direction:column;gap:24px}
+      .gallery-grid{grid-template-columns:1fr}.gallery-item{aspect-ratio:16/10}
+      .hero-buttons{flex-direction:column;align-items:center}
+      .hero-cta,.hero-cta-secondary{width:100%;max-width:280px;text-align:center}
+      .cta-pricing{padding:24px 32px}
+      .cta-buttons{flex-direction:column;align-items:center}
+      .cta-btn{width:100%;max-width:280px;text-align:center}
+      .reservation-form{padding:24px}
+      .contact-info{padding:40px 24px}
+      .contact-map{min-height:300px}
+      .map-overlay{flex-direction:column;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    <span>⚠️ APERÇU — Site créé pour <strong>Manoir de Collonges - COSI WORK</strong> par Local Visibility</span>
+    <a href="#commander">Obtenir ce site — 480€</a>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <a href="#" class="logo">Manoir de Collonges - COSI WORK</a>
+    <ul class="nav-links">
+      <li><a href="#about">Le Restaurant</a></li>
+      <li><a href="#atouts">Nos Atouts</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#reservation">Réservation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-buttons">
+      <a href="tel:07 61 96 72 02" class="nav-btn-call">Appeler</a>
+      <a href="#reservation" class="nav-cta">Réserver</a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU57m5HR3FIpwt9WeQM0zIyulTE9vEP8ezqJfM-cJ5MfWnOg9XanywOKN62Dgb_FwYJYZT94_3JBnirPiU7heZn3m-5tBwUpfsNgQ1yZogfsUZtOYG5L6ikfhUCcNd9FA1XiBEAAqChwdZhvBUwATwKGofIAdjZ5zPl1bjTbuxFK_qAyETcO10SwDtJ4Z8pEcHb8dYw9I_2D-FyNhU29UgC0ixvnUFE0ZKuCYne8Ad0dRCkp5Pg0Xd3iCSQ6N3rqi67xB513873ephECg6VnqO5K1_-7mZYIQLpGx-jj_n1D1w&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">Dégustez l'excellence à Collonges</p>
+      <h1 class="hero-title">Manoir de Collonges - COSI WORK</h1>
+      <p class="hero-description">Découvrez une expérience culinaire exceptionnelle dans un cadre historique et charmant.</p>
+      <div class="hero-buttons">
+        <a href="#reservation" class="hero-cta">Réserver une table</a>
+        <a href="tel:07 61 96 72 02" class="hero-cta-secondary">📞 Appeler</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-image">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU6jHYqm24LOb0hE3B3REe4cakqsyPGld_1fn13dyNx1aVmHZYxzdPdrmSxv3H99jkvGZnWxW1xwEcrrVNui0ytNWajhuhNarPMqAdZuVdTAe1yzUWEeQQdTS_24o-oD2tn1WhxegNTst7CqGGSJYYRpr3LyFuMC6_9UsDf-O8zHouUbt2BD0knV3JlzBwTLyJj9oRBjcrkoU003-K1h9ll7gCHVDdXBkHzOpfPAyGvVfVEW3KoGQYejN3MDmlqXC7dN2upst0HIKrwXjk0iQvqJpmZaOMtlPvtBk9g6zW9SvxoEVJUbRmcKpKhnPKPBzFd7idWvGFEQvLcmB0KyT8kPxWfdbADXqQntfMfIjYFzVzbOOD9aLLIaYGh7U25MWf8FP6RfiA0XIpVEgDqNu5rFB7eP12aWzd7Oz2UF8nCc_c6y90CnIVlLC1mVuCmO&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK">
+          <div class="photo-badge">📸 Photo Google</div>
+        </div>
+        <div class="intro-content">
+          <span class="section-label">Notre Histoire</span>
+          <h2>Bienvenue au Manoir de Collonges</h2>
+          <p>Niché dans le magnifique village de Collonges-au-Mont-d'Or, le Manoir de Collonges vous invite à vivre une expérience gastronomique inoubliable.</p>
+          <p>Nos chefs passionnés créent des plats raffinés et savoureux, en utilisant les meilleurs produits locaux pour vous régaler.</p>
+          <div class="intro-speciality">"Spécialités régionales et cuisine bistronomique dans un écrin d'exception."</div>
+          <div class="intro-stats">
+            <div class="intro-stat"><div class="intro-stat-value">4.0</div><div class="intro-stat-label">Note Google</div></div>
+            <div class="intro-stat"><div class="intro-stat-value">68</div><div class="intro-stat-label">Avis</div></div>
+            <div class="intro-stat"><div class="intro-stat-value">€€</div><div class="intro-stat-label">Gamme de prix</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="atouts">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Pourquoi nous choisir</span>
+        <h2 class="section-title">Nos Atouts</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">🍽️</div><h3>Salle de restaurant</h3><p>Cadre élégant et chaleureux</p></div><div class="feature-card"><div class="feature-icon">👨‍🍳</div><h3>Cuisine de qualité</h3><p>Produits frais et de saison</p></div><div class="feature-card"><div class="feature-icon">🌟</div><h3>Expérience d'exception</h3><p>Dîner gastronomique dans un lieu historique</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="galerie"><div class="gallery-grid"><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU57m5HR3FIpwt9WeQM0zIyulTE9vEP8ezqJfM-cJ5MfWnOg9XanywOKN62Dgb_FwYJYZT94_3JBnirPiU7heZn3m-5tBwUpfsNgQ1yZogfsUZtOYG5L6ikfhUCcNd9FA1XiBEAAqChwdZhvBUwATwKGofIAdjZ5zPl1bjTbuxFK_qAyETcO10SwDtJ4Z8pEcHb8dYw9I_2D-FyNhU29UgC0ixvnUFE0ZKuCYne8Ad0dRCkp5Pg0Xd3iCSQ6N3rqi67xB513873ephECg6VnqO5K1_-7mZYIQLpGx-jj_n1D1w&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU6jHYqm24LOb0hE3B3REe4cakqsyPGld_1fn13dyNx1aVmHZYxzdPdrmSxv3H99jkvGZnWxW1xwEcrrVNui0ytNWajhuhNarPMqAdZuVdTAe1yzUWEeQQdTS_24o-oD2tn1WhxegNTst7CqGGSJYYRpr3LyFuMC6_9UsDf-O8zHouUbt2BD0knV3JlzBwTLyJj9oRBjcrkoU003-K1h9ll7gCHVDdXBkHzOpfPAyGvVfVEW3KoGQYejN3MDmlqXC7dN2upst0HIKrwXjk0iQvqJpmZaOMtlPvtBk9g6zW9SvxoEVJUbRmcKpKhnPKPBzFd7idWvGFEQvLcmB0KyT8kPxWfdbADXqQntfMfIjYFzVzbOOD9aLLIaYGh7U25MWf8FP6RfiA0XIpVEgDqNu5rFB7eP12aWzd7Oz2UF8nCc_c6y90CnIVlLC1mVuCmO&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU7-KgjjRuz8bcbgOAqWMT2XiEn5gu174OcqCufQMqE0B8KAqwBmXvb1fSuywaDbHyQN_wjdvG8ZyCTgxHxfPumAEWBruq-AuX2INXDgZ5nMbm5i6vzl19vWEycP7VRNVUOLTB9DN6kdSteeBAxKopp1cMl0GPqWfZDLnBcS8Nm3DVJUSfa8mBhTM6VP37f3JlMteIpjklDHMwa7lt2NWZfa9jqbwTKgJ0kUZlz7QJsTgkfZ4ROmk5ov6FvRpH-LP67bIzCclGO1SEpQp7a8m5yE6-KLeU6TXJ3-kLIXCvyluEir7aPZwu1HmXXj2-A_EdvLXbU1weyBphI5ImALMIEYG1iZfspF_a0hIFrM_W0Z914ijss2rfY7grl26C3VOpo2WmktPQE4kBwLC9EP6wAUt_Hrf8rc9kW80GxH3K5vUklob2XXdhGOsy8tSfZr&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU6ygJW7W1xEhinM0jA3KK2s8YpXdt4n6EUrQ4F8s0k2tX7g2jMiYplXzA2WCCEiEYF_Fssr8kOzaoXX6CRrys9amYcyMvjH54TDuC36QKLZHcxRm8PqbXsvGXBYsb0aaf-Xi_7Op9EWBU11svDd8OQc_kJhGfKQGNXUr_MBTEhpVY-Dh2o4RX-UjJ1jQztK-hkU6egZwqXv5vgeRh8slcchG-8d5xIheBD9SsWmhoCfUSWhnsSLDATvMijzcPoIFC6JjpLBxjI1q4XB6CI-dWQ44Ei6kt55gjB-BYxRUTKfQfGcBr1SLzUsJ-zrcCmt_h1ViXBwoBgSqkQEQ166sZculgbT_Xk3Zsl7b_UFYoljsbNkJGoGTk-M7qop0npBX_abhrZcJ9srMIFCrP9BFfQ0kEQDr0iW8cv9gjHOk6xe4A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU7by74kFrzghHH4bZayhp8OcjLSUrkceMASfr6yMLwbsntPYKeIWyltgea_fp5gBIyWlY05YigOShpNqpn1-J71WU1Vxj7oN_Gjrh2r7qVbcArYqGy4uFEF8p3dJnTQj9hRRUyA2kR0_8jvAmzBgDRpkS22tea2PHBrhXMCCotwHF0ZH5Ygm7nhGvLJHU4eCSuQp_5rSCUN8u3J8JsZ2w5n84v53h_l8LxqT26I7DfosupaJmOxTHvS0Sn18vYnzlbCuvYcXFGzqkYXF0XeKSSMce08x4SO-4Wigoi07Mrtfq12KfTb3VEmOCzQVMPral8WzWXEYK-g3dge3gYX6eEFdxmKlE1HDLPWxhpqruCJjPidt4n72ce1ybiL50FW1bKw07PddmK3r0x-sd6W0WekmPXj5JVgYBjirdHsj4Y16zTSXtuj0-ojyWh7_eRk&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU6FiQgtAYe7hsQOZ4pRBLXK_H10g3Eq1Pn8ucs_ZWmUD6G_NOT9Sz0XPGfToEifvLEc47WFMyZdkjLFJRDZOeF1sro0_5gs3P1lsdXPLvH2aU-Zv2MV0nZkzYGbB7VxNL-4XQU90sclMbHk54I9uv7afu6Sa1FWokTSn6gr05ae4Je__auiQVwAvhIaUU6RJY9yKT8YIzC90gSOCMzCYDYL9hoBL9xVnnDmqkDo6Rx86YkTOwxhr8CCOWQhtQ4R9vf8hrk3UcstJOa5-n79w6Yhl6xBmgebUM9Iljhmkyi2Vw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU5M6jOLJy-KD1fFznp57kzxRi1bJIIz2-D7K4yiCgFtJ9bm0BqKphjJih_jFCXDTFKf9tW2s0ldG6Y6Slba5BPPO7-oYnn-7BPNdCSKtnNLD2Eth4wtbZveVjCxiOcDkZUNhf3d27QnoozryRMSCuxVabcq9a7nj6jHa9x5Kk_zWDGp8P5oE1XEcEbYEH7PUg8O_slf66LUKbOXXJUp7Z-FG67p9qQyGDPgWpX_HaR4sBiPrbvT5e4WgBJ804JudPo4OOfSKkhmVC7omL3KnrDUw7Xemfi4sHK1DqrtyynD-NLaQmuRSdkXVjvw6rcjxPZJ1EbSChW8pS5CFGNzGWl6tuZAIURvK0M4Gq3ORlDBQuTQknLI1W1Y0tLVySsWK2ZsTSqDI63bDZX3QmjrfhPvWILzJ9gWL61fbqg7tmgjvBGHOAeBH20Bq7wc3vMk&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU5tgUTbOt9SWdpVVOmQaJiF-hPTog4WHS1gG9-AtU1ew58xTRjrRZKaksevcohUQaRS9spJEEXKcPHyRUv9u1l8Si5QCrU4ezZx7INfyNjinbtY66jx6zL5SI0MHm61o4OgZqiTjQtPXamTg63E46CxGJxYVv2fPDQ9EsGaKrB3DFYlEmHNgvgx2LR86e1rhTz6SvpwwY5247QbxNcjAPCHj3K_pNnvueDXsHzBjJSAApS-CL8qvcOKYEX6r0SIvR1oF5C-6zYXBMh_1AFOkqM2s7If5whIAmOcY3h64UX3kg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK"></div></div></section>
+
+  <section class="reviews-section" id="avis"><div class="container"><div class="section-header"><span class="section-label">Témoignages</span><h2 class="section-title">Ce que nos clients disent</h2></div><div class="reviews-grid"><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Nous venons de profiter de cette magnifique demeure ce week-end pour un anniversaire. Le charme du manoir, la déco incroyable, le confort et la gentillesse d’Agnes ont fait l’unanimité.
+Nous sommes 10 à avoir dormi sur place et 23 personnes samedi so"</p><span class="review-author">helene boget</span><div class="review-source">Avis Google · il y a 2 mois</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Agnès nous a accueillie dans son manoir aux petits soins pour que tout se déroule bien. Nous avons été conquis par le chic, le charme de cette maison à la décoration raffinée. Une maison de famille rare et précieuse pour recevoir à l’ancienne. À reco"</p><span class="review-author">valerie brac de la perriere</span><div class="review-source">Avis Google · il y a 2 ans</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Un endroit magique, magnifique et vraiment calme ! Idéal pour se retrouver en famille mais peut-être moins entre amis (nous y étions pour un EVJF), le voisinage est vraiment virulent. Un coup de fil passé à la police pour 30mn de musique juste après "</p><span class="review-author">Laurence Ego</span><div class="review-source">Avis Google · il y a 5 ans</div></div></div></div></section>
+
+  <section class="reservation-section" id="reservation">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Réservation</span>
+        <h2 class="section-title">Réservez votre table</h2>
+      </div>
+      <div class="reservation-content">
+        <p>Réservez directement en ligne ou appelez-nous.</p>
+        <div class="reservation-form">
+          <div class="form-row">
+            <div class="form-group"><label>Nom</label><input type="text" placeholder="Votre nom"></div>
+            <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="06 00 00 00 00"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Date</label><input type="date"></div>
+            <div class="form-group"><label>Heure</label><select><option>12:00</option><option>12:30</option><option>13:00</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Personnes</label><select><option>2 personnes</option><option>3 personnes</option><option>4 personnes</option><option>5 personnes</option><option>6+ personnes</option></select></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com"></div>
+          </div>
+          <div class="form-group full"><label>Message (optionnel)</label><textarea rows="3" placeholder="Allergies, occasion spéciale..."></textarea></div>
+          <button type="button" class="form-submit" onclick="alert('Ceci est un aperçu. Le formulaire sera fonctionnel après achat.');">Réserver maintenant</button>
+          <p class="form-note">Ou appelez-nous au <a href="tel:07 61 96 72 02">07 61 96 72 02</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h2>Nous trouver</h2>
+        <p>Venez nous rendre visite et découvrir notre cuisine.</p>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon-wrap">📍</div>
+            <div class="contact-item-content">
+              <h4>Adresse</h4>
+              <p>9 Rue Maréchal Joffre, 69660 Collonges-au-Mont-d'Or, France</p>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon-wrap">📞</div>
+            <div class="contact-item-content">
+              <h4>Téléphone</h4>
+              <p><a href="tel:07 61 96 72 02">07 61 96 72 02</a></p>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon-wrap">🕐</div>
+            <div class="contact-item-content">
+              <h4>Horaires</h4>
+              <p>lundi: 09:00 – 20:00<br>mardi: 09:00 – 20:00<br>mercredi: 09:00 – 20:00</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-map">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=4.8364372%2C45.818923899999994%2C4.856437199999999%2C45.8349239&layer=mapnik&marker=45.8269239%2C4.8464372" allowfullscreen loading="lazy"></iframe>
+        <div class="map-overlay">
+          <p>📍 Manoir de Collonges - COSI WORK</p>
+          <a href="https://maps.google.com/?cid=8138262989803338920" target="_blank">Itinéraire →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="commander">
+    <div class="container">
+      <h2>Ce site peut être le vôtre</h2>
+      <p>Site professionnel créé sur-mesure, prêt à être mis en ligne.</p>
+      <div class="cta-pricing">
+        <div class="cta-price-old">990€</div>
+        <div class="cta-price">480€ <small>TTC</small></div>
+        <div class="cta-price-note">Paiement unique · Sans abonnement · Livré en 48h</div>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:07 80 95 49 13" class="cta-btn cta-btn-primary">📞 Appeler</a>
+        <a href="https://wa.me/33780954913" class="cta-btn cta-btn-secondary" target="_blank">💬 WhatsApp</a>
+        <a href="mailto:contact@local-visibility.com" class="cta-btn cta-btn-secondary">📧 Email</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Manoir de Collonges - COSI WORK</span>
+    <div class="footer-links">
+      <a href="#about">Le Restaurant</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#reservation">Réservation</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p>Site créé par <a href="https://local-visibility.com" target="_blank">Local Visibility</a></p>
+  </footer>
+
+  <script>window.addEventListener('scroll',function(){var n=document.getElementById('navbar');n.classList.toggle('scrolled',window.scrollY>50)});</script>
+</body>
+</html>
