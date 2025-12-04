@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Bienvenue chez Sylvie | Lyon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--white:#fff;--off-white:#fafafa;--cream:#f8f6f3;--black:#1a1a1a;--dark:#2d2d2d;--gray-100:#f5f5f5;--gray-200:#eee;--gray-300:#e0e0e0;--gray-500:#9e9e9e;--gray-600:#757575;--gray-700:#616161;--gold:#b8860b;--gold-light:#d4a84b;--accent:#c41e3a}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--black);line-height:1.8;font-size:15px}
+    img{display:block;max-width:100%;height:auto}
+    
+    .preview-banner{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--accent);color:var(--white);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px}
+    .preview-banner strong{font-weight:600}
+    .preview-banner a{background:var(--white);color:var(--accent);padding:8px 20px;text-decoration:none;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-radius:2px;transition:.3s;white-space:nowrap}
+    .preview-banner a:hover{background:var(--black);color:var(--white)}
+    
+    .navbar{position:fixed;top:44px;left:0;right:0;z-index:1000;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--gray-200);padding:16px 5%;display:flex;justify-content:space-between;align-items:center;transition:.3s}
+    .navbar.scrolled{padding:12px 5%;box-shadow:0 2px 20px rgba(0,0,0,.08)}
+    .logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:var(--black);text-decoration:none;letter-spacing:1px}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{color:var(--gray-700);text-decoration:none;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;transition:.3s}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-buttons{display:flex;gap:12px;align-items:center}
+    .nav-btn-call{display:flex;align-items:center;background:var(--accent);color:var(--white);padding:10px 18px;text-decoration:none;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-radius:3px;transition:.3s}
+    .nav-btn-call:hover{background:#a01830;transform:translateY(-1px)}
+    .nav-cta{background:var(--black);color:var(--white);padding:10px 20px;text-decoration:none;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;transition:.3s}
+    .nav-cta:hover{background:var(--gold)}
+    .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px}
+    .menu-toggle span{width:24px;height:2px;background:var(--black)}
+    
+    .hero{min-height:100vh;padding-top:44px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;z-index:0}
+    .hero-bg img{width:100%;height:100%;object-fit:cover}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3),rgba(0,0,0,.5))}
+    .hero-content{position:relative;z-index:1;text-align:center;max-width:850px;padding:40px 24px;color:var(--white)}
+    .hero-subtitle{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:4px;color:var(--gold-light);margin-bottom:20px}
+    .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:400;line-height:1.1;letter-spacing:2px;margin-bottom:24px}
+    .hero-description{font-size:16px;font-weight:300;max-width:550px;margin:0 auto 40px;line-height:1.8;opacity:.9}
+    .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .hero-cta{display:inline-block;background:var(--white);color:var(--black);padding:16px 40px;text-decoration:none;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:2px;transition:.3s}
+    .hero-cta:hover{background:var(--gold);color:var(--white)}
+    .hero-cta-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;border:2px solid rgba(255,255,255,.6);color:var(--white);padding:14px 32px;text-decoration:none;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:2px;transition:.3s}
+    .hero-cta-secondary:hover{background:rgba(255,255,255,.1);border-color:var(--white)}
+    
+    section{padding:100px 5%}
+    .container{max-width:1100px;margin:0 auto}
+    .section-header{text-align:center;margin-bottom:60px}
+    .section-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--gold);margin-bottom:12px;display:block}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:400;color:var(--black);letter-spacing:1px}
+    
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .intro-image{position:relative;overflow:hidden}
+    .intro-image img{width:100%;height:500px;object-fit:cover}
+    .intro-image::before{content:'';position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;border:2px solid var(--gold);z-index:-1}
+    .photo-badge{position:absolute;bottom:16px;right:16px;background:rgba(0,0,0,.8);color:var(--gold-light);padding:8px 16px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+    .intro-content{padding:20px 0}
+    .intro-content .section-label{text-align:left}
+    .intro-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;margin-bottom:24px;line-height:1.3;color:var(--black)}
+    .intro-content p{color:var(--gray-700);margin-bottom:20px;line-height:1.9}
+    .intro-speciality{background:var(--cream);padding:16px 20px;border-left:3px solid var(--gold);font-style:italic;color:var(--gray-700);margin:24px 0}
+    .intro-stats{display:flex;gap:40px;margin-top:40px;padding-top:40px;border-top:1px solid var(--gray-200)}
+    .intro-stat{text-align:center}
+    .intro-stat-value{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:var(--gold);line-height:1}
+    .intro-stat-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gray-600);margin-top:8px}
+    
+    .features-section{background:var(--cream)}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+    .feature-card{background:var(--white);border:1px solid var(--gray-300);padding:48px 32px;text-align:center;transition:.3s}
+    .feature-card:hover{border-color:var(--gold);box-shadow:0 15px 50px rgba(0,0,0,.1);transform:translateY(-5px)}
+    .feature-icon{font-size:2.5rem;margin-bottom:20px}
+    .feature-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;margin-bottom:12px;color:var(--black)}
+    .feature-card p{color:var(--gray-600);font-size:14px;line-height:1.7}
+    
+    .gallery-section{padding:0}
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .gallery-item{position:relative;aspect-ratio:1;overflow:hidden}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.6s}
+    .gallery-item:hover img{transform:scale(1.1)}
+    
+    .reviews-section{background:var(--off-white)}
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+    .review-card{background:var(--white);padding:40px;text-align:center;border:1px solid var(--gray-200);position:relative}
+    .review-card::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:5rem;color:var(--gold);opacity:.2;position:absolute;top:10px;left:20px;line-height:1}
+    .review-stars{color:var(--gold);font-size:18px;letter-spacing:3px;margin-bottom:20px}
+    .review-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;line-height:1.8;color:var(--gray-700);margin-bottom:24px}
+    .review-author{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--black)}
+    .review-source{font-size:11px;color:var(--gray-500);margin-top:4px}
+    
+    .reservation-section{background:linear-gradient(135deg,var(--black),var(--dark));color:var(--white);text-align:center}
+    .reservation-section .section-title{color:var(--white)}
+    .reservation-content{max-width:600px;margin:0 auto}
+    .reservation-content>p{color:rgba(255,255,255,.8);margin-bottom:32px;font-size:16px}
+    .reservation-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:40px;border-radius:4px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .form-group{text-align:left}
+    .form-group.full{grid-column:1/-1}
+    .form-group label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gold-light);margin-bottom:8px}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;font-size:14px;font-family:inherit;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);color:var(--white);border-radius:2px;transition:.3s}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.4)}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+    .form-group select option{background:var(--black);color:var(--white)}
+    .form-submit{width:100%;padding:16px;margin-top:24px;background:var(--gold);color:var(--white);border:none;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:.3s}
+    .form-submit:hover{background:var(--gold-light)}
+    .form-note{margin-top:16px;font-size:12px;color:rgba(255,255,255,.5)}
+    .form-note a{color:var(--gold)}
+    
+    .contact-section{background:var(--white);position:relative;overflow:hidden}
+    .contact-wrapper{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+    .contact-info{background:var(--black);color:var(--white);padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+    .contact-info h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;margin-bottom:16px;color:var(--white)}
+    .contact-info>p{color:rgba(255,255,255,.6);margin-bottom:48px;font-size:15px}
+    .contact-list{list-style:none}
+    .contact-list li{display:flex;align-items:flex-start;gap:20px;margin-bottom:32px}
+    .contact-list li:last-child{margin-bottom:0}
+    .contact-icon-wrap{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .contact-item-content{padding-top:2px}
+    .contact-item-content h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--gold-light);margin-bottom:8px}
+    .contact-item-content p,.contact-item-content a{color:rgba(255,255,255,.9);text-decoration:none;font-size:15px;line-height:1.7}
+    .contact-item-content a:hover{color:var(--gold)}
+    .contact-map{position:relative;background:var(--gray-100)}
+    .contact-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .map-overlay{position:absolute;bottom:24px;left:24px;right:24px;background:var(--white);padding:20px 24px;box-shadow:0 10px 40px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .map-overlay p{font-size:13px;color:var(--gray-700);margin:0}
+    .map-overlay a{background:var(--accent);color:var(--white);padding:10px 20px;text-decoration:none;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;transition:.3s}
+    .map-overlay a:hover{background:#a01830}
+    
+    .cta-section{background:linear-gradient(135deg,#2d5a3d,#1a472a);color:var(--white);text-align:center}
+    .cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:400;margin-bottom:16px}
+    .cta-section>.container>p{opacity:.9;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
+    .cta-pricing{background:rgba(0,0,0,.25);display:inline-block;padding:32px 56px;margin-bottom:32px;border-radius:4px}
+    .cta-price-old{font-size:1.1rem;text-decoration:line-through;opacity:.5}
+    .cta-price{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:400;line-height:1.2}
+    .cta-price small{font-size:1rem}
+    .cta-price-note{font-size:13px;opacity:.7;margin-top:8px}
+    .cta-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .cta-btn{padding:16px 32px;text-decoration:none;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;transition:.3s}
+    .cta-btn-primary{background:var(--white);color:var(--black)}
+    .cta-btn-primary:hover{background:var(--gold);color:var(--white)}
+    .cta-btn-secondary{background:transparent;border:1px solid rgba(255,255,255,.4);color:var(--white)}
+    .cta-btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6)}
+    
+    footer{background:var(--black);color:var(--white);padding:60px 5% 40px;text-align:center}
+    .footer-logo{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;letter-spacing:2px;color:var(--white);display:block;margin-bottom:24px}
+    .footer-links{display:flex;justify-content:center;gap:32px;margin-bottom:24px;flex-wrap:wrap}
+    .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:1px;transition:.3s}
+    .footer-links a:hover{color:var(--gold)}
+    .footer-divider{width:60px;height:1px;background:rgba(255,255,255,.2);margin:32px auto}
+    footer p{color:rgba(255,255,255,.5);font-size:13px}
+    footer a{color:var(--gold);text-decoration:none}
+    
+    @media(max-width:1024px){
+      .nav-links{display:none}.menu-toggle{display:flex}
+      .intro-grid,.contact-wrapper{grid-template-columns:1fr}
+      .intro-image{order:-1}.intro-image::before{display:none}.intro-image img{height:350px}
+      .intro-stats{justify-content:center}
+      .features-grid,.reviews-grid{grid-template-columns:1fr;max-width:450px;margin:0 auto}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .form-row{grid-template-columns:1fr}
+      .contact-info{padding:60px 40px;order:2}
+      .contact-map{min-height:350px;order:1}
+      .map-overlay{position:relative;bottom:auto;left:auto;right:auto;margin:0}
+    }
+    @media(max-width:768px){
+      .preview-banner{flex-direction:column;gap:10px;text-align:center;padding:10px 16px}
+      .navbar{top:72px;padding:12px 5%}
+      .nav-buttons{gap:8px}.nav-btn-call{padding:8px 12px;font-size:10px}
+      .logo{font-size:1.2rem}
+      .hero{padding-top:72px}
+      section{padding:70px 5%}
+      .intro-image img{height:280px}
+      .intro-stats{flex-direction:column;gap:24px}
+      .gallery-grid{grid-template-columns:1fr}.gallery-item{aspect-ratio:16/10}
+      .hero-buttons{flex-direction:column;align-items:center}
+      .hero-cta,.hero-cta-secondary{width:100%;max-width:280px;text-align:center}
+      .cta-pricing{padding:24px 32px}
+      .cta-buttons{flex-direction:column;align-items:center}
+      .cta-btn{width:100%;max-width:280px;text-align:center}
+      .reservation-form{padding:24px}
+      .contact-info{padding:40px 24px}
+      .contact-map{min-height:300px}
+      .map-overlay{flex-direction:column;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    <span>⚠️ APERÇU — Site créé pour <strong>Bienvenue chez Sylvie</strong> par Local Visibility</span>
+    <a href="#commander">Obtenir ce site — 480€</a>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <a href="#" class="logo">Bienvenue chez Sylvie</a>
+    <ul class="nav-links">
+      <li><a href="#about">Le Restaurant</a></li>
+      <li><a href="#atouts">Nos Atouts</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#reservation">Réservation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-buttons">
+      <a href="tel:06 62 47 68 74" class="nav-btn-call">Appeler</a>
+      <a href="#reservation" class="nav-cta">Réserver</a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU4Cr1HsDaCTVlnSgXkNu6MuAZegBFBsKEd4sc2Ur5yB-rLXN03KDwfm_CehwDfnkJx2oYSZV3cz5XTkTSty0tLGLnWMEVuNbBIfui24zZGm3H4fuHeSOZUFgo8EB3SyTeDuOlgxKm5wf5RtD9V5qD9ieMSfaqpRj4P2SUPbho9K1yd_BOedCMdQ7D7pNBDlYBowveZ3fnZZMB-Tn4xW9ZM0WH1UWPTEbA8stfomy0PW13lKttv8Js2mvikjb9Zw1w4wqOlSAmQj6oNI4TD6pm5ccMp-b-sbKygj62ar_GdUew&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">Saveurs authentiques lyonnaises</p>
+      <h1 class="hero-title">Bienvenue chez Sylvie, l'essence de Lyon</h1>
+      <p class="hero-description">Plongez dans l'atmosphère chaleureuse et conviviale de notre restaurant, où la gastronomie lyonnaise est à l'honneur.</p>
+      <div class="hero-buttons">
+        <a href="#reservation" class="hero-cta">Réserver une table</a>
+        <a href="tel:06 62 47 68 74" class="hero-cta-secondary">📞 Appeler</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-image">
+          <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU44-yN2Jxq_RBahfhCcrudXbIUfmDInFQcUhU6-0nBF9M0G5Eat00l1DRV45ukwH1aux14BLHQLgOT_VlShVWWvDER8L0HtAS2yDF8gKqKRYfWacoNZUA9Fdi0HnPI3THIKt0igYPpSW7bp78yBvMt_JZ361QOq49t-gZDynib8muZSaIcRR_FjdV635fWqKgW7PiEZMNwylsFKVhwL-wgkjx7hNLwHZGbvdZqKYNnvopY98IDnFaf98y4eD3HgwemFfaa1wA3cX_oacSX8e1lT8Zz9SlWqI6yRU6dZQwmnRA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie">
+          <div class="photo-badge">📸 Photo Google</div>
+        </div>
+        <div class="intro-content">
+          <span class="section-label">Notre Histoire</span>
+          <h2>Découvrez l'histoire de Sylvie</h2>
+          <p>Depuis plus de 20 ans, Sylvie perpétue la tradition culinaire lyonnaise avec passion et savoir-faire dans son établissement.</p>
+          <p>Venez partager une expérience unique et authentique, où la qualité des produits et le service attentionné font la différence.</p>
+          <div class="intro-speciality">"Spécialités lyonnaises de haute volée, du bœuf bourguignon aux quenelles de brochet."</div>
+          <div class="intro-stats">
+            <div class="intro-stat"><div class="intro-stat-value">5.0</div><div class="intro-stat-label">Note Google</div></div>
+            <div class="intro-stat"><div class="intro-stat-value">48</div><div class="intro-stat-label">Avis</div></div>
+            <div class="intro-stat"><div class="intro-stat-value">€€</div><div class="intro-stat-label">Gamme de prix</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="atouts">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Pourquoi nous choisir</span>
+        <h2 class="section-title">Nos Atouts</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">🍽️</div><h3>Cuisine Maison</h3><p>Saveurs authentiques préparées avec soin.</p></div><div class="feature-card"><div class="feature-icon">👨‍🍳</div><h3>Savoir-faire</h3><p>Une équipe expérimentée aux petits soins.</p></div><div class="feature-card"><div class="feature-icon">🌟</div><h3>Accueil Chaleureux</h3><p>Une ambiance conviviale et familiale.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="galerie"><div class="gallery-grid"><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU4Cr1HsDaCTVlnSgXkNu6MuAZegBFBsKEd4sc2Ur5yB-rLXN03KDwfm_CehwDfnkJx2oYSZV3cz5XTkTSty0tLGLnWMEVuNbBIfui24zZGm3H4fuHeSOZUFgo8EB3SyTeDuOlgxKm5wf5RtD9V5qD9ieMSfaqpRj4P2SUPbho9K1yd_BOedCMdQ7D7pNBDlYBowveZ3fnZZMB-Tn4xW9ZM0WH1UWPTEbA8stfomy0PW13lKttv8Js2mvikjb9Zw1w4wqOlSAmQj6oNI4TD6pm5ccMp-b-sbKygj62ar_GdUew&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU44-yN2Jxq_RBahfhCcrudXbIUfmDInFQcUhU6-0nBF9M0G5Eat00l1DRV45ukwH1aux14BLHQLgOT_VlShVWWvDER8L0HtAS2yDF8gKqKRYfWacoNZUA9Fdi0HnPI3THIKt0igYPpSW7bp78yBvMt_JZ361QOq49t-gZDynib8muZSaIcRR_FjdV635fWqKgW7PiEZMNwylsFKVhwL-wgkjx7hNLwHZGbvdZqKYNnvopY98IDnFaf98y4eD3HgwemFfaa1wA3cX_oacSX8e1lT8Zz9SlWqI6yRU6dZQwmnRA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU63RqqCrpzf9uPHUBASb9MttkWnp_J8kUXhCZjnctwwg6i8zSPIp69kT2EWU6qnb8jB9WbHbTP70zD14yH1BLBgfJfMsyg1QQ2xaqLWsIMLFUS8ee9P--7X7Mcvo1jUexrC3Kv8IWXfqiFI62jjSZ3QU4qCEjMnaK4bFEwCc9K-7G8YvRKoybv4dpKG3fKk82itbRx_Fyy0X2PdP-Enwnhm-Qq_LXwYOd4uqyX-QJysg6FSClgLuQHZsw_sRdzEVexgODIvO4kRCkBB_bePcZqRQG22MW1-lMkYaYY-B2Zz4A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU4peILM-3wzQ7U544iBGF8u-18EHvJxgiFp5wnJgXQ_Lpi7EpXzP4FgXb1_PrSq9xxn1B_QfEoE7uF4GBG_9Bl2qqEGJ2RHX5J-rgb2eAaSgaAfsqrj9aevzMkPgoqlxJCkDjxguDbSZqPp5WxbR9aq1p0uT5X2nXpH_I4NGYV4rkuaD_X4RSPHpX4lslL3A9M8YLSpOGDsorhOnHArpZeJtd1LK3dRfIg0KH_bfdSgw7wsDIbUvv48bYJiWYhIwHHgScmjUj1FIR9dPAn_T4noDR5xtjJzSE3ffnNBFb36eg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU5sY0g9qJSTACa0KJFZrNdsSnmzKoWYK_L06HCrpS07i3Lf11jg42m2YV1H6hJP12xLJfDOQMZUFf0sBOWZq0n7HF0rC5-plmQof8R9Ac3trZJ93gR9sm-7twpnxl7bE0vEHzf644Q134SY-dqoWbe8vl6VZAo8XG_a-2XeWGr9FpXQgjMsnjgOYu36gMm1lzaUU2XrgwXgUiGFPTL9Wb6FhyyA1L9RJHth_3m-aU72A7dlChmCtAzwzlTy0AMKSMw8u0iUcV6FqwzI_-jcK2NlNgn5RW2R_hlWLFLBGFw-PA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU5zn4VCFRDdK7s0tpm60OvxQPQpcFzjyAX5PJimoKSwEq-kiyASnXcYTnzHZK5rnCY3ePmeDxSbpV-bWGydxni3q3NVSQyIUJ5qdNEqM1BBsNtQADWYc9EfppmU0DG5JPOD3UjhUCTyb8Bbz0EIkAKCVIX-mqy-OowToIZK0n3D-wABUx1vL7KzCfiWS33ikAMd1K4dyl7UOTY-Q6R2n7eqzfk0DGNyPnlQnTZrwkiRbIeYDESWm0afQPgwPixQ_xBtgsSBSu1SJxl40YEs7NFwQzK7VTyIsPALOrsXt-3bUQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU4YFKsCbxyfo--Jw0rio6FcFsJb55beMX_WWb_9nuPqP9S3rehMOxTz6iZ_dOFElZAzqj5IQIaFIy1c2yRXiiTvYnVP_Y9ZbOCrCYpuxQvgfbpRS-Eb3gZHFP9zxzqW8nM_lJWJq1hf4l0bZH0FX2YZ9EruSzJXIolhNhMcfg-jBsuY1b6rzPD40l1fXO4taZ1NGax8sHBD3FXWzmGQEZ9ybWjYz3PCxv_Lp_7O20EZsnEH9_zXEbUcSHN8kcCyUuoIDTvY9g374Njjq1aNGOFqtVImDkALc8CN81U1mbwO4Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie"></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AWn5SU5bbdWTy5_U5EIki1dbmx7gOqVvTV46345WRenShs80wAX08pVvL6PIFxW0RUVyVq3rnJealzan1xnqDWm_Has9rQKbbvodEhXPT6MTJ37HjYlQjjTe6I3JpougmR0tLte8caL_BhfrmIvnHyHzGLJVr0u8j0ZyQqC3LxsBxV74-VptW5IvBhQGIt_g1SGoPYWhaplTWAPAgpJdpmdacBla3zbVYVmX_I6q97vsM8MBqsDvbRUS-yGljCLVrXjS1X0FwAkA4wZz30Xj9fKLe6e6BSpIHW9zJB5ZtJEPhs9P_A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Bienvenue chez Sylvie"></div></div></section>
+
+  <section class="reviews-section" id="avis"><div class="container"><div class="section-header"><span class="section-label">Témoignages</span><h2 class="section-title">Ce que nos clients disent</h2></div><div class="reviews-grid"><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Incroyablement surpris par la beauté du logement. Quel bonheur d’avoir passé notre week-end dans une ravissante maison retapée par leur mains. Quelle magnifique chambre. Tout était parfait. Un grand merci à Sylvie et à son mari. Je recommande le jacu"</p><span class="review-author">Nanais</span><div class="review-source">Avis Google · il y a un an</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Nous avons passé un superbe moment chez Sylvie ! Une chambre aménagée et décorée avec goût, très propre et bien équipée avec un emplacement idéal pour découvrir le vieux Lyon à pied ! Au coeur de la ville mais dans un calme parfait ! Un magnifique pe"</p><span class="review-author">sylvain brun</span><div class="review-source">Avis Google · il y a un an</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Une très belle soirée dans le Vieux Lyon grâce à Sylvie qui nous a accueillis dans son havre de paix. La chambre est très typique, très charmante et tout en étant très proche des lieux touristiques, extrêmement calme. La baignoire balnéothérapie ajou"</p><span class="review-author">Chrystelle Dupuis</span><div class="review-source">Avis Google · il y a 2 ans</div></div></div></div></section>
+
+  <section class="reservation-section" id="reservation">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Réservation</span>
+        <h2 class="section-title">Réservez votre table</h2>
+      </div>
+      <div class="reservation-content">
+        <p>Réservez directement en ligne ou appelez-nous.</p>
+        <div class="reservation-form">
+          <div class="form-row">
+            <div class="form-group"><label>Nom</label><input type="text" placeholder="Votre nom"></div>
+            <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="06 00 00 00 00"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Date</label><input type="date"></div>
+            <div class="form-group"><label>Heure</label><select><option>12:00</option><option>12:30</option><option>13:00</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Personnes</label><select><option>2 personnes</option><option>3 personnes</option><option>4 personnes</option><option>5 personnes</option><option>6+ personnes</option></select></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com"></div>
+          </div>
+          <div class="form-group full"><label>Message (optionnel)</label><textarea rows="3" placeholder="Allergies, occasion spéciale..."></textarea></div>
+          <button type="button" class="form-submit" onclick="alert('Ceci est un aperçu. Le formulaire sera fonctionnel après achat.');">Réserver maintenant</button>
+          <p class="form-note">Ou appelez-nous au <a href="tel:06 62 47 68 74">06 62 47 68 74</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h2>Nous trouver</h2>
+        <p>Venez nous rendre visite et découvrir notre cuisine.</p>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon-wrap">📍</div>
+            <div class="contact-item-content">
+              <h4>Adresse</h4>
+              <p>18 Mnt des Épies, 69005 Lyon, France</p>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon-wrap">📞</div>
+            <div class="contact-item-content">
+              <h4>Téléphone</h4>
+              <p><a href="tel:06 62 47 68 74">06 62 47 68 74</a></p>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon-wrap">🕐</div>
+            <div class="contact-item-content">
+              <h4>Horaires</h4>
+              <p>Nous contacter</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-map">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=4.813861800000001%2C45.7494361%2C4.8338618%2C45.7654361&layer=mapnik&marker=45.7574361%2C4.8238618" allowfullscreen loading="lazy"></iframe>
+        <div class="map-overlay">
+          <p>📍 Bienvenue chez Sylvie</p>
+          <a href="https://maps.google.com/?cid=12027189170307870335" target="_blank">Itinéraire →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="commander">
+    <div class="container">
+      <h2>Ce site peut être le vôtre</h2>
+      <p>Site professionnel créé sur-mesure, prêt à être mis en ligne.</p>
+      <div class="cta-pricing">
+        <div class="cta-price-old">990€</div>
+        <div class="cta-price">480€ <small>TTC</small></div>
+        <div class="cta-price-note">Paiement unique · Sans abonnement · Livré en 48h</div>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:07 80 95 49 13" class="cta-btn cta-btn-primary">📞 Appeler</a>
+        <a href="https://wa.me/33780954913" class="cta-btn cta-btn-secondary" target="_blank">💬 WhatsApp</a>
+        <a href="mailto:contact@local-visibility.com" class="cta-btn cta-btn-secondary">📧 Email</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Bienvenue chez Sylvie</span>
+    <div class="footer-links">
+      <a href="#about">Le Restaurant</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#reservation">Réservation</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p>Site créé par <a href="https://local-visibility.com" target="_blank">Local Visibility</a></p>
+  </footer>
+
+  <script>window.addEventListener('scroll',function(){var n=document.getElementById('navbar');n.classList.toggle('scrolled',window.scrollY>50)});</script>
+</body>
+</html>
