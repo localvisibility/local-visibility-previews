@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Le Mas du Pestrin, hébergements / Nuits insolites / Cousinade en Ardèche. Gîtes, spa, massage bien-être, piscine - Meyras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#8fa294;--primary-dark:#6d8272;--accent:#e27d60;--text:#4a4a4a;--bg:#f9f9f7;--white:#fff;--black:#222;--font-serif:"Merriweather",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.8;background:var(--bg)}
+
+/* HEADER & HERO */
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(5px);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 20px rgba(0,0,0,0.05)}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:768px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.9rem;text-transform:uppercase;transition:color 0.3s}.booking-bar nav a:hover{color:var(--accent)}.booking-bar .btn-book{background:var(--accent);color:var(--white);padding:0.6rem 1.5rem;border:none;border-radius:30px;font-weight:700;cursor:pointer}
+.hero{position:relative;height:90vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqF1UXkQq9o2MN5C8ed7DYGqUZtAV7kftAy7y4WdonQvz2kWoLzpqT0dYum4iCvoyghCp4C6e4OA4lKQTurPwSyBxD0K-6zdfxaqVG-8k36M_JR3TGg5ntWvPgP19UDFI51YPvA4_dE0gSs9y10WZX4IKiOk_3mNKIbW2pPjVpPiay1RiUAKoCRMZpsyyfD7owgc-M5LQIxUH5jk6mlSpDiotOLZr1nYma0c38GSg59JBbsiIBJd0PuiuiPi6Lzxnv6fxoS01r6CXcxbGZn5de7mpEQyVT22wxFYvIVBib7vA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5))}
+.hero-content{position:relative;padding:2rem;max-width:900px;background:rgba(0,0,0,0.3);backdrop-filter:blur(3px);border-radius:10px}
+.hero-title{font-family:var(--font-serif);font-size:clamp(2.5rem,5vw,4.5rem);margin-bottom:1rem;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.2);padding:0.5rem 1.5rem;border-radius:30px;margin-bottom:2rem;font-weight:700}
+.hero-rating i{color:#ffd700}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1rem 2.5rem;text-decoration:none;font-weight:700;border-radius:30px;transition:all 0.3s}.btn-hero:hover{background:var(--accent);color:var(--white)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}.section-tagline{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:0.85rem;margin-bottom:0.5rem}.section-title{font-family:var(--font-serif);font-size:2.5rem;color:var(--primary-dark)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}@media(max-width:900px){.about-grid{grid-template-columns:1fr}}.about-img{border-radius:20px;overflow:hidden}.about-img img{width:100%;display:block}
+
+/* ROOMS */
+.rooms{background:var(--white)}.rooms-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;max-width:900px;margin:0 auto}
+.room-card{background:var(--bg);border-radius:15px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.05);display:md-grid;grid-template-columns:1fr}
+.room-image{height:400px;position:relative;cursor:pointer;overflow:hidden}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;bottom:1rem;right:1rem;background:var(--white);padding:0.5rem 1.2rem;border-radius:30px;font-size:1.1rem;color:var(--primary-dark);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.room-content{padding:2.5rem;text-align:center}
+.room-content h3{font-family:var(--font-serif);font-size:2rem;margin-bottom:0.5rem;color:var(--primary-dark)}
+.room-size{color:var(--accent);font-weight:700;margin-bottom:1.5rem;font-size:1.1rem}
+.room-features{list-style:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}.room-features li{display:flex;align-items:center;gap:0.5rem;background:var(--white);padding:0.5rem 1rem;border-radius:20px;font-size:0.9rem;box-shadow:0 2px 5px rgba(0,0,0,0.05)}
+.btn-room{padding:1rem 2rem;background:var(--primary-dark);color:var(--white);border:none;border-radius:30px;font-weight:700;cursor:pointer;font-size:1rem;transition:all 0.3s}.btn-room:hover{background:var(--primary)}
+
+/* FEATURES SPLIT */
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto;border-radius:20px;overflow:hidden}@media(max-width:900px){.features-split{grid-template-columns:1fr}}.feature-block{padding:4rem;display:flex;flex-direction:column;justify-content:center}.feature-bg-1{background:var(--primary-dark);color:var(--white)}.feature-bg-2{background:var(--accent);color:var(--white)}.feature-img img{width:100%;height:100%;object-fit:cover;min-height:400px}
+
+/* GALERIE */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;max-width:1400px;margin:0 auto}
+.gallery-item{height:250px;overflow:hidden;border-radius:10px;cursor:pointer;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.gallery-item:hover img{transform:scale(1.1)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay i{color:white;font-size:2rem}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;display:none;justify-content:center;align-items:center;flex-direction:column}
+.lightbox.active{display:flex}
+.lightbox-img{max-height:85vh;max-width:90vw;border-radius:5px;box-shadow:0 0 50px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:20px;right:30px;color:white;font-size:3rem;cursor:pointer;z-index:10001}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);color:white;font-size:3rem;cursor:pointer;padding:20px;z-index:10000;background:rgba(0,0,0,0.2);border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center;transition:background 0.3s}
+.lightbox-nav:hover{background:rgba(255,255,255,0.2)}
+.prev{left:20px}.next{right:20px}
+
+/* REVIEWS & FOOTER */
+.reviews{background:var(--bg)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}.review-card{background:var(--white);padding:2rem;border-radius:15px}.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.review-header img{width:50px;height:50px;border-radius:50%}
+.cta{background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqF1UXkQq9o2MN5C8ed7DYGqUZtAV7kftAy7y4WdonQvz2kWoLzpqT0dYum4iCvoyghCp4C6e4OA4lKQTurPwSyBxD0K-6zdfxaqVG-8k36M_JR3TGg5ntWvPgP19UDFI51YPvA4_dE0gSs9y10WZX4IKiOk_3mNKIbW2pPjVpPiay1RiUAKoCRMZpsyyfD7owgc-M5LQIxUH5jk6mlSpDiotOLZr1nYma0c38GSg59JBbsiIBJd0PuiuiPi6Lzxnv6fxoS01r6CXcxbGZn5de7mpEQyVT22wxFYvIVBib7vA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed;text-align:center;color:var(--white);padding:8rem 2rem}
+.contact-section{background:var(--white);padding:0}.contact-grid{display:grid;grid-template-columns:1fr 1fr}@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}.contact-info{padding:4rem;background:var(--primary-dark);color:var(--white)}.contact-item{display:flex;gap:1rem;margin-bottom:1.5rem;font-size:1.1rem}.contact-item a{color:var(--white);text-decoration:none}.map-frame{width:100%;height:100%;min-height:400px;border:none}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;display:none;align-items:center;justify-content:center}.modal-overlay.active{display:flex}.modal{background:var(--white);width:90%;max-width:500px;padding:2rem;border-radius:15px;position:relative}.modal-close{position:absolute;top:1rem;right:1rem;border:none;background:none;font-size:1.5rem;cursor:pointer}.form-group{margin-bottom:1rem}.form-group label{display:block;margin-bottom:0.5rem;font-weight:700}.form-group input{width:100%;padding:0.8rem;border:1px solid #ddd;border-radius:8px}.btn-submit{width:100%;padding:1rem;background:var(--accent);color:var(--white);border:none;border-radius:8px;font-weight:700;cursor:pointer}footer{background:#333;color:#aaa;text-align:center;padding:2rem}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">Le Mas du Pestrin, hébergements / Nuits insolites / Cousinade en Ardèche. Gîtes, spa, massage bien-être, piscine</div><nav><a href="#about">Lieu</a><a href="#rooms">Logement</a><a href="#gallery">Galerie</a><a href="#contact">Contact</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Insolite. Ardèche. Rêve.</div>
+        <h1 class="hero-title">Le Mas du Pestrin : Votre parenthèse enchantée en Ardèche</h1>
+        <div class="hero-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 
+            <span>4.9/5 (223 avis)</span>
+        </div>
+        <a href="#rooms" class="btn-hero">Voir le logement</a>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr8gglpb-KLLzR9_fa4Oscv3R9ZGsGvyTa49RC0EAOGyanKm4uxN_nSTKtKT3Ys8pwDvVodTdaa8Ee7Wc4R9tUFykIMRDxP3WDElV6v5owKw02fGinWg01EnVVsz4aTDzRMQk4xxt4BKJgUBx4Dp-meX6znvlxZhkcUpv3C8Y2_RqzrF_iIumt4VZE6fEuASJiZZ5tmRAJDQGUABvANWTapcEYCV678bw3g1kUqjp88oDjQukQToF5C5cPtL61Csz2q2sHWHHwS4h-36SnQF2JdEFLezyxsDx3JhajMutqtOw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">Notre Histoire</p><h2 class="section-title">Authenticité</h2><p>Au Mas du Pestrin, Anne et Jean-François vous accueillent chaleureusement dans un lieu magique où la nature et l'authenticité règnent. Laissez-vous bercer par le calme environnant et reconnectez-vous à votre âme d'enfant dans nos hébergements créatifs et confortables. Que ce soit pour une réunion de famille, une escapade en amoureux ou des vacances entre amis, nous mettons tout en œuvre pour rendre votre séjour inoubliable.</p></div></div></section>
+
+<section id="rooms" class="rooms"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Repos</p><h2 class="section-title">Votre Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr8gglpb-KLLzR9_fa4Oscv3R9ZGsGvyTa49RC0EAOGyanKm4uxN_nSTKtKT3Ys8pwDvVodTdaa8Ee7Wc4R9tUFykIMRDxP3WDElV6v5owKw02fGinWg01EnVVsz4aTDzRMQk4xxt4BKJgUBx4Dp-meX6znvlxZhkcUpv3C8Y2_RqzrF_iIumt4VZE6fEuASJiZZ5tmRAJDQGUABvANWTapcEYCV678bw3g1kUqjp88oDjQukQToF5C5cPtL61Csz2q2sHWHHwS4h-36SnQF2JdEFLezyxsDx3JhajMutqtOw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Le Mas du Pestrin, hébergements / Nuits insolites / Cousinade en Ardèche. Gîtes, spa, massage bien-être, piscine" loading="lazy" onclick="openLightbox(1)">
+            <div class="room-price"><strong>Nous consulter</strong></div>
+        </div>
+        <div class="room-content">
+            <h3>Le Mas du Pestrin, hébergements / Nuits insolites / Cousinade en Ardèche. Gîtes, spa, massage bien-être, piscine</h3>
+            <p class="room-size">
+                <i class="fas fa-user-friends"></i> Capacité : 4 pers.
+                
+            </p>
+            <p class="room-desc">Au Mas du Pestrin, Anne et Jean-François vous accueillent chaleureusement dans un lieu magique où la nature et l'authent...</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver ce logement</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--white)">Gourmandise</p><h2 class="feature-title" style="margin-bottom:1rem">Saveurs Ardéchoises</h2><p>Bien que les détails sur les repas soient limités dans les avis, nous mettons un point d'honneur à vous proposer des produits locaux et de qualité pour vos petits-déjeuners et repas.</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline" style="color:var(--white)">Nature</p><h2 class="feature-title" style="margin-bottom:1rem">Nature & Bien-Être</h2><p>Plongez dans un cadre enchanteur où calme et beauté se rencontrent. Profitez de notre piscine rafraîchissante, de notre spa bien-être et laissez-vous tenter par un massage relaxant prodigué par Nanou.</p></div></div></section>
+
+<section id="gallery" class="rooms"><div class="section-header"><p class="section-tagline">En images</p><h2 class="section-title">Galerie Photo</h2></div><div class="gallery-grid"><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqF1UXkQq9o2MN5C8ed7DYGqUZtAV7kftAy7y4WdonQvz2kWoLzpqT0dYum4iCvoyghCp4C6e4OA4lKQTurPwSyBxD0K-6zdfxaqVG-8k36M_JR3TGg5ntWvPgP19UDFI51YPvA4_dE0gSs9y10WZX4IKiOk_3mNKIbW2pPjVpPiay1RiUAKoCRMZpsyyfD7owgc-M5LQIxUH5jk6mlSpDiotOLZr1nYma0c38GSg59JBbsiIBJd0PuiuiPi6Lzxnv6fxoS01r6CXcxbGZn5de7mpEQyVT22wxFYvIVBib7vA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(0)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr8gglpb-KLLzR9_fa4Oscv3R9ZGsGvyTa49RC0EAOGyanKm4uxN_nSTKtKT3Ys8pwDvVodTdaa8Ee7Wc4R9tUFykIMRDxP3WDElV6v5owKw02fGinWg01EnVVsz4aTDzRMQk4xxt4BKJgUBx4Dp-meX6znvlxZhkcUpv3C8Y2_RqzrF_iIumt4VZE6fEuASJiZZ5tmRAJDQGUABvANWTapcEYCV678bw3g1kUqjp88oDjQukQToF5C5cPtL61Csz2q2sHWHHwS4h-36SnQF2JdEFLezyxsDx3JhajMutqtOw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(1)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoZr6r5FiI2R4Qwd5L1UpfjGEQxlbDCyoPm0hFCcTSfWBaEVQa2JLRBDqWVvAnLuNeCKT4AwM3KZ8irjVSM4rRERS2-uDyP88XMRyyjZovlXwoVs8qkJeaVrzzsYUnuCDnStX0ogIyKpzi6Rs0OeR6x-8MFaFAGIYGNFWd13P-paLjBhDjPsXpAa8eAOExJCU5jmmJyoAo9Z-dhG_mVYXSqoccFCyy7Z_ke_vrmwEs3OIHHcNbKxs2rFcV7nGQ4-bpywPPXKeIAqNAaZwvgxO8SyPD9CCXkVLL1Eh58g0WBpA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(2)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrMZw1jci49NFZF9Q07Phvx7Fecv7_af_dvbIH_sFhT5o9KQxhZPpdZSXXVwSh18kuTDrIyX9fb9KPcsXXPwFDkmtB4yE6-oXMtcnw0QbS78ime3wnVNQMLSTjwZyOsgogClBET2OHxp4YVKU4XaVbjp_9JYbPdiZjjxYpreQsdaMci-LvItUSwaVd7o0aVO9KxXNz9Phy_0FzGaPbqExLK4iRHyeSUiTkOX4XnFoStmIwEI1AawFU-0_wNYmAGKCfF4yj5hUKHgHrSkqHTCZj0M7eoItL5sP8V75W_avepYg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(3)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrL5bYAfC7bTBBc24diIrhIgnyYnmVjQezV3u0LcGiJUXWH0fMeDw3Ae-uE0qIa4bDHzot5VJPfzMrVCD-umlFEAnzqNh9DdWseiMZxILvgF2jZ-ohHNbv3EYoBPKs7XKFyThxeSCnSefAz7J3_4JhEX4pVh9N6wg2LoASz4f-F5-glGPFDP-_hH434mu241HfolDE3SWO84ZeWYi8XS-VxhujXQbzxou66o0JM66404GupdobIe-MSpxwk4EsLyBoc7hiGb5oQJqZhIjEiCWN6BeHUxK1tfuD6EBAQpIFcTg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(4)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpBf4d12YsJa57E2skBb67hZ-uBfUjoE6wRUgVq_M2WblX_s199q74I8RI3WQJ6K_B1Hwx33hgv-UNWPaw8MF0IYGEBa76SpvishxpfqSkCXgE5haDA-niv-wzbbn6J2MWeOdErI7x130vTtKEFAdhkawzULR8o-Zi0WGpflt7KTzo8YvQTMWsCrPWZ37I3Yndvr4WYgkHoLMe77H8aZNlpot4pkRLbFNf_GQA0eXEJ7vEHFHlGoBIaXT5Hbvb5DhQbv4VlummXy8aeG2_ZXfYh_nT-QMu37Ohal3G4lVQZYQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(5)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHp9NJqR4VllofYvbjiLd-3-hBWpQ0PgxWv0ntQvApMr-PUo-kDCEGZjelQO4x-5o_6uNpBmyU7T9NM8ZSRdpI9i8SHq-22mBu2hxq6IWeMs0MU_EU22OnDkWorLbPnNjCLX6GWqXtNFiohYeeNxTy0UM95ku2MnlD5AvyXJy64VQQ_hTaLXdDzeumfIyuTVBvzf-_XzzscU82RzvahNbV1fkqoZ1Jp4GqjuFwuM-kDZhWBi_QPeZsHDitF6nYmeqtaUNPI9JB4kUmK41kdbi-kbZuVKD48qFoVrwe8rnNvl1g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(6)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr0jYSx7tEaByE9A2ji72y9QoIYwBBlKFYpJtC85Y9eIxAl-O5uyu7cq-lYfH38VFeIy_tR5hQoy2VMEQHabdV0218LutpN0n0iPGhos0AWc3EeFkauW-mMxzoSn_odsXtZQiTqmWYpSPmn9A9iJA_DBdutaaxa1Wi0gFW3bwmkToajeYJQkwCIvnccpVsxbCAJj2MOz8G8O8RksbOLgy6Jt2O2aXXr09gm_SBSVwIoVuQFb9sAqPVzcgYp8Ij67amPqaN86VWNMIeHDqvZy7NvyqDtGbP5o8s7F7pN8t6NrQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(7)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqEfgT-mdzMNP268IHaVWov2ikwnL8P3Z1ZPQscmsEeOqTUlly0scT4hv_rluC2Pg6vFVnPKfXdQ1ayIlG-5kWHnEw6MjdZyMhoDaZtVq3FZO7oJ29sAV_ikOH0MP9YJEs3VoAA535Y64B5AbOTNu6dA9jmmvFLFddFp7ofAUNZRjlcro0pFYHYXs9VSAMMtA6RY53BgL7Czld_sdqmU-6Ll2iec-OS61kSYeMbMqwgaScoh4dkEdRpc_qjsWvn240GitB-VOHVr-lyLxLNThWSe7bVj-lFxIUuvEmThs8dkQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(8)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpmpxhkgBhfdVYI8cfDke-8PAbrroV7xPH_By2ZIURKG2D5hz5l38kcuN3DDpapV1eYiM5daCiNbgkB9o07dvNKmvTyrPDdk0-J9giUoRbUlLkaEuNgAR8hN9bZcESHBgx1e2Yb7dODRgqOLBezEeoJyVOigiyR5Ljr84fYUXLCxF992-KjhEeEdSNx2hxsKITn43w7Yza5w1nsmcHejy9YU5W2qlUbVzpKwAiQ1Ietq80y5zjV03HsO6HFJMkPSwC6w3Pn1V0_sf9rPEql70xK2Dwt4fyJv9iD0VNwtLrzzA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy" onclick="openLightbox(9)"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Avis</p><h2 class="section-title">Ce qu'ils en disent</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjWSqnGSJqZIOz3M2cY-wgJi686zKr2DqL6tuFELoXwR9v5KsBok=s128-c0x00000000-cc-rp-mo" alt="Matthieu Weibel"><div><h4>Matthieu Weibel</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 3 mois</span></div></div><p class="review-text">"Nous sommes venus à 3 familles pour une semaine en août, nous avons passé un moment très agréable. Les logements insolites ont été plébiscités par nos enfants, nous avons dormi dans la yourte, au frais la nuit, malgré la période de canicule. La piscine a été très utile!
+Nos hôtes ont été très accuei"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjU_mnIAvxzW1qYIC-qr4VR5532UoWbf1cCjhwN7DX9BcNOkxd0n=s128-c0x00000000-cc-rp-mo-ba2" alt="Hyacinthe Duclos"><div><h4>Hyacinthe Duclos</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a un mois</span></div></div><p class="review-text">"Grand merci à Anne et Jean-François pour leur chaleureux accueil et leur mise en synergie humaine de tous les bénéficiaires de ce lieu magique ;
+un lieu qui offre une reconnexion à notre âme d'enfant 😊 avec des hébergements créatifs et une nature magnifique (dont un chêne majestueux).
+Merci pour po"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocKahC56pfyn16IjE6LSq_ivzsJsau9FDc2l3muknIJPm-AfJw=s128-c0x00000000-cc-rp-mo" alt="domi boehm"><div><h4>domi boehm</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 7 mois</span></div></div><p class="review-text">"Nous avons privatisé le gîte pour une réunion familiale. L'environnement est vraiment très beau et le calme est assuré. Les logements sont décorés avec goût et de manière originale. Ils sont confortables. Beaucoup d'espace et possibilité de s'isoler si besoin. Plein de balades et des lieux magnifiqu"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocLvm4U9NsvPbel0TMX5r5L_54x0hPNzVUSNxXdXlrn4HAsCYw=s128-c0x00000000-cc-rp-mo" alt="nadege giren"><div><h4>nadege giren</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 3 semaines</span></div></div><p class="review-text">"Nous avons passé 2 formidables nuits en yourte jean François est un hôte exceptionnel avec de grandes valeurs humaines et les massages de Nanou sont exceptionnels et tres professionnels
+Nous recommandons fortement cet endroit hors du temps
+De plus un tarif très attractif pour les prestations proposé"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocKpUiY88GyV7v_BAbRqz05YeuU_VnS_vPgwWyaL9zR9JFCaDA=s128-c0x00000000-cc-rp-mo" alt="Clement Rheims"><div><h4>Clement Rheims</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 4 mois</span></div></div><p class="review-text">"Nous avons passé un super moment au Mas du Pestrin. Les gérants du domaine sont très à l'écoute et présent en cas de besoin. Le domaine est magnifique et les alentours sont au top"</p></div></div></section>
+
+<section class="cta"><div data-aos="zoom-in"><h2>Réservez votre séjour inoubliable</h2><button class="btn-hero" onclick="openBooking()">Vérifier disponibilités</button></div></section>
+
+<section id="contact" class="contact-section"><div class="contact-grid"><div class="contact-info"><h2 class="section-title" style="color:white;margin-bottom:2rem">Contact</h2><div class="contact-item"><i class="fas fa-map-marker-alt"></i> 2662 route de la fontaulière, 07380 Meyras, France</div><div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:0475945751">04 75 94 57 51</a></div></div><div class="contact-map"><iframe class="map-frame" src="https://maps.google.com/maps?q=44.6840943,4.2813528&hl=fr&z=14&output=embed" allowfullscreen></iframe></div></div></section>
+<footer><p>Site réalisé par Local Visibility</p></footer>
+
+<div class="modal-overlay" id="bookingModal"><div class="modal"><button class="modal-close" onclick="closeBooking()">×</button><h3>Demande de réservation</h3><form onsubmit="alert('Demande envoyée !');return false;"><div class="form-group"><label>Dates</label><input type="date" required></div><div class="form-group"><label>Email</label><input type="email" required></div><button type="submit" class="btn-submit">Envoyer</button></form></div></div>
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-nav prev" onclick="changeImage(-1)">&#10094;</div>
+    <img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen">
+    <div class="lightbox-nav next" onclick="changeImage(1)">&#10095;</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({duration:800,once:true});
+    
+    // BOOKING MODAL
+    function openBooking(){document.getElementById("bookingModal").classList.add("active")}
+    function closeBooking(){document.getElementById("bookingModal").classList.remove("active")}
+    
+    // LIGHTBOX LOGIC
+    const images = ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqF1UXkQq9o2MN5C8ed7DYGqUZtAV7kftAy7y4WdonQvz2kWoLzpqT0dYum4iCvoyghCp4C6e4OA4lKQTurPwSyBxD0K-6zdfxaqVG-8k36M_JR3TGg5ntWvPgP19UDFI51YPvA4_dE0gSs9y10WZX4IKiOk_3mNKIbW2pPjVpPiay1RiUAKoCRMZpsyyfD7owgc-M5LQIxUH5jk6mlSpDiotOLZr1nYma0c38GSg59JBbsiIBJd0PuiuiPi6Lzxnv6fxoS01r6CXcxbGZn5de7mpEQyVT22wxFYvIVBib7vA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr8gglpb-KLLzR9_fa4Oscv3R9ZGsGvyTa49RC0EAOGyanKm4uxN_nSTKtKT3Ys8pwDvVodTdaa8Ee7Wc4R9tUFykIMRDxP3WDElV6v5owKw02fGinWg01EnVVsz4aTDzRMQk4xxt4BKJgUBx4Dp-meX6znvlxZhkcUpv3C8Y2_RqzrF_iIumt4VZE6fEuASJiZZ5tmRAJDQGUABvANWTapcEYCV678bw3g1kUqjp88oDjQukQToF5C5cPtL61Csz2q2sHWHHwS4h-36SnQF2JdEFLezyxsDx3JhajMutqtOw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoZr6r5FiI2R4Qwd5L1UpfjGEQxlbDCyoPm0hFCcTSfWBaEVQa2JLRBDqWVvAnLuNeCKT4AwM3KZ8irjVSM4rRERS2-uDyP88XMRyyjZovlXwoVs8qkJeaVrzzsYUnuCDnStX0ogIyKpzi6Rs0OeR6x-8MFaFAGIYGNFWd13P-paLjBhDjPsXpAa8eAOExJCU5jmmJyoAo9Z-dhG_mVYXSqoccFCyy7Z_ke_vrmwEs3OIHHcNbKxs2rFcV7nGQ4-bpywPPXKeIAqNAaZwvgxO8SyPD9CCXkVLL1Eh58g0WBpA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrMZw1jci49NFZF9Q07Phvx7Fecv7_af_dvbIH_sFhT5o9KQxhZPpdZSXXVwSh18kuTDrIyX9fb9KPcsXXPwFDkmtB4yE6-oXMtcnw0QbS78ime3wnVNQMLSTjwZyOsgogClBET2OHxp4YVKU4XaVbjp_9JYbPdiZjjxYpreQsdaMci-LvItUSwaVd7o0aVO9KxXNz9Phy_0FzGaPbqExLK4iRHyeSUiTkOX4XnFoStmIwEI1AawFU-0_wNYmAGKCfF4yj5hUKHgHrSkqHTCZj0M7eoItL5sP8V75W_avepYg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrL5bYAfC7bTBBc24diIrhIgnyYnmVjQezV3u0LcGiJUXWH0fMeDw3Ae-uE0qIa4bDHzot5VJPfzMrVCD-umlFEAnzqNh9DdWseiMZxILvgF2jZ-ohHNbv3EYoBPKs7XKFyThxeSCnSefAz7J3_4JhEX4pVh9N6wg2LoASz4f-F5-glGPFDP-_hH434mu241HfolDE3SWO84ZeWYi8XS-VxhujXQbzxou66o0JM66404GupdobIe-MSpxwk4EsLyBoc7hiGb5oQJqZhIjEiCWN6BeHUxK1tfuD6EBAQpIFcTg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpBf4d12YsJa57E2skBb67hZ-uBfUjoE6wRUgVq_M2WblX_s199q74I8RI3WQJ6K_B1Hwx33hgv-UNWPaw8MF0IYGEBa76SpvishxpfqSkCXgE5haDA-niv-wzbbn6J2MWeOdErI7x130vTtKEFAdhkawzULR8o-Zi0WGpflt7KTzo8YvQTMWsCrPWZ37I3Yndvr4WYgkHoLMe77H8aZNlpot4pkRLbFNf_GQA0eXEJ7vEHFHlGoBIaXT5Hbvb5DhQbv4VlummXy8aeG2_ZXfYh_nT-QMu37Ohal3G4lVQZYQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHp9NJqR4VllofYvbjiLd-3-hBWpQ0PgxWv0ntQvApMr-PUo-kDCEGZjelQO4x-5o_6uNpBmyU7T9NM8ZSRdpI9i8SHq-22mBu2hxq6IWeMs0MU_EU22OnDkWorLbPnNjCLX6GWqXtNFiohYeeNxTy0UM95ku2MnlD5AvyXJy64VQQ_hTaLXdDzeumfIyuTVBvzf-_XzzscU82RzvahNbV1fkqoZ1Jp4GqjuFwuM-kDZhWBi_QPeZsHDitF6nYmeqtaUNPI9JB4kUmK41kdbi-kbZuVKD48qFoVrwe8rnNvl1g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr0jYSx7tEaByE9A2ji72y9QoIYwBBlKFYpJtC85Y9eIxAl-O5uyu7cq-lYfH38VFeIy_tR5hQoy2VMEQHabdV0218LutpN0n0iPGhos0AWc3EeFkauW-mMxzoSn_odsXtZQiTqmWYpSPmn9A9iJA_DBdutaaxa1Wi0gFW3bwmkToajeYJQkwCIvnccpVsxbCAJj2MOz8G8O8RksbOLgy6Jt2O2aXXr09gm_SBSVwIoVuQFb9sAqPVzcgYp8Ij67amPqaN86VWNMIeHDqvZy7NvyqDtGbP5o8s7F7pN8t6NrQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqEfgT-mdzMNP268IHaVWov2ikwnL8P3Z1ZPQscmsEeOqTUlly0scT4hv_rluC2Pg6vFVnPKfXdQ1ayIlG-5kWHnEw6MjdZyMhoDaZtVq3FZO7oJ29sAV_ikOH0MP9YJEs3VoAA535Y64B5AbOTNu6dA9jmmvFLFddFp7ofAUNZRjlcro0pFYHYXs9VSAMMtA6RY53BgL7Czld_sdqmU-6Ll2iec-OS61kSYeMbMqwgaScoh4dkEdRpc_qjsWvn240GitB-VOHVr-lyLxLNThWSe7bVj-lFxIUuvEmThs8dkQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpmpxhkgBhfdVYI8cfDke-8PAbrroV7xPH_By2ZIURKG2D5hz5l38kcuN3DDpapV1eYiM5daCiNbgkB9o07dvNKmvTyrPDdk0-J9giUoRbUlLkaEuNgAR8hN9bZcESHBgx1e2Yb7dODRgqOLBezEeoJyVOigiyR5Ljr84fYUXLCxF992-KjhEeEdSNx2hxsKITn43w7Yza5w1nsmcHejy9YU5W2qlUbVzpKwAiQ1Ietq80y5zjV03HsO6HFJMkPSwC6w3Pn1V0_sf9rPEql70xK2Dwt4fyJv9iD0VNwtLrzzA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"]; // Injection des images depuis n8n
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Empêche le scroll
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        lightboxImg.src = images[currentIndex];
+    }
+    
+    // Fermeture avec Echap
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowRight") changeImage(1);
+        if (event.key === "ArrowLeft") changeImage(-1);
+    });
+    
+    // Fermeture au clic en dehors de l'image
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+</script>
+</body></html>
