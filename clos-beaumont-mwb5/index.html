@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Clos Beaumont - Beaumont</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#5c7c64;--primary-dark:#3a5240;--accent:#c68b59;--text:#2d2d2d;--bg:#fdfbf7;--white:#fff;--font-serif:"Playfair Display",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.6;background:var(--bg)}
+
+/* HEADER & HERO */
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);box-shadow:0 2px 20px rgba(0,0,0,0.05);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:768px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;transition:color 0.3s}.booking-bar nav a:hover{color:var(--accent)}.booking-bar .btn-book{background:var(--primary);color:var(--white);padding:0.7rem 1.8rem;border:none;border-radius:2px;font-weight:700;cursor:pointer;text-transform:uppercase;font-size:0.8rem;letter-spacing:1px;transition:background 0.3s}.booking-bar .btn-book:hover{background:var(--primary-dark)}
+
+.hero{position:relative;height:95vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpptRqEkDScTl4E9CDmDykBfjkFdLXd2XhxfKCMfu7PBYqMAY6VFlbjQcAHjitpokHw2qQu0C7SL9SUSgQd0j4PVjknUFwO4_R5b48X130QibNbnh-OG9wv-CuE29PlSxq1J9mcOssxCmCRPBpuzINd8hNDHb1IEid1_eQPhax66B3GUG13Jblbs2vyR0CswcuT5gCN0lJFjqlHnP1jUshRG4h8MsqpT5WTAsDuq1vIuqQvfYFGRZRbXUMciowJDSAxDtR261vRgSEQ6bght8hTis-KTFPFblA6inaYKr9bWA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35)}
+.hero-content{position:relative;padding:3rem;max-width:1000px;animation:fadeIn 1.5s}
+.hero-tagline{font-size:0.9rem;text-transform:uppercase;letter-spacing:4px;margin-bottom:1.5rem;color:rgba(255,255,255,0.9)}
+.hero-title{font-family:var(--font-serif);font-size:clamp(3rem,6vw,5.5rem);margin-bottom:1.5rem;line-height:1.1}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.15);backdrop-filter:blur(5px);padding:0.6rem 1.5rem;border-radius:50px;margin-bottom:2.5rem;font-weight:600}
+.hero-rating i{color:#f1c40f}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1.1rem 3rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:0.8rem;transition:all 0.3s;border:1px solid var(--white)}.btn-hero:hover{background:transparent;color:var(--white)}
+
+/* SECTIONS */
+section{padding:6rem 2rem}.section-header{text-align:center;max-width:700px;margin:0 auto 5rem}.section-tagline{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:0.8rem;margin-bottom:1rem;display:block}.section-title{font-family:var(--font-serif);font-size:3rem;color:var(--primary-dark)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto}@media(max-width:900px){.about-grid{grid-template-columns:1fr}}.about-img{position:relative}.about-img img{width:100%;display:block;box-shadow:20px 20px 0 var(--primary-dark)}
+
+/* ROOMS */
+.rooms-grid{max-width:1000px;margin:0 auto}
+.room-card{background:var(--white);box-shadow:0 15px 40px rgba(0,0,0,0.08);display:grid;grid-template-columns:1.2fr 1fr}@media(max-width:768px){.room-card{grid-template-columns:1fr}}
+.room-image{position:relative;cursor:pointer;overflow:hidden;min-height:350px}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;top:1.5rem;left:1.5rem;background:var(--white);padding:0.6rem 1.2rem;font-family:var(--font-serif);color:var(--text);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.room-price .amount{font-size:1.4rem;font-weight:700}.room-price .period{font-size:0.9rem;color:#666}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;opacity:0;transition:opacity 0.3s;pointer-events:none}.room-image:hover .zoom-icon{opacity:1}
+.room-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
+.room-header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+.room-header-row h3{font-family:var(--font-serif);font-size:2rem;color:var(--primary-dark);margin:0}
+.room-cap-badge{background:var(--bg);padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:700;color:var(--primary)}
+.room-desc{color:#666;margin-bottom:2rem;line-height:1.8}
+.room-features{list-style:none;margin-bottom:2.5rem;display:flex;flex-wrap:wrap;gap:1rem}.room-features li{font-size:0.9rem;color:var(--primary-dark);display:flex;align-items:center;gap:0.5rem}.room-features i{color:var(--accent)}
+.btn-room{padding:1rem 2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;font-size:0.85rem;transition:all 0.3s;align-self:start}.btn-room:hover{background:var(--accent)}
+
+/* FEATURES SPLIT */
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto}@media(max-width:900px){.features-split{grid-template-columns:1fr}}.feature-block{padding:5rem;display:flex;flex-direction:column;justify-content:center}.feature-bg-1{background:#f4f1ea;color:var(--text)}.feature-bg-2{background:var(--primary-dark);color:var(--white)}.feature-bg-2 .section-tagline{color:var(--white);opacity:0.7}.feature-bg-2 .feature-title{color:var(--white)}.feature-img img{width:100%;height:100%;object-fit:cover;min-height:500px}.feature-title{font-family:var(--font-serif);font-size:2.5rem;margin-bottom:1.5rem}
+
+/* GALERIE */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1400px;margin:0 auto}
+.gallery-item{height:300px;position:relative;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.gallery-item:hover img{transform:scale(1.05)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(58,82,64,0.4);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}.gallery-item:hover .gallery-overlay{opacity:1}.gallery-overlay i{color:white;font-size:2rem;transform:translateY(20px);transition:transform 0.3s}.gallery-item:hover .gallery-overlay i{transform:translateY(0)}
+
+/* REVIEWS & FOOTER */
+.reviews{background:var(--white)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2.5rem;max-width:1200px;margin:0 auto}.review-card{background:var(--bg);padding:2.5rem;border-top:3px solid var(--accent)}.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}.review-header img{width:60px;height:60px;border-radius:50%;object-fit:cover}.review-text{font-style:italic;color:#555;font-size:1.05rem}
+.contact-section{background:var(--primary-dark);color:var(--white);padding:0}.contact-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px}@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{padding:5rem;display:flex;flex-direction:column;justify-content:center}
+.contact-item{display:flex;align-items:start;gap:1.5rem;margin-bottom:2rem;font-size:1.1rem}
+.contact-item i{color:var(--accent);font-size:1.4rem;margin-top:5px}
+.contact-item a{color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.3);padding-bottom:2px}.contact-item a:hover{border-color:var(--white)}
+.map-container{position:relative;height:100%;min-height:400px;width:100%}
+.map-frame{position:absolute;top:0;left:0;width:100%;height:100%;border:none;filter:grayscale(0.2)}
+.btn-itinerary{display:inline-block;margin-top:2rem;background:var(--white);color:var(--primary-dark);padding:1rem 2rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:all 0.3s}.btn-itinerary:hover{background:var(--accent);color:var(--white)}
+footer{background:#222;color:#888;text-align:center;padding:3rem;font-size:0.9rem}
+
+/* MODAL FORM PRO */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
+.modal-overlay.active{display:flex;animation:fadeIn 0.3s}
+.modal{background:var(--white);width:95%;max-width:600px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.modal-header{background:var(--primary-dark);color:var(--white);padding:2rem;text-align:center}
+.modal-header h3{font-family:var(--font-serif);font-size:1.8rem;margin-bottom:0.5rem;color:var(--white)}
+.modal-header p{opacity:0.8;font-size:0.9rem;text-transform:uppercase;letter-spacing:1px}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;opacity:0.7;transition:opacity 0.2s}.modal-close:hover{opacity:1}
+.modal-body{padding:2.5rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}@media(max-width:600px){.form-grid{grid-template-columns:1fr}}
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;margin-bottom:0.6rem;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;color:var(--text)}
+.form-group input{width:100%;padding:1rem;border:1px solid #ddd;font-family:var(--font-sans);font-size:1rem;color:var(--text);transition:border 0.3s}
+.form-group input:focus{border-color:var(--primary);outline:none}
+.form-note{font-size:0.85rem;color:#888;font-style:italic}
+.btn-submit{width:100%;padding:1.2rem;background:var(--accent);color:var(--white);border:none;font-weight:700;text-transform:uppercase;letter-spacing:2px;cursor:pointer;font-size:0.9rem;transition:background 0.3s;margin-top:1rem}.btn-submit:hover{background:#b07a4d}
+.modal-footer-note{text-align:center;margin-top:1.5rem;font-size:0.8rem;color:#999}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.98);z-index:99999;display:none;justify-content:center;align-items:center}
+.lightbox.active{display:flex}
+.lightbox-img{max-height:85vh;max-width:90vw;box-shadow:0 0 40px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:30px;right:30px;color:white;font-size:2.5rem;cursor:pointer;opacity:0.7;transition:opacity 0.2s}.lightbox-close:hover{opacity:1}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%;transition:background 0.3s}
+.lightbox-nav:hover{background:rgba(255,255,255,0.2)}
+.prev{left:30px}.next{right:30px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">Clos Beaumont</div><nav><a href="#about">Lieu</a><a href="#rooms">Hébergement</a><a href="#gallery">Galerie</a><a href="#contact">Accès</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Charme, Calme, Volcans</div>
+        <h1 class="hero-title">Clos Beaumont : Gîte de Charme</h1>
+        <div class="hero-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>4.9/5</span></div>
+        <div style="font-size:1.4rem;font-weight:300;margin-bottom:2.5rem;opacity:0.9">Sur devis </div>
+        <a href="#rooms" class="btn-hero">Découvrir le logement</a>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqNTN8h3d979q_lBsLUqiWoU3O6LpYJOdn5kBoSzQ6VBI7hO10zgIVXjRW3tTVpIv-xLnUQglmSBYuTHkTigy_h5XSUSF0Qlu5IFyIG8GWmw4euoa-T_6AlBhkYDcQNoiGCnw478ftePfWbPsN4Z1Otzgc_Ml4La6Rh5s1SMUAWHvlKFQ3LwMRj2KIuv3y9MAMxWfY0a41kktQUKR0AbsJ0FVpULNvhLhEKGtg_GAafaQ241crIdWbsQJrfyFi5rY_t2ccG4EABp_Lb1oZFr_a4oM7lkkvOMTXDaapaSWI3MA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">Notre Histoire</p><h2 class="section-title">L'Esprit de la Maison</h2><p style="color:#666;line-height:1.8;margin-bottom:2rem">Bienvenue au Clos Beaumont, une magnifique bâtisse où tradition et modernité se rencontrent pour créer une expérience inoubliable. Nos hôtes sont notre priorité, et nous mettons tout en œuvre pour vous offrir un accueil chaleureux et des conseils avisés pour explorer les trésors de notre région. Laissez-vous séduire par le calme des lieux, le décor soigné et l'atmosphère conviviale où l'on se sent comme chez soi.</p><div style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;color:var(--primary)">"Un lieu où l'on se sent comme chez soi."</div></div></div></section>
+
+<section id="rooms" style="background:#f9f9f9"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Votre Séjour</p><h2 class="section-title">L'Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image" onclick="openLightbox(2)">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHo18M2PqACP4prLdK-Ep4zIAKhG1F3IojP8pG_DfAJsZ4eKUUIWOSNDMVUZLUuXdaH6WBMYy5yN-ofKgIieiNsW-85qMx0jdppIpoPMFXk6p4m-yNCUakSRbH1DIWW2DMHcwSyGtiSBS2_aLz7B4W9N9NgL2SjIGk3day9rY77zkgX4oBTNblgJO1tJ3RKl9OwO9-8ACCza-UgtUFzKI9Gb80fQM6Uy9qoWfcK3QnNXlb0BGPdaqB2Ik4LKQq_8yoykoaIDCDZbFHGf-01FRI_sfzFOE0aDmdlCFGZ-ctBF1Y9vH4E8eoZXqujaMfJF3F6gEKFERMUgJKvOvAonF1iSd9YmxHWeIfPTHxgTd7V21k9EMRypW7VGmPKtoh7KhZjacm8qgkEukGLzzTKddboIqNph_Z3UJvg_znYuJP0pw5SE&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Clos Beaumont" loading="lazy">
+            <div class="room-price">
+                <span class="amount">Sur devis</span>
+                <span class="period"></span>
+            </div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="room-content">
+            <div class="room-header-row">
+                <h3>Clos Beaumont</h3>
+                <div class="room-cap-badge"><i class="fas fa-user-friends"></i> 4 pers.</div>
+            </div>
+            <p class="room-desc">Bienvenue au Clos Beaumont, une magnifique bâtisse où tradition et modernité se rencontrent pour créer une expérience inoubliable....</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver maintenant</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--accent)">Saveurs</p><h2 class="feature-title" style="margin-bottom:1rem">Gourmandises Matinales</h2><p style="color:#666;line-height:1.8">Commencez votre journée avec un petit-déjeuner complet, sucré et salé, mettant en valeur les produits locaux de qualité : fromages, miel, jambon et infusions du terroir. Un régal pour les papilles !</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrVbTc1mUheAt9YdorJiwJCSQZ9IgS_2Ry6z2NAdoq8h9jyKjVXIh6qYXjQyiP5twkZ_5jCYvSehxJLguh3XVmBGp3CNHeduWdWnSNgt9w_hj2HS634QJo4UQ3vKuZiX4w2srPIEqqQCsLY6QgAFibq-_CxRAGNvFsNJ7aoqgzL508cue2jb-dosggKHVz9s0DXnat_TdxlE_YDfwL1vW6TMHCKmPI0B3UHI2-99KJ6Gwo7JszkxeiHbsvrwQ9cLQPmEWgOSCz6vrQecAAGtvG2ncDC4rJvzk0nqL_4TQMv9Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline">Grand Air</p><h2 class="feature-title" style="margin-bottom:1rem">Détente & Bien-être</h2><p style="opacity:0.9;line-height:1.8">Profitez d'un cadre extérieur paisible et décoré avec goût. Un jacuzzi est à votre disposition pour des moments de relaxation après une journée d'exploration.</p></div></div></section>
+
+<section id="gallery"><div class="section-header"><p class="section-tagline">En Images</p><h2 class="section-title">Galerie Photos</h2></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox(0)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpptRqEkDScTl4E9CDmDykBfjkFdLXd2XhxfKCMfu7PBYqMAY6VFlbjQcAHjitpokHw2qQu0C7SL9SUSgQd0j4PVjknUFwO4_R5b48X130QibNbnh-OG9wv-CuE29PlSxq1J9mcOssxCmCRPBpuzINd8hNDHb1IEid1_eQPhax66B3GUG13Jblbs2vyR0CswcuT5gCN0lJFjqlHnP1jUshRG4h8MsqpT5WTAsDuq1vIuqQvfYFGRZRbXUMciowJDSAxDtR261vRgSEQ6bght8hTis-KTFPFblA6inaYKr9bWA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(1)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqNTN8h3d979q_lBsLUqiWoU3O6LpYJOdn5kBoSzQ6VBI7hO10zgIVXjRW3tTVpIv-xLnUQglmSBYuTHkTigy_h5XSUSF0Qlu5IFyIG8GWmw4euoa-T_6AlBhkYDcQNoiGCnw478ftePfWbPsN4Z1Otzgc_Ml4La6Rh5s1SMUAWHvlKFQ3LwMRj2KIuv3y9MAMxWfY0a41kktQUKR0AbsJ0FVpULNvhLhEKGtg_GAafaQ241crIdWbsQJrfyFi5rY_t2ccG4EABp_Lb1oZFr_a4oM7lkkvOMTXDaapaSWI3MA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(2)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHo18M2PqACP4prLdK-Ep4zIAKhG1F3IojP8pG_DfAJsZ4eKUUIWOSNDMVUZLUuXdaH6WBMYy5yN-ofKgIieiNsW-85qMx0jdppIpoPMFXk6p4m-yNCUakSRbH1DIWW2DMHcwSyGtiSBS2_aLz7B4W9N9NgL2SjIGk3day9rY77zkgX4oBTNblgJO1tJ3RKl9OwO9-8ACCza-UgtUFzKI9Gb80fQM6Uy9qoWfcK3QnNXlb0BGPdaqB2Ik4LKQq_8yoykoaIDCDZbFHGf-01FRI_sfzFOE0aDmdlCFGZ-ctBF1Y9vH4E8eoZXqujaMfJF3F6gEKFERMUgJKvOvAonF1iSd9YmxHWeIfPTHxgTd7V21k9EMRypW7VGmPKtoh7KhZjacm8qgkEukGLzzTKddboIqNph_Z3UJvg_znYuJP0pw5SE&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(3)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrVbTc1mUheAt9YdorJiwJCSQZ9IgS_2Ry6z2NAdoq8h9jyKjVXIh6qYXjQyiP5twkZ_5jCYvSehxJLguh3XVmBGp3CNHeduWdWnSNgt9w_hj2HS634QJo4UQ3vKuZiX4w2srPIEqqQCsLY6QgAFibq-_CxRAGNvFsNJ7aoqgzL508cue2jb-dosggKHVz9s0DXnat_TdxlE_YDfwL1vW6TMHCKmPI0B3UHI2-99KJ6Gwo7JszkxeiHbsvrwQ9cLQPmEWgOSCz6vrQecAAGtvG2ncDC4rJvzk0nqL_4TQMv9Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(4)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoEWCPqXDVH6gn4wrwGGrCmAKQdghUJj7FNteuH0yoVsUFsG2LaUTjHSxvJ8He7H3t2gqRiNaCzDfDMiG8FplYkabTHDiXlI2LQcYep8M0PqEV9AzuyYN-YF0J9Qamp70cOoWfDlGXbqHABwFRdIWX55cMfXF6VpdW5xEO66JVxITZYmybHS3yEH8w7jItnplhFBDfDZfn-4NjP_jTsB63npfrG6Re0WFKBPuZWHdww8fWOsHTBInVoagiBgT-FH7BKIg4I4HfeB4V30oXrpuosTK1Ph-Kj-XG5vRP6FQnOpQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(5)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHowY6ciiddXHvWTkXH8xroRn0H08nrDfTt76r6WCDa0W47W5Q4ewu2Tc_BhjyJ0W9xKxZPlNdPN47ZpKW4_aRecfx21AU50f4l1Njl1FEwA1LluMnRPtfmSr9QAp4UttP6xGYaXAiCfV4vQtrJICrqwqWexAacb9evhqJnFFoNNhmVVnS4lLSEWC4j9EECnL8VnKB67VGrWkp6zTgbzBsiWbgPmY92zEHgltnLyMnYwioNu-pqAhhRp4WT1X7Oat2W5n30j0pxhxbS2PDyvrUbsJegjRTUezpu7emwXg_WpMg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(6)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrbBUEGGnWNE_1OdpgcLDtGQrMHkCqX3aqD0NkIrS6Xrj5ZW6bRTosU_yJX68rLP-oGoATqH9yVsS10J2UdoU9fycyRjFo7FWDGRboTwj_smHiX1qhA8mOm_iaoXHMjx9cf1y5Gv0-7JgyU1OS-l1KJpII60vwWBTjh1V--Xz_beiMp2Z7T45b7OPqkVh-YBjN-o6bzgm_-QbrdX_YNbR-hG7mKgBoYP4LF3L5yxDWpaRgdPff78JecIrepDvLT1mbWvk3mKwwMQiDnxhplxHcDuflifPW0L1nojbaQYVZ4mA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(7)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHozpRFbfXXdoacK2nvoTnFeFhbjjg3KQ1fDk9U68ZVp_8kAA6UQ5pAVQit_jCW9RPIDdT0bYpIKDKZmXs9AuVtbop_g80jZCveV_mGKs4hevxD7LVwwaWY9GAZO4y0NU94jN0JwZ0r52FCGXKHpOSUYewUj9AZqlwjrrY1v_KmLk41DO0CHtNC83ur43GnaOFLEi5r7_ejK-AqF5wIVaK7Dk_vWgqR1K_d4az_kAzxma6KKJMXDXuMi4-eSE0OuGi9Ijso9oZbH15NTObwyQ02cKPn0-Osr39ztDFckq8Y-6Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(8)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrGuNK_wSj54Us7oavR3N6sIieSZi84JDcxhwjr4J0qRfwJmlKR_6vygXyK9QW6NKoaIQ882jE8oBbSelR0KIOBlZThvKwWQo3upd5POIfbjNpfX2Im9JBdGnsM15fHG9wtmjNDH3aJzLZ4yfdM5deE9MgvFQ823uZ3MYSGqfP5qI1bqDqoR-BDfxbRsdM0P-b_64dnlzv5JVcnxfG16K3-DoM49L1kHKnBx89-5rtRai4D_0WNYrzjAp19XHo1dR6Sp4H-wff11Jl2sfx9b3-yBh0pOwh1utmE8IdG6OUKDQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(9)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHop0jFtTJ9j46bbMqMdw3Yt_C7iJFucvHCyDCWjojUQLtGlwS2r4HbDGuODNJpiZK9cimCcLbKgJR7BQNv6d2XlcZGHJ809axmKmNxtygBJhgjqQQNce0KLF4lhdQV-tp0WmVcdo73M4LjlDDGZFMNMUnMXW0y-FERec2Dhf--7rQvWi5np0y5C06WmwySvV0yr6LH3hO3PZmUS3oytP9HBMYt-udRwxT7Ox6xD7tnI_TlXgotadVcLQaKdMXowyFCr_PW1vXZyf0n4yGjbi6yzeacbj3onK5RYl2r1zE9B7Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Livre d'or</p><h2 class="section-title">Expériences Voyageurs</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjXzIKoXy2dOH0SHeBlvgiAnoD-KjxX24I2qpxpBwzTN9h_mxpQU=s128-c0x00000000-cc-rp-mo" alt="Stella"><div><h4>Stella</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 5 mois</span></div></div><p class="review-text">"Nous avons passé un superbe séjour au Clos Beaumont. Merci à nos hôtes pour leur accueil chaleureux, leurs conseils de randonnées, et les discussions très enrichissantes. La bâtisse est magnifique, notre chambre était propre, spacieuse et climatisée. Le petit-déjeuner est quant à lui excellent et va"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocINZu0UEUbBJt9-lJ9UH3SH7KaHsUGq0uQemFMbuKqtlbEZBg=s128-c0x00000000-cc-rp-mo" alt="Pauline Stein"><div><h4>Pauline Stein</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 4 mois</span></div></div><p class="review-text">"De passage à Clermont, nous avons été accueillis chaleureusement dans cette chambre d'hôtes.
+Petit jacuzzi de fin de journée très agréable et un petit déjeuner complet !
+Très belle maison et hôtes très accueillants.
+Nous vous recommandons l'endroit !"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocLOY5E-r7y8SeWKB6oc2jg8tT2w_KdmkdN-2YndtFr2p_afYw=s128-c0x00000000-cc-rp-mo-ba3" alt="Sophie Marlin"><div><h4>Sophie Marlin</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 3 mois</span></div></div><p class="review-text">"Accueil très bien,  les hôtes sont de bon conseils. La chambre est spacieuse, propre.
+Petit déjeuner complet, sucré et salé, avec des produits de qualité.
+Parking limité au niveau des places.
+Je recommande vivement"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocJDM2Hx5rZSv1HGSCG2f2Ciz1xlYbADpQvaUJvLmp6QC-DRqQ=s128-c0x00000000-cc-rp-mo" alt="Christina Terrier"><div><h4>Christina Terrier</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 3 mois</span></div></div><p class="review-text">"Un endroit magnifique, tellement calme, decoré avec goût, où l'on se sent comme chez soi.
+Très bon accueil, conseils avisés.
+Idéalement situé pour aller explorer la chaîne des volcans sur plusieurs jours, nous serions restés plus longtemps si nous avions pu annuler nos hebergements postérieurs."</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjVuk5GL3i2rwwj1ohwebO0qXb2dcv7UsMEY31Www4sXjn58vykg=s128-c0x00000000-cc-rp-mo-ba2" alt="Pablo Parra"><div><h4>Pablo Parra</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 6 mois</span></div></div><p class="review-text">"Excellent !
+Réception et attention au poil, la bâtisse est magnifique mélange de tradition et modernité, jusque dans les détails.
+Produits locaux (infusions, fromages, miel, jambon...)
+C'est dommage de ne pas pouvoir mettre 6 étoiles. Nous reviendrons !"</p></div></div></section>
+
+<section class="cta"><div data-aos="zoom-in"><h2 style="font-family:var(--font-serif);font-size:3rem;margin-bottom:1rem">Réservez Votre Séjour</h2><p style="font-size:1.2rem;margin-bottom:2.5rem;opacity:0.9">Voir disponibilités</p><button class="btn-hero" onclick="openBooking()">Vérifier les disponibilités</button></div></section>
+
+<section id="contact" class="contact-section">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2 class="section-title" style="color:white;margin-bottom:3rem;text-align:left">Nous trouver</h2>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div>15 Rue René Brut, 63110 Beaumont, France</div></div>
+            <div class="contact-item"><i class="fas fa-phone"></i> <div><a href="tel:0473263252">04 73 26 32 52</a></div></div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=45.7517611,3.0867566" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Obtenir l'itinéraire</a>
+        </div>
+        <div class="map-container">
+            <iframe class="map-frame" src="https://maps.google.com/maps?q=45.7517611,3.0867566&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<footer><p>&copy; 2024 Clos Beaumont - Site réalisé par Local Visibility</p></footer>
+
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+            <h3>Réservation</h3>
+            <p>Clos Beaumont</p>
+        </div>
+        <div class="modal-body">
+            <form onsubmit="alert('Demande envoyée avec succès ! Nous vous recontacterons sous 24h.');return false;">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Arrivée</label>
+                        <input type="date" required id="checkin">
+                    </div>
+                    <div class="form-group">
+                        <label>Départ</label>
+                        <input type="date" required id="checkout">
+                    </div>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Prénom</label>
+                        <input type="text" placeholder="Jean" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" placeholder="Dupont" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                     <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="jean.dupont@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Téléphone <span class="form-note">(facultatif)</span></label>
+                        <input type="tel" placeholder="06 12 34 56 78">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Message / Demande particulière</label>
+                    <input type="text" placeholder="Lit bébé, heure d'arrivée...">
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer la demande</button>
+                <p class="modal-footer-note"><i class="fas fa-lock"></i> Paiement sécurisé lors de la confirmation</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+    <div class="lightbox-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+    <img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen">
+    <div class="lightbox-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({duration:800,once:true});
+    
+    // BOOKING
+    const modal = document.getElementById("bookingModal");
+    function openBooking(){modal.classList.add("active");document.body.style.overflow='hidden'}
+    function closeBooking(){modal.classList.remove("active");document.body.style.overflow='auto'}
+    modal.addEventListener('click', function(e){if(e.target===modal)closeBooking()});
+
+    // LIGHTBOX
+    const images = ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpptRqEkDScTl4E9CDmDykBfjkFdLXd2XhxfKCMfu7PBYqMAY6VFlbjQcAHjitpokHw2qQu0C7SL9SUSgQd0j4PVjknUFwO4_R5b48X130QibNbnh-OG9wv-CuE29PlSxq1J9mcOssxCmCRPBpuzINd8hNDHb1IEid1_eQPhax66B3GUG13Jblbs2vyR0CswcuT5gCN0lJFjqlHnP1jUshRG4h8MsqpT5WTAsDuq1vIuqQvfYFGRZRbXUMciowJDSAxDtR261vRgSEQ6bght8hTis-KTFPFblA6inaYKr9bWA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqNTN8h3d979q_lBsLUqiWoU3O6LpYJOdn5kBoSzQ6VBI7hO10zgIVXjRW3tTVpIv-xLnUQglmSBYuTHkTigy_h5XSUSF0Qlu5IFyIG8GWmw4euoa-T_6AlBhkYDcQNoiGCnw478ftePfWbPsN4Z1Otzgc_Ml4La6Rh5s1SMUAWHvlKFQ3LwMRj2KIuv3y9MAMxWfY0a41kktQUKR0AbsJ0FVpULNvhLhEKGtg_GAafaQ241crIdWbsQJrfyFi5rY_t2ccG4EABp_Lb1oZFr_a4oM7lkkvOMTXDaapaSWI3MA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHo18M2PqACP4prLdK-Ep4zIAKhG1F3IojP8pG_DfAJsZ4eKUUIWOSNDMVUZLUuXdaH6WBMYy5yN-ofKgIieiNsW-85qMx0jdppIpoPMFXk6p4m-yNCUakSRbH1DIWW2DMHcwSyGtiSBS2_aLz7B4W9N9NgL2SjIGk3day9rY77zkgX4oBTNblgJO1tJ3RKl9OwO9-8ACCza-UgtUFzKI9Gb80fQM6Uy9qoWfcK3QnNXlb0BGPdaqB2Ik4LKQq_8yoykoaIDCDZbFHGf-01FRI_sfzFOE0aDmdlCFGZ-ctBF1Y9vH4E8eoZXqujaMfJF3F6gEKFERMUgJKvOvAonF1iSd9YmxHWeIfPTHxgTd7V21k9EMRypW7VGmPKtoh7KhZjacm8qgkEukGLzzTKddboIqNph_Z3UJvg_znYuJP0pw5SE&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrVbTc1mUheAt9YdorJiwJCSQZ9IgS_2Ry6z2NAdoq8h9jyKjVXIh6qYXjQyiP5twkZ_5jCYvSehxJLguh3XVmBGp3CNHeduWdWnSNgt9w_hj2HS634QJo4UQ3vKuZiX4w2srPIEqqQCsLY6QgAFibq-_CxRAGNvFsNJ7aoqgzL508cue2jb-dosggKHVz9s0DXnat_TdxlE_YDfwL1vW6TMHCKmPI0B3UHI2-99KJ6Gwo7JszkxeiHbsvrwQ9cLQPmEWgOSCz6vrQecAAGtvG2ncDC4rJvzk0nqL_4TQMv9Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoEWCPqXDVH6gn4wrwGGrCmAKQdghUJj7FNteuH0yoVsUFsG2LaUTjHSxvJ8He7H3t2gqRiNaCzDfDMiG8FplYkabTHDiXlI2LQcYep8M0PqEV9AzuyYN-YF0J9Qamp70cOoWfDlGXbqHABwFRdIWX55cMfXF6VpdW5xEO66JVxITZYmybHS3yEH8w7jItnplhFBDfDZfn-4NjP_jTsB63npfrG6Re0WFKBPuZWHdww8fWOsHTBInVoagiBgT-FH7BKIg4I4HfeB4V30oXrpuosTK1Ph-Kj-XG5vRP6FQnOpQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHowY6ciiddXHvWTkXH8xroRn0H08nrDfTt76r6WCDa0W47W5Q4ewu2Tc_BhjyJ0W9xKxZPlNdPN47ZpKW4_aRecfx21AU50f4l1Njl1FEwA1LluMnRPtfmSr9QAp4UttP6xGYaXAiCfV4vQtrJICrqwqWexAacb9evhqJnFFoNNhmVVnS4lLSEWC4j9EECnL8VnKB67VGrWkp6zTgbzBsiWbgPmY92zEHgltnLyMnYwioNu-pqAhhRp4WT1X7Oat2W5n30j0pxhxbS2PDyvrUbsJegjRTUezpu7emwXg_WpMg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrbBUEGGnWNE_1OdpgcLDtGQrMHkCqX3aqD0NkIrS6Xrj5ZW6bRTosU_yJX68rLP-oGoATqH9yVsS10J2UdoU9fycyRjFo7FWDGRboTwj_smHiX1qhA8mOm_iaoXHMjx9cf1y5Gv0-7JgyU1OS-l1KJpII60vwWBTjh1V--Xz_beiMp2Z7T45b7OPqkVh-YBjN-o6bzgm_-QbrdX_YNbR-hG7mKgBoYP4LF3L5yxDWpaRgdPff78JecIrepDvLT1mbWvk3mKwwMQiDnxhplxHcDuflifPW0L1nojbaQYVZ4mA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHozpRFbfXXdoacK2nvoTnFeFhbjjg3KQ1fDk9U68ZVp_8kAA6UQ5pAVQit_jCW9RPIDdT0bYpIKDKZmXs9AuVtbop_g80jZCveV_mGKs4hevxD7LVwwaWY9GAZO4y0NU94jN0JwZ0r52FCGXKHpOSUYewUj9AZqlwjrrY1v_KmLk41DO0CHtNC83ur43GnaOFLEi5r7_ejK-AqF5wIVaK7Dk_vWgqR1K_d4az_kAzxma6KKJMXDXuMi4-eSE0OuGi9Ijso9oZbH15NTObwyQ02cKPn0-Osr39ztDFckq8Y-6Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrGuNK_wSj54Us7oavR3N6sIieSZi84JDcxhwjr4J0qRfwJmlKR_6vygXyK9QW6NKoaIQ882jE8oBbSelR0KIOBlZThvKwWQo3upd5POIfbjNpfX2Im9JBdGnsM15fHG9wtmjNDH3aJzLZ4yfdM5deE9MgvFQ823uZ3MYSGqfP5qI1bqDqoR-BDfxbRsdM0P-b_64dnlzv5JVcnxfG16K3-DoM49L1kHKnBx89-5rtRai4D_0WNYrzjAp19XHo1dR6Sp4H-wff11Jl2sfx9b3-yBh0pOwh1utmE8IdG6OUKDQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHop0jFtTJ9j46bbMqMdw3Yt_C7iJFucvHCyDCWjojUQLtGlwS2r4HbDGuODNJpiZK9cimCcLbKgJR7BQNv6d2XlcZGHJ809axmKmNxtygBJhgjqQQNce0KLF4lhdQV-tp0WmVcdo73M4LjlDDGZFMNMUnMXW0y-FERec2Dhf--7rQvWi5np0y5C06WmwySvV0yr6LH3hO3PZmUS3oytP9HBMYt-udRwxT7Ox6xD7tnI_TlXgotadVcLQaKdMXowyFCr_PW1vXZyf0n4yGjbi6yzeacbj3onK5RYl2r1zE9B7Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(index) {
+        if(!images || images.length === 0) return;
+        currentIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    function updateLightbox() {
+        lightboxImg.src = images[currentIndex];
+    }
+    function changeImage(dir) {
+        currentIndex += dir;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        updateLightbox();
+    }
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") changeImage(1);
+        if (e.key === "ArrowLeft") changeImage(-1);
+    });
+</script>
+</body></html>
