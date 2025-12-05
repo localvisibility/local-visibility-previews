@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Gîte de groupe l' Ancien Relais de Poste - Saint-Dier-d'Auvergne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#5c7c64;--primary-dark:#3a5240;--accent:#c68b59;--text:#2d2d2d;--bg:#fdfbf7;--white:#fff;--font-serif:"Playfair Display",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.6;background:var(--bg)}
+
+/* HEADER & HERO */
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);box-shadow:0 2px 20px rgba(0,0,0,0.05);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:768px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.85rem;text-transform:uppercase;transition:color 0.3s}.booking-bar nav a:hover{color:var(--accent)}.booking-bar .btn-book{background:var(--primary);color:var(--white);padding:0.7rem 1.8rem;border:none;border-radius:2px;font-weight:700;cursor:pointer;text-transform:uppercase;font-size:0.8rem;transition:background 0.3s}.booking-bar .btn-book:hover{background:var(--primary-dark)}
+
+.hero{position:relative;height:95vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoLhxw3FICPAzpsLDyXgqwO-7uaavXIkmBZgjQkqp4ZPnEuaN7FH-EpmkReZTwrKvpofwZgY6e94BawCsUgqHre9pthStMsvIrkKaq8AzjEP1hfORbtUl4LohxaZXXBlSlB_C1d2NH-ARoXcC15_j4lcNTusqG1wOPWZERBi55QVRa--oZIBMWze6deoim3PeNj35lg_fuhLP-4YjaXtQE9COSA5GiN-3zEMMp1lCLz49widrFOh5TUvSprass6kW-ob1y9ZMqBJuMhvU2opgASgxxTN3NZPT2JAk8K5pxQeg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35)}
+.hero-content{position:relative;padding:2rem;width:90%;max-width:1000px;animation:fadeIn 1.5s}
+.hero-title{font-family:var(--font-serif);font-size:clamp(3rem, 7vw, 5.5rem);margin-bottom:1.5rem}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.15);backdrop-filter:blur(5px);padding:0.6rem 1.5rem;border-radius:50px;margin-bottom:2.5rem;font-weight:600}
+.hero-rating i{color:#f1c40f}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1.1rem 3rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:0.8rem;transition:all 0.3s;border:1px solid var(--white)}.btn-hero:hover{background:transparent;color:var(--white)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}.section-tagline{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:0.8rem;margin-bottom:1rem;display:block}.section-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);color:var(--primary-dark)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}.about-img{order:2}}
+.about-img img{width:100%;display:block;box-shadow:20px 20px 0 var(--primary-dark)}
+
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto}@media(max-width:900px){.features-split{grid-template-columns:1fr}}.feature-block{padding:4rem;display:flex;flex-direction:column;justify-content:center}.feature-bg-1{background:#f4f1ea}.feature-bg-2{background:var(--primary-dark);color:var(--white)}.feature-bg-2 .section-tagline{color:var(--white);opacity:0.7}.feature-bg-2 .feature-title{color:var(--white)}.feature-img img{width:100%;height:100%;object-fit:cover;min-height:400px}
+
+/* ROOM CARD */
+.rooms-grid{max-width:1000px;margin:0 auto}
+.room-card{background:var(--white);box-shadow:0 15px 40px rgba(0,0,0,0.08);display:grid;grid-template-columns:1.2fr 1fr}@media(max-width:768px){.room-card{grid-template-columns:1fr}}
+.room-image{position:relative;cursor:pointer;overflow:hidden;min-height:300px}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;top:1.5rem;left:1.5rem;background:var(--white);padding:0.6rem 1.2rem;font-family:var(--font-serif);color:var(--text);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.room-price .amount{font-size:1.4rem;font-weight:700}.room-price .period{font-size:0.9rem;color:#666}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;opacity:0;transition:opacity 0.3s;pointer-events:none}.room-image:hover .zoom-icon{opacity:1}
+.room-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
+.room-header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:1rem}
+.room-header-row h3{font-family:var(--font-serif);font-size:2rem;color:var(--primary-dark);margin:0}
+.room-cap-badge{background:var(--bg);padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:700;color:var(--primary)}
+.room-features{list-style:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:0.8rem}.room-features li{font-size:0.9rem;color:var(--primary-dark);display:flex;align-items:center;gap:0.5rem}.room-features i{color:var(--accent)}
+.btn-room{padding:1rem 2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;font-size:0.85rem;transition:all 0.3s;align-self:start}.btn-room:hover{background:var(--accent)}
+
+/* GALLERY & REVIEWS */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-width:1400px;margin:0 auto}
+.gallery-item{height:300px;position:relative;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.gallery-item:hover img{transform:scale(1.05)}
+.reviews{background:var(--white)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}.review-card{background:var(--bg);padding:2rem;border-top:3px solid var(--accent)}.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.review-header img{width:50px;height:50px;border-radius:50%}
+
+/* CONTACT */
+.contact-section{background:var(--primary-dark);color:var(--white);padding:0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px}@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{padding:5rem;display:flex;flex-direction:column;justify-content:center}.contact-item{display:flex;gap:1.5rem;margin-bottom:2rem;font-size:1.1rem}.contact-item a{color:var(--white);text-decoration:none}
+.btn-itinerary{display:inline-block;margin-top:2rem;background:var(--white);color:var(--primary-dark);padding:1rem 2rem;text-decoration:none;font-weight:700;text-transform:uppercase;transition:all 0.3s}.btn-itinerary:hover{background:var(--accent);color:var(--white)}
+.map-container{position:relative;width:100%;height:100%;min-height:400px}.map-frame{position:absolute;top:0;left:0;width:100%;height:100%;border:none;filter:grayscale(0.2)}
+
+/* SELL SECTION */
+.sell-section{background:#1a4d2e;color:var(--white);padding:6rem 2rem;text-align:center}
+.sell-container{max-width:800px;margin:0 auto}
+.sell-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 2.5rem);margin-bottom:1rem}
+.sell-subtitle{font-size:0.9rem;text-transform:uppercase;letter-spacing:2px;opacity:0.8;margin-bottom:3rem}
+.sell-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:3rem;max-width:500px;margin:0 auto 3rem}
+.sell-price-new{font-family:var(--font-serif);font-size:3.5rem;color:var(--white);line-height:1}
+.sell-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-sell{padding:1rem 2rem;border:1px solid rgba(255,255,255,0.3);color:var(--white);text-decoration:none;text-transform:uppercase;font-size:0.8rem;letter-spacing:1px;font-weight:700;transition:all 0.3s}.btn-sell:hover{background:var(--white);color:#1a4d2e}.btn-sell.primary{background:var(--white);color:#1a4d2e}
+
+/* MODAL BOOKING STYLES */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(5px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);width:95%;max-width:600px;max-height:90vh;overflow-y:auto;border-radius:10px;box-shadow:0 25px 50px rgba(0,0,0,0.3)}
+.modal-header{background:var(--primary-dark);color:var(--white);padding:2rem;text-align:center;position:relative}
+.modal-header h3{font-family:var(--font-serif);font-size:2rem;margin-bottom:0.5rem}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;opacity:0.7}.modal-close:hover{opacity:1}
+.modal-body{padding:2.5rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}@media(max-width:500px){.form-grid{grid-template-columns:1fr}}
+.form-group{margin-bottom:0}
+.form-group label{display:block;margin-bottom:0.6rem;font-weight:700;font-size:0.85rem;text-transform:uppercase;color:#555}
+.form-group input{width:100%;padding:1rem;border:1px solid #ddd;border-radius:5px;font-size:1rem;color:#333}
+.form-group input:focus{border-color:var(--primary);outline:none;box-shadow:0 0 0 3px rgba(92,124,100,0.1)}
+.btn-submit{width:100%;padding:1.2rem;background:var(--accent);color:var(--white);border:none;font-weight:700;text-transform:uppercase;cursor:pointer;border-radius:5px;margin-top:1rem;transition:background 0.3s}.btn-submit:hover{background:#b07a4d}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.98);z-index:99999;display:none;justify-content:center;align-items:center}
+.lightbox.active{display:flex}
+.lightbox-img{max-height:85vh;max-width:90vw;box-shadow:0 0 30px rgba(0,0,0,0.5)}.lightbox-close{position:absolute;top:30px;right:30px;color:white;font-size:2.5rem;cursor:pointer}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%}.prev{left:30px}.next{right:30px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">Gîte de groupe l' Ancien Relais de Poste</div><nav><a href="#about">Lieu</a><a href="#rooms">Hébergement</a><a href="#gallery">Galerie</a><a href="#contact">Accès</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Charme, Calme, Convivialité</div>
+        <h1 class="hero-title">L'Ancien Relais de Poste : Gîte de Charme à Saint-Dier-d'Auvergne</h1>
+        <div class="hero-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>4.9/5</span></div>
+        <div style="font-size:1.4rem;font-weight:300;margin-bottom:2.5rem;opacity:0.9">Sur devis </div>
+        <a href="#rooms" class="btn-hero">Découvrir le logement</a>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr_ZRkrfHydCt76W0zC4bqfO36rvhQEbJ1ZQZEym1FVer26qEl6ea6e48DPJIVkb-sSCSXjjColm0sEDknsFvciF2U-4gn3Q3z22peECqfXnHc_T9r7tyBOqUisE-MHCvlWauAhQ5jC37TTZ9UQl53prNxj9Gc49GNfGwy7ZMM9BCDCljafLHYcvTzayULFgG2NatlfMy7yCQOIeQLI4HHKpXXpzPzRa3edVxc9xa99lhd-qRBKomjKtXXqfX7jWVNAkC6AfCrQLTazi3mxnnADHT4FBXHYpo2A5mhTjRp-gg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">Notre Histoire</p><h2 class="section-title">L'Esprit de la Maison</h2><p style="color:#666;line-height:1.8;margin-bottom:2rem">Bienvenue à l'Ancien Relais de Poste, un gîte magnifique où l'authenticité et la convivialité se rencontrent. Imaginez-vous, entouré de vos proches, dans une maison pleine de charme, rénovée avec goût et pensée pour accueillir les groupes, même avec de jeunes enfants. Ici, le temps s'arrête et les souvenirs se créent. Nos hôtes apprécient particulièrement l'atmosphère chaleureuse des espaces communs et le cadre enchanteur de la propriété.</p><div style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;color:var(--primary)">"« On s’y sent tout de suite bien… comme à la maison. »"</div></div></div></section>
+
+<section id="rooms" style="background:#f9f9f9"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Votre Séjour</p><h2 class="section-title">L'Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image" onclick="openLightbox(2)">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpT-u4gCEp6Rmt_wooQaqdXKzAyu1uoTFXVXIxUfV573hbxZONUHgHZmypyD8XGZrK_6Tg9f_Iq6Ry5TtPz3mzQmppB6rTa8tX0SnziUOIvnjTjB1q7d621RZboZIyjQp59-nUJeyiKRk6uwZm33yxBi-9TAWxBV_MI8z5YmoDnjdIaAPRj1Q7hJAHm-mDV-xbmShDKKDKNEJsCVcfi5NQWfahDd7L5ArUNCJb-ZdZ0r0QL83IYW_E8UPQB-OYHztNxfCDBSYAAxzltsWtOttgDxo8uqmBy8gY2G2hGc3CjQw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Gîte de groupe l' Ancien Relais de Poste" loading="lazy">
+            <div class="room-price">
+                <span class="amount">Sur devis</span>
+                <span class="period"></span>
+            </div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="room-content">
+            <div class="room-header-row">
+                <h3>Gîte de groupe l' Ancien Relais de Poste</h3>
+                <div class="room-cap-badge"><i class="fas fa-user-friends"></i> 4 pers.</div>
+            </div>
+            <p class="room-desc">Bienvenue à l'Ancien Relais de Poste, un gîte magnifique où l'authenticité et la convivialité se rencontrent. Imaginez-vous, entou...</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver maintenant</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--accent)">Saveurs</p><h2 class="feature-title" style="margin-bottom:1rem">Gourmandises</h2><p style="color:#666;line-height:1.8">Laissez-vous tenter par les saveurs authentiques de notre région. Dégustez des produits locaux et de saison, préparés avec amour pour ravir vos papilles. Sur demande, Justine peut préparer des plats maison absolument superbes qui valent le voyage !</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrekSj7d6bd2VFSmZnOMmcsdLEX7ekOxrS7-jY1dxx0ZD6vWtYPgDt04uv9A6x2wkCyCCFPdTqOAbq0GwbOmwfsjdmpN3OvCxWgyfmf-jvtbjAGrxkgNy5YhZFWs1HHuYGfDIXyIjWn7LdFmTdaETEHQuMjM1TWNnWOJFZCdeuNg00VRhZJ_2jipjQGuare4NDiXMj5C6cRxAi9hMmekHKnbogP_fwlzDmlPaP9zLraWHRS3PDmlPxz94HcfJJGy3bxyq7ZWQnSnX5l3HsbvGFQC8-oVphkA1ufnvrVICd-JQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline">Grand Air</p><h2 class="feature-title" style="margin-bottom:1rem">Détente & Nature</h2><p style="opacity:0.9;line-height:1.8">Profitez d'un cadre extérieur exceptionnel avec un magnifique bassin naturel où vous pourrez vous rafraîchir et une grande place de jeux qui ravira les enfants. La rivière qui longe la propriété ajoute une touche de magie à ce coin de paradis.</p></div></div></section>
+
+<section id="gallery"><div class="section-header"><p class="section-tagline">En Images</p><h2 class="section-title">Galerie Photos</h2></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox(0)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoLhxw3FICPAzpsLDyXgqwO-7uaavXIkmBZgjQkqp4ZPnEuaN7FH-EpmkReZTwrKvpofwZgY6e94BawCsUgqHre9pthStMsvIrkKaq8AzjEP1hfORbtUl4LohxaZXXBlSlB_C1d2NH-ARoXcC15_j4lcNTusqG1wOPWZERBi55QVRa--oZIBMWze6deoim3PeNj35lg_fuhLP-4YjaXtQE9COSA5GiN-3zEMMp1lCLz49widrFOh5TUvSprass6kW-ob1y9ZMqBJuMhvU2opgASgxxTN3NZPT2JAk8K5pxQeg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(1)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr_ZRkrfHydCt76W0zC4bqfO36rvhQEbJ1ZQZEym1FVer26qEl6ea6e48DPJIVkb-sSCSXjjColm0sEDknsFvciF2U-4gn3Q3z22peECqfXnHc_T9r7tyBOqUisE-MHCvlWauAhQ5jC37TTZ9UQl53prNxj9Gc49GNfGwy7ZMM9BCDCljafLHYcvTzayULFgG2NatlfMy7yCQOIeQLI4HHKpXXpzPzRa3edVxc9xa99lhd-qRBKomjKtXXqfX7jWVNAkC6AfCrQLTazi3mxnnADHT4FBXHYpo2A5mhTjRp-gg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(2)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpT-u4gCEp6Rmt_wooQaqdXKzAyu1uoTFXVXIxUfV573hbxZONUHgHZmypyD8XGZrK_6Tg9f_Iq6Ry5TtPz3mzQmppB6rTa8tX0SnziUOIvnjTjB1q7d621RZboZIyjQp59-nUJeyiKRk6uwZm33yxBi-9TAWxBV_MI8z5YmoDnjdIaAPRj1Q7hJAHm-mDV-xbmShDKKDKNEJsCVcfi5NQWfahDd7L5ArUNCJb-ZdZ0r0QL83IYW_E8UPQB-OYHztNxfCDBSYAAxzltsWtOttgDxo8uqmBy8gY2G2hGc3CjQw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(3)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrekSj7d6bd2VFSmZnOMmcsdLEX7ekOxrS7-jY1dxx0ZD6vWtYPgDt04uv9A6x2wkCyCCFPdTqOAbq0GwbOmwfsjdmpN3OvCxWgyfmf-jvtbjAGrxkgNy5YhZFWs1HHuYGfDIXyIjWn7LdFmTdaETEHQuMjM1TWNnWOJFZCdeuNg00VRhZJ_2jipjQGuare4NDiXMj5C6cRxAi9hMmekHKnbogP_fwlzDmlPaP9zLraWHRS3PDmlPxz94HcfJJGy3bxyq7ZWQnSnX5l3HsbvGFQC8-oVphkA1ufnvrVICd-JQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(4)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqUpwOFNUaKjEGyaP01chwGbfhGUVl9wcPfUcF-NSsohlNHYORYJu1PBtmtCMg_p5F0sm9hwfPfpifmZENEKni4gJcNz4O5urumJEUHbaQWhZEmIt6Z_jgKmAJovXlnNy_vd_uWjVG6wxNUzJvqIJ6vmwa-Uv4HgXjWQvR4YUp_fIhniGdtiqnNS1yB_yaW-OCn0xTVlXsaAwrerUTpKZLNxQs2nrfRS0c6i9qR5uwDigQQBGOJLjuYtvJxqvqLe1D88N9cXY3FsekTtuouYybCYV1tL_FFDaTLcsXnJJpavQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(5)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpsf_5tmXHjK_1HQmEYdfJ4VTt4Dy4EEpuon54-wFDd1YxwVoQXpQrxFUe654j4Z8YnG056-mH0Z2NZ1nulPbPgYHiwiXP7xHYsrkWAtjIEGm69ZYCdkY6LyOYVXelLvfl7WBzgYSFqzMTTWkSaXYRa0EfO91g80aBOAQeLgnhZgQNAtAUiahM7FLwhOT1QpmogQTA3US234oz8kMt3KdbgDCbykT0A-7Sw5w6cP-seYMYp2rAQjEOwWWNoH-7ZzobSzc33fUtdOMYrtb0zoQmcHwjxye6GQj1WzpimAOpuDQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(6)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq2ojhwKDG_17d18nBqrki4g0xR-FNvrC-s-aMO87L9CdtHYJfJcAT3yuzjTpEOBU3HKj8Xry1uGSOI9UW97y-4LCLqZ3PNOnSNKCUqmKQ-uuqvrQ1q0qvW2ZDqkpSYDbrm2Pxf3tIDXu6JPjgZRj49w1Ml3M99-e5ppFfj69eCbxZVbd1BcZxG_06EIcD2URWuK_3Pla4d9gtfmJcCwHRdlttR7OLeHDMH7av3qhse6PxQguIeNNFz7uGeRAQXJ3Mi6hAf54h1fecDlgu5i6DIB1VJR166DHyk5I9hVt8VHQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(7)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpTxvRmGzLTWldPvLFrEa7ghC4XdDg8yamcWh3zeuo4KVQsoUBLJ3Mzqr5SWXRGtqSkaNFP0jE_LoJyWEAsvHKziaGeBi4wFbisVwi3WYoMnFe8oBkxBd_XaqmbAh6BM59f5w8ljeCtOsbdYv9XBcJDf0FODG1jWGZd1k7DHdoFTvoZZS6M_M4Vet3mGJdg_IVexgj19SXT4Shu1Pkukh-flLbzH1sWc68BYzfTGrMzyTassdwCX4Ftz9LVjgm4mGlZOJ-7LslhNYGG_SIR_Xd6GoI0QSJFTVBcqb87Nt6-Sw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(8)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHo3CT9YszAGYVnXgMI3lqGDaxSBAAaF3rPqqnOZruviHH4CLd_l4zXOSqjuN2lwv-i3wThS--cRc1wCWvg6wnUSRNy8DJX7QiElqFH4OtWfL3qki3jNvw69RGsWjctcsB0_d9mBUbXYSKzuNgK_r6SfIUvhVf9xRhKcJdTiILXlvaB5M4aAIHXcU41b2aSYpUx5znpe7iFNgYrkEwyENHIysuj1so_m5lY30_n5e8T1uZ6Bt8tprv9dtMBbYstFa38qNi6tzyaPBc6dJCLEEvS3Y0Qjevu8pFqeQKOYkPxWEQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(9)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr2PeDFso4w_cymBxYy2JJ-mpocBeYxpDhG80ObWCAJH_MsE4PqRAcN57kgdBy19ajiCNoKvK5M_49_kcJHC9g4ufwnJ_N_mV3eVyMiQck-gkWZqMqXNCajOanKcK-67Odg072umF0OQjBT4y13VI2sdrLLK9eKt0qlG7ESki7b_TtpsylLYkl0g47zOw29LqS3PZFH2SoYt4fy1l0jclfnZYGDxCawuvzg3hufPrrl_BvUQfbivtPoHTJy_iKcmgGUTjxsN1JUSPRpLxKlg8VY_MsYnN9NNLSl7ZOtd0XxmQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Livre d'or</p><h2 class="section-title">Expériences Voyageurs</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocKsPKwPi2GVlfuHl5Nvjvveilbn2f4_6wbUDXBQ77K9jhsNBg=s128-c0x00000000-cc-rp-mo" alt="Manon Fine"><div><h4>Manon Fine</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 3 semaines</span></div></div><p class="review-text">"Justine nous a accueilli dans ce magnifique gîte, parfaitement adapté à notre groupe d’amis avec une dizaine d’enfants en bas âge! Nous avons passé 4 jours très agréable dans sa maison très bien rénovée. Petit bémol pour l’insolation sonore mais cela représente évidemment beaucoup d’investissement.
+"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocJpNOtapEqLvaewpJPIwNeLKF5B5UuXGuQxn-gqVcQ5xHA5Hg=s128-c0x00000000-cc-rp-mo-ba3" alt="Hadrien Lavaux"><div><h4>Hadrien Lavaux</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 3 mois</span></div></div><p class="review-text">"Un séjour parfait entre amis dans ce gîte exceptionnel. Le grand plus : les extérieurs avec un bassin naturel magnifique, et une très grande place de jeux qui a ravi les enfants. Côté intérieur, le gîte est super bien équipé pour un grand groupe (avec même une machine à glaçons, bien utile l'été), l"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocL1msp35X20ej5Bez-YhVcjnBnXDTVrt52j2a5Id7A-Bs_vEQ=s128-c0x00000000-cc-rp-mo" alt="Camille Francisco"><div><h4>Camille Francisco</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 5 mois</span></div></div><p class="review-text">"Nous avons eu la chance de célébrer notre mariage dans ce gîte magnifique, et tout était simplement parfait. Le lieu est plein de charme, avec un superbe bassin naturel et une rivière qui longe la propriété : un vrai coin de paradis.
+
+Justine a été aux petits soins du début à la fin, toujours dispon"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjXxoeJ8xRLnDcBTyyXzK1HXWM32q7zfNNeyS9uQe0uuRHQ4bw=s128-c0x00000000-cc-rp-mo" alt="Christina Leulier"><div><h4>Christina Leulier</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 6 mois</span></div></div><p class="review-text">"La cuisine faite maison était absolument superbe ça valait le voyage (de la Suède!)juste pour ça. On était très bien accueilli pour le reste aussi.
+J’ai surtout apprécié la baignade le matin dans la piscine naturelle au milieu de ce paysage de toutes les nuances de verts."</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjWu0uBEpB8STHD_hXeK4qq-Vm85E22y7IH2pNNFQgi3oYvSyw8=s128-c0x00000000-cc-rp-mo-ba2" alt="Margaux Pelleray"><div><h4>Margaux Pelleray</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 4 mois</span></div></div><p class="review-text">"Un week-end entre copains plus que réussi grâce à cette jolie maison !
+Pleine de charme, avec des espaces communs chaleureux et un point d’eau rafraîchissant, on s’y sent tout de suite bien… comme à la maison.
+On repart la tête pleine de souvenirs, le cœur léger, et chargés de bonnes ondes.
+Merci 🫶"</p></div></div></section>
+
+<section class="cta">
+    <div class="cta-content" data-aos="zoom-in" style="position:relative;z-index:2;max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)">
+        <h2 style="font-family:var(--font-serif);font-size:3rem;margin-bottom:1rem;color:var(--white)">Réservez votre séjour</h2>
+        <p style="font-size:1.2rem;margin-bottom:2.5rem;opacity:0.9">Voir disponibilités</p>
+        <button class="btn-hero" onclick="openBooking()">Vérifier les disponibilités</button>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2 class="section-title" style="color:white;margin-bottom:3rem;text-align:left">Nous trouver</h2>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div>3 impasse de la Poste, 63520 Saint-Dier-d'Auvergne, France</div></div>
+            <div class="contact-item"><i class="fas fa-phone"></i> <div><a href="tel:0625673809">06 25 67 38 09</a></div></div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=45.6745104,3.482567" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Obtenir l'itinéraire</a>
+        </div>
+        <div class="map-container">
+            <iframe class="map-frame" src="https://maps.google.com/maps?q=45.6745104,3.482567&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="sell-section">
+    <div class="sell-container">
+        <h2 class="sell-title">Ce site peut être le vôtre</h2>
+        <p class="sell-subtitle">Site professionnel créé sur-mesure pour Gîte de groupe l' Ancien Relais de Poste</p>
+        <div class="sell-card">
+            <span class="sell-price-old">990€</span>
+            <div class="sell-price-new">480€ <span class="sell-price-sub">TTC</span></div>
+            <div class="sell-features">Paiement unique · Sans abonnement · Livré en 48h</div>
+        </div>
+        <div class="sell-actions">
+            <a href="tel:33780954913" class="btn-sell primary"><i class="fas fa-phone"></i> Appeler</a>
+            <a href="https://wa.me/33780954913" class="btn-sell"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:contact@local-visibility.com" class="btn-sell"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </div>
+</section>
+
+<footer><p>© 2024 Gîte de groupe l' Ancien Relais de Poste - Site réalisé par Local Visibility</p></footer>
+
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+            <h3>Réservation</h3>
+            <p>Gîte de groupe l' Ancien Relais de Poste</p>
+        </div>
+        <div class="modal-body">
+            <form onsubmit="alert('Demande envoyée avec succès !');return false;">
+                <div class="form-grid">
+                    <div class="form-group"><label>Arrivée</label><input type="date" required id="checkin"></div>
+                    <div class="form-group"><label>Départ</label><input type="date" required id="checkout"></div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label>Prénom</label><input type="text" placeholder="Jean" required></div>
+                    <div class="form-group"><label>Nom</label><input type="text" placeholder="Dupont" required></div>
+                </div>
+                <div class="form-grid">
+                     <div class="form-group"><label>Email</label><input type="email" placeholder="email@exemple.com" required></div>
+                    <div class="form-group"><label>Téléphone <span style="font-weight:400;text-transform:none;font-size:0.7em">(facultatif)</span></label><input type="tel"></div>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer la demande</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+    <div class="lightbox-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+    <img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen">
+    <div class="lightbox-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({duration:800,once:true});
+    const modal = document.getElementById("bookingModal");
+    function openBooking(){modal.classList.add("active");document.body.style.overflow='hidden'}
+    function closeBooking(){modal.classList.remove("active");document.body.style.overflow='auto'}
+    modal.addEventListener('click', function(e){if(e.target===modal)closeBooking()});
+
+    const images = ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoLhxw3FICPAzpsLDyXgqwO-7uaavXIkmBZgjQkqp4ZPnEuaN7FH-EpmkReZTwrKvpofwZgY6e94BawCsUgqHre9pthStMsvIrkKaq8AzjEP1hfORbtUl4LohxaZXXBlSlB_C1d2NH-ARoXcC15_j4lcNTusqG1wOPWZERBi55QVRa--oZIBMWze6deoim3PeNj35lg_fuhLP-4YjaXtQE9COSA5GiN-3zEMMp1lCLz49widrFOh5TUvSprass6kW-ob1y9ZMqBJuMhvU2opgASgxxTN3NZPT2JAk8K5pxQeg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr_ZRkrfHydCt76W0zC4bqfO36rvhQEbJ1ZQZEym1FVer26qEl6ea6e48DPJIVkb-sSCSXjjColm0sEDknsFvciF2U-4gn3Q3z22peECqfXnHc_T9r7tyBOqUisE-MHCvlWauAhQ5jC37TTZ9UQl53prNxj9Gc49GNfGwy7ZMM9BCDCljafLHYcvTzayULFgG2NatlfMy7yCQOIeQLI4HHKpXXpzPzRa3edVxc9xa99lhd-qRBKomjKtXXqfX7jWVNAkC6AfCrQLTazi3mxnnADHT4FBXHYpo2A5mhTjRp-gg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpT-u4gCEp6Rmt_wooQaqdXKzAyu1uoTFXVXIxUfV573hbxZONUHgHZmypyD8XGZrK_6Tg9f_Iq6Ry5TtPz3mzQmppB6rTa8tX0SnziUOIvnjTjB1q7d621RZboZIyjQp59-nUJeyiKRk6uwZm33yxBi-9TAWxBV_MI8z5YmoDnjdIaAPRj1Q7hJAHm-mDV-xbmShDKKDKNEJsCVcfi5NQWfahDd7L5ArUNCJb-ZdZ0r0QL83IYW_E8UPQB-OYHztNxfCDBSYAAxzltsWtOttgDxo8uqmBy8gY2G2hGc3CjQw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrekSj7d6bd2VFSmZnOMmcsdLEX7ekOxrS7-jY1dxx0ZD6vWtYPgDt04uv9A6x2wkCyCCFPdTqOAbq0GwbOmwfsjdmpN3OvCxWgyfmf-jvtbjAGrxkgNy5YhZFWs1HHuYGfDIXyIjWn7LdFmTdaETEHQuMjM1TWNnWOJFZCdeuNg00VRhZJ_2jipjQGuare4NDiXMj5C6cRxAi9hMmekHKnbogP_fwlzDmlPaP9zLraWHRS3PDmlPxz94HcfJJGy3bxyq7ZWQnSnX5l3HsbvGFQC8-oVphkA1ufnvrVICd-JQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqUpwOFNUaKjEGyaP01chwGbfhGUVl9wcPfUcF-NSsohlNHYORYJu1PBtmtCMg_p5F0sm9hwfPfpifmZENEKni4gJcNz4O5urumJEUHbaQWhZEmIt6Z_jgKmAJovXlnNy_vd_uWjVG6wxNUzJvqIJ6vmwa-Uv4HgXjWQvR4YUp_fIhniGdtiqnNS1yB_yaW-OCn0xTVlXsaAwrerUTpKZLNxQs2nrfRS0c6i9qR5uwDigQQBGOJLjuYtvJxqvqLe1D88N9cXY3FsekTtuouYybCYV1tL_FFDaTLcsXnJJpavQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpsf_5tmXHjK_1HQmEYdfJ4VTt4Dy4EEpuon54-wFDd1YxwVoQXpQrxFUe654j4Z8YnG056-mH0Z2NZ1nulPbPgYHiwiXP7xHYsrkWAtjIEGm69ZYCdkY6LyOYVXelLvfl7WBzgYSFqzMTTWkSaXYRa0EfO91g80aBOAQeLgnhZgQNAtAUiahM7FLwhOT1QpmogQTA3US234oz8kMt3KdbgDCbykT0A-7Sw5w6cP-seYMYp2rAQjEOwWWNoH-7ZzobSzc33fUtdOMYrtb0zoQmcHwjxye6GQj1WzpimAOpuDQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq2ojhwKDG_17d18nBqrki4g0xR-FNvrC-s-aMO87L9CdtHYJfJcAT3yuzjTpEOBU3HKj8Xry1uGSOI9UW97y-4LCLqZ3PNOnSNKCUqmKQ-uuqvrQ1q0qvW2ZDqkpSYDbrm2Pxf3tIDXu6JPjgZRj49w1Ml3M99-e5ppFfj69eCbxZVbd1BcZxG_06EIcD2URWuK_3Pla4d9gtfmJcCwHRdlttR7OLeHDMH7av3qhse6PxQguIeNNFz7uGeRAQXJ3Mi6hAf54h1fecDlgu5i6DIB1VJR166DHyk5I9hVt8VHQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpTxvRmGzLTWldPvLFrEa7ghC4XdDg8yamcWh3zeuo4KVQsoUBLJ3Mzqr5SWXRGtqSkaNFP0jE_LoJyWEAsvHKziaGeBi4wFbisVwi3WYoMnFe8oBkxBd_XaqmbAh6BM59f5w8ljeCtOsbdYv9XBcJDf0FODG1jWGZd1k7DHdoFTvoZZS6M_M4Vet3mGJdg_IVexgj19SXT4Shu1Pkukh-flLbzH1sWc68BYzfTGrMzyTassdwCX4Ftz9LVjgm4mGlZOJ-7LslhNYGG_SIR_Xd6GoI0QSJFTVBcqb87Nt6-Sw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHo3CT9YszAGYVnXgMI3lqGDaxSBAAaF3rPqqnOZruviHH4CLd_l4zXOSqjuN2lwv-i3wThS--cRc1wCWvg6wnUSRNy8DJX7QiElqFH4OtWfL3qki3jNvw69RGsWjctcsB0_d9mBUbXYSKzuNgK_r6SfIUvhVf9xRhKcJdTiILXlvaB5M4aAIHXcU41b2aSYpUx5znpe7iFNgYrkEwyENHIysuj1so_m5lY30_n5e8T1uZ6Bt8tprv9dtMBbYstFa38qNi6tzyaPBc6dJCLEEvS3Y0Qjevu8pFqeQKOYkPxWEQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr2PeDFso4w_cymBxYy2JJ-mpocBeYxpDhG80ObWCAJH_MsE4PqRAcN57kgdBy19ajiCNoKvK5M_49_kcJHC9g4ufwnJ_N_mV3eVyMiQck-gkWZqMqXNCajOanKcK-67Odg072umF0OQjBT4y13VI2sdrLLK9eKt0qlG7ESki7b_TtpsylLYkl0g47zOw29LqS3PZFH2SoYt4fy1l0jclfnZYGDxCawuvzg3hufPrrl_BvUQfbivtPoHTJy_iKcmgGUTjxsN1JUSPRpLxKlg8VY_MsYnN9NNLSl7ZOtd0XxmQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    function openLightbox(index) {
+        if(!images || images.length === 0) return;
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    function changeImage(dir) {
+        currentIndex += dir;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        lightboxImg.src = images[currentIndex];
+    }
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") changeImage(1);
+        if (e.key === "ArrowLeft") changeImage(-1);
+    });
+</script>
+</body></html>
