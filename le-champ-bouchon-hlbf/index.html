@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Le Champ Bouchon - Treban</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#5c7c64;--primary-dark:#3a5240;--accent:#c68b59;--text:#2d2d2d;--bg:#fdfbf7;--white:#fff;--font-serif:"Playfair Display",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.6;background:var(--bg)}
+
+/* RESPONSIVE TYPOGRAPHY */
+h1, h2, h3{line-height:1.2}
+img{max-width:100%;height:auto}
+
+/* HEADER */
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);box-shadow:0 2px 20px rgba(0,0,0,0.05);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:992px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.85rem;text-transform:uppercase;transition:color 0.3s}.booking-bar nav a:hover{color:var(--accent)}.booking-bar .btn-book{background:var(--primary);color:var(--white);padding:0.7rem 1.8rem;border:none;border-radius:2px;font-weight:700;cursor:pointer;text-transform:uppercase;font-size:0.8rem;transition:background 0.3s}.booking-bar .btn-book:hover{background:var(--primary-dark)}
+
+/* HERO */
+.hero{position:relative;height:95vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpDK_Gbu6SmsxlOL7m0ZAWK_SsJ-1nNSi5JXTbGhjR767_CMqW4PzT2wJCjy2_tjyteZuMdaFzU-4MNAAJsmvpozZJObvdrlSI35pxo5MM2K5Jnr5UMW_cZphawN_WrDgvP54WHHZHW1KuNcdKftdcUhyzpryzysE2EX33X2HdcwrNC-cxnTqQhz2bAFT4ugYpw4uM3kkTlzNyE-iWo1uhVNrW-sutP_GkA2IF6zVgNkD9OEKsbulnM8rNqfegB4KGZiXceiCeUKdPXKhF6qiWGkdNQvJTYhLl1GhSYSx75Gw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.4)}
+.hero-content{position:relative;padding:2rem;width:90%;max-width:1000px;animation:fadeIn 1.5s}
+.hero-tagline{font-size:0.9rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:1rem;color:rgba(255,255,255,0.9)}
+.hero-title{font-family:var(--font-serif);font-size:clamp(2.5rem, 8vw, 5.5rem);margin-bottom:1.5rem}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.15);backdrop-filter:blur(5px);padding:0.6rem 1.5rem;border-radius:50px;margin-bottom:2rem;font-weight:600}
+.hero-price-tag{font-size:1.5rem;font-weight:300;margin-bottom:2.5rem;opacity:0.95;text-shadow:0 2px 4px rgba(0,0,0,0.3)}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1.1rem 3rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:0.8rem;transition:all 0.3s;border:1px solid var(--white)}.btn-hero:hover{background:transparent;color:var(--white)}
+
+/* RESPONSIVE SECTIONS */
+section{padding:5rem 2rem}
+@media(max-width:768px){section{padding:3rem 1.5rem}}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem;padding:0 1rem}.section-tagline{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:0.8rem;margin-bottom:1rem;display:block}.section-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);color:var(--primary-dark)}
+
+/* ABOUT & FEATURES */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}.about-img{order:2}.about-content{order:1}}
+.about-img img{width:100%;display:block;box-shadow:20px 20px 0 var(--primary-dark)}
+@media(max-width:768px){.about-img img{box-shadow:10px 10px 0 var(--primary-dark)}}
+
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto}
+@media(max-width:900px){.features-split{grid-template-columns:1fr}}
+.feature-block{padding:4rem;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:768px){.feature-block{padding:3rem 1.5rem}}
+.feature-bg-1{background:#f4f1ea}.feature-bg-2{background:var(--primary-dark);color:var(--white)}.feature-bg-2 .section-tagline{color:var(--white);opacity:0.7}.feature-bg-2 .feature-title{color:var(--white)}
+.feature-img img{width:100%;height:100%;object-fit:cover;min-height:400px}
+.feature-title{font-family:var(--font-serif);font-size:2.2rem;margin-bottom:1rem}
+
+/* ROOM CARD */
+.rooms-grid{max-width:1000px;margin:0 auto}
+.room-card{background:var(--white);box-shadow:0 15px 40px rgba(0,0,0,0.08);display:grid;grid-template-columns:1.2fr 1fr}
+@media(max-width:768px){.room-card{grid-template-columns:1fr}}
+.room-image{position:relative;cursor:pointer;overflow:hidden;min-height:300px}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;top:1.5rem;left:1.5rem;background:var(--white);padding:0.6rem 1.2rem;font-family:var(--font-serif);color:var(--text);box-shadow:0 5px 15px rgba(0,0,0,0.1);font-size:1.2rem;font-weight:700}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;opacity:0;transition:opacity 0.3s;pointer-events:none}.room-image:hover .zoom-icon{opacity:1}
+.room-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:768px){.room-content{padding:2rem}}
+.room-header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:1rem}
+.room-header-row h3{font-family:var(--font-serif);font-size:2rem;color:var(--primary-dark);margin:0}
+.room-cap-badge{background:var(--bg);padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:700;color:var(--primary)}
+.room-features{list-style:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:0.8rem}.room-features li{font-size:0.9rem;color:var(--primary-dark);display:flex;align-items:center;gap:0.5rem}.room-features i{color:var(--accent)}
+.btn-room{padding:1rem 2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;font-size:0.85rem;transition:all 0.3s}.btn-room:hover{background:var(--accent)}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-width:1400px;margin:0 auto}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr 1fr;gap:0.5rem}}
+.gallery-item{height:300px;position:relative;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.gallery-item:hover img{transform:scale(1.05)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(58,82,64,0.4);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}.gallery-item:hover .gallery-overlay{opacity:1}.gallery-overlay i{color:white;font-size:2rem}
+
+/* REVIEWS & CONTACT */
+.reviews{background:var(--white)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}.review-card{background:var(--bg);padding:2rem;border-top:3px solid var(--accent)}
+.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.review-header img{width:50px;height:50px;border-radius:50%}
+
+.contact-section{background:var(--primary-dark);color:var(--white);padding:0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{padding:5rem}
+@media(max-width:768px){.contact-info{padding:3rem 1.5rem}}
+.contact-item{display:flex;gap:1.5rem;margin-bottom:2rem;font-size:1.1rem}.contact-item a{color:var(--white);text-decoration:none}
+
+/* MAP FIX (Ratio Aspect) */
+.map-container{position:relative;width:100%;height:100%;min-height:400px}
+@media(max-width:900px){.map-container{height:400px}}
+.map-frame{position:absolute;top:0;left:0;width:100%;height:100%;border:none;filter:grayscale(0.2)}
+.btn-itinerary{display:inline-block;margin-top:2rem;background:var(--white);color:var(--primary-dark);padding:1rem 2rem;text-decoration:none;font-weight:700;text-transform:uppercase;transition:all 0.3s}.btn-itinerary:hover{background:var(--accent);color:var(--white)}
+
+/* SELL SECTION */
+.sell-section{background:#1a4d2e;color:var(--white);padding:6rem 2rem;text-align:center}
+.sell-container{max-width:800px;margin:0 auto}
+.sell-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 2.5rem);margin-bottom:1rem}
+.sell-subtitle{font-size:0.9rem;text-transform:uppercase;letter-spacing:2px;opacity:0.8;margin-bottom:3rem}
+.sell-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:3rem;max-width:500px;margin:0 auto 3rem}
+.sell-price-new{font-family:var(--font-serif);font-size:3.5rem;color:var(--white);line-height:1}
+.sell-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-sell{padding:1rem 2rem;border:1px solid rgba(255,255,255,0.3);color:var(--white);text-decoration:none;text-transform:uppercase;font-size:0.8rem;letter-spacing:1px;font-weight:700;transition:all 0.3s}
+.btn-sell:hover{background:var(--white);color:#1a4d2e}
+.btn-sell.primary{background:var(--white);color:#1a4d2e}
+
+/* MODAL & LIGHTBOX */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);width:95%;max-width:600px;max-height:90vh;overflow-y:auto}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.98);z-index:99999;display:none;justify-content:center;align-items:center}
+.lightbox.active{display:flex}
+.lightbox-img{max-height:85vh;max-width:90vw}.lightbox-close{position:absolute;top:30px;right:30px;color:white;font-size:2.5rem;cursor:pointer}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%}
+.prev{left:30px}.next{right:30px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">Le Champ Bouchon</div><nav><a href="#about">Lieu</a><a href="#rooms">Hébergement</a><a href="#gallery">Galerie</a><a href="#contact">Accès</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Charme, Calme, Convivialité</div>
+        <h1 class="hero-title">Le Champ Bouchon : Gîte de Charme à Tréban</h1>
+        <div class="hero-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>4.8/5</span></div>
+        <div class="hero-price-tag">Meilleur tarif garanti</div>
+        <a href="#rooms" class="btn-hero">Découvrir le logement</a>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpsAg7OdN-KT6Aowm9hqFksp5IC0cSls8w0_pU4hfBsGkwhx2WqNnaq1Q8T7uYYw4OEiF_n5tpGFAZjibz-ipelW3YOtrzgvRRHEim-IcoV2aYZC6lGw3I-1tFFgLOnJjfE7JzgB5DwN4TVZuBM1KfDoBwtCBY31IWmr9I7ktkIul3NasQBlhBPpZxGMWSP5tGYYIiZdYez9pzM_FYieeZJdDiIK8Xx2xX0SM3l2qDkosIiHLYpcXnmt_30oPCuAGomNeUif1F1q2yOXzr1cplluCxbnJ_Dd2xbgZ2TKSW9Vg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">Notre Histoire</p><h2 class="section-title">L'Esprit de la Maison</h2><p style="color:#666;line-height:1.8;margin-bottom:2rem">Bienvenue au Champ Bouchon, une ancienne ferme transformée avec goût et originalité. Sue et Colin vous accueillent chaleureusement dans ce lieu paisible où règne une ambiance conviviale. Laissez-vous charmer par l'authenticité des lieux et profitez d'un séjour inoubliable.</p><div style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;color:var(--primary)">"Un accueil chaleureux pour un séjour réussi."</div></div></div></section>
+
+<section id="rooms" style="background:#f9f9f9"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Votre Séjour</p><h2 class="section-title">L'Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image" onclick="openLightbox(2)">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpXl4soZWhKqw2SjM3LFDEF_Ro8WWZ9NyeZ7on3s8khTOdi6NsZOmP-0csVmiUlT6yOmDKiMWnqu8RFfdEp7k_8yVWxJgDALyxfZ9q_-s0i7Nez3pYlKFBog8kdF-_z5a75wgCRsK7pSLYlO3-Jl9qVV5ajJIWdkQLFFHjphjlk0s9ZGR_xRVVQsNOz-5lHQX22SqETKUkhCaRP_n_8zd2J0SXAJFwCHm4u_IN2cNMUAYN5rMCybdeivTLcsD1kHtXoiYOEL-tUD1qzyrs7d6wHbIZhbwZu8zryuxEVyydqJg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Le Champ Bouchon" loading="lazy">
+            <div class="room-price">
+                <span class="amount">Sur devis</span>
+            </div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="room-content">
+            <div class="room-header-row">
+                <h3>Le Champ Bouchon</h3>
+                <div class="room-cap-badge"><i class="fas fa-user-friends"></i> 4 pers.</div>
+            </div>
+            <p class="room-desc">Bienvenue au Champ Bouchon, une ancienne ferme transformée avec goût et originalité. Sue et Colin vous accueillent chaleureusement...</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver maintenant</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--accent)">Saveurs</p><h2 class="feature-title" style="margin-bottom:1rem">Gourmandises</h2><p style="color:#666;line-height:1.8">Commencez votre journée avec un délicieux petit-déjeuner fait maison, incluant du pain frais et des produits locaux. Sur demande, savourez un repas préparé avec soin, mettant en valeur les saveurs authentiques de la région.</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrR1tj5HGlpr9EdRK1zNsq6bC0XmkSk3Ot9jxY3_IH7ftbFWqg9uQD2sOMXlO17Xx0ZiHxUU35y4FbQ7YrubtBw8_wjcYql57TnGPcx4dFZVL4kRBYrzZVKA67TJrXisYh49JDLv_lfD5flOu_Wtq2nLzokskO8UKc27h4i-RhllfuN-X_luuo6rXH9JK-x4_8IB7hJQJqRDxbLXVRiAdmQWDVznOCKZG5TLbjAqfwsqtcqlIR1sPA22cKbKAL9L_fhJZyHo8hCkw6O1DlSBE_kHGa_AYMaioN40OGdkZKsdA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline">Grand Air</p><h2 class="feature-title" style="margin-bottom:1rem">Détente</h2><p style="opacity:0.9;line-height:1.8">Profitez du grand pré verdoyant pour vous détendre, du patio pour prendre l'apéritif ou dîner en plein air. Laissez-vous bercer par le calme environnant et la beauté de la nature.</p></div></div></section>
+
+<section id="gallery"><div class="section-header"><p class="section-tagline">En Images</p><h2 class="section-title">Galerie Photos</h2></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox(0)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpDK_Gbu6SmsxlOL7m0ZAWK_SsJ-1nNSi5JXTbGhjR767_CMqW4PzT2wJCjy2_tjyteZuMdaFzU-4MNAAJsmvpozZJObvdrlSI35pxo5MM2K5Jnr5UMW_cZphawN_WrDgvP54WHHZHW1KuNcdKftdcUhyzpryzysE2EX33X2HdcwrNC-cxnTqQhz2bAFT4ugYpw4uM3kkTlzNyE-iWo1uhVNrW-sutP_GkA2IF6zVgNkD9OEKsbulnM8rNqfegB4KGZiXceiCeUKdPXKhF6qiWGkdNQvJTYhLl1GhSYSx75Gw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(1)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpsAg7OdN-KT6Aowm9hqFksp5IC0cSls8w0_pU4hfBsGkwhx2WqNnaq1Q8T7uYYw4OEiF_n5tpGFAZjibz-ipelW3YOtrzgvRRHEim-IcoV2aYZC6lGw3I-1tFFgLOnJjfE7JzgB5DwN4TVZuBM1KfDoBwtCBY31IWmr9I7ktkIul3NasQBlhBPpZxGMWSP5tGYYIiZdYez9pzM_FYieeZJdDiIK8Xx2xX0SM3l2qDkosIiHLYpcXnmt_30oPCuAGomNeUif1F1q2yOXzr1cplluCxbnJ_Dd2xbgZ2TKSW9Vg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(2)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpXl4soZWhKqw2SjM3LFDEF_Ro8WWZ9NyeZ7on3s8khTOdi6NsZOmP-0csVmiUlT6yOmDKiMWnqu8RFfdEp7k_8yVWxJgDALyxfZ9q_-s0i7Nez3pYlKFBog8kdF-_z5a75wgCRsK7pSLYlO3-Jl9qVV5ajJIWdkQLFFHjphjlk0s9ZGR_xRVVQsNOz-5lHQX22SqETKUkhCaRP_n_8zd2J0SXAJFwCHm4u_IN2cNMUAYN5rMCybdeivTLcsD1kHtXoiYOEL-tUD1qzyrs7d6wHbIZhbwZu8zryuxEVyydqJg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(3)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrR1tj5HGlpr9EdRK1zNsq6bC0XmkSk3Ot9jxY3_IH7ftbFWqg9uQD2sOMXlO17Xx0ZiHxUU35y4FbQ7YrubtBw8_wjcYql57TnGPcx4dFZVL4kRBYrzZVKA67TJrXisYh49JDLv_lfD5flOu_Wtq2nLzokskO8UKc27h4i-RhllfuN-X_luuo6rXH9JK-x4_8IB7hJQJqRDxbLXVRiAdmQWDVznOCKZG5TLbjAqfwsqtcqlIR1sPA22cKbKAL9L_fhJZyHo8hCkw6O1DlSBE_kHGa_AYMaioN40OGdkZKsdA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(4)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqNdvxQL4Z0CxujqGbQu-vLIeGzw2mjg_XwhocRT_OHp4uIgQca7_KOLu-hgMXU0o4JMcJGaEqL3TL34NHwEvVYxlER686GTF1KtH6HLw6oc_Da9r-fm19Tub2T6vghX5BspN_mxVQT7XsgO9k5AH_vf-1cBO2UqkA1SL4nv14KR6S0ckz6j-57aQeJhzIW8h0fuks251VyqPgMuqwC-d3UTxkDFb5mGWDLV6PpWSiU9lP-0f007eCbDFfr2J-byZzwPdBpo131aO2_PAal2nQqDzE9x4Byn0HU-sq6uE2A8Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(5)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpL6qeniuyX7ZTx_wsN8RJ5IbBHQVKK76symJTZFF2SXlKP3LrgKYWLKrFB_IU0ItWw-RgT4JLmjlb3e1A-aD4sFp-kAGRMTRgGSTXrpclgV6OvwET7IJ2gBVNOzPgruhIhH3p0i1VjbmG4vsqWdsVPd3IpDcP1i-TyLQUXvdAPIWk9_4P6aNN6vu9XmCfHtWlsJpG8qf5Ik09AFAsf3e3SGNQx1aOfEzeYETDkgHgiUiCCDVQoJzdDwIYe3-oSOZCDvIOVqM-B37H-a0e5TwtUquZQXHqAAuL-GJH2cElbnA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(6)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHofpjxJ3mRRHKCG7Fb6VTENMkCPIg3vCf2ij0zqhqvn9wffrk_oTjG1_SABP_SME897iysOmOZMyczC13NzkELBGsI5QNKZNDFMaANYSJrfJVRVcu-IoCchwGWdCtzE8GXjK9cEPhjhrJuQipgB-N-C64J7Xd_V14o55HLgsAgU81BWHL_c0hB8y0mHKqKk_3XOZZu7bcFblBhGPF7SWRhJXTn607IHW3HVEraF_tLNsDqA3BMLzJZuhNvKVpDifxij2FLnxZBqM5fSSz9sLjxhcMn_ON-PjvTibkCAF3NEpA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(7)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHppqt3U2YB3Wt4aLaj6QIS6jTIbK9igFdGYAwCv_R9WIdl-HtU42KrxeMM8nzQv_qf-PbDVbN_UR6JfP6z151nobleUCCZD0FBS10xxn_DI3HGe9VF597xQ5E8-mPPgKPucn6Ke1ppu_-ybjjdN9MMIXZkIXFJIEZ4sGHcPvGNdvRsCAKDecxqUjDmKDMqIZ6U5xlynDPtNRYpSP7H4GD_GotdY3i7_IyFR62-TFPXQyJRg5xCEwetjuW3FTN1Tpcn-UWRVQFRAl3u8T6BtKB66tm-M2VeI9q-P5SwCS9rs7g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(8)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoGScEUIZhiF0JFBfkAi_AIEmbPHyQZYlkQ8iGAZNd_ZgZbBVbg2xWVZQgGMcFtM4JVmS-9xjBSnzm2bR4CdmedjIkuzqMh7K3KI_WsLO0Y8oPPo6DIeEGLaoh8bkc6hLaqyMvOZVegOp3DFSHFvsCxWxGqljvYfQX83sD0i-0lcfWuyaoE_KYYwdO5xGqx6Wk2eOccpG4ed0hhPrpT_MFxj23qqc9FrG6dxEV9_JfHj8YKkQlD8DzoPVnPKDfoNz0Rx2WnfmNh_OxplV6mlEe9VN6hQcbEZEOKqd5SbNuCEkLwkgh__1PcnOxGhhwvupiLcQooTTRHHB33vslK1JYMBB749OvNm4nh-lrPNsTD5r1fUZBQgIdYDEPi-8HGlp0CSsRLvW6pIw38XqyuAo277HDKc9rfsuUIDFN8iuhWVA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(9)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHro5P5rCgodBy5EsylWjgyWojEhyv7n_931XZ5SSvQ9GJEHCnq2pNaGfxd0ZIjBEyDJoBAE3yKA3VRlSG7u1Zr8TmQpKkywDq2BIpi12wDwcvzUBWzxgrPADoVV7j0gRGtkkihiqkZzUTQ0d46JXUxfcz50JUX3Tfns_UzYiHPm0fPUoCzpAQENTtsWZ0KSid4oiUfAB6y_n-dWBDaHBw6rZ02E27ccjFxXWvULseVM7S0HH3QrGSH7mJdaSLbpdIngoJdAOcZAcoW1_LnsA-AEMQsUj6CLnKhjHzU9leWgRUrMQr6GSGYzxVetvOhoy5MQTRmMxTHjJMmML6IQoBUPaGy0Fqlteb7yPqcXALTtsReF5zHM6ydDjgQ7OJH2UkV-aGlxsns59kek1lAvwZm9hX6ylkEQaQwjghivFxl8yVJz&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Livre d'or</p><h2 class="section-title">Expériences Voyageurs</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjX10tYSgCBOcZ3V_LN2vSttgpgJPsa2yK7hD-Qf41qPAwoqkBKi=s128-c0x00000000-cc-rp-mo-ba2" alt="Stéphanie Chamonard"><div><h4>Stéphanie Chamonard</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 6 ans</span></div></div><p class="review-text">"Très bon accueil de la part de Sue et Colin (et leur 2 chiens). Le champ bouchon est un endroit charmant. Les chambres sont propres et confortable. Nous avons bien petit déjeuné. J'ai passé une très bonne nuit ! Merci"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocLPNVYc4NyncfIOEKuZjimW2VEQhWZjnFE8yt0qfvcT-fpceQ=s128-c0x00000000-cc-rp-mo-ba4" alt="Kilpéric Fontaine"><div><h4>Kilpéric Fontaine</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 4 ans</span></div></div><p class="review-text">"Une ancienne ferme aménagée avec goût et originalité. Notre chambre était spacieuse et nous avions nos propres sdb et wc.
+La gentillesse de notre hôte et son accueil nous a tout de suite mis à l'aise.
+Il y a un grand pré ou vous pouvez vous détendre et un patio pour l'apéro, voir le dîner si le temp"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocJJf-T8rmR5dtXHV0INSi3XJdcYo-OODZ7wUjn2BCAQn9GVdSI=s128-c0x00000000-cc-rp-mo-ba3" alt="Herve Bornet"><div><h4>Herve Bornet</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div><span class="review-time">il y a 8 ans</span></div></div><p class="review-text">"Couple britannique très sympathique. Très bon rapport prix prestations. Nuit super calme et agréable. Repas et petit déjeuner super. Si vous passez dans le coin, n hésitez pas !"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjUqEan5vQbRAsS3GdnjEyiwKTUPIKoyl0Z3ngoZJROM2roMPbOdKQ=s128-c0x00000000-cc-rp-mo-ba4" alt="Patricia Seibert"><div><h4>Patricia Seibert</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 7 ans</span></div></div><p class="review-text">"j'ai adoré la chambre, et l'hôte nous a accompagné pour dîner dans une très sympathique petit restaurant de village.
+J'ai bien aimé le pain fait maison pour le petit déjeuner."</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocK_ilGW2QuZaJ7qIerZAmRWHQFnAnddYzQTZpvP1OEFhm4O=s128-c0x00000000-cc-rp-mo-ba7" alt="PHILIPPESYLVIE REVERSEDEPARIS"><div><h4>PHILIPPESYLVIE REVERSEDEPARIS</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div><span class="review-time">il y a 5 ans</span></div></div><p class="review-text">"Très bien accueilli a la chambre d'hôte repas très bien je vous la recommande"</p></div></div></section>
+
+<section class="cta">
+    <div class="cta-content" data-aos="zoom-in">
+        <h2>Séjournez chez nous</h2>
+        <p style="font-size:1.2rem;margin-bottom:2.5rem;opacity:0.9">Voir disponibilités</p>
+        <button class="btn-hero" onclick="openBooking()">Vérifier les disponibilités</button>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2 class="section-title" style="color:white;margin-bottom:3rem;text-align:left">Nous trouver</h2>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div>Le Champ Bouchon, 1970 route de tronget, 03240 Treban, France</div></div>
+            <div class="contact-item"><i class="fas fa-phone"></i> <div><a href="tel:0470423365">04 70 42 33 65</a></div></div>
+            <a href="https://maps.google.com/?q=46.4070804,3.1486934" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Obtenir l'itinéraire</a>
+        </div>
+        <div class="map-container">
+            <iframe class="map-frame" src="https://maps.google.com/maps?q=46.4070804,3.1486934&hl=fr&z=14&output=embed" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="sell-section">
+    <div class="sell-container">
+        <h2 class="sell-title">Ce site peut être le vôtre</h2>
+        <p class="sell-subtitle">Site professionnel créé sur-mesure pour Le Champ Bouchon</p>
+        <div class="sell-card">
+            <span class="sell-price-old">990€</span>
+            <div class="sell-price-new">480€ <span class="sell-price-sub">TTC</span></div>
+            <div class="sell-features">Paiement unique · Sans abonnement · Livré en 48h</div>
+        </div>
+        <div class="sell-actions">
+            <a href="tel:33780954913" class="btn-sell primary"><i class="fas fa-phone"></i> Appeler</a>
+            <a href="https://wa.me/33780954913" class="btn-sell"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:contact@local-visibility.com" class="btn-sell"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </div>
+</section>
+
+<footer><p>© 2024 Le Champ Bouchon - Site réalisé par Local Visibility</p></footer>
+
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+            <h3>Réservation</h3>
+            <p>Le Champ Bouchon</p>
+        </div>
+        <div class="modal-body">
+            <form onsubmit="alert('Demande envoyée avec succès !');return false;">
+                <div class="form-grid">
+                    <div class="form-group"><label>Arrivée</label><input type="date" required id="checkin"></div>
+                    <div class="form-group"><label>Départ</label><input type="date" required id="checkout"></div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label>Prénom</label><input type="text" placeholder="Jean" required></div>
+                    <div class="form-group"><label>Nom</label><input type="text" placeholder="Dupont" required></div>
+                </div>
+                <div class="form-grid">
+                     <div class="form-group"><label>Email</label><input type="email" placeholder="email@exemple.com" required></div>
+                    <div class="form-group"><label>Téléphone <span style="font-weight:400;text-transform:none">(facultatif)</span></label><input type="tel"></div>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer la demande</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+    <div class="lightbox-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+    <img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen">
+    <div class="lightbox-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({duration:800,once:true});
+    const modal = document.getElementById("bookingModal");
+    function openBooking(){modal.classList.add("active");document.body.style.overflow='hidden'}
+    function closeBooking(){modal.classList.remove("active");document.body.style.overflow='auto'}
+    modal.addEventListener('click', function(e){if(e.target===modal)closeBooking()});
+
+    const images = ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpDK_Gbu6SmsxlOL7m0ZAWK_SsJ-1nNSi5JXTbGhjR767_CMqW4PzT2wJCjy2_tjyteZuMdaFzU-4MNAAJsmvpozZJObvdrlSI35pxo5MM2K5Jnr5UMW_cZphawN_WrDgvP54WHHZHW1KuNcdKftdcUhyzpryzysE2EX33X2HdcwrNC-cxnTqQhz2bAFT4ugYpw4uM3kkTlzNyE-iWo1uhVNrW-sutP_GkA2IF6zVgNkD9OEKsbulnM8rNqfegB4KGZiXceiCeUKdPXKhF6qiWGkdNQvJTYhLl1GhSYSx75Gw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpsAg7OdN-KT6Aowm9hqFksp5IC0cSls8w0_pU4hfBsGkwhx2WqNnaq1Q8T7uYYw4OEiF_n5tpGFAZjibz-ipelW3YOtrzgvRRHEim-IcoV2aYZC6lGw3I-1tFFgLOnJjfE7JzgB5DwN4TVZuBM1KfDoBwtCBY31IWmr9I7ktkIul3NasQBlhBPpZxGMWSP5tGYYIiZdYez9pzM_FYieeZJdDiIK8Xx2xX0SM3l2qDkosIiHLYpcXnmt_30oPCuAGomNeUif1F1q2yOXzr1cplluCxbnJ_Dd2xbgZ2TKSW9Vg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpXl4soZWhKqw2SjM3LFDEF_Ro8WWZ9NyeZ7on3s8khTOdi6NsZOmP-0csVmiUlT6yOmDKiMWnqu8RFfdEp7k_8yVWxJgDALyxfZ9q_-s0i7Nez3pYlKFBog8kdF-_z5a75wgCRsK7pSLYlO3-Jl9qVV5ajJIWdkQLFFHjphjlk0s9ZGR_xRVVQsNOz-5lHQX22SqETKUkhCaRP_n_8zd2J0SXAJFwCHm4u_IN2cNMUAYN5rMCybdeivTLcsD1kHtXoiYOEL-tUD1qzyrs7d6wHbIZhbwZu8zryuxEVyydqJg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrR1tj5HGlpr9EdRK1zNsq6bC0XmkSk3Ot9jxY3_IH7ftbFWqg9uQD2sOMXlO17Xx0ZiHxUU35y4FbQ7YrubtBw8_wjcYql57TnGPcx4dFZVL4kRBYrzZVKA67TJrXisYh49JDLv_lfD5flOu_Wtq2nLzokskO8UKc27h4i-RhllfuN-X_luuo6rXH9JK-x4_8IB7hJQJqRDxbLXVRiAdmQWDVznOCKZG5TLbjAqfwsqtcqlIR1sPA22cKbKAL9L_fhJZyHo8hCkw6O1DlSBE_kHGa_AYMaioN40OGdkZKsdA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqNdvxQL4Z0CxujqGbQu-vLIeGzw2mjg_XwhocRT_OHp4uIgQca7_KOLu-hgMXU0o4JMcJGaEqL3TL34NHwEvVYxlER686GTF1KtH6HLw6oc_Da9r-fm19Tub2T6vghX5BspN_mxVQT7XsgO9k5AH_vf-1cBO2UqkA1SL4nv14KR6S0ckz6j-57aQeJhzIW8h0fuks251VyqPgMuqwC-d3UTxkDFb5mGWDLV6PpWSiU9lP-0f007eCbDFfr2J-byZzwPdBpo131aO2_PAal2nQqDzE9x4Byn0HU-sq6uE2A8Q&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpL6qeniuyX7ZTx_wsN8RJ5IbBHQVKK76symJTZFF2SXlKP3LrgKYWLKrFB_IU0ItWw-RgT4JLmjlb3e1A-aD4sFp-kAGRMTRgGSTXrpclgV6OvwET7IJ2gBVNOzPgruhIhH3p0i1VjbmG4vsqWdsVPd3IpDcP1i-TyLQUXvdAPIWk9_4P6aNN6vu9XmCfHtWlsJpG8qf5Ik09AFAsf3e3SGNQx1aOfEzeYETDkgHgiUiCCDVQoJzdDwIYe3-oSOZCDvIOVqM-B37H-a0e5TwtUquZQXHqAAuL-GJH2cElbnA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHofpjxJ3mRRHKCG7Fb6VTENMkCPIg3vCf2ij0zqhqvn9wffrk_oTjG1_SABP_SME897iysOmOZMyczC13NzkELBGsI5QNKZNDFMaANYSJrfJVRVcu-IoCchwGWdCtzE8GXjK9cEPhjhrJuQipgB-N-C64J7Xd_V14o55HLgsAgU81BWHL_c0hB8y0mHKqKk_3XOZZu7bcFblBhGPF7SWRhJXTn607IHW3HVEraF_tLNsDqA3BMLzJZuhNvKVpDifxij2FLnxZBqM5fSSz9sLjxhcMn_ON-PjvTibkCAF3NEpA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHppqt3U2YB3Wt4aLaj6QIS6jTIbK9igFdGYAwCv_R9WIdl-HtU42KrxeMM8nzQv_qf-PbDVbN_UR6JfP6z151nobleUCCZD0FBS10xxn_DI3HGe9VF597xQ5E8-mPPgKPucn6Ke1ppu_-ybjjdN9MMIXZkIXFJIEZ4sGHcPvGNdvRsCAKDecxqUjDmKDMqIZ6U5xlynDPtNRYpSP7H4GD_GotdY3i7_IyFR62-TFPXQyJRg5xCEwetjuW3FTN1Tpcn-UWRVQFRAl3u8T6BtKB66tm-M2VeI9q-P5SwCS9rs7g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoGScEUIZhiF0JFBfkAi_AIEmbPHyQZYlkQ8iGAZNd_ZgZbBVbg2xWVZQgGMcFtM4JVmS-9xjBSnzm2bR4CdmedjIkuzqMh7K3KI_WsLO0Y8oPPo6DIeEGLaoh8bkc6hLaqyMvOZVegOp3DFSHFvsCxWxGqljvYfQX83sD0i-0lcfWuyaoE_KYYwdO5xGqx6Wk2eOccpG4ed0hhPrpT_MFxj23qqc9FrG6dxEV9_JfHj8YKkQlD8DzoPVnPKDfoNz0Rx2WnfmNh_OxplV6mlEe9VN6hQcbEZEOKqd5SbNuCEkLwkgh__1PcnOxGhhwvupiLcQooTTRHHB33vslK1JYMBB749OvNm4nh-lrPNsTD5r1fUZBQgIdYDEPi-8HGlp0CSsRLvW6pIw38XqyuAo277HDKc9rfsuUIDFN8iuhWVA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHro5P5rCgodBy5EsylWjgyWojEhyv7n_931XZ5SSvQ9GJEHCnq2pNaGfxd0ZIjBEyDJoBAE3yKA3VRlSG7u1Zr8TmQpKkywDq2BIpi12wDwcvzUBWzxgrPADoVV7j0gRGtkkihiqkZzUTQ0d46JXUxfcz50JUX3Tfns_UzYiHPm0fPUoCzpAQENTtsWZ0KSid4oiUfAB6y_n-dWBDaHBw6rZ02E27ccjFxXWvULseVM7S0HH3QrGSH7mJdaSLbpdIngoJdAOcZAcoW1_LnsA-AEMQsUj6CLnKhjHzU9leWgRUrMQr6GSGYzxVetvOhoy5MQTRmMxTHjJMmML6IQoBUPaGy0Fqlteb7yPqcXALTtsReF5zHM6ydDjgQ7OJH2UkV-aGlxsns59kek1lAvwZm9hX6ylkEQaQwjghivFxl8yVJz&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    function openLightbox(index) {
+        if(!images || images.length === 0) return;
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    function changeImage(dir) {
+        currentIndex += dir;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        lightboxImg.src = images[currentIndex];
+    }
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") changeImage(1);
+        if (e.key === "ArrowLeft") changeImage(-1);
+    });
+</script>
+</body></html>
