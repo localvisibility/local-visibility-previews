@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Château Royal de Saint-Saturnin - Saint-Saturnin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#8fa294;--primary-dark:#6d8272;--accent:#e27d60;--text:#4a4a4a;--bg:#f9f9f7;--white:#fff;--black:#222;--font-serif:"Merriweather",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.8;background:var(--bg)}
+
+/* HEADER & HERO */
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(5px);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 20px rgba(0,0,0,0.05)}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:768px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.9rem;text-transform:uppercase;transition:color 0.3s}.booking-bar nav a:hover{color:var(--accent)}.booking-bar .btn-book{background:var(--accent);color:var(--white);padding:0.6rem 1.5rem;border:none;border-radius:30px;font-weight:700;cursor:pointer}
+.hero{position:relative;height:90vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq2xAjE1o7saBdujgaMyqfjBeA1etINNj1jsdysGDiV5xA-lWxBz0Wu85CrrSpN2jjdFH7UC4yjE1rVRsseSXHRhxN4WdDEINeiH8AIgAQfB2z1H96S4z3rn2rFKvpXyk_0PYNKFctd8ePGbowYQ71ISjpzLcUeHRqmb665lSIbCu-au3QFuHuOxSuhkC7SxMDKVOo-Z5YCENeESkIxYOhoydRHKk0uXfqsOVOuCIlF9OzOc07pCRTYyAmz8oJrgRNM2P8P3iwmaU8Ed2RsHD6ss-RawK7r7aEHEd-utqkxDQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5))}
+.hero-content{position:relative;padding:2rem;max-width:900px;background:rgba(0,0,0,0.3);backdrop-filter:blur(3px);border-radius:10px}
+.hero-title{font-family:var(--font-serif);font-size:clamp(2.5rem,5vw,4.5rem);margin-bottom:1rem;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.2);padding:0.5rem 1.5rem;border-radius:30px;margin-bottom:2rem;font-weight:700}
+.hero-rating i{color:#ffd700}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1rem 2.5rem;text-decoration:none;font-weight:700;border-radius:30px;transition:all 0.3s}.btn-hero:hover{background:var(--accent);color:var(--white)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}.section-tagline{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:0.85rem;margin-bottom:0.5rem}.section-title{font-family:var(--font-serif);font-size:2.5rem;color:var(--primary-dark)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}@media(max-width:900px){.about-grid{grid-template-columns:1fr}}.about-img{border-radius:20px;overflow:hidden}.about-img img{width:100%;display:block}
+
+/* ROOMS */
+.rooms{background:var(--white)}.rooms-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;max-width:900px;margin:0 auto}
+.room-card{background:var(--bg);border-radius:15px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.05);display:md-grid;grid-template-columns:1fr}
+.room-image{height:400px;position:relative;cursor:pointer;overflow:hidden}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;bottom:1rem;right:1rem;background:var(--white);padding:0.5rem 1.2rem;border-radius:30px;font-size:1.1rem;color:var(--primary-dark);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;opacity:0;transition:opacity 0.3s;pointer-events:none}
+.room-image:hover .zoom-icon{opacity:1}
+.room-content{padding:2.5rem;text-align:center}
+.room-content h3{font-family:var(--font-serif);font-size:2rem;margin-bottom:0.5rem;color:var(--primary-dark)}
+.room-size{color:var(--accent);font-weight:700;margin-bottom:1.5rem;font-size:1.1rem}
+.room-features{list-style:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}.room-features li{display:flex;align-items:center;gap:0.5rem;background:var(--white);padding:0.5rem 1rem;border-radius:20px;font-size:0.9rem;box-shadow:0 2px 5px rgba(0,0,0,0.05)}
+.btn-room{padding:1rem 2rem;background:var(--primary-dark);color:var(--white);border:none;border-radius:30px;font-weight:700;cursor:pointer;font-size:1rem;transition:all 0.3s}.btn-room:hover{background:var(--primary)}
+
+/* FEATURES SPLIT */
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto;border-radius:20px;overflow:hidden}@media(max-width:900px){.features-split{grid-template-columns:1fr}}.feature-block{padding:4rem;display:flex;flex-direction:column;justify-content:center}.feature-bg-1{background:var(--primary-dark);color:var(--white)}.feature-bg-2{background:var(--accent);color:var(--white)}.feature-img img{width:100%;height:100%;object-fit:cover;min-height:400px}
+
+/* GALERIE */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;max-width:1400px;margin:0 auto}
+.gallery-item{height:250px;overflow:hidden;border-radius:10px;cursor:pointer;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.gallery-item:hover img{transform:scale(1.1)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay i{color:white;font-size:2rem}
+
+/* LIGHTBOX (MODALE PHOTO) */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:99999;display:none;justify-content:center;align-items:center;opacity:0;transition:opacity 0.3s}
+.lightbox.active{display:flex;opacity:1}
+.lightbox-content{position:relative;max-width:90vw;max-height:90vh}
+.lightbox-img{max-width:100%;max-height:85vh;border-radius:5px;box-shadow:0 0 20px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:-40px;right:0;color:white;font-size:2rem;cursor:pointer;padding:10px}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;background:rgba(255,255,255,0.1);width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background 0.3s}
+.lightbox-nav:hover{background:rgba(255,255,255,0.3)}
+.prev{left:20px}.next{right:20px}
+
+/* REVIEWS & FOOTER */
+.reviews{background:var(--bg)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}.review-card{background:var(--white);padding:2rem;border-radius:15px}.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.review-header img{width:50px;height:50px;border-radius:50%}
+.cta{background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq2xAjE1o7saBdujgaMyqfjBeA1etINNj1jsdysGDiV5xA-lWxBz0Wu85CrrSpN2jjdFH7UC4yjE1rVRsseSXHRhxN4WdDEINeiH8AIgAQfB2z1H96S4z3rn2rFKvpXyk_0PYNKFctd8ePGbowYQ71ISjpzLcUeHRqmb665lSIbCu-au3QFuHuOxSuhkC7SxMDKVOo-Z5YCENeESkIxYOhoydRHKk0uXfqsOVOuCIlF9OzOc07pCRTYyAmz8oJrgRNM2P8P3iwmaU8Ed2RsHD6ss-RawK7r7aEHEd-utqkxDQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed;text-align:center;color:var(--white);padding:8rem 2rem}
+.contact-section{background:var(--white);padding:0}.contact-grid{display:grid;grid-template-columns:1fr 1fr}@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}.contact-info{padding:4rem;background:var(--primary-dark);color:var(--white)}.contact-item{display:flex;gap:1rem;margin-bottom:1.5rem;font-size:1.1rem}.contact-item a{color:var(--white);text-decoration:none}.map-frame{width:100%;height:100%;min-height:400px;border:none}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;display:none;align-items:center;justify-content:center}.modal-overlay.active{display:flex}.modal{background:var(--white);width:90%;max-width:500px;padding:2rem;border-radius:15px;position:relative}.modal-close{position:absolute;top:1rem;right:1rem;border:none;background:none;font-size:1.5rem;cursor:pointer}.form-group{margin-bottom:1rem}.form-group label{display:block;margin-bottom:0.5rem;font-weight:700}.form-group input{width:100%;padding:0.8rem;border:1px solid #ddd;border-radius:8px}.btn-submit{width:100%;padding:1rem;background:var(--accent);color:var(--white);border:none;border-radius:8px;font-weight:700;cursor:pointer}footer{background:#333;color:#aaa;text-align:center;padding:2rem}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">Château Royal de Saint-Saturnin</div><nav><a href="#about">Lieu</a><a href="#rooms">Logement</a><a href="#gallery">Galerie</a><a href="#contact">Contact</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Élégance, Histoire, Sérénité</div>
+        <h1 class="hero-title">Château Royal de Saint-Saturnin</h1>
+        <div class="hero-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 
+            <span>4.4/5 (386 avis)</span>
+        </div>
+        <a href="#rooms" class="btn-hero">Voir le logement</a>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHruc3VN4JNvtQk2Afdpc-qsvmWF11aD37el4AjFbxt9GwpC8u-c-iGIR0jGqxIxszyI1t_Xaou_rASr7G6hYV4VXw7ylhtF4cNgW-NLKyoNgKmWAMK6MKtDRUpTchj2c2Dy0W6WG9hRl6TQEKqu2cC4EKlM0NTn16Qxwz6J3rL2fDusscAJH8kzjDC0gzW9rLa2vrgUnUcnV6quHqxw-3E9ANZ6rN0j7S-6FhOxqUcWGgLZTHiwp6t8YkEtSLcXk0uS3W9VHyMCiswjiKK9MANu4qvuP-7QhUWU8zdxlrXfRA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">Notre Histoire</p><h2 class="section-title">Authenticité</h2><p>Plongez dans un univers où l'authenticité et le raffinement se rencontrent. Le Château Royal de Saint-Saturnin, autrefois témoin des séjours de la reine Margot et Catherine de Médicis, vous ouvre ses portes. Chaque pierre restaurée avec passion, chaque détail soigné, respire l'histoire et offre une expérience inoubliable. Laissez-vous charmer par la sérénité des lieux et l'accueil chaleureux qui vous attend.</p></div></div></section>
+
+<section id="rooms" class="rooms"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Repos</p><h2 class="section-title">Votre Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image" onclick="openLightbox(2)">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqh__ETTP1wMP_jVDPybBXlBw20a1JRz2IIFHxBGcQSDhxGR2PI4ITvRGrRbwa2SW23Mm1bd0IouzSnSRwcRe9ry5VwoIarkS01EICVCL1v_71EE9bdcGtxuj-hACJntYza4MsX5Ua5pvp7-TZaw7S6MA2azNlyjY8uBTUq7ta2zr9h8hoTEmIgXd3PHen7JFjN2hBWeZx__g63ylFbMODm37Lipne1uxM3KP8xr2htlb25E_M5SYdlVYJUEJwYUezXyzH65i4ngBSMTjmB2UxSmLavc26dR3FK0xoGodp5nw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Château Royal de Saint-Saturnin" loading="lazy">
+            <div class="room-price"><strong>Nous consulter</strong></div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="room-content">
+            <h3>Château Royal de Saint-Saturnin</h3>
+            <p class="room-size">
+                <i class="fas fa-user-friends"></i> Capacité : 4 pers.
+                
+            </p>
+            <p class="room-desc">Plongez dans un univers où l'authenticité et le raffinement se rencontrent. Le Château Royal de Saint-Saturnin, autrefoi...</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver ce logement</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--white)">Gourmandise</p><h2 class="feature-title" style="margin-bottom:1rem">Gourmandises Royales</h2><p>Découvrez les saveurs authentiques de l'Auvergne grâce à notre sélection de produits locaux et de saison. Un régal pour les papilles dans un cadre exceptionnel.</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrhJ9p972vHapol-CI2c9a3wQjCZMmLF13iFufK2yt1g-UuA85OyKZ_oKgtiZ_U-HA0KxyGp76FqKJPZhskV5AUdoA4F4ofwxlKj8BH7LCCYiASyKW_9yu0P5ijOHxLhDEBFIFWJPlE_GI8hUVrW7z5eHutja2qSzYdo-k1O4uyW0UGLLc0-UxqwoZo_8CmhQS8Bp8XDI7hU68boq4xkPsVIhUJoQlLWJi3AKZAzqyAqIwMXiHBudycWMVOr3tprIvDdU_SnTHriUPNZ_AB7MkkjdU0xHmBbjuh_pFPk-vhOQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline" style="color:var(--white)">Nature</p><h2 class="feature-title" style="margin-bottom:1rem">Évasion Nature</h2><p>Profitez du calme et de la beauté des environs du château. Un cadre idéal pour la détente et la contemplation.</p></div></div></section>
+
+<section id="gallery" class="rooms"><div class="section-header"><p class="section-tagline">En images</p><h2 class="section-title">Galerie Photo</h2></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox(0)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq2xAjE1o7saBdujgaMyqfjBeA1etINNj1jsdysGDiV5xA-lWxBz0Wu85CrrSpN2jjdFH7UC4yjE1rVRsseSXHRhxN4WdDEINeiH8AIgAQfB2z1H96S4z3rn2rFKvpXyk_0PYNKFctd8ePGbowYQ71ISjpzLcUeHRqmb665lSIbCu-au3QFuHuOxSuhkC7SxMDKVOo-Z5YCENeESkIxYOhoydRHKk0uXfqsOVOuCIlF9OzOc07pCRTYyAmz8oJrgRNM2P8P3iwmaU8Ed2RsHD6ss-RawK7r7aEHEd-utqkxDQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(1)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHruc3VN4JNvtQk2Afdpc-qsvmWF11aD37el4AjFbxt9GwpC8u-c-iGIR0jGqxIxszyI1t_Xaou_rASr7G6hYV4VXw7ylhtF4cNgW-NLKyoNgKmWAMK6MKtDRUpTchj2c2Dy0W6WG9hRl6TQEKqu2cC4EKlM0NTn16Qxwz6J3rL2fDusscAJH8kzjDC0gzW9rLa2vrgUnUcnV6quHqxw-3E9ANZ6rN0j7S-6FhOxqUcWGgLZTHiwp6t8YkEtSLcXk0uS3W9VHyMCiswjiKK9MANu4qvuP-7QhUWU8zdxlrXfRA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(2)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqh__ETTP1wMP_jVDPybBXlBw20a1JRz2IIFHxBGcQSDhxGR2PI4ITvRGrRbwa2SW23Mm1bd0IouzSnSRwcRe9ry5VwoIarkS01EICVCL1v_71EE9bdcGtxuj-hACJntYza4MsX5Ua5pvp7-TZaw7S6MA2azNlyjY8uBTUq7ta2zr9h8hoTEmIgXd3PHen7JFjN2hBWeZx__g63ylFbMODm37Lipne1uxM3KP8xr2htlb25E_M5SYdlVYJUEJwYUezXyzH65i4ngBSMTjmB2UxSmLavc26dR3FK0xoGodp5nw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(3)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrhJ9p972vHapol-CI2c9a3wQjCZMmLF13iFufK2yt1g-UuA85OyKZ_oKgtiZ_U-HA0KxyGp76FqKJPZhskV5AUdoA4F4ofwxlKj8BH7LCCYiASyKW_9yu0P5ijOHxLhDEBFIFWJPlE_GI8hUVrW7z5eHutja2qSzYdo-k1O4uyW0UGLLc0-UxqwoZo_8CmhQS8Bp8XDI7hU68boq4xkPsVIhUJoQlLWJi3AKZAzqyAqIwMXiHBudycWMVOr3tprIvDdU_SnTHriUPNZ_AB7MkkjdU0xHmBbjuh_pFPk-vhOQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(4)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrQyGshuGbeYYpGfitScOkAvZCWZkU7q1uJXnRgeSaUxxrErENcQzaM0TFA5CuqXtLsJTd_v75T4G4C2NjRzsTxiuwz-VH_IivqbZHdLjuzgZ3ORrzlx4LHE7qOoMQgNiFzDeDpH0mGDu7cI3vJPgHQKNLhIXFzvkNX7E6o3HWXS6oj2y0msxMvl1TaPY6x4tM9SkggoEn3l_e5T6T7cI3BF3Cs9kFwbFa2WiCo7rvaefcuAd1D4JRYyRdIuTacNYvO4mgPvtZM7OMH2fCyBe6J8ypgwCXHCEK_ecJEZQeUjw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(5)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqC0okpT0__ACzc9qfGNVOUy9PhWEfvvedYusFy_RMDqCnLi9I5CJj5IIi4r2iqgwlgpTMfeKcEAVD0vyIehzy7saJaY4aTNkuagH_t0pMBjxpulZgq0XkJufG975jM7vTOWwS0EwhXVz17q2GEbTJLNmK-WcaOHzaHPRkR9upE2VmjAkulzeARbIcDt7a0WOA6VpsHYe5b8T9wr3KxTjNLBo2eH3jfN8KwLE92WqD3jIcV2qDEJccrpy5gUvN5yJ0nApdRZsHuGw3hPyF8rOOpA-n70EwSmYpeZNu0quPG_w&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(6)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqRoW_7LEredDaZnVzLB57Cg6jFKYPbCgMWJ7jRLygwxdbQrpuSxNf0RLjF9PwQX7U3XczBg6ZYqehDdC6naTr1ms4IL32jrpEQQxRZU68C3MwM1ylbVea-G3TaKgsDVkFNmfUuCqhPgtZ6pOp-p0BmspxGpZEtNUV6sNiaar4wQa5oa6CScVgkkTQeXnLT5gK7zgc5lFkE8xr7Yl_1P_QAY5MB1UAVLNKEGtqDbbjuiw_m0TMftqcFyBICsTpCEOGS_pRTMuEoQwd5zq_WFCHUs4wa5AVSaqriqZWq74i7uQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(7)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpyAH9CXYkVSyaCS6u1nhm0T1sBDHJObdDd41KyT5oQdYL4oM-xZvyR5a4-LmWuVi14ZXSVTzS__I73QxVfDYKFObd46RNPtGJPPbgvTZvg-woPn2nlNIDFvlpwuYIb23c3T-3is6DQVxUaujPP_X2q4F46TEiVpRD2hX5vSQhtgviLnMri2ZMkI9iF6mYnfUuFQXBUPq9Odn4lddTwJlCO-uqXbZs9WblKX4RaHLry2RiZ5rOczgOulGNCo8gg88UucCzyaWIfU2HYmFNiFIKNW1BxmEK-y5tcjHYAOhE7SQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(8)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHroCyVd94kJi6LfOJXg2Gh-0k9oU-yd0QAdnpS3x_LxhmedVEzCtfhMSx517tB1u3gmEYzbvBGTls4VxXmSVHdJdtvgiQa8skUYKzbnvWS-7NW389fFI_l6kAIx--BMxwv0LqzvtcjFSiEzWsRcVXj6GhgUaRNTZte_XWhr-5TyK1IYNQAiRFzT51OOWjJLxoY_yvWE1_hzq3m9EZ9vh2M4gBQSyky7n0rBXAMzaR8bBoAp_s7rgkQh4ZYhJaRjPIN2tJmHv-CtqiTmkWh-i_1UzuxgZ5hP2iJ41CpfukqB5g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div><div class="gallery-item" onclick="openLightbox(9)">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqOdqSX2AeTYLs5kZwhIvhI386oPZi2s3dDKIUnFMex4m4Vf05P1AwDL_37PuHCzuc8g0gR7629KY2wH5zs4ov6G8PX3GWhd_Ozd6dAsnLmzZiIQ7JlIiF4Fmgt89byd9gqee5Pndxk2Ee_VqXULaMu5tVxGX96XShO3V4r1fUfynPQRB8rnJCWcj7kQ2HXV4FF36JuomV2qRtOHliOVcrbPsfnZv1I8-XFdrvhITi0ffBC15R3gHSsyd8-j73ouuf49aORxgW7vm63RrlPFOf9QaJT_uXy6BVfdukdCJyw-A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+     </div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Avis</p><h2 class="section-title">Ce qu'ils en disent</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjVKLJd7sBOM3MW0XTlb8Vy3ty2A4hUIVL5pOnuolHim2G-QLwM=s128-c0x00000000-cc-rp-mo-ba3" alt="Joh Ann"><div><h4>Joh Ann</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 2 mois</span></div></div><p class="review-text">"Un séjour incroyable. Le château, parfaitement restauré, allie authenticité, confort et raffinement. Chaque détail respire le soin et la passion, que ce soit dans la décoration des chambres, la qualité de l’accueil ou encore la sérénité qui se dégage des lieux.
+L’accueil fut tout simplement remarqua"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocIUN9WVRxT97Xu_DFCHIymS8OnbkiWTtPItc_TDG5EVrp4o4g=s128-c0x00000000-cc-rp-mo" alt="Côme Massaloux"><div><h4>Côme Massaloux</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 2 mois</span></div></div><p class="review-text">"Superbe lieu, dont les hôtes sont charmants. J’ai eu l’occasion d’y aller à deux reprises en l’espace d’un an, une fois à pour le mariage de mon frère, puis pour un concert bénévole pour lequel les propriétaires ont eu la gentillesse d’ouvrir les portes au public. Quel plaisir de pouvoir profiter de"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjV12Lz39IR18as9PA_A174972RTMsTbOfppt4M2ryBjkZWS1Scv=s128-c0x00000000-cc-rp-mo-ba3" alt="Agustina L"><div><h4>Agustina L</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 3 mois</span></div></div><p class="review-text">"Une expérience inoubliable ! Dormir dans un château où la reine Margot et Catherine de Médicis ont séjourné est déjà exceptionnel, mais l’accueil a rendu le séjour encore plus magique. La vice-directrice, d’une grande amabilité, a pris de son temps pour nous faire visiter l’ensemble du château, alor"</p></div></div></section>
+
+<section class="cta"><div data-aos="zoom-in"><h2>Réservez votre séjour</h2><button class="btn-hero" onclick="openBooking()">Vérifier disponibilités</button></div></section>
+
+<section id="contact" class="contact-section"><div class="contact-grid"><div class="contact-info"><h2 class="section-title" style="color:white;margin-bottom:2rem">Contact</h2><div class="contact-item"><i class="fas fa-map-marker-alt"></i> Pl. de l'Ormeau, 63450 Saint-Saturnin, France</div><div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:0473393964">04 73 39 39 64</a></div></div><div class="contact-map"><iframe class="map-frame" src="http://googleusercontent.com/maps.google.com/maps?q=45.658731,3.092581&hl=fr&z=14&output=embed" allowfullscreen></iframe></div></div></section>
+<footer><p>Site réalisé par Local Visibility</p></footer>
+
+<div class="modal-overlay" id="bookingModal"><div class="modal"><button class="modal-close" onclick="closeBooking()">×</button><h3>Demande de réservation</h3><form onsubmit="alert('Demande envoyée !');return false;"><div class="form-group"><label>Dates</label><input type="date" required></div><div class="form-group"><label>Email</label><input type="email" required></div><button type="submit" class="btn-submit">Envoyer</button></form></div></div>
+
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+        <img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen">
+    </div>
+    <div class="lightbox-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+    <div class="lightbox-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({duration:800,once:true});
+    
+    // BOOKING
+    function openBooking(){document.getElementById("bookingModal").classList.add("active")}
+    function closeBooking(){document.getElementById("bookingModal").classList.remove("active")}
+    
+    // LIGHTBOX LOGIC
+    const images = ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq2xAjE1o7saBdujgaMyqfjBeA1etINNj1jsdysGDiV5xA-lWxBz0Wu85CrrSpN2jjdFH7UC4yjE1rVRsseSXHRhxN4WdDEINeiH8AIgAQfB2z1H96S4z3rn2rFKvpXyk_0PYNKFctd8ePGbowYQ71ISjpzLcUeHRqmb665lSIbCu-au3QFuHuOxSuhkC7SxMDKVOo-Z5YCENeESkIxYOhoydRHKk0uXfqsOVOuCIlF9OzOc07pCRTYyAmz8oJrgRNM2P8P3iwmaU8Ed2RsHD6ss-RawK7r7aEHEd-utqkxDQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHruc3VN4JNvtQk2Afdpc-qsvmWF11aD37el4AjFbxt9GwpC8u-c-iGIR0jGqxIxszyI1t_Xaou_rASr7G6hYV4VXw7ylhtF4cNgW-NLKyoNgKmWAMK6MKtDRUpTchj2c2Dy0W6WG9hRl6TQEKqu2cC4EKlM0NTn16Qxwz6J3rL2fDusscAJH8kzjDC0gzW9rLa2vrgUnUcnV6quHqxw-3E9ANZ6rN0j7S-6FhOxqUcWGgLZTHiwp6t8YkEtSLcXk0uS3W9VHyMCiswjiKK9MANu4qvuP-7QhUWU8zdxlrXfRA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqh__ETTP1wMP_jVDPybBXlBw20a1JRz2IIFHxBGcQSDhxGR2PI4ITvRGrRbwa2SW23Mm1bd0IouzSnSRwcRe9ry5VwoIarkS01EICVCL1v_71EE9bdcGtxuj-hACJntYza4MsX5Ua5pvp7-TZaw7S6MA2azNlyjY8uBTUq7ta2zr9h8hoTEmIgXd3PHen7JFjN2hBWeZx__g63ylFbMODm37Lipne1uxM3KP8xr2htlb25E_M5SYdlVYJUEJwYUezXyzH65i4ngBSMTjmB2UxSmLavc26dR3FK0xoGodp5nw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrhJ9p972vHapol-CI2c9a3wQjCZMmLF13iFufK2yt1g-UuA85OyKZ_oKgtiZ_U-HA0KxyGp76FqKJPZhskV5AUdoA4F4ofwxlKj8BH7LCCYiASyKW_9yu0P5ijOHxLhDEBFIFWJPlE_GI8hUVrW7z5eHutja2qSzYdo-k1O4uyW0UGLLc0-UxqwoZo_8CmhQS8Bp8XDI7hU68boq4xkPsVIhUJoQlLWJi3AKZAzqyAqIwMXiHBudycWMVOr3tprIvDdU_SnTHriUPNZ_AB7MkkjdU0xHmBbjuh_pFPk-vhOQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrQyGshuGbeYYpGfitScOkAvZCWZkU7q1uJXnRgeSaUxxrErENcQzaM0TFA5CuqXtLsJTd_v75T4G4C2NjRzsTxiuwz-VH_IivqbZHdLjuzgZ3ORrzlx4LHE7qOoMQgNiFzDeDpH0mGDu7cI3vJPgHQKNLhIXFzvkNX7E6o3HWXS6oj2y0msxMvl1TaPY6x4tM9SkggoEn3l_e5T6T7cI3BF3Cs9kFwbFa2WiCo7rvaefcuAd1D4JRYyRdIuTacNYvO4mgPvtZM7OMH2fCyBe6J8ypgwCXHCEK_ecJEZQeUjw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqC0okpT0__ACzc9qfGNVOUy9PhWEfvvedYusFy_RMDqCnLi9I5CJj5IIi4r2iqgwlgpTMfeKcEAVD0vyIehzy7saJaY4aTNkuagH_t0pMBjxpulZgq0XkJufG975jM7vTOWwS0EwhXVz17q2GEbTJLNmK-WcaOHzaHPRkR9upE2VmjAkulzeARbIcDt7a0WOA6VpsHYe5b8T9wr3KxTjNLBo2eH3jfN8KwLE92WqD3jIcV2qDEJccrpy5gUvN5yJ0nApdRZsHuGw3hPyF8rOOpA-n70EwSmYpeZNu0quPG_w&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqRoW_7LEredDaZnVzLB57Cg6jFKYPbCgMWJ7jRLygwxdbQrpuSxNf0RLjF9PwQX7U3XczBg6ZYqehDdC6naTr1ms4IL32jrpEQQxRZU68C3MwM1ylbVea-G3TaKgsDVkFNmfUuCqhPgtZ6pOp-p0BmspxGpZEtNUV6sNiaar4wQa5oa6CScVgkkTQeXnLT5gK7zgc5lFkE8xr7Yl_1P_QAY5MB1UAVLNKEGtqDbbjuiw_m0TMftqcFyBICsTpCEOGS_pRTMuEoQwd5zq_WFCHUs4wa5AVSaqriqZWq74i7uQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpyAH9CXYkVSyaCS6u1nhm0T1sBDHJObdDd41KyT5oQdYL4oM-xZvyR5a4-LmWuVi14ZXSVTzS__I73QxVfDYKFObd46RNPtGJPPbgvTZvg-woPn2nlNIDFvlpwuYIb23c3T-3is6DQVxUaujPP_X2q4F46TEiVpRD2hX5vSQhtgviLnMri2ZMkI9iF6mYnfUuFQXBUPq9Odn4lddTwJlCO-uqXbZs9WblKX4RaHLry2RiZ5rOczgOulGNCo8gg88UucCzyaWIfU2HYmFNiFIKNW1BxmEK-y5tcjHYAOhE7SQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHroCyVd94kJi6LfOJXg2Gh-0k9oU-yd0QAdnpS3x_LxhmedVEzCtfhMSx517tB1u3gmEYzbvBGTls4VxXmSVHdJdtvgiQa8skUYKzbnvWS-7NW389fFI_l6kAIx--BMxwv0LqzvtcjFSiEzWsRcVXj6GhgUaRNTZte_XWhr-5TyK1IYNQAiRFzT51OOWjJLxoY_yvWE1_hzq3m9EZ9vh2M4gBQSyky7n0rBXAMzaR8bBoAp_s7rgkQh4ZYhJaRjPIN2tJmHv-CtqiTmkWh-i_1UzuxgZ5hP2iJ41CpfukqB5g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqOdqSX2AeTYLs5kZwhIvhI386oPZi2s3dDKIUnFMex4m4Vf05P1AwDL_37PuHCzuc8g0gR7629KY2wH5zs4ov6G8PX3GWhd_Ozd6dAsnLmzZiIQ7JlIiF4Fmgt89byd9gqee5Pndxk2Ee_VqXULaMu5tVxGX96XShO3V4r1fUfynPQRB8rnJCWcj7kQ2HXV4FF36JuomV2qRtOHliOVcrbPsfnZv1I8-XFdrvhITi0ffBC15R3gHSsyd8-j73ouuf49aORxgW7vm63RrlPFOf9QaJT_uXy6BVfdukdCJyw-A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(index) {
+        if(!images || images.length === 0) return;
+        currentIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function updateLightbox() {
+        lightboxImg.src = images[currentIndex];
+    }
+
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        updateLightbox();
+    }
+    
+    document.addEventListener('keydown', function(event) {
+        if (!lightbox.classList.contains('active')) return;
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowRight") changeImage(1);
+        if (event.key === "ArrowLeft") changeImage(-1);
+    });
+    
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+</script>
+</body></html>
