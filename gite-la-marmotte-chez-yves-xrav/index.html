@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Gîte La Marmotte chez Yves - Le Chaffal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#5c7c64;--primary-dark:#3a5240;--accent:#c68b59;--text:#2d2d2d;--bg:#fdfbf7;--white:#fff;--font-serif:"Playfair Display",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.6;background:var(--bg)}
+img{max-width:100%;height:auto;display:block}
+
+/* HEADER */
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);box-shadow:0 2px 20px rgba(0,0,0,0.05);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:900px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.85rem;text-transform:uppercase;transition:color 0.3s}.booking-bar nav a:hover{color:var(--accent)}.booking-bar .btn-book{background:var(--primary);color:var(--white);padding:0.7rem 1.8rem;border:none;border-radius:2px;font-weight:700;cursor:pointer;text-transform:uppercase;font-size:0.8rem;transition:background 0.3s}.booking-bar .btn-book:hover{background:var(--primary-dark)}
+
+/* HERO (Mobile Fixed) */
+.hero{position:relative;height:95vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqEjQr5D753s_IPPRgNsPle0ftzaPgZHIP-jYQ6mpZolPpeJgChpM6heIGnKXN5U7BSL3Jufly_XvQDt19uuaZ5BwmFrBcbJM5ggj_tr2god5TmBgZfJbUYORcT4jgc0yixeHMHX76PQN5AZM0-dTuEGxU4iSOZNY6NvPBQyRwr6OleSZ40Znnlkeiij4A6rmUj4zsAaarT7razQnOEW-8plR5pnw9GjDBUdRIHcCuGVjYAeLGK1s8qy7mPX2k7CnjiL8VG2s7J43m0KVpVJGeoXC9dw2tqvlShWkXyntPVfA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed}
+@media(max-width:768px){.hero-bg{background-attachment:scroll}} /* Fix mobile */
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.4)}
+.hero-content{position:relative;padding:2rem;width:95%;max-width:1000px;animation:fadeIn 1.5s}
+.hero-tagline{font-size:0.9rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:1rem;color:rgba(255,255,255,0.9)}
+.hero-title{font-family:var(--font-serif);font-size:clamp(3rem, 8vw, 5.5rem);margin-bottom:1.5rem;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.2);backdrop-filter:blur(5px);padding:0.6rem 1.5rem;border-radius:50px;margin-bottom:2rem;font-weight:600}
+.hero-rating i{color:#f1c40f}
+.hero-price-tag{font-size:1.8rem;font-weight:700;margin-bottom:2.5rem;text-shadow:0 2px 5px rgba(0,0,0,0.3)}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1rem 2.5rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:0.9rem;transition:all 0.3s;border:1px solid var(--white)}.btn-hero:hover{background:transparent;color:var(--white)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.6)}.btn-outline:hover{background:var(--white);color:var(--primary)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+@media(max-width:768px){section{padding:3rem 1.5rem}}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}.section-tagline{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:0.8rem;margin-bottom:1rem;display:block}.section-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);color:var(--primary-dark)}
+
+/* ABOUT & FEATURES */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}.about-img{order:2}}
+.about-img img{width:100%;display:block;box-shadow:20px 20px 0 var(--primary-dark)}
+
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto}@media(max-width:900px){.features-split{grid-template-columns:1fr}}.feature-block{padding:4rem;display:flex;flex-direction:column;justify-content:center}@media(max-width:768px){.feature-block{padding:3rem 1.5rem}}.feature-bg-1{background:#f4f1ea}.feature-bg-2{background:var(--primary-dark);color:var(--white)}.feature-bg-2 .section-tagline{color:var(--white);opacity:0.7}.feature-bg-2 .feature-title{color:var(--white)}.feature-img img{width:100%;height:100%;object-fit:cover;min-height:400px}
+
+/* ROOM CARD */
+.rooms-grid{max-width:1000px;margin:0 auto}
+.room-card{background:var(--white);box-shadow:0 15px 40px rgba(0,0,0,0.08);display:grid;grid-template-columns:1.2fr 1fr}
+@media(max-width:800px){.room-card{display:block;grid-template-columns:1fr}}
+.room-image{position:relative;cursor:pointer;overflow:hidden;height:350px}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;top:1.5rem;left:1.5rem;background:var(--white);padding:0.6rem 1.2rem;font-family:var(--font-serif);color:var(--text);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.room-price .amount{font-size:1.4rem;font-weight:700}.room-price .period{font-size:0.9rem;color:#666}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;opacity:0;transition:opacity 0.3s;pointer-events:none}.room-image:hover .zoom-icon{opacity:1}
+.room-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:800px){.room-content{padding:2rem}}
+.room-header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:1rem}
+.room-header-row h3{font-family:var(--font-serif);font-size:2rem;color:var(--primary-dark);margin:0}
+.room-cap-badge{background:var(--bg);padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:700;color:var(--primary)}
+.room-features{list-style:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:0.8rem}.room-features li{font-size:0.9rem;color:var(--primary-dark);display:flex;align-items:center;gap:0.5rem}.room-features i{color:var(--accent)}
+.btn-room{padding:1rem 2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;font-size:0.85rem;transition:all 0.3s;align-self:start}.btn-room:hover{background:var(--accent)}
+
+/* GALLERY & REVIEWS */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-width:1400px;margin:0 auto}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr 1fr;gap:0.5rem}}
+.gallery-item{height:300px;position:relative;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.gallery-item:hover img{transform:scale(1.05)}
+.reviews{background:var(--white)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}.review-card{background:var(--bg);padding:2rem;border-top:3px solid var(--accent)}.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.review-header img{width:50px;height:50px;border-radius:50%}
+
+/* CONTACT */
+.contact-section{background:var(--primary-dark);color:var(--white);padding:0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px}@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{padding:5rem}
+@media(max-width:768px){.contact-info{padding:3rem 1.5rem}}
+.contact-item{display:flex;gap:1.5rem;margin-bottom:2rem;font-size:1.1rem}.contact-item a{color:var(--white);text-decoration:none}
+.btn-itinerary{display:inline-block;margin-top:2rem;background:var(--white);color:var(--primary-dark);padding:1rem 2rem;text-decoration:none;font-weight:700;text-transform:uppercase;transition:all 0.3s}.btn-itinerary:hover{background:var(--accent);color:var(--primary-dark)}
+/* MAP FIX HTTPS */
+.map-container{position:relative;width:100%;height:100%;min-height:450px}.map-frame{position:absolute;top:0;left:0;width:100%;height:100%;border:none;filter:grayscale(0.2)}
+
+/* CTA */
+.cta{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpgYXZE9imCMFd02ArtLOTeePeWYNKEg4or_uGfCrVOC_5DsoYzKTxd7FIUTqgP8IsjSR3u6AUflKYG6LN3mDw_MbUcDgMfbu5Vw-irKmCHwIH3PyRWoe6HXkdauzM2AZN69S68sh-w0qie-gqIhm7O-dcAvNJl3fcHIm1s43KUaZX__Y4DXWyBYU0-BDLCUKdAW54sjqQtT4D_Q2AaULCrByaAdEFDVthvEkxHQiiV2KbkYwaFo68azRvWT4oEdHPHYtZAMhN_NaJh1KnuUMF9RsntSrLIWbaz0pWkzJBLRw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed;text-align:center;color:var(--white);padding:8rem 2rem}
+.cta-content{max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)}
+
+/* SELL SECTION (PRIX & OFFRES) */
+.sell-section{background:#1a4d2e;color:var(--white);padding:6rem 2rem;text-align:center;border-top:10px solid #143d24}
+.sell-container{max-width:900px;margin:0 auto}
+.sell-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);margin-bottom:1rem;color:var(--white)}
+.sell-desc{font-size:1.1rem;opacity:0.9;max-width:700px;margin:0 auto 4rem;line-height:1.6}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem}
+@media(max-width:700px){.pricing-grid{grid-template-columns:1fr}}
+.sell-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:2.5rem;transition:transform 0.3s}
+.sell-card:hover{transform:translateY(-5px);background:rgba(255,255,255,0.08)}
+.card-header h3{font-size:1.5rem;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:2px;font-weight:400}
+.price-box{margin-bottom:1.5rem}
+.price-old{text-decoration:line-through;opacity:0.6;font-size:1.3rem;display:block;margin-bottom:0.5rem}
+.price-new{font-family:var(--font-serif);font-size:3.5rem;line-height:1;color:var(--white)}
+.price-sub{font-size:1rem;text-transform:uppercase;opacity:0.8}
+.sell-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-sell{padding:1rem 2rem;border:1px solid rgba(255,255,255,0.3);color:var(--white);text-decoration:none;text-transform:uppercase;font-size:0.8rem;letter-spacing:1px;font-weight:700;transition:all 0.3s}.btn-sell:hover{background:var(--white);color:#1a4d2e}.btn-sell.primary{background:var(--white);color:#1a4d2e}
+
+/* MODAL & LIGHTBOX */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(5px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);width:95%;max-width:600px;max-height:90vh;overflow-y:auto;border-radius:10px}
+.modal-header{background:var(--primary);color:var(--white);padding:2rem;text-align:center}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+.modal-body{padding:2.5rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}@media(max-width:500px){.form-grid{grid-template-columns:1fr}}
+.form-group label{display:block;margin-bottom:0.6rem;font-weight:700;font-size:0.85rem;text-transform:uppercase}
+.form-group input{width:100%;padding:1rem;border:1px solid #ddd}
+.btn-submit{width:100%;padding:1.2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;cursor:pointer}
+
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.98);z-index:99999;display:none;justify-content:center;align-items:center}
+.lightbox.active{display:flex}
+.lightbox-img{max-height:85vh;max-width:90vw}.lightbox-close{position:absolute;top:30px;right:30px;color:white;font-size:2.5rem;cursor:pointer}.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%}.prev{left:30px}.next{right:30px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">Gîte La Marmotte chez Yves</div><nav><a href="#about">Lieu</a><a href="#rooms">Hébergement</a><a href="#gallery">Galerie</a><a href="#contact">Accès</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Douceur Alpine, Calme</div>
+        <h1 class="hero-title">Gîte La Marmotte : Refuge de Charme au Chaffal</h1>
+        <div class="hero-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>4.7/5</span></div>
+        <div class="hero-price-tag">150€ <span style="font-size:0.6em;vertical-align:middle">/ nuit</span></div>
+        
+        <div class="hero-actions">
+            <a href="#rooms" class="btn-hero">Découvrir le logement</a>
+            <a href="tel:0671994091" class="btn-hero btn-outline"><i class="fas fa-phone"></i> Appeler</a>
+        </div>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpzg-gRukfLBh_t0EQbHS4UveF2YkC67UztyO37_wB94uTUhvWhGiyZKlT762R7Y1RqqqzMhqoNTzDHWHC-GY07wJ7T3VSqGOx_tGEYq3oKBT7JT3FJ3rplEgJ8T71GQsQiHdpjoE_WbA1bUXEHNuEV-M6gJdURTeOVQPHfeOKGexub6hFnJooBsB4dJk4NGdQDS08KHzrpchyt9EkRYBbJmQq0ECjWI__HjPnO6Hm2urnoEvE-zylmUxvuVB5RGfvdgHgcS2-4TIH3IgYOS6uAvMt5GUvAUA1yZXygE3Vn2w&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">Yves et son Gîte : Une Histoire de Coeur</p><h2 class="section-title">L'Esprit de la Maison</h2><p style="color:#666;line-height:1.8;margin-bottom:2rem">Bienvenue au Gîte La Marmotte, un lieu façonné par la passion d'Yves pour sa région. Ici, l'accueil est chaleureux, la nature omniprésente et le confort soigné. Laissez-vous bercer par l'atmosphère paisible et ressourcez-vous en toute simplicité.</p><div style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;color:var(--primary)">"Le bonheur se trouve dans le calme de la nature."</div></div></div></section>
+
+<section id="rooms" style="background:#f9f9f9"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Votre Séjour</p><h2 class="section-title">L'Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image" onclick="openLightbox(2)">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqMZYslNrxtBhScrmPLSCsDy7I5l-7S3RdsMqrtgnyi_8BLXF5IiTZmzfXgQRpVYtQKgcVEI3E-oFwcU1yckT5Ccwm6cdgUIn-AOb-ASvXxnArSho21ieY_zem7lOK7vCYsIiFkdIe7YxH2BzQeOKw4UpPqRxseSeFFnxWraH7E-SWTWhhWrmp5Yz31fDIP2NZsTDxQyP5QH2vBS_KJNojLWeDLR3c5lc4k6XLoD-YPIJqtAsbyBvTq_HWoeVnHdzHEQtZfDTT9_RSd-786RzsI4VTSsBi_gOYe285UTg5suw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Gîte La Marmotte chez Yves" loading="lazy">
+            <div class="room-price">
+                <span class="amount">150€ <span style="font-size:0.6em;vertical-align:middle">/ nuit</span></span>
+            </div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="room-content">
+            <div class="room-header-row">
+                <h3>Gîte La Marmotte chez Yves</h3>
+                <div class="room-cap-badge"><i class="fas fa-user-friends"></i> 4 pers.</div>
+            </div>
+            <p class="room-desc">Bienvenue au Gîte La Marmotte, un lieu façonné par la passion d'Yves pour sa région. Ici, l'accueil est chaleureux, la nature omni...</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver maintenant</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--accent)">Saveurs</p><h2 class="feature-title" style="margin-bottom:1rem">La Table Paysanne</h2><p style="color:#666;line-height:1.8">Savourez un petit-déjeuner gourmand avec des confitures maison aux fruits du jardin, des œufs frais de nos poules, du pain bio et les produits de nos voisins agriculteurs. Possibilité de table d'hôtes sur réservation.</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpgYXZE9imCMFd02ArtLOTeePeWYNKEg4or_uGfCrVOC_5DsoYzKTxd7FIUTqgP8IsjSR3u6AUflKYG6LN3mDw_MbUcDgMfbu5Vw-irKmCHwIH3PyRWoe6HXkdauzM2AZN69S68sh-w0qie-gqIhm7O-dcAvNJl3fcHIm1s43KUaZX__Y4DXWyBYU0-BDLCUKdAW54sjqQtT4D_Q2AaULCrByaAdEFDVthvEkxHQiiV2KbkYwaFo68azRvWT4oEdHPHYtZAMhN_NaJh1KnuUMF9RsntSrLIWbaz0pWkzJBLRw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline" style="color:var(--white)">Nature</p><h2 class="feature-title" style="margin-bottom:1rem">Oasis de Verdure</h2><p style="opacity:0.9;line-height:1.8">Profitez du calme et de la beauté du jardin, rafraîchissez-vous dans la piscine, détendez-vous au soleil ou partez à la découverte des sentiers de randonnée environnants. La nature est votre alliée pour un séjour revitalisant.</p></div></div></section>
+
+<section id="gallery"><div class="section-header"><p class="section-tagline">En Images</p><h2 class="section-title">Galerie Photos</h2></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox(0)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqEjQr5D753s_IPPRgNsPle0ftzaPgZHIP-jYQ6mpZolPpeJgChpM6heIGnKXN5U7BSL3Jufly_XvQDt19uuaZ5BwmFrBcbJM5ggj_tr2god5TmBgZfJbUYORcT4jgc0yixeHMHX76PQN5AZM0-dTuEGxU4iSOZNY6NvPBQyRwr6OleSZ40Znnlkeiij4A6rmUj4zsAaarT7razQnOEW-8plR5pnw9GjDBUdRIHcCuGVjYAeLGK1s8qy7mPX2k7CnjiL8VG2s7J43m0KVpVJGeoXC9dw2tqvlShWkXyntPVfA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(1)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpzg-gRukfLBh_t0EQbHS4UveF2YkC67UztyO37_wB94uTUhvWhGiyZKlT762R7Y1RqqqzMhqoNTzDHWHC-GY07wJ7T3VSqGOx_tGEYq3oKBT7JT3FJ3rplEgJ8T71GQsQiHdpjoE_WbA1bUXEHNuEV-M6gJdURTeOVQPHfeOKGexub6hFnJooBsB4dJk4NGdQDS08KHzrpchyt9EkRYBbJmQq0ECjWI__HjPnO6Hm2urnoEvE-zylmUxvuVB5RGfvdgHgcS2-4TIH3IgYOS6uAvMt5GUvAUA1yZXygE3Vn2w&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(2)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqMZYslNrxtBhScrmPLSCsDy7I5l-7S3RdsMqrtgnyi_8BLXF5IiTZmzfXgQRpVYtQKgcVEI3E-oFwcU1yckT5Ccwm6cdgUIn-AOb-ASvXxnArSho21ieY_zem7lOK7vCYsIiFkdIe7YxH2BzQeOKw4UpPqRxseSeFFnxWraH7E-SWTWhhWrmp5Yz31fDIP2NZsTDxQyP5QH2vBS_KJNojLWeDLR3c5lc4k6XLoD-YPIJqtAsbyBvTq_HWoeVnHdzHEQtZfDTT9_RSd-786RzsI4VTSsBi_gOYe285UTg5suw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(3)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpgYXZE9imCMFd02ArtLOTeePeWYNKEg4or_uGfCrVOC_5DsoYzKTxd7FIUTqgP8IsjSR3u6AUflKYG6LN3mDw_MbUcDgMfbu5Vw-irKmCHwIH3PyRWoe6HXkdauzM2AZN69S68sh-w0qie-gqIhm7O-dcAvNJl3fcHIm1s43KUaZX__Y4DXWyBYU0-BDLCUKdAW54sjqQtT4D_Q2AaULCrByaAdEFDVthvEkxHQiiV2KbkYwaFo68azRvWT4oEdHPHYtZAMhN_NaJh1KnuUMF9RsntSrLIWbaz0pWkzJBLRw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(4)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq9Dz0Ra85ScMuiHC1KmnXvWRt2mIVI9LpbteL6Dr8Og87-F0i88tGcoMo_EcDcaysKBMrdxko028K3xUc-ZRR84kEDiot1Zkq7ZRf86EMJqPtkR7jP6-urpD6dDaZh5MCcxwX_qvzhv9KpeRGvKWHGztJvTI02Z1G9KEXfPJ7t_Chj0XEYeW2b4fpYO3qxfutThTJeCra5lgRlUfv5REKt-5tuUg2DMhu2-RfB_KnvNX3AO2RHijpz2I1ZT0TQa4oA8pfTLxTItAej5fJMDSZQXwf3UWN7sVP1oK1rv1og8g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(5)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrsRlcojOcV11glW0NcI-70K5yKIrJV_aK0DDAm9W2DQWkejJkkLC3sBDwL7NrtEJZVUR7K4v2_2_tLJnUxT5BJdKjrk9DySuQcFwAYbd8OuL7EPu489sXaPTiuCBriGK3Db0r4ryOxMHsqk76Cqt06U4R_86uFEKIs_ipg2t674fjnkvUVdCoKWmma5uXRPyUOQAqPVB_1GBaFp4uUmhLT9JsEMtm9XrrLZLedQLdg_VtCRQmso6xc3l4fonoWUiRzpATipKe9SiXuwIXxi4ioUBXFIvM1OyoRpArzClszvg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(6)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrbyA0l-HAaWhU0AL-LZIV4hDDJgSitNXGwlhS0p2qRma4oMpb7Q1P8b1587Ka5yRBUJbnWeU3CtQWOzfWxO0AHmk57y1HZqi8DnnyxOX8sKfSGWCF7NzshiNwvmg4B_ibSOwe2N3LMUDgTQaTcldiOZjCF4qozZU6kPpQXzQuZ95rXWwyBnFMTCuRkBifPApm0rNqSkplltYXcSrANBje-h-MKhF6BLLDlcG0X3Mbxl6lleNXuYwsts054NYIp73MgcXzsp8-MwsiAK7TD5J0oBuJHag4SXmJknk0C81kvSA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(7)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoMWqUoLXhbpLt5bLXSDdD-cHDqLJLyH5MvITT01cs1AjXUddYd6L8x2_EZu39Udz-1XyFDgzn3QWC3VfWKZ61J37f_28qjpC8wxauGdsjTwl34M0OzGHfEEtwttMwU1y_2gQutQ2jubcVraqCTWVTR3EznBK_ksiWDngPZ2bwcV2bBika6OtQTKR0ZK2tKJqOFQejxr3wpU9YnUjO7YOQbSluySDLwfZ80_ftGZAkvU8S3EV60c1PuuihY08HNTsDBBxXGqTWAHrPWClvesloRRh5EnRDklcJ43KifY2uCyw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(8)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrrswWF1FI3Tli-63gylGdELBY0NpTnquHUi6zPA2mWR2yQE8_x3d8acxQBB87ov10ErhZIfV_Z7HRBEWmjyyGmSlPZxsBslBMikNUKvcBbpYq3h3Wl2sdXxqMRJc5BAxsm223o9exBkwMdwdb89VTQeCaZwxIpM7G0lfPAiqISRIEFsv2zd3GILeT4AZUwZBgcd-ullRSFkR0a6xFd-FtBrAbMMKI2bV_iUjUaK4fSm3NMMdoD3j9UN-KUByVdcZFrqjyU68VNI_Bs9qkJcaurlA9EN8MLMFlQVfZ-qxp0kw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(9)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoYGxb1XvZ1IA_C4usxdOFTz4DUWh3PlELU-gRREafzHx6scfi_hgOnaC4dRWXSFnZo10wc_CFKJA9nvnXTt5EH--ansKUiP3sym58GZb5yED4EMZPt5l6Q9gXY4IQbAckDY56pv_4jADNzyogkoaBcvKW7SJ8U1-yX7MhuA__EGcpI9E_-g5UlwbV_aQpWzgVuflhazp9mlogcmCz7Zmrm4PLWkBHtgBqzvz-yEOVd-emNXme_lVx7lBA5K8A2KkPtgQh1XfHu1UqtH5UCBLD-pi0L78VGf446ZLU2y26KWEGFZ0P0UJTfBOQp2h7k7QAPMd_Tzz0IiRK5ZAmotO4s-AsXtHFEHDFpdI2drcl6vbl1gkd1KV3GzXZLz7Rk4N7ua1Lpm6FXHy2SB2YgrQxFH5EdH0wo3EfQJK6n4Um33CDk&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Livre d'or</p><h2 class="section-title">Expériences Voyageurs</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjXDNZ2dC4_jKLp85QClqkloaCfBbKfojXBIOK_LBQ8U71rV14E=s128-c0x00000000-cc-rp-mo" alt="Emma"><div><h4>Emma</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 4 mois</span></div></div><p class="review-text">"Très bon séjour, très beau gîte avec tout ce qu'il faut ! Propriétaire très gentil !"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocLUpyDoAgA3U3XubqkuLU4sxJrDvCAqnUrZOVz2JYZKGA4RyQ=s128-c0x00000000-cc-rp-mo" alt="Dorothee Labisse"><div><h4>Dorothee Labisse</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 5 ans</span></div></div><p class="review-text">"Merci à Yves pour son accueil et sa gentillesse ! Nous avons passé de très bons moments autour de la piscine et du barbecue ! Yves est très attentionné envers ses hôtes et il est très discret ! Merci à lui ! Je recommande ce gîte"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocKjYVwcGnhr-jLnWr18lABlmFCGSMQQOpgqezFuMR5Mswof5g=s128-c0x00000000-cc-rp-mo" alt="Cat Drome"><div><h4>Cat Drome</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div><span class="review-time">il y a 7 ans</span></div></div><p class="review-text">"Gîte confortable et bien équipé, accueil chaleureux et piscine très agréable !"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjWCp5g2fRqAKj0umZ9W_6EYHLgvTvA8VAH0a7r38qJeelU_b57K=s128-c0x00000000-cc-rp-mo" alt="jean-francois Bouquillon"><div><h4>jean-francois Bouquillon</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 8 ans</span></div></div><p class="review-text">"Très bon gites et très bon accueil merci"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocLmqGBITMyv6HSyRbaBavuiYnTJnVls2OdHGVX523whcS20fg=s128-c0x00000000-cc-rp-mo-ba2" alt="Daniel Bati"><div><h4>Daniel Bati</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div><span class="review-time">il y a 7 ans</span></div></div><p class="review-text">"Propriétaire sympa et agréable et discret"</p></div></div></section>
+
+<section class="cta">
+    <div class="cta-content" data-aos="zoom-in" style="position:relative;z-index:2;max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)">
+        <h2 style="font-family:var(--font-serif);font-size:3rem;margin-bottom:1rem;color:var(--white)">Votre Séjour de Rêve Vous Attend</h2>
+        <p style="font-size:1.2rem;margin-bottom:2.5rem;opacity:0.9">Réservez Directement et Économisez</p>
+        <button class="btn-hero" onclick="openBooking()">Vérifier les disponibilités</button>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2 class="section-title" style="color:white;margin-bottom:3rem;text-align:left">Nous trouver</h2>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div>La Vacherie, 26190 Le Chaffal, France</div></div>
+            <div class="contact-item"><i class="fas fa-phone"></i> <div><a href="tel:0671994091">06 71 99 40 91</a></div></div>
+            <a href="https://maps.google.com/?q=44.886796,5.182326" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Obtenir l'itinéraire</a>
+        </div>
+        <div class="map-container">
+            <iframe class="map-frame" src="https://maps.google.com/maps?q=44.886796,5.182326&hl=fr&z=13&output=embed" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="sell-section">
+    <div class="sell-container">
+        <h2 class="sell-title">Ce site peut être le vôtre</h2>
+        <p class="sell-desc">Site optimisé pour le référencement pour se placer dans le haut des résultats de recherche pour gîte à Le Chaffal.</p>
+        
+        <div class="pricing-grid">
+            <div class="sell-card">
+                <div class="card-header"><h3>Achat Immédiat</h3></div>
+                <div class="price-box">
+                    <span class="price-old">790€</span>
+                    <div class="price-new">449€ <span class="price-sub">TTC</span></div>
+                </div>
+                <div>Paiement unique · Propriété 100%</div>
+            </div>
+            
+            <div class="sell-card">
+                <div class="card-header"><h3>Abonnement</h3></div>
+                <div class="price-box">
+                    <span class="price-old" style="visibility:hidden">00€</span>
+                    <div class="price-new">49€ <span class="price-sub">/mois</span></div>
+                </div>
+                <div>Sans engagement · Maintenance incluse</div>
+            </div>
+        </div>
+
+        <div class="sell-actions">
+            <a href="tel:33780954913" class="btn-sell primary"><i class="fas fa-phone"></i> Appeler</a>
+            <a href="https://wa.me/33780954913" class="btn-sell"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:contact@local-visibility.com" class="btn-sell"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </div>
+</section>
+
+<footer><p>© 2024 Gîte La Marmotte chez Yves - Site réalisé par Local Visibility</p></footer>
+
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+            <h3>Réservation</h3>
+            <p>Gîte La Marmotte chez Yves</p>
+        </div>
+        <div class="modal-body">
+            <form onsubmit="alert('Demande envoyée avec succès !');return false;">
+                <div class="form-grid">
+                    <div class="form-group"><label>Arrivée</label><input type="date" required id="checkin"></div>
+                    <div class="form-group"><label>Départ</label><input type="date" required id="checkout"></div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label>Prénom</label><input type="text" placeholder="Jean" required></div>
+                    <div class="form-group"><label>Nom</label><input type="text" placeholder="Dupont" required></div>
+                </div>
+                <div class="form-grid">
+                     <div class="form-group"><label>Email</label><input type="email" placeholder="email@exemple.com" required></div>
+                    <div class="form-group"><label>Téléphone <span style="font-weight:400;text-transform:none;font-size:0.7em">(facultatif)</span></label><input type="tel"></div>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer la demande</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+    <div class="lightbox-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+    <img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen">
+    <div class="lightbox-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({duration:800,once:true});
+    const modal = document.getElementById("bookingModal");
+    function openBooking(){modal.classList.add("active");document.body.style.overflow='hidden'}
+    function closeBooking(){modal.classList.remove("active");document.body.style.overflow='auto'}
+    modal.addEventListener('click', function(e){if(e.target===modal)closeBooking()});
+
+    const images = ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqEjQr5D753s_IPPRgNsPle0ftzaPgZHIP-jYQ6mpZolPpeJgChpM6heIGnKXN5U7BSL3Jufly_XvQDt19uuaZ5BwmFrBcbJM5ggj_tr2god5TmBgZfJbUYORcT4jgc0yixeHMHX76PQN5AZM0-dTuEGxU4iSOZNY6NvPBQyRwr6OleSZ40Znnlkeiij4A6rmUj4zsAaarT7razQnOEW-8plR5pnw9GjDBUdRIHcCuGVjYAeLGK1s8qy7mPX2k7CnjiL8VG2s7J43m0KVpVJGeoXC9dw2tqvlShWkXyntPVfA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpzg-gRukfLBh_t0EQbHS4UveF2YkC67UztyO37_wB94uTUhvWhGiyZKlT762R7Y1RqqqzMhqoNTzDHWHC-GY07wJ7T3VSqGOx_tGEYq3oKBT7JT3FJ3rplEgJ8T71GQsQiHdpjoE_WbA1bUXEHNuEV-M6gJdURTeOVQPHfeOKGexub6hFnJooBsB4dJk4NGdQDS08KHzrpchyt9EkRYBbJmQq0ECjWI__HjPnO6Hm2urnoEvE-zylmUxvuVB5RGfvdgHgcS2-4TIH3IgYOS6uAvMt5GUvAUA1yZXygE3Vn2w&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqMZYslNrxtBhScrmPLSCsDy7I5l-7S3RdsMqrtgnyi_8BLXF5IiTZmzfXgQRpVYtQKgcVEI3E-oFwcU1yckT5Ccwm6cdgUIn-AOb-ASvXxnArSho21ieY_zem7lOK7vCYsIiFkdIe7YxH2BzQeOKw4UpPqRxseSeFFnxWraH7E-SWTWhhWrmp5Yz31fDIP2NZsTDxQyP5QH2vBS_KJNojLWeDLR3c5lc4k6XLoD-YPIJqtAsbyBvTq_HWoeVnHdzHEQtZfDTT9_RSd-786RzsI4VTSsBi_gOYe285UTg5suw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpgYXZE9imCMFd02ArtLOTeePeWYNKEg4or_uGfCrVOC_5DsoYzKTxd7FIUTqgP8IsjSR3u6AUflKYG6LN3mDw_MbUcDgMfbu5Vw-irKmCHwIH3PyRWoe6HXkdauzM2AZN69S68sh-w0qie-gqIhm7O-dcAvNJl3fcHIm1s43KUaZX__Y4DXWyBYU0-BDLCUKdAW54sjqQtT4D_Q2AaULCrByaAdEFDVthvEkxHQiiV2KbkYwaFo68azRvWT4oEdHPHYtZAMhN_NaJh1KnuUMF9RsntSrLIWbaz0pWkzJBLRw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq9Dz0Ra85ScMuiHC1KmnXvWRt2mIVI9LpbteL6Dr8Og87-F0i88tGcoMo_EcDcaysKBMrdxko028K3xUc-ZRR84kEDiot1Zkq7ZRf86EMJqPtkR7jP6-urpD6dDaZh5MCcxwX_qvzhv9KpeRGvKWHGztJvTI02Z1G9KEXfPJ7t_Chj0XEYeW2b4fpYO3qxfutThTJeCra5lgRlUfv5REKt-5tuUg2DMhu2-RfB_KnvNX3AO2RHijpz2I1ZT0TQa4oA8pfTLxTItAej5fJMDSZQXwf3UWN7sVP1oK1rv1og8g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrsRlcojOcV11glW0NcI-70K5yKIrJV_aK0DDAm9W2DQWkejJkkLC3sBDwL7NrtEJZVUR7K4v2_2_tLJnUxT5BJdKjrk9DySuQcFwAYbd8OuL7EPu489sXaPTiuCBriGK3Db0r4ryOxMHsqk76Cqt06U4R_86uFEKIs_ipg2t674fjnkvUVdCoKWmma5uXRPyUOQAqPVB_1GBaFp4uUmhLT9JsEMtm9XrrLZLedQLdg_VtCRQmso6xc3l4fonoWUiRzpATipKe9SiXuwIXxi4ioUBXFIvM1OyoRpArzClszvg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrbyA0l-HAaWhU0AL-LZIV4hDDJgSitNXGwlhS0p2qRma4oMpb7Q1P8b1587Ka5yRBUJbnWeU3CtQWOzfWxO0AHmk57y1HZqi8DnnyxOX8sKfSGWCF7NzshiNwvmg4B_ibSOwe2N3LMUDgTQaTcldiOZjCF4qozZU6kPpQXzQuZ95rXWwyBnFMTCuRkBifPApm0rNqSkplltYXcSrANBje-h-MKhF6BLLDlcG0X3Mbxl6lleNXuYwsts054NYIp73MgcXzsp8-MwsiAK7TD5J0oBuJHag4SXmJknk0C81kvSA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoMWqUoLXhbpLt5bLXSDdD-cHDqLJLyH5MvITT01cs1AjXUddYd6L8x2_EZu39Udz-1XyFDgzn3QWC3VfWKZ61J37f_28qjpC8wxauGdsjTwl34M0OzGHfEEtwttMwU1y_2gQutQ2jubcVraqCTWVTR3EznBK_ksiWDngPZ2bwcV2bBika6OtQTKR0ZK2tKJqOFQejxr3wpU9YnUjO7YOQbSluySDLwfZ80_ftGZAkvU8S3EV60c1PuuihY08HNTsDBBxXGqTWAHrPWClvesloRRh5EnRDklcJ43KifY2uCyw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrrswWF1FI3Tli-63gylGdELBY0NpTnquHUi6zPA2mWR2yQE8_x3d8acxQBB87ov10ErhZIfV_Z7HRBEWmjyyGmSlPZxsBslBMikNUKvcBbpYq3h3Wl2sdXxqMRJc5BAxsm223o9exBkwMdwdb89VTQeCaZwxIpM7G0lfPAiqISRIEFsv2zd3GILeT4AZUwZBgcd-ullRSFkR0a6xFd-FtBrAbMMKI2bV_iUjUaK4fSm3NMMdoD3j9UN-KUByVdcZFrqjyU68VNI_Bs9qkJcaurlA9EN8MLMFlQVfZ-qxp0kw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoYGxb1XvZ1IA_C4usxdOFTz4DUWh3PlELU-gRREafzHx6scfi_hgOnaC4dRWXSFnZo10wc_CFKJA9nvnXTt5EH--ansKUiP3sym58GZb5yED4EMZPt5l6Q9gXY4IQbAckDY56pv_4jADNzyogkoaBcvKW7SJ8U1-yX7MhuA__EGcpI9E_-g5UlwbV_aQpWzgVuflhazp9mlogcmCz7Zmrm4PLWkBHtgBqzvz-yEOVd-emNXme_lVx7lBA5K8A2KkPtgQh1XfHu1UqtH5UCBLD-pi0L78VGf446ZLU2y26KWEGFZ0P0UJTfBOQp2h7k7QAPMd_Tzz0IiRK5ZAmotO4s-AsXtHFEHDFpdI2drcl6vbl1gkd1KV3GzXZLz7Rk4N7ua1Lpm6FXHy2SB2YgrQxFH5EdH0wo3EfQJK6n4Um33CDk&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    function openLightbox(index) {
+        if(!images || images.length === 0) return;
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    function changeImage(dir) {
+        currentIndex += dir;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        lightboxImg.src = images[currentIndex];
+    }
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") changeImage(1);
+        if (e.key === "ArrowLeft") changeImage(-1);
+    });
+</script>
+</body></html>
