@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Manoir de Collonges - COSI WORK - Collonges-au-Mont-d'Or</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#5c7c64;--primary-dark:#3a5240;--accent:#c68b59;--text:#2d2d2d;--bg:#fdfbf7;--white:#fff;--font-serif:"Playfair Display",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.6;background:var(--bg)}
+img{max-width:100%;height:auto;display:block}
+
+/* HEADER */
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);box-shadow:0 2px 20px rgba(0,0,0,0.05);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:900px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.85rem;text-transform:uppercase;transition:color 0.3s}.booking-bar nav a:hover{color:var(--accent)}.booking-bar .btn-book{background:var(--primary);color:var(--white);padding:0.7rem 1.8rem;border:none;border-radius:2px;font-weight:700;cursor:pointer;text-transform:uppercase;font-size:0.8rem;transition:background 0.3s}.booking-bar .btn-book:hover{background:var(--primary-dark)}
+
+/* HERO (Mobile Fixed) */
+.hero{position:relative;height:95vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpo_NmrBFdDMGPfVdYLkbU_8XOGIrdQIp5ZsuCCVla3UvTW4QTrfKUHtH8BIRqj8bqwRlp0OmoPZKFZqtuYwNbsTVErp36hxtIq3rDQ9D-WYJaTp8Df6LJ5P58Nlxc4OyJgNX5DpC9voV7rkn18V2Gk7rEq-IHthZYGNoaD8rufKijQ4VblDX-I6G6eh5ep-ZvVZGM0pN_lm1m_n72wt_on-LWQhyyNH4rBhVXXmCJtWRtvL_G49r5NkMkKIKg1B6xGNCMahSTKDA6ZKSsGoupJdUm0vePs0mVmMsiqfJzaEA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed}
+@media(max-width:768px){.hero-bg{background-attachment:scroll}} /* Fix mobile */
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.4)}
+.hero-content{position:relative;padding:2rem;width:95%;max-width:1000px;animation:fadeIn 1.5s}
+.hero-tagline{font-size:0.9rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:1rem;color:rgba(255,255,255,0.9)}
+.hero-title{font-family:var(--font-serif);font-size:clamp(3rem, 8vw, 5.5rem);margin-bottom:1.5rem;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.2);backdrop-filter:blur(5px);padding:0.6rem 1.5rem;border-radius:50px;margin-bottom:2rem;font-weight:600}
+.hero-rating i{color:#f1c40f}
+.hero-price-tag{font-size:1.8rem;font-weight:700;margin-bottom:2.5rem;text-shadow:0 2px 5px rgba(0,0,0,0.3)}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1rem 2.5rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:0.9rem;transition:all 0.3s;border:1px solid var(--white)}.btn-hero:hover{background:transparent;color:var(--white)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.6)}.btn-outline:hover{background:var(--white);color:var(--primary)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+@media(max-width:768px){section{padding:3rem 1.5rem}}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}.section-tagline{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:0.8rem;margin-bottom:1rem;display:block}.section-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);color:var(--primary-dark)}
+
+/* ABOUT & FEATURES */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}.about-img{order:2}}
+.about-img img{width:100%;display:block;box-shadow:20px 20px 0 var(--primary-dark)}
+
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto}@media(max-width:900px){.features-split{grid-template-columns:1fr}}.feature-block{padding:4rem;display:flex;flex-direction:column;justify-content:center}@media(max-width:768px){.feature-block{padding:3rem 1.5rem}}.feature-bg-1{background:#f4f1ea}.feature-bg-2{background:var(--primary-dark);color:var(--white)}.feature-bg-2 .section-tagline{color:var(--white);opacity:0.7}.feature-bg-2 .feature-title{color:var(--white)}.feature-img img{width:100%;height:100%;object-fit:cover;min-height:400px}
+
+/* ROOM CARD */
+.rooms-grid{max-width:1000px;margin:0 auto}
+.room-card{background:var(--white);box-shadow:0 15px 40px rgba(0,0,0,0.08);display:grid;grid-template-columns:1.2fr 1fr}
+@media(max-width:800px){.room-card{display:block;grid-template-columns:1fr}}
+.room-image{position:relative;cursor:pointer;overflow:hidden;height:350px}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;top:1.5rem;left:1.5rem;background:var(--white);padding:0.6rem 1.2rem;font-family:var(--font-serif);color:var(--text);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.room-price .amount{font-size:1.4rem;font-weight:700}.room-price .period{font-size:0.9rem;color:#666}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;opacity:0;transition:opacity 0.3s;pointer-events:none}.room-image:hover .zoom-icon{opacity:1}
+.room-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:800px){.room-content{padding:2rem}}
+.room-header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:1rem}
+.room-header-row h3{font-family:var(--font-serif);font-size:2rem;color:var(--primary-dark);margin:0}
+.room-cap-badge{background:var(--bg);padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:700;color:var(--primary)}
+.room-features{list-style:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:0.8rem}.room-features li{font-size:0.9rem;color:var(--primary-dark);display:flex;align-items:center;gap:0.5rem}.room-features i{color:var(--accent)}
+.btn-room{padding:1rem 2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;font-size:0.85rem;transition:all 0.3s;align-self:start}.btn-room:hover{background:var(--accent)}
+
+/* GALLERY & REVIEWS */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-width:1400px;margin:0 auto}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr 1fr;gap:0.5rem}}
+.gallery-item{height:300px;position:relative;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.gallery-item:hover img{transform:scale(1.05)}
+.reviews{background:var(--white)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}.review-card{background:var(--bg);padding:2rem;border-top:3px solid var(--accent)}.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.review-header img{width:50px;height:50px;border-radius:50%}
+
+/* CONTACT */
+.contact-section{background:var(--primary-dark);color:var(--white);padding:0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px}@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{padding:5rem}
+@media(max-width:768px){.contact-info{padding:3rem 1.5rem}}
+.contact-item{display:flex;gap:1.5rem;margin-bottom:2rem;font-size:1.1rem}.contact-item a{color:var(--white);text-decoration:none}
+.btn-itinerary{display:inline-block;margin-top:2rem;background:var(--white);color:var(--primary-dark);padding:1rem 2rem;text-decoration:none;font-weight:700;text-transform:uppercase;transition:all 0.3s}.btn-itinerary:hover{background:var(--accent);color:var(--primary-dark)}
+/* MAP FIX HTTPS */
+.map-container{position:relative;width:100%;height:100%;min-height:450px}.map-frame{position:absolute;top:0;left:0;width:100%;height:100%;border:none;filter:grayscale(0.2)}
+
+/* CTA */
+.cta{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpU5du5z13N6Q9oi51K3yr7CF6C991YBcA-u9mPsyS7zVvAGktx3U8SmOzac67qRXx5Vzch7o2dMCYKQQah35J0MmFcV9ngLyw8cFJYVz8947AlSjvX6lJ7lifiOdDGUwcZ8hFfxZN9nSUYzXz3yv7YBYeLwEeR1-xbkOWqFVZy4zoQZ0BRzYYZHE2RqFXubXl0kvj9xr1FhC-j1nVLWVs4Xi9OzdZ9X5gc3uJPBql9evMctEsGsKklq1i_KDr1w7jGW9SH7xG1Hpv3GxjcA5ksXewbLuIdglxK1aPnyD3__GufFtZHGGbCZ6DUcwchNBVKZTdr-rQ_einRbPXeir4R12-79KuTsgM_yeTi7AN4D4eUZsMFpKd32gEdrkojU3ojOgvXB5hUsKSLUDiF8mwp2e2LkydmkYUL1_DDhWMDpg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed;text-align:center;color:var(--white);padding:8rem 2rem}
+.cta-content{max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)}
+
+/* SELL SECTION (PRIX & OFFRES) */
+.sell-section{background:#1a4d2e;color:var(--white);padding:6rem 2rem;text-align:center;border-top:10px solid #143d24}
+.sell-container{max-width:900px;margin:0 auto}
+.sell-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);margin-bottom:1rem;color:var(--white)}
+.sell-desc{font-size:1.1rem;opacity:0.9;max-width:700px;margin:0 auto 4rem;line-height:1.6}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem}
+@media(max-width:700px){.pricing-grid{grid-template-columns:1fr}}
+.sell-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:2.5rem;transition:transform 0.3s}
+.sell-card:hover{transform:translateY(-5px);background:rgba(255,255,255,0.08)}
+.card-header h3{font-size:1.5rem;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:2px;font-weight:400}
+.price-box{margin-bottom:1.5rem}
+.price-old{text-decoration:line-through;opacity:0.6;font-size:1.3rem;display:block;margin-bottom:0.5rem}
+.price-new{font-family:var(--font-serif);font-size:3.5rem;line-height:1;color:var(--white)}
+.price-sub{font-size:1rem;text-transform:uppercase;opacity:0.8}
+.sell-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-sell{padding:1rem 2rem;border:1px solid rgba(255,255,255,0.3);color:var(--white);text-decoration:none;text-transform:uppercase;font-size:0.8rem;letter-spacing:1px;font-weight:700;transition:all 0.3s}.btn-sell:hover{background:var(--white);color:#1a4d2e}.btn-sell.primary{background:var(--white);color:#1a4d2e}
+
+/* MODAL & LIGHTBOX */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(5px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);width:95%;max-width:600px;max-height:90vh;overflow-y:auto;border-radius:10px}
+.modal-header{background:var(--primary);color:var(--white);padding:2rem;text-align:center}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+.modal-body{padding:2.5rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}@media(max-width:500px){.form-grid{grid-template-columns:1fr}}
+.form-group label{display:block;margin-bottom:0.6rem;font-weight:700;font-size:0.85rem;text-transform:uppercase}
+.form-group input{width:100%;padding:1rem;border:1px solid #ddd}
+.btn-submit{width:100%;padding:1.2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;cursor:pointer}
+
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.98);z-index:99999;display:none;justify-content:center;align-items:center}
+.lightbox.active{display:flex}
+.lightbox-img{max-height:85vh;max-width:90vw}.lightbox-close{position:absolute;top:30px;right:30px;color:white;font-size:2.5rem;cursor:pointer}.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%}.prev{left:30px}.next{right:30px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">Manoir de Collonges - COSI WORK</div><nav><a href="#about">Lieu</a><a href="#rooms">Hébergement</a><a href="#gallery">Galerie</a><a href="#contact">Accès</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Calme, Charme, Authenticité</div>
+        <h1 class="hero-title">Manoir de Collonges : L'Échappée Belle Lyonnaise</h1>
+        <div class="hero-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>4/5</span></div>
+        <div class="hero-price-tag">100€ <span style="font-size:0.6em;vertical-align:middle">/ nuit</span></div>
+        
+        <div class="hero-actions">
+            <a href="#rooms" class="btn-hero">Découvrir le logement</a>
+            <a href="tel:0761967202" class="btn-hero btn-outline"><i class="fas fa-phone"></i> Appeler</a>
+        </div>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpp27VfYCvoBeEdF5aMNlw3InQ8b7D16ogZ0IoY2FnYr0gOXYOtGHSC0VEmXRhAw7qvcVj4QKcPog21XE2QZVtPT7UeJX3sJ8OXGh3eEhPeNRgtAI5ovn7vFYVSpC2YnCMC0vkfPyFNC0qWwFRn-7ln8UQcI-bdX2PFXePp04UU6_ZbmCXFCqP-19_9fARZGTgr3PV6_QWFHP6bZESdhzukXYCo1-a64d-jOTd7QYl02v3hlLcn81d8tLu8o_er2LeLozDqhCd5_FEpUllJ-8kBCCnlveXBGMK6GbXXYfqGOR330OsdbHDubrYmNoyduJsbmDB77ImFZ-YFjw27LXBwDt6AgFYVwE7OOLqmsdGYruVy_1ERfIAVXx3h2uXz-7dV0_9Sop_4nEnpkRitfEEWMQK2hKnGxGnIDoWCpgM9aJoAxsD44DxQX05qlJaR&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">Une Histoire de Famille et de Passion</p><h2 class="section-title">L'Esprit de la Maison</h2><p style="color:#666;line-height:1.8;margin-bottom:2rem">Bienvenue au Manoir de Collonges - COSI WORK, un lieu empreint d'histoire et d'authenticité. Nous vous accueillons chaleureusement dans notre demeure familiale, restaurée avec amour et respect du patrimoine. Laissez-vous bercer par le charme des lieux et profitez d'un séjour ressourçant.</p><div style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;color:var(--primary)">"Le bonheur se trouve souvent dans la simplicité de la nature."</div></div></div></section>
+
+<section id="rooms" style="background:#f9f9f9"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Votre Séjour</p><h2 class="section-title">L'Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image" onclick="openLightbox(2)">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHobqESUDFqii-_ZwP9b7TOIEtIVcnsFOwyxjT7hqe9eKdGCRhrd64tKZalkE0MxdPGNyBrAA3bfNfnJimzi4Wm-qmL9BW5a1biHGCmcd9vnrwheSUNHNSR55lXR6DAaJmyTDSg2GC5auGtrV9E1d5zsOyof_B3D6TLTdOmKA-MFuvJCY-56IhJeroMfeFZufANVvwVpKqxMHHi92VScKsb9OFS9MAbmBo-_Vaas4B6p7xJTrG265y5243ORGZLAkAJNUcU5k5QaqOQO2ul6pIhhJ6PXfBBLC82DOxzhcw_zC-o9e_ua6Fz48Hd5KBXvs54866xiF3Y0ntMlflZ3Y6HSoGCys-xfiNI4t5WRB3T0a90G1s-9ogIWyxBU70SJncGfQEGOPfQmnbn37tSdcRnv2uXD66Q6DL5U-UNFTmMqdKqk6GHZqfTWymx77xKW&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Manoir de Collonges - COSI WORK" loading="lazy">
+            <div class="room-price">
+                <span class="amount">100€ <span style="font-size:0.6em;vertical-align:middle">/ nuit</span></span>
+            </div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="room-content">
+            <div class="room-header-row">
+                <h3>Manoir de Collonges - COSI WORK</h3>
+                <div class="room-cap-badge"><i class="fas fa-user-friends"></i> 4 pers.</div>
+            </div>
+            <p class="room-desc">Bienvenue au Manoir de Collonges - COSI WORK, un lieu empreint d'histoire et d'authenticité. Nous vous accueillons chaleureusement...</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver maintenant</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--accent)">Saveurs</p><h2 class="feature-title" style="margin-bottom:1rem">La Table Gourmande & Saveurs Locales</h2><p style="color:#666;line-height:1.8">Savourez un petit-déjeuner préparé avec amour, composé de confitures maison, d'œufs frais de nos poules, de pain bio et de produits issus des producteurs locaux. Une explosion de saveurs pour bien commencer la journée.</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpU5du5z13N6Q9oi51K3yr7CF6C991YBcA-u9mPsyS7zVvAGktx3U8SmOzac67qRXx5Vzch7o2dMCYKQQah35J0MmFcV9ngLyw8cFJYVz8947AlSjvX6lJ7lifiOdDGUwcZ8hFfxZN9nSUYzXz3yv7YBYeLwEeR1-xbkOWqFVZy4zoQZ0BRzYYZHE2RqFXubXl0kvj9xr1FhC-j1nVLWVs4Xi9OzdZ9X5gc3uJPBql9evMctEsGsKklq1i_KDr1w7jGW9SH7xG1Hpv3GxjcA5ksXewbLuIdglxK1aPnyD3__GufFtZHGGbCZ6DUcwchNBVKZTdr-rQ_einRbPXeir4R12-79KuTsgM_yeTi7AN4D4eUZsMFpKd32gEdrkojU3ojOgvXB5hUsKSLUDiF8mwp2e2LkydmkYUL1_DDhWMDpg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline" style="color:var(--white)">Nature</p><h2 class="feature-title" style="margin-bottom:1rem">Havre de Paix & Nature</h2><p style="opacity:0.9;line-height:1.8">Profitez de notre jardin luxuriant, détendez-vous au bord de la piscine, flânez sur le terrain de pétanque ou partez à la découverte des sentiers de randonnée environnants. Le calme et la nature sont au rendez-vous.</p></div></div></section>
+
+<section id="gallery"><div class="section-header"><p class="section-tagline">En Images</p><h2 class="section-title">Galerie Photos</h2></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox(0)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpo_NmrBFdDMGPfVdYLkbU_8XOGIrdQIp5ZsuCCVla3UvTW4QTrfKUHtH8BIRqj8bqwRlp0OmoPZKFZqtuYwNbsTVErp36hxtIq3rDQ9D-WYJaTp8Df6LJ5P58Nlxc4OyJgNX5DpC9voV7rkn18V2Gk7rEq-IHthZYGNoaD8rufKijQ4VblDX-I6G6eh5ep-ZvVZGM0pN_lm1m_n72wt_on-LWQhyyNH4rBhVXXmCJtWRtvL_G49r5NkMkKIKg1B6xGNCMahSTKDA6ZKSsGoupJdUm0vePs0mVmMsiqfJzaEA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(1)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpp27VfYCvoBeEdF5aMNlw3InQ8b7D16ogZ0IoY2FnYr0gOXYOtGHSC0VEmXRhAw7qvcVj4QKcPog21XE2QZVtPT7UeJX3sJ8OXGh3eEhPeNRgtAI5ovn7vFYVSpC2YnCMC0vkfPyFNC0qWwFRn-7ln8UQcI-bdX2PFXePp04UU6_ZbmCXFCqP-19_9fARZGTgr3PV6_QWFHP6bZESdhzukXYCo1-a64d-jOTd7QYl02v3hlLcn81d8tLu8o_er2LeLozDqhCd5_FEpUllJ-8kBCCnlveXBGMK6GbXXYfqGOR330OsdbHDubrYmNoyduJsbmDB77ImFZ-YFjw27LXBwDt6AgFYVwE7OOLqmsdGYruVy_1ERfIAVXx3h2uXz-7dV0_9Sop_4nEnpkRitfEEWMQK2hKnGxGnIDoWCpgM9aJoAxsD44DxQX05qlJaR&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(2)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHobqESUDFqii-_ZwP9b7TOIEtIVcnsFOwyxjT7hqe9eKdGCRhrd64tKZalkE0MxdPGNyBrAA3bfNfnJimzi4Wm-qmL9BW5a1biHGCmcd9vnrwheSUNHNSR55lXR6DAaJmyTDSg2GC5auGtrV9E1d5zsOyof_B3D6TLTdOmKA-MFuvJCY-56IhJeroMfeFZufANVvwVpKqxMHHi92VScKsb9OFS9MAbmBo-_Vaas4B6p7xJTrG265y5243ORGZLAkAJNUcU5k5QaqOQO2ul6pIhhJ6PXfBBLC82DOxzhcw_zC-o9e_ua6Fz48Hd5KBXvs54866xiF3Y0ntMlflZ3Y6HSoGCys-xfiNI4t5WRB3T0a90G1s-9ogIWyxBU70SJncGfQEGOPfQmnbn37tSdcRnv2uXD66Q6DL5U-UNFTmMqdKqk6GHZqfTWymx77xKW&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(3)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpU5du5z13N6Q9oi51K3yr7CF6C991YBcA-u9mPsyS7zVvAGktx3U8SmOzac67qRXx5Vzch7o2dMCYKQQah35J0MmFcV9ngLyw8cFJYVz8947AlSjvX6lJ7lifiOdDGUwcZ8hFfxZN9nSUYzXz3yv7YBYeLwEeR1-xbkOWqFVZy4zoQZ0BRzYYZHE2RqFXubXl0kvj9xr1FhC-j1nVLWVs4Xi9OzdZ9X5gc3uJPBql9evMctEsGsKklq1i_KDr1w7jGW9SH7xG1Hpv3GxjcA5ksXewbLuIdglxK1aPnyD3__GufFtZHGGbCZ6DUcwchNBVKZTdr-rQ_einRbPXeir4R12-79KuTsgM_yeTi7AN4D4eUZsMFpKd32gEdrkojU3ojOgvXB5hUsKSLUDiF8mwp2e2LkydmkYUL1_DDhWMDpg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(4)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrhqahv6yC6P2YYTn8-NlqYzbwfe8DZk_4UYn_xacmYfClIP6QTmS2C-rKcFv7udjkw4KUEGwMIe6JGH5Z73qyDFv4VQCcen_wuzI1AjOHX9dsoz_s483ubYWuIXxMmy1vLOXb7IikZUVU1f2NGy0xen18dP5z4kk1SejelehY125sY7eR7X_X8re3Rt5_aBWn7-JVtt7kW8p6lrcLqrw1KdSRQnoNq0HT5ROr6iO0BZthIMsfVJBX6zZRkOyZJC3tnbTfI91AXhkNtXrt_s_GKIaGBjyMwaXIVbR36N0iZu8UmCqkmfJFQrc-bWrW8gI2-WOFV2NuJjegjC8GAb3CXjuv3excqxb5KQkrWOJi-AqA3kcr7-e2RE6NXU5FemlHvk8w0FqxSz55oUnsEy1U5HsRRaGVgZJaJtNW198p9m7iSVJo2WUTBKJTyCWq5&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(5)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHo5CI54vjxpLZmNUuJm3v9Wt2c07fRQXVt_EJXtNJo7jPwQVjNPdFukcDCzIXV5V8bzHHsWFvOC4sNr5YgNOrcIJrly2y_lKe-JnxogqaZHESJlmsusrKSAwZzYcPCLu7oWh_5XWx_jnOjsYU6z3rAApTIHtGFyVIezwjGlhKewRzORXNVYmArHuysE4K38wjCLwC2rebvihJkMuckQHoRY1pMnOH5bui87d6MSoLmwo9jSx4Ad4ufIXdaA5mTK5hYu3v_qEsZ3qgRMZ6qcc0c5Ev59aKmrlBmnvPxTapnlZg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(6)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHp5KiXwzaGSr15IYIE0tHI2k5muNBqrS8thLW79MbY4ZOf9Lst89NhTzazPlKQZjpNNZLSOjW2pAiOyx68ZsyL3tqFlW9cVJLMQtMEkypP6VPqzVXJQAeSx2rG7ac1xucjBdXhBHcW75DxtTP71JwOOiGpexf4y1Vix9NhOMzTJs4SX0gjJWlvKbSCzTnkEcJOdLI6MI4zy6GiX_bpaSVPBtNHucaOaoACB3Kb7Z0DtdzZeqcqOg2JYvMviVrB0LemxD-3RjGYzq16-l5cgdrmBNkb7semhO8Wptih5XgnKx4f2rKbYrORN23a-ZHEVBZMcqRedKCVQjDy7p79KplusuvlvXZUzVktTX03vQx4alMWmC5e_Ij_NK1q1ivPDr_WLYSGBaqDQp2SKL4E0ySKKg-_tstnxPv_-zSa8gKlY-uZP9eWPISbcrh3QUB_x&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(7)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqxwScrnnwZV84CsLFaiURPnuttdCTp5ArALamHg0-GLwhr5z6W3agG46E0JzrgP7kpl0cnVMfdzD514MWrebetVQlJzYwWT0VD8nCJcfun_oQWNxV3MjUJsk7qo6jaKP53Zf4ztfot5-E_Z0boFDRZmVShqn4nybsCUNK83fiMdXScNSA6yzKc2w3uUQB6nU2hvfJDFbFF3uPa4ZeHtojg6oY82yFzunOlg5w3yinU8qwACkidiReAmO01kJqOjfjlQZrexhgZzD4PEmaEKeC9Kq2wlQAs1bF03Idr_FF4_A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(8)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpzhmD6S_BcQv0oc49W24jyWowRmsE7pndH-0ZG68_EbvvsYSMMALjUXm2BTMtlfB28Vy906oUntx-wz6zaG_eJGkkxbSxHRqdbGc-shThPxzG_hzqhqkmmeXiyH0YKmQ9aH6hjfreJ-SBeh6bc3B3EgLRBPck2e1HycR5pBnyssLnLWeh45Dwhrk922SUfXvywMMs9L2QgCHEDhl4xO6qfZiuT_0mvbA917OIE67qM0pgyaPP4bO55m9y9rp3gvoLmHYCUIDBMylRYvJ_f00m8ToDhA7T3KFRgR6vfZZz67g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(9)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqXyAJPk5W5TNQi1iGJGruTmS28JRL7p_u184Su7udyRbtNEEupNvoyYginsr8I7lkv3wIOAVmAdwo_J46N7tKPTDtXLVuzzyYHGkgWacNaHge4b5nGRgzzBim2IbsLnqK-BsOqVgBwgLwCseEgepLXkgpYc4igCR1_OA2QzwxIg5F_pPjXP_N1JqY-LfEaQCj_0IoY4sXJ-aougiTNyMn7Wb2ZPjvthQRivwZd5I0Stepuaa6XFCarbCdST6ezkW01uKpauGmhZ0MoVLPD7dRorwY8uXFXUJLgrKLhGNNq-g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Livre d'or</p><h2 class="section-title">Expériences Voyageurs</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjUsHotCjepVux0bfc-jjliGn1MY_K2spQVyQDZOJpne-6mSVA=s128-c0x00000000-cc-rp-mo-ba2" alt="helene boget"><div><h4>helene boget</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 2 mois</span></div></div><p class="review-text">"Nous venons de profiter de cette magnifique demeure ce week-end pour un anniversaire. Le charme du manoir, la déco incroyable, le confort et la gentillesse d’Agnes ont fait l’unanimité.
+Nous sommes 10 à avoir dormi sur place et 23 personnes samedi soir pour la soirée.
+C’était génial nous garderons u"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocIZp59q22fMn9R6XpThOqGhx93_aPcDOgbzMmr1zrq08zQQFA=s128-c0x00000000-cc-rp-mo" alt="valerie brac de la perriere"><div><h4>valerie brac de la perriere</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 2 ans</span></div></div><p class="review-text">"Agnès nous a accueillie dans son manoir aux petits soins pour que tout se déroule bien. Nous avons été conquis par le chic, le charme de cette maison à la décoration raffinée. Une maison de famille rare et précieuse pour recevoir à l’ancienne. À recommander sans modération pour les personnes de goût"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjVLkFwa-ffxCZbCjcm9vLL09CdEDfx6kCICC6_vGRVd5ejnthKOuA=s128-c0x00000000-cc-rp-mo-ba5" alt="Laurence Ego"><div><h4>Laurence Ego</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 5 ans</span></div></div><p class="review-text">"Un endroit magique, magnifique et vraiment calme ! Idéal pour se retrouver en famille mais peut-être moins entre amis (nous y étions pour un EVJF), le voisinage est vraiment virulent. Un coup de fil passé à la police pour 30mn de musique juste après notre dîner, un samedi soir... Je le recommande po"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocJqhw_1Vug9IN_GU82qNElwv2nk5e0d613hu7unToJ1XkBSoA=s128-c0x00000000-cc-rp-mo" alt="Alexandre IMBERT"><div><h4>Alexandre IMBERT</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 4 mois</span></div></div><p class="review-text">"Séjour absolument parfait du début à la fin.
+La propriété est magnifique et tout à fait conforme à la description et aux photos.
+Merci à Agnès pour son chaleureux accueil, son professionnalisme."</p></div></div></section>
+
+<section class="cta">
+    <div class="cta-content" data-aos="zoom-in" style="position:relative;z-index:2;max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)">
+        <h2 style="font-family:var(--font-serif);font-size:3rem;margin-bottom:1rem;color:var(--white)">Offrez-vous une Pause Enchantée</h2>
+        <p style="font-size:1.2rem;margin-bottom:2.5rem;opacity:0.9">Réservez Directement au Meilleur Prix Garanti</p>
+        <button class="btn-hero" onclick="openBooking()">Vérifier les disponibilités</button>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2 class="section-title" style="color:white;margin-bottom:3rem;text-align:left">Nous trouver</h2>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div>9 Rue Maréchal Joffre, 69660 Collonges-au-Mont-d'Or, France</div></div>
+            <div class="contact-item"><i class="fas fa-phone"></i> <div><a href="tel:0761967202">07 61 96 72 02</a></div></div>
+            <a href="https://maps.google.com/?q=45.8269239,4.8464372" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Obtenir l'itinéraire</a>
+        </div>
+        <div class="map-container">
+            <iframe class="map-frame" src="https://maps.google.com/maps?q=45.8269239,4.8464372&hl=fr&z=13&output=embed" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="sell-section">
+    <div class="sell-container">
+        <h2 class="sell-title">Ce site peut être le vôtre</h2>
+        <p class="sell-desc">Site optimisé pour le référencement pour se placer dans le haut des résultats de recherche pour gîte à Collonges-au-Mont-d'Or.</p>
+        
+        <div class="pricing-grid">
+            <div class="sell-card">
+                <div class="card-header"><h3>Achat Immédiat</h3></div>
+                <div class="price-box">
+                    <span class="price-old">790€</span>
+                    <div class="price-new">449€ <span class="price-sub">TTC</span></div>
+                </div>
+                <div>Paiement unique · Propriété 100%</div>
+            </div>
+            
+            <div class="sell-card">
+                <div class="card-header"><h3>Abonnement</h3></div>
+                <div class="price-box">
+                    <span class="price-old" style="visibility:hidden">00€</span>
+                    <div class="price-new">49€ <span class="price-sub">/mois</span></div>
+                </div>
+                <div>Sans engagement · Maintenance incluse</div>
+            </div>
+        </div>
+
+        <div class="sell-actions">
+            <a href="tel:33780954913" class="btn-sell primary"><i class="fas fa-phone"></i> Appeler</a>
+            <a href="https://wa.me/33780954913" class="btn-sell"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:contact@local-visibility.com" class="btn-sell"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </div>
+</section>
+
+<footer><p>© 2024 Manoir de Collonges - COSI WORK - Site réalisé par Local Visibility</p></footer>
+
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+            <h3>Réservation</h3>
+            <p>Manoir de Collonges - COSI WORK</p>
+        </div>
+        <div class="modal-body">
+            <form onsubmit="alert('Demande envoyée avec succès !');return false;">
+                <div class="form-grid">
+                    <div class="form-group"><label>Arrivée</label><input type="date" required id="checkin"></div>
+                    <div class="form-group"><label>Départ</label><input type="date" required id="checkout"></div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label>Prénom</label><input type="text" placeholder="Jean" required></div>
+                    <div class="form-group"><label>Nom</label><input type="text" placeholder="Dupont" required></div>
+                </div>
+                <div class="form-grid">
+                     <div class="form-group"><label>Email</label><input type="email" placeholder="email@exemple.com" required></div>
+                    <div class="form-group"><label>Téléphone <span style="font-weight:400;text-transform:none;font-size:0.7em">(facultatif)</span></label><input type="tel"></div>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer la demande</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+    <div class="lightbox-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+    <img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen">
+    <div class="lightbox-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({duration:800,once:true});
+    const modal = document.getElementById("bookingModal");
+    function openBooking(){modal.classList.add("active");document.body.style.overflow='hidden'}
+    function closeBooking(){modal.classList.remove("active");document.body.style.overflow='auto'}
+    modal.addEventListener('click', function(e){if(e.target===modal)closeBooking()});
+
+    const images = ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpo_NmrBFdDMGPfVdYLkbU_8XOGIrdQIp5ZsuCCVla3UvTW4QTrfKUHtH8BIRqj8bqwRlp0OmoPZKFZqtuYwNbsTVErp36hxtIq3rDQ9D-WYJaTp8Df6LJ5P58Nlxc4OyJgNX5DpC9voV7rkn18V2Gk7rEq-IHthZYGNoaD8rufKijQ4VblDX-I6G6eh5ep-ZvVZGM0pN_lm1m_n72wt_on-LWQhyyNH4rBhVXXmCJtWRtvL_G49r5NkMkKIKg1B6xGNCMahSTKDA6ZKSsGoupJdUm0vePs0mVmMsiqfJzaEA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpp27VfYCvoBeEdF5aMNlw3InQ8b7D16ogZ0IoY2FnYr0gOXYOtGHSC0VEmXRhAw7qvcVj4QKcPog21XE2QZVtPT7UeJX3sJ8OXGh3eEhPeNRgtAI5ovn7vFYVSpC2YnCMC0vkfPyFNC0qWwFRn-7ln8UQcI-bdX2PFXePp04UU6_ZbmCXFCqP-19_9fARZGTgr3PV6_QWFHP6bZESdhzukXYCo1-a64d-jOTd7QYl02v3hlLcn81d8tLu8o_er2LeLozDqhCd5_FEpUllJ-8kBCCnlveXBGMK6GbXXYfqGOR330OsdbHDubrYmNoyduJsbmDB77ImFZ-YFjw27LXBwDt6AgFYVwE7OOLqmsdGYruVy_1ERfIAVXx3h2uXz-7dV0_9Sop_4nEnpkRitfEEWMQK2hKnGxGnIDoWCpgM9aJoAxsD44DxQX05qlJaR&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHobqESUDFqii-_ZwP9b7TOIEtIVcnsFOwyxjT7hqe9eKdGCRhrd64tKZalkE0MxdPGNyBrAA3bfNfnJimzi4Wm-qmL9BW5a1biHGCmcd9vnrwheSUNHNSR55lXR6DAaJmyTDSg2GC5auGtrV9E1d5zsOyof_B3D6TLTdOmKA-MFuvJCY-56IhJeroMfeFZufANVvwVpKqxMHHi92VScKsb9OFS9MAbmBo-_Vaas4B6p7xJTrG265y5243ORGZLAkAJNUcU5k5QaqOQO2ul6pIhhJ6PXfBBLC82DOxzhcw_zC-o9e_ua6Fz48Hd5KBXvs54866xiF3Y0ntMlflZ3Y6HSoGCys-xfiNI4t5WRB3T0a90G1s-9ogIWyxBU70SJncGfQEGOPfQmnbn37tSdcRnv2uXD66Q6DL5U-UNFTmMqdKqk6GHZqfTWymx77xKW&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpU5du5z13N6Q9oi51K3yr7CF6C991YBcA-u9mPsyS7zVvAGktx3U8SmOzac67qRXx5Vzch7o2dMCYKQQah35J0MmFcV9ngLyw8cFJYVz8947AlSjvX6lJ7lifiOdDGUwcZ8hFfxZN9nSUYzXz3yv7YBYeLwEeR1-xbkOWqFVZy4zoQZ0BRzYYZHE2RqFXubXl0kvj9xr1FhC-j1nVLWVs4Xi9OzdZ9X5gc3uJPBql9evMctEsGsKklq1i_KDr1w7jGW9SH7xG1Hpv3GxjcA5ksXewbLuIdglxK1aPnyD3__GufFtZHGGbCZ6DUcwchNBVKZTdr-rQ_einRbPXeir4R12-79KuTsgM_yeTi7AN4D4eUZsMFpKd32gEdrkojU3ojOgvXB5hUsKSLUDiF8mwp2e2LkydmkYUL1_DDhWMDpg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrhqahv6yC6P2YYTn8-NlqYzbwfe8DZk_4UYn_xacmYfClIP6QTmS2C-rKcFv7udjkw4KUEGwMIe6JGH5Z73qyDFv4VQCcen_wuzI1AjOHX9dsoz_s483ubYWuIXxMmy1vLOXb7IikZUVU1f2NGy0xen18dP5z4kk1SejelehY125sY7eR7X_X8re3Rt5_aBWn7-JVtt7kW8p6lrcLqrw1KdSRQnoNq0HT5ROr6iO0BZthIMsfVJBX6zZRkOyZJC3tnbTfI91AXhkNtXrt_s_GKIaGBjyMwaXIVbR36N0iZu8UmCqkmfJFQrc-bWrW8gI2-WOFV2NuJjegjC8GAb3CXjuv3excqxb5KQkrWOJi-AqA3kcr7-e2RE6NXU5FemlHvk8w0FqxSz55oUnsEy1U5HsRRaGVgZJaJtNW198p9m7iSVJo2WUTBKJTyCWq5&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHo5CI54vjxpLZmNUuJm3v9Wt2c07fRQXVt_EJXtNJo7jPwQVjNPdFukcDCzIXV5V8bzHHsWFvOC4sNr5YgNOrcIJrly2y_lKe-JnxogqaZHESJlmsusrKSAwZzYcPCLu7oWh_5XWx_jnOjsYU6z3rAApTIHtGFyVIezwjGlhKewRzORXNVYmArHuysE4K38wjCLwC2rebvihJkMuckQHoRY1pMnOH5bui87d6MSoLmwo9jSx4Ad4ufIXdaA5mTK5hYu3v_qEsZ3qgRMZ6qcc0c5Ev59aKmrlBmnvPxTapnlZg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHp5KiXwzaGSr15IYIE0tHI2k5muNBqrS8thLW79MbY4ZOf9Lst89NhTzazPlKQZjpNNZLSOjW2pAiOyx68ZsyL3tqFlW9cVJLMQtMEkypP6VPqzVXJQAeSx2rG7ac1xucjBdXhBHcW75DxtTP71JwOOiGpexf4y1Vix9NhOMzTJs4SX0gjJWlvKbSCzTnkEcJOdLI6MI4zy6GiX_bpaSVPBtNHucaOaoACB3Kb7Z0DtdzZeqcqOg2JYvMviVrB0LemxD-3RjGYzq16-l5cgdrmBNkb7semhO8Wptih5XgnKx4f2rKbYrORN23a-ZHEVBZMcqRedKCVQjDy7p79KplusuvlvXZUzVktTX03vQx4alMWmC5e_Ij_NK1q1ivPDr_WLYSGBaqDQp2SKL4E0ySKKg-_tstnxPv_-zSa8gKlY-uZP9eWPISbcrh3QUB_x&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqxwScrnnwZV84CsLFaiURPnuttdCTp5ArALamHg0-GLwhr5z6W3agG46E0JzrgP7kpl0cnVMfdzD514MWrebetVQlJzYwWT0VD8nCJcfun_oQWNxV3MjUJsk7qo6jaKP53Zf4ztfot5-E_Z0boFDRZmVShqn4nybsCUNK83fiMdXScNSA6yzKc2w3uUQB6nU2hvfJDFbFF3uPa4ZeHtojg6oY82yFzunOlg5w3yinU8qwACkidiReAmO01kJqOjfjlQZrexhgZzD4PEmaEKeC9Kq2wlQAs1bF03Idr_FF4_A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpzhmD6S_BcQv0oc49W24jyWowRmsE7pndH-0ZG68_EbvvsYSMMALjUXm2BTMtlfB28Vy906oUntx-wz6zaG_eJGkkxbSxHRqdbGc-shThPxzG_hzqhqkmmeXiyH0YKmQ9aH6hjfreJ-SBeh6bc3B3EgLRBPck2e1HycR5pBnyssLnLWeh45Dwhrk922SUfXvywMMs9L2QgCHEDhl4xO6qfZiuT_0mvbA917OIE67qM0pgyaPP4bO55m9y9rp3gvoLmHYCUIDBMylRYvJ_f00m8ToDhA7T3KFRgR6vfZZz67g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqXyAJPk5W5TNQi1iGJGruTmS28JRL7p_u184Su7udyRbtNEEupNvoyYginsr8I7lkv3wIOAVmAdwo_J46N7tKPTDtXLVuzzyYHGkgWacNaHge4b5nGRgzzBim2IbsLnqK-BsOqVgBwgLwCseEgepLXkgpYc4igCR1_OA2QzwxIg5F_pPjXP_N1JqY-LfEaQCj_0IoY4sXJ-aougiTNyMn7Wb2ZPjvthQRivwZd5I0Stepuaa6XFCarbCdST6ezkW01uKpauGmhZ0MoVLPD7dRorwY8uXFXUJLgrKLhGNNq-g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    function openLightbox(index) {
+        if(!images || images.length === 0) return;
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    function changeImage(dir) {
+        currentIndex += dir;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        lightboxImg.src = images[currentIndex];
+    }
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") changeImage(1);
+        if (e.key === "ArrowLeft") changeImage(-1);
+    });
+</script>
+</body></html>
