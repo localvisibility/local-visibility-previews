@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Le Volcan des Sens - Torsiac</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#5c7c64;--primary-dark:#3a5240;--accent:#c68b59;--text:#2d2d2d;--bg:#fdfbf7;--white:#fff;--font-serif:"Playfair Display",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.6;background:var(--bg)}
+img{max-width:100%;height:auto;display:block}
+
+/* HEADER */
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);box-shadow:0 2px 20px rgba(0,0,0,0.05);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:900px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.85rem;text-transform:uppercase;transition:color 0.3s}.booking-bar nav a:hover{color:var(--accent)}.booking-bar .btn-book{background:var(--primary);color:var(--white);padding:0.7rem 1.8rem;border:none;border-radius:2px;font-weight:700;cursor:pointer;text-transform:uppercase;font-size:0.8rem;transition:background 0.3s}.booking-bar .btn-book:hover{background:var(--primary-dark)}
+
+/* HERO (Mobile Fixed) */
+.hero{position:relative;height:95vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoZLPNAKqVksUwW8Uzfr7IAw2HyJw3RBGbVuJ51nr9gjqEYF1WC-FTXyha35W46T-55Zt6XR_fXOB1ntLgabI-PBF2rNpAltoSYs15kvq4B6abGaE5IfOQemrraNTuyu5gBwbT-I6onPwqIhyT1-XGBDbV3Bv1sYbkOUaQELTMIEPRREiJa188NAlb9nns8J8m3d1-0Ssb4IQ7wKRbl2Tf1S_NlanEOJYxwLVpJ3ve8kiYGt9rHUhfGeg07dyX7iQMjHiLirZDV4d3xdLEfQSBhC0QiOZ9bYC23xSbnq-co6A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed}
+@media(max-width:768px){.hero-bg{background-attachment:scroll}} /* Fix mobile */
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.4)}
+.hero-content{position:relative;padding:2rem;width:95%;max-width:1000px;animation:fadeIn 1.5s}
+.hero-tagline{font-size:0.9rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:1rem;color:rgba(255,255,255,0.9)}
+.hero-title{font-family:var(--font-serif);font-size:clamp(3rem, 8vw, 5.5rem);margin-bottom:1.5rem;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.2);backdrop-filter:blur(5px);padding:0.6rem 1.5rem;border-radius:50px;margin-bottom:2rem;font-weight:600}
+.hero-rating i{color:#f1c40f}
+.hero-price-tag{font-size:1.8rem;font-weight:700;margin-bottom:2.5rem;text-shadow:0 2px 5px rgba(0,0,0,0.3)}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1rem 2.5rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:0.9rem;transition:all 0.3s;border:1px solid var(--white)}.btn-hero:hover{background:transparent;color:var(--white)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.6)}.btn-outline:hover{background:var(--white);color:var(--primary)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+@media(max-width:768px){section{padding:3rem 1.5rem}}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}.section-tagline{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:0.8rem;margin-bottom:1rem;display:block}.section-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);color:var(--primary-dark)}
+
+/* ABOUT & FEATURES */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}.about-img{order:2}}
+.about-img img{width:100%;display:block;box-shadow:20px 20px 0 var(--primary-dark)}
+
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto}@media(max-width:900px){.features-split{grid-template-columns:1fr}}.feature-block{padding:4rem;display:flex;flex-direction:column;justify-content:center}@media(max-width:768px){.feature-block{padding:3rem 1.5rem}}.feature-bg-1{background:#f4f1ea}.feature-bg-2{background:var(--primary-dark);color:var(--white)}.feature-bg-2 .section-tagline{color:var(--white);opacity:0.7}.feature-bg-2 .feature-title{color:var(--white)}.feature-img img{width:100%;height:100%;object-fit:cover;min-height:400px}
+
+/* ROOM CARD */
+.rooms-grid{max-width:1000px;margin:0 auto}
+.room-card{background:var(--white);box-shadow:0 15px 40px rgba(0,0,0,0.08);display:grid;grid-template-columns:1.2fr 1fr}
+@media(max-width:800px){.room-card{display:block;grid-template-columns:1fr}}
+.room-image{position:relative;cursor:pointer;overflow:hidden;height:350px}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;top:1.5rem;left:1.5rem;background:var(--white);padding:0.6rem 1.2rem;font-family:var(--font-serif);color:var(--text);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.room-price .amount{font-size:1.4rem;font-weight:700}.room-price .period{font-size:0.9rem;color:#666}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;opacity:0;transition:opacity 0.3s;pointer-events:none}.room-image:hover .zoom-icon{opacity:1}
+.room-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:800px){.room-content{padding:2rem}}
+.room-header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:1rem}
+.room-header-row h3{font-family:var(--font-serif);font-size:2rem;color:var(--primary-dark);margin:0}
+.room-cap-badge{background:var(--bg);padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:700;color:var(--primary)}
+.room-features{list-style:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:0.8rem}.room-features li{font-size:0.9rem;color:var(--primary-dark);display:flex;align-items:center;gap:0.5rem}.room-features i{color:var(--accent)}
+.btn-room{padding:1rem 2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;font-size:0.85rem;transition:all 0.3s;align-self:start}.btn-room:hover{background:var(--accent)}
+
+/* GALLERY & REVIEWS */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-width:1400px;margin:0 auto}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr 1fr;gap:0.5rem}}
+.gallery-item{height:300px;position:relative;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.gallery-item:hover img{transform:scale(1.05)}
+.reviews{background:var(--white)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}.review-card{background:var(--bg);padding:2rem;border-top:3px solid var(--accent)}.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.review-header img{width:50px;height:50px;border-radius:50%}
+
+/* CONTACT */
+.contact-section{background:var(--primary-dark);color:var(--white);padding:0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px}@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{padding:5rem}
+@media(max-width:768px){.contact-info{padding:3rem 1.5rem}}
+.contact-item{display:flex;gap:1.5rem;margin-bottom:2rem;font-size:1.1rem}.contact-item a{color:var(--white);text-decoration:none}
+.btn-itinerary{display:inline-block;margin-top:2rem;background:var(--white);color:var(--primary-dark);padding:1rem 2rem;text-decoration:none;font-weight:700;text-transform:uppercase;transition:all 0.3s}.btn-itinerary:hover{background:var(--accent);color:var(--primary-dark)}
+/* MAP FIX HTTPS */
+.map-container{position:relative;width:100%;height:100%;min-height:450px}.map-frame{position:absolute;top:0;left:0;width:100%;height:100%;border:none;filter:grayscale(0.2)}
+
+/* CTA */
+.cta{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoraN-VOUUcJlPiamhsDFZrKNCViHFVGxBZSFFXjHIAR0O17wz4jJOCyI2QCCarxECBW8RNawujdTtkxCX4dHwu-3paqsCLCmBnmQAP0FzxjydyrcOmIJ6qvRD_wthAs2Fd6xVyoZl-ECeLvj302LVdw4PEs0i53MOoJe3Og0iz3HuITVSab7TRUIuYICA57fuYzR2BSUX_dObMYjRzWDrKD4j0XLRK0Ew7e5PrCa0d6JSXAoIYla_Qev007gHjJ1gyyeDEYyDAPKYwKrCNzhRxjm0d29zYPfPGBtG7haL1zA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed;text-align:center;color:var(--white);padding:8rem 2rem}
+.cta-content{max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)}
+
+/* SELL SECTION (PRIX & OFFRES) */
+.sell-section{background:#1a4d2e;color:var(--white);padding:6rem 2rem;text-align:center;border-top:10px solid #143d24}
+.sell-container{max-width:900px;margin:0 auto}
+.sell-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);margin-bottom:1rem;color:var(--white)}
+.sell-desc{font-size:1.1rem;opacity:0.9;max-width:700px;margin:0 auto 4rem;line-height:1.6}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem}
+@media(max-width:700px){.pricing-grid{grid-template-columns:1fr}}
+.sell-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:2.5rem;transition:transform 0.3s}
+.sell-card:hover{transform:translateY(-5px);background:rgba(255,255,255,0.08)}
+.card-header h3{font-size:1.5rem;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:2px;font-weight:400}
+.price-box{margin-bottom:1.5rem}
+.price-old{text-decoration:line-through;opacity:0.6;font-size:1.3rem;display:block;margin-bottom:0.5rem}
+.price-new{font-family:var(--font-serif);font-size:3.5rem;line-height:1;color:var(--white)}
+.price-sub{font-size:1rem;text-transform:uppercase;opacity:0.8}
+.sell-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-sell{padding:1rem 2rem;border:1px solid rgba(255,255,255,0.3);color:var(--white);text-decoration:none;text-transform:uppercase;font-size:0.8rem;letter-spacing:1px;font-weight:700;transition:all 0.3s}.btn-sell:hover{background:var(--white);color:#1a4d2e}.btn-sell.primary{background:var(--white);color:#1a4d2e}
+
+/* MODAL & LIGHTBOX */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(5px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);width:95%;max-width:600px;max-height:90vh;overflow-y:auto;border-radius:10px}
+.modal-header{background:var(--primary);color:var(--white);padding:2rem;text-align:center}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+.modal-body{padding:2.5rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}@media(max-width:500px){.form-grid{grid-template-columns:1fr}}
+.form-group label{display:block;margin-bottom:0.6rem;font-weight:700;font-size:0.85rem;text-transform:uppercase}
+.form-group input{width:100%;padding:1rem;border:1px solid #ddd}
+.btn-submit{width:100%;padding:1.2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;cursor:pointer}
+
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.98);z-index:99999;display:none;justify-content:center;align-items:center}
+.lightbox.active{display:flex}
+.lightbox-img{max-height:85vh;max-width:90vw}.lightbox-close{position:absolute;top:30px;right:30px;color:white;font-size:2.5rem;cursor:pointer}.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%}.prev{left:30px}.next{right:30px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">Le Volcan des Sens</div><nav><a href="#about">Lieu</a><a href="#rooms">Hébergement</a><a href="#gallery">Galerie</a><a href="#contact">Accès</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Évasion, Calme, Authenticité</div>
+        <h1 class="hero-title">Le Volcan des Sens : Réveil des Éléments</h1>
+        <div class="hero-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>4.9/5</span></div>
+        <div class="hero-price-tag">200€ <span style="font-size:0.6em;vertical-align:middle">/ nuit</span></div>
+        
+        <div class="hero-actions">
+            <a href="#rooms" class="btn-hero">Découvrir le logement</a>
+            <a href="tel:0685575904" class="btn-hero btn-outline"><i class="fas fa-phone"></i> Appeler</a>
+        </div>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpiioi92JpNwDyGAifiugBkRQ2QvGc_P1ishOMYj8G4YcwEVJLeqx03uHHJONEW8RiObQ9TlT8eVuvs9xfCa_XH83QNycdFGr6jP82pBHaMeImLLKDcMrZCwZW5Flz6Vj5_jSO1rMClV4_7GQgrUhi7uTakvZdlMVl4lVFeJf3LzToU5lW6g6Y1KR1t0a9vlZpG0ARucEKM4oSDuvaeNmjoOmB-GF4ujOnLXFiqGf2atZhBO1OXPDC02YLQjPWfh-dloGl3rl52JhPq3VhT5ayvHg25HYjzTUZ9tJKeNfbUOw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">Une Histoire de Cœur et de Volcans</p><h2 class="section-title">L'Esprit de la Maison</h2><p style="color:#666;line-height:1.8;margin-bottom:2rem">Niché à Torsiac, Le Volcan des Sens est né d'une passion pour l'accueil et le partage. Nous vous ouvrons les portes de notre gîte de charme, un lieu pensé pour la détente et la découverte des saveurs locales. Laissez-vous bercer par la douceur de vivre auvergnate.</p><div style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;color:var(--primary)">"La nature apaise l'âme et éveille les sens."</div></div></div></section>
+
+<section id="rooms" style="background:#f9f9f9"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Votre Séjour</p><h2 class="section-title">L'Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image" onclick="openLightbox(2)">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpNziTWqJydVfwhbnxreepNJRGhFo-IdTo8cxsyerT7CkIEUf7Tx3lrGYAV5wB5qHeCqgHrvkfB2FWd3peS4TGKRO3Jdfq03dSpawSxrx4TBoHKLT9hHqW4RZb8s3blUoraU5Jv23sA-mTzrmFPZSPQ8JOmUe2XPAlo0AEXhXPRuF2AAc2qgLmjuXe7X66WuErR5AW5_FMvlznwqDZ3ThtfaOAHB78kSQS5QetvJqn66I-3z7kZS1KpGhFlfyg6Y_3wAyPO5cZZdp-oGayl52JD5SLIFzP0EfqSBS5ya8Lc-g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Le Volcan des Sens" loading="lazy">
+            <div class="room-price">
+                <span class="amount">200€ <span style="font-size:0.6em;vertical-align:middle">/ nuit</span></span>
+            </div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="room-content">
+            <div class="room-header-row">
+                <h3>Le Volcan des Sens</h3>
+                <div class="room-cap-badge"><i class="fas fa-user-friends"></i> 4 pers.</div>
+            </div>
+            <p class="room-desc">Niché à Torsiac, Le Volcan des Sens est né d'une passion pour l'accueil et le partage. Nous vous ouvrons les portes de notre gîte ...</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver maintenant</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--accent)">Saveurs</p><h2 class="feature-title" style="margin-bottom:1rem">La Table & Le Terroir</h2><p style="color:#666;line-height:1.8">Savourez un petit-déjeuner fait maison avec des confitures artisanales, des œufs frais de nos poules, du pain bio et les produits de nos producteurs locaux, un régal authentique.</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoraN-VOUUcJlPiamhsDFZrKNCViHFVGxBZSFFXjHIAR0O17wz4jJOCyI2QCCarxECBW8RNawujdTtkxCX4dHwu-3paqsCLCmBnmQAP0FzxjydyrcOmIJ6qvRD_wthAs2Fd6xVyoZl-ECeLvj302LVdw4PEs0i53MOoJe3Og0iz3HuITVSab7TRUIuYICA57fuYzR2BSUX_dObMYjRzWDrKD4j0XLRK0Ew7e5PrCa0d6JSXAoIYla_Qev007gHjJ1gyyeDEYyDAPKYwKrCNzhRxjm0d29zYPfPGBtG7haL1zA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline" style="color:var(--white)">Nature</p><h2 class="feature-title" style="margin-bottom:1rem">Jardin & Détente</h2><p style="opacity:0.9;line-height:1.8">Profitez de notre piscine chauffée, du calme du jardin arboré et des sentiers de randonnée à proximité pour une escapade ressourçante et conviviale.</p></div></div></section>
+
+<section id="gallery"><div class="section-header"><p class="section-tagline">En Images</p><h2 class="section-title">Galerie Photos</h2></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox(0)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoZLPNAKqVksUwW8Uzfr7IAw2HyJw3RBGbVuJ51nr9gjqEYF1WC-FTXyha35W46T-55Zt6XR_fXOB1ntLgabI-PBF2rNpAltoSYs15kvq4B6abGaE5IfOQemrraNTuyu5gBwbT-I6onPwqIhyT1-XGBDbV3Bv1sYbkOUaQELTMIEPRREiJa188NAlb9nns8J8m3d1-0Ssb4IQ7wKRbl2Tf1S_NlanEOJYxwLVpJ3ve8kiYGt9rHUhfGeg07dyX7iQMjHiLirZDV4d3xdLEfQSBhC0QiOZ9bYC23xSbnq-co6A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(1)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpiioi92JpNwDyGAifiugBkRQ2QvGc_P1ishOMYj8G4YcwEVJLeqx03uHHJONEW8RiObQ9TlT8eVuvs9xfCa_XH83QNycdFGr6jP82pBHaMeImLLKDcMrZCwZW5Flz6Vj5_jSO1rMClV4_7GQgrUhi7uTakvZdlMVl4lVFeJf3LzToU5lW6g6Y1KR1t0a9vlZpG0ARucEKM4oSDuvaeNmjoOmB-GF4ujOnLXFiqGf2atZhBO1OXPDC02YLQjPWfh-dloGl3rl52JhPq3VhT5ayvHg25HYjzTUZ9tJKeNfbUOw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(2)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpNziTWqJydVfwhbnxreepNJRGhFo-IdTo8cxsyerT7CkIEUf7Tx3lrGYAV5wB5qHeCqgHrvkfB2FWd3peS4TGKRO3Jdfq03dSpawSxrx4TBoHKLT9hHqW4RZb8s3blUoraU5Jv23sA-mTzrmFPZSPQ8JOmUe2XPAlo0AEXhXPRuF2AAc2qgLmjuXe7X66WuErR5AW5_FMvlznwqDZ3ThtfaOAHB78kSQS5QetvJqn66I-3z7kZS1KpGhFlfyg6Y_3wAyPO5cZZdp-oGayl52JD5SLIFzP0EfqSBS5ya8Lc-g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(3)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoraN-VOUUcJlPiamhsDFZrKNCViHFVGxBZSFFXjHIAR0O17wz4jJOCyI2QCCarxECBW8RNawujdTtkxCX4dHwu-3paqsCLCmBnmQAP0FzxjydyrcOmIJ6qvRD_wthAs2Fd6xVyoZl-ECeLvj302LVdw4PEs0i53MOoJe3Og0iz3HuITVSab7TRUIuYICA57fuYzR2BSUX_dObMYjRzWDrKD4j0XLRK0Ew7e5PrCa0d6JSXAoIYla_Qev007gHjJ1gyyeDEYyDAPKYwKrCNzhRxjm0d29zYPfPGBtG7haL1zA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(4)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpWs18IqAUNGEldrOT1VZxBq-v20SW6j3LWuTco3ztUiVWd2CJ1BqJDJK1reuRnHFsHXOQSvEnYLXXq0RbW2IZdBuph10kp1NDBATXZm3xEG22xWaEPLpDEfQcY-BTTrccZLv2nIHBj9_xRbPXazOY2_3hMToq9WmzeTySJS-bCvs5R0GlVwuac5A80y1z5rvG35EdVSyuXsVPj9Dw5yjTAwjoTY-OVnRLSitlv0zARHgh5iqtTiEDvUV7fQU1KhWeknH_yDYkaGFmH_wR0_CrnfX6QJStkoE1fu5lhMfxvMg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(5)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrF8-udF9maCksjcYpeAX_dPSPCB1uwGqkiJx0pHh8mnk3xiSOeZ7PkGxAv2UcA6HNJzMlNa-0UVgTPNN8BPYh-Sm5bn7XoHhy0fwCtHjzypSVZ2a710_AEGpe0_AdXNIHNU_ZH2CFtmi30NsL7MejMU4FM5Zfp_TY5TVR4jpPsZ989DV4uLwFgU9l19BYoPWalGKGwFv06CfNmNwaPSg7lsjEw_iitaWlMoXysIpsk0qjteiIjmWYzGkeby7zlW1nQFplnk0bFfA51BQQ5Slu-3lvcAU-0fJYjylroklRGPw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(6)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHodUYWdjP1DPKjItfzyEi6SeNV3NWzXLqGZCutyfsukh_m9dRzdqxUoTEcJBb0UOQUSFg8YA1eEdToA8So-_qMNWlT0dGxi-48R0wtmy1U0TkfYREPnPNnYzbvBEHLShMdIM2avpv45oXJvCmsPKKRzUd9_klgzK15QYOwiS4cmC6GgQxI36rYW-BzCAY6C2KItTTL6LMtF0BWnAHFgIss-lO8eOzXHi3Hwh1DV96kdJAY4tgimWYcZJyDy8tUp7wG0u-6gqhHW72Negh0Yr6y9BcxRGPUNT-Vjy_amYHlpfg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(7)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr5gPL9vXrf6RVaxV3mB1QByADWl2DmWp_8Z5r2ZNcVuHJT_JcALQgvSNhCJ-_awEaHHok52nPTtGNByG0hqJEFfePKg3Vl4uYkaAqUF7Fu1adZWeJqDuJ5mkool5BR-AyhZ06xGN6uM3ZmQf8pVLtFutoyoKpEXicZZHdgaL3j8ZvdCut_J6DVHRLBYxFbtRmFG9B-5GnGIFPQAOD9R8ceTSd9ElX4y_8KwUx2O_HIZ88352DpWTIRy0NmDOqBK8BpQCgh8tiJZByjf5iOymtEHTJAB9BKzikZ40sLH-IgJw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(8)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqbiAmpCZFN-aJ2eu9QGc4_KBF09ek7YML80jusmbod3aoShRcZKXv_iDdsm9uEGOG3TQfme92CNb9xcdW395KGgTOrewDrst2Su15zysEcyTAM0nSlL4bd-X8Tx_KZzeYeoRg5XjXZZCwxvDtmBhNWh5yuEQr-2faFmkXyO0cEeyeq0wtL8F8_beQ6myO8AmoSDspalJ3-CcHnL9KLKIQgk2vjpnaYWU5Uzfvf7ttug0O1VHZO1T2hPPCzp24ZOrFKmVXYozBKhb_mIvT31ZajTcoSVWF2LwDayWqD-L_E9A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(9)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHo7ta-_wHkSGWUGNf1kMj1JxSf2FRAbl1qx10_-XkSGZ-IAvsICQGyktYHOAsKB58a-inJgrG7RS5PRuKDfX8IAhATXqk2LJu20x9kD3WSnCoVW_vkBvbr0pjiYH8YCeGqmC6Uc7SyQ2RsaUkgPervyT12xKKFsNUrvpnbeyAR6OfJpTRtMvK3FzkBNUoAFdZd4CSHh-1Z3LHC-_OA89-JrQrvu_B3U_VVkOUOCooISMJi7sx86bNTChrwri-Rwy_t9Zdj9hWPUKfbDZTernnvrubeyO_gleX5jXlZPNVEeXw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Livre d'or</p><h2 class="section-title">Expériences Voyageurs</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocI3zciH5qwt1uPPFsgECV4jVKEdisXMLb6txY1Ka-HZG7bjXA=s128-c0x00000000-cc-rp-mo" alt="David ANASTASI"><div><h4>David ANASTASI</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 2 semaines</span></div></div><p class="review-text">"Une petite parenthèse merveilleuse  qui nous a fait un bien fou. Ici tout est propice à la détente et au farniente. La chambre est spacieuse, la literie hyper confortable, un cocon ou l’on s’y sent bien.
+Merci à Françoise et à Thierry pour leur accueil,  et mention spéciale pour le dîner où tout est"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjXgawm-aVdqLMtzOLkuXs34SgFzTvPqhjNqLf31u4Eq_pdp445L=s128-c0x00000000-cc-rp-mo" alt="Louise Galante"><div><h4>Louise Galante</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 4 mois</span></div></div><p class="review-text">"Nous avons passé une semaine très agréable et reposante au Volcan des Sens. Le lieu est magnifique, propice à la détente, et parfaitement entretenu. Françoise et Thierry sont des hôtes adorables, chaleureux et attentionnés. Chaque soir, un délicieux repas fait maison à base de produits frais nous ét"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjUu72OoQIt-nKqpfHNnlj_QXQveohQZWm66fzSyLtxaQIbxMHU8=s128-c0x00000000-cc-rp-mo" alt="Jean Claude Debord"><div><h4>Jean Claude Debord</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 2 mois</span></div></div><p class="review-text">"Si vous souhaitez passer un séjour en pleine nature au calme choisissez le Volcan des Sens. Vous y trouverez un accueil aimable, un lodge très confortable, douillet et décoré avec goût, un petit déjeuner copieux et varié et un dîner où Thierry prépare une cuisine inventive et goûteuse et Françoise d"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocLxt-9Ezh-4WVODmPNKP3KJ3weMdOCby27ar9rIEc2zKY0Z9pmC=s128-c0x00000000-cc-rp-mo" alt="Rmn Th"><div><h4>Rmn Th</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 2 mois</span></div></div><p class="review-text">"Un véritable havre de paix, au cœur de la nature. L’accueil est chaleureux et convivial, le repas digne d’un grand restaurant avec des produits locaux et de saison. Les chambres sont spacieuses, confortables et indépendantes, le spa est un vrai moment de détente et la vue sur la nature auvergnate es"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocIRboe3xBnJPN38uoLPOdjsaHpCx3YIB09pJY6hh2fiCC6BFg=s128-c0x00000000-cc-rp-mo-ba3" alt="Edith Petitet"><div><h4>Edith Petitet</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 2 mois</span></div></div><p class="review-text">"L'accueil de Françoise et Thierry est remarquable. Tout est pensé pour que nous nous sentions vraiment bien ; l'espace de vie, la terrasse avec spa/bain bouillonnant, le restaurant ...L'écolodge est fonctionnel, propre et très confortable. La literie de très bonne qualité. Les petits-déjeuners et dî"</p></div></div></section>
+
+<section class="cta">
+    <div class="cta-content" data-aos="zoom-in" style="position:relative;z-index:2;max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)">
+        <h2 style="font-family:var(--font-serif);font-size:3rem;margin-bottom:1rem;color:var(--white)">Réservez votre parenthèse enchantée</h2>
+        <p style="font-size:1.2rem;margin-bottom:2.5rem;opacity:0.9">Meilleur tarif garanti en direct</p>
+        <button class="btn-hero" onclick="openBooking()">Vérifier les disponibilités</button>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2 class="section-title" style="color:white;margin-bottom:3rem;text-align:left">Nous trouver</h2>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div>8 Rte du Pont d'Alagnon, 43450 Torsiac, France</div></div>
+            <div class="contact-item"><i class="fas fa-phone"></i> <div><a href="tel:0685575904">06 85 57 59 04</a></div></div>
+            <a href="https://maps.google.com/?q=45.3370906,3.1999495" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Obtenir l'itinéraire</a>
+        </div>
+        <div class="map-container">
+            <iframe class="map-frame" src="https://maps.google.com/maps?q=45.3370906,3.1999495&hl=fr&z=13&output=embed" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="sell-section">
+    <div class="sell-container">
+        <h2 class="sell-title">Ce site peut être le vôtre</h2>
+        <p class="sell-desc">Site optimisé pour le référencement pour se placer dans le haut des résultats de recherche pour gîte à Torsiac.</p>
+        
+        <div class="pricing-grid">
+            <div class="sell-card">
+                <div class="card-header"><h3>Achat Immédiat</h3></div>
+                <div class="price-box">
+                    <span class="price-old">790€</span>
+                    <div class="price-new">449€ <span class="price-sub">TTC</span></div>
+                </div>
+                <div>Paiement unique · Propriété 100%</div>
+            </div>
+            
+            <div class="sell-card">
+                <div class="card-header"><h3>Abonnement</h3></div>
+                <div class="price-box">
+                    <span class="price-old" style="visibility:hidden">00€</span>
+                    <div class="price-new">49€ <span class="price-sub">/mois</span></div>
+                </div>
+                <div>Sans engagement · Maintenance incluse</div>
+            </div>
+        </div>
+
+        <div class="sell-actions">
+            <a href="tel:33780954913" class="btn-sell primary"><i class="fas fa-phone"></i> Appeler</a>
+            <a href="https://wa.me/33780954913" class="btn-sell"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:contact@local-visibility.com" class="btn-sell"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </div>
+</section>
+
+<footer><p>© 2024 Le Volcan des Sens - Site réalisé par Local Visibility</p></footer>
+
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+            <h3>Réservation</h3>
+            <p>Le Volcan des Sens</p>
+        </div>
+        <div class="modal-body">
+            <form onsubmit="alert('Demande envoyée avec succès !');return false;">
+                <div class="form-grid">
+                    <div class="form-group"><label>Arrivée</label><input type="date" required id="checkin"></div>
+                    <div class="form-group"><label>Départ</label><input type="date" required id="checkout"></div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label>Prénom</label><input type="text" placeholder="Jean" required></div>
+                    <div class="form-group"><label>Nom</label><input type="text" placeholder="Dupont" required></div>
+                </div>
+                <div class="form-grid">
+                     <div class="form-group"><label>Email</label><input type="email" placeholder="email@exemple.com" required></div>
+                    <div class="form-group"><label>Téléphone <span style="font-weight:400;text-transform:none;font-size:0.7em">(facultatif)</span></label><input type="tel"></div>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer la demande</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+    <div class="lightbox-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+    <img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen">
+    <div class="lightbox-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({duration:800,once:true});
+    const modal = document.getElementById("bookingModal");
+    function openBooking(){modal.classList.add("active");document.body.style.overflow='hidden'}
+    function closeBooking(){modal.classList.remove("active");document.body.style.overflow='auto'}
+    modal.addEventListener('click', function(e){if(e.target===modal)closeBooking()});
+
+    const images = ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoZLPNAKqVksUwW8Uzfr7IAw2HyJw3RBGbVuJ51nr9gjqEYF1WC-FTXyha35W46T-55Zt6XR_fXOB1ntLgabI-PBF2rNpAltoSYs15kvq4B6abGaE5IfOQemrraNTuyu5gBwbT-I6onPwqIhyT1-XGBDbV3Bv1sYbkOUaQELTMIEPRREiJa188NAlb9nns8J8m3d1-0Ssb4IQ7wKRbl2Tf1S_NlanEOJYxwLVpJ3ve8kiYGt9rHUhfGeg07dyX7iQMjHiLirZDV4d3xdLEfQSBhC0QiOZ9bYC23xSbnq-co6A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpiioi92JpNwDyGAifiugBkRQ2QvGc_P1ishOMYj8G4YcwEVJLeqx03uHHJONEW8RiObQ9TlT8eVuvs9xfCa_XH83QNycdFGr6jP82pBHaMeImLLKDcMrZCwZW5Flz6Vj5_jSO1rMClV4_7GQgrUhi7uTakvZdlMVl4lVFeJf3LzToU5lW6g6Y1KR1t0a9vlZpG0ARucEKM4oSDuvaeNmjoOmB-GF4ujOnLXFiqGf2atZhBO1OXPDC02YLQjPWfh-dloGl3rl52JhPq3VhT5ayvHg25HYjzTUZ9tJKeNfbUOw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpNziTWqJydVfwhbnxreepNJRGhFo-IdTo8cxsyerT7CkIEUf7Tx3lrGYAV5wB5qHeCqgHrvkfB2FWd3peS4TGKRO3Jdfq03dSpawSxrx4TBoHKLT9hHqW4RZb8s3blUoraU5Jv23sA-mTzrmFPZSPQ8JOmUe2XPAlo0AEXhXPRuF2AAc2qgLmjuXe7X66WuErR5AW5_FMvlznwqDZ3ThtfaOAHB78kSQS5QetvJqn66I-3z7kZS1KpGhFlfyg6Y_3wAyPO5cZZdp-oGayl52JD5SLIFzP0EfqSBS5ya8Lc-g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoraN-VOUUcJlPiamhsDFZrKNCViHFVGxBZSFFXjHIAR0O17wz4jJOCyI2QCCarxECBW8RNawujdTtkxCX4dHwu-3paqsCLCmBnmQAP0FzxjydyrcOmIJ6qvRD_wthAs2Fd6xVyoZl-ECeLvj302LVdw4PEs0i53MOoJe3Og0iz3HuITVSab7TRUIuYICA57fuYzR2BSUX_dObMYjRzWDrKD4j0XLRK0Ew7e5PrCa0d6JSXAoIYla_Qev007gHjJ1gyyeDEYyDAPKYwKrCNzhRxjm0d29zYPfPGBtG7haL1zA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpWs18IqAUNGEldrOT1VZxBq-v20SW6j3LWuTco3ztUiVWd2CJ1BqJDJK1reuRnHFsHXOQSvEnYLXXq0RbW2IZdBuph10kp1NDBATXZm3xEG22xWaEPLpDEfQcY-BTTrccZLv2nIHBj9_xRbPXazOY2_3hMToq9WmzeTySJS-bCvs5R0GlVwuac5A80y1z5rvG35EdVSyuXsVPj9Dw5yjTAwjoTY-OVnRLSitlv0zARHgh5iqtTiEDvUV7fQU1KhWeknH_yDYkaGFmH_wR0_CrnfX6QJStkoE1fu5lhMfxvMg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrF8-udF9maCksjcYpeAX_dPSPCB1uwGqkiJx0pHh8mnk3xiSOeZ7PkGxAv2UcA6HNJzMlNa-0UVgTPNN8BPYh-Sm5bn7XoHhy0fwCtHjzypSVZ2a710_AEGpe0_AdXNIHNU_ZH2CFtmi30NsL7MejMU4FM5Zfp_TY5TVR4jpPsZ989DV4uLwFgU9l19BYoPWalGKGwFv06CfNmNwaPSg7lsjEw_iitaWlMoXysIpsk0qjteiIjmWYzGkeby7zlW1nQFplnk0bFfA51BQQ5Slu-3lvcAU-0fJYjylroklRGPw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHodUYWdjP1DPKjItfzyEi6SeNV3NWzXLqGZCutyfsukh_m9dRzdqxUoTEcJBb0UOQUSFg8YA1eEdToA8So-_qMNWlT0dGxi-48R0wtmy1U0TkfYREPnPNnYzbvBEHLShMdIM2avpv45oXJvCmsPKKRzUd9_klgzK15QYOwiS4cmC6GgQxI36rYW-BzCAY6C2KItTTL6LMtF0BWnAHFgIss-lO8eOzXHi3Hwh1DV96kdJAY4tgimWYcZJyDy8tUp7wG0u-6gqhHW72Negh0Yr6y9BcxRGPUNT-Vjy_amYHlpfg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHr5gPL9vXrf6RVaxV3mB1QByADWl2DmWp_8Z5r2ZNcVuHJT_JcALQgvSNhCJ-_awEaHHok52nPTtGNByG0hqJEFfePKg3Vl4uYkaAqUF7Fu1adZWeJqDuJ5mkool5BR-AyhZ06xGN6uM3ZmQf8pVLtFutoyoKpEXicZZHdgaL3j8ZvdCut_J6DVHRLBYxFbtRmFG9B-5GnGIFPQAOD9R8ceTSd9ElX4y_8KwUx2O_HIZ88352DpWTIRy0NmDOqBK8BpQCgh8tiJZByjf5iOymtEHTJAB9BKzikZ40sLH-IgJw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqbiAmpCZFN-aJ2eu9QGc4_KBF09ek7YML80jusmbod3aoShRcZKXv_iDdsm9uEGOG3TQfme92CNb9xcdW395KGgTOrewDrst2Su15zysEcyTAM0nSlL4bd-X8Tx_KZzeYeoRg5XjXZZCwxvDtmBhNWh5yuEQr-2faFmkXyO0cEeyeq0wtL8F8_beQ6myO8AmoSDspalJ3-CcHnL9KLKIQgk2vjpnaYWU5Uzfvf7ttug0O1VHZO1T2hPPCzp24ZOrFKmVXYozBKhb_mIvT31ZajTcoSVWF2LwDayWqD-L_E9A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHo7ta-_wHkSGWUGNf1kMj1JxSf2FRAbl1qx10_-XkSGZ-IAvsICQGyktYHOAsKB58a-inJgrG7RS5PRuKDfX8IAhATXqk2LJu20x9kD3WSnCoVW_vkBvbr0pjiYH8YCeGqmC6Uc7SyQ2RsaUkgPervyT12xKKFsNUrvpnbeyAR6OfJpTRtMvK3FzkBNUoAFdZd4CSHh-1Z3LHC-_OA89-JrQrvu_B3U_VVkOUOCooISMJi7sx86bNTChrwri-Rwy_t9Zdj9hWPUKfbDZTernnvrubeyO_gleX5jXlZPNVEeXw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    function openLightbox(index) {
+        if(!images || images.length === 0) return;
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    function changeImage(dir) {
+        currentIndex += dir;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        lightboxImg.src = images[currentIndex];
+    }
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") changeImage(1);
+        if (e.key === "ArrowLeft") changeImage(-1);
+    });
+</script>
+</body></html>
