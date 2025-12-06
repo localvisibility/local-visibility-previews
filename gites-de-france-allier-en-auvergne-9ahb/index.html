@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Gîtes de France, Allier en Auvergne - Moulins</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#3A5A40;--primary-dark:#283e2c;--accent:#DAD7CD;--text:#333;--bg:#FDFCF8;--white:#fff;--font-serif:"Playfair Display",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.6;background:var(--bg)}
+img{max-width:100%;height:auto;display:block}
+
+/* HEADER */
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(5px);box-shadow:0 2px 15px rgba(0,0,0,0.05);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:900px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.8rem;text-transform:uppercase;transition:color 0.3s}.booking-bar nav a:hover{color:var(--primary)}.booking-bar .btn-book{background:var(--primary);color:var(--white);padding:0.7rem 1.5rem;border:none;border-radius:2px;font-weight:700;cursor:pointer;text-transform:uppercase;font-size:0.75rem;letter-spacing:1px}.booking-bar .btn-book:hover{background:var(--primary-dark)}
+
+/* HERO */
+.hero{position:relative;height:95vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHovLXxJEjy-_y2X5ANBijKYEzvKGyoa9lf7RMgsOjfVAM2Q8bx9hpGVgCAbSSyg_iLuTtV2tL0yvAUYgFU9VBXnyXZHPaVAeLAiofUFMA81C-JFbJ7YmTOrDe_mHgnyfPVFVlg_5lrePjnp1HmG6qlVDzweKU9PzW6yDE74RLzhGQh2PiTj0IV_wpDUT5F-1hmyZCN2KGY-smsk_4bon8HkxWnLm5Dnu_aZMNh9BjDVa7Hg0Tk4Y2VRMafzvawMGtMUf8DmPAzkoNOdojgoey6eneM3omTwB9_pFGhpYI6vBg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35)}
+.hero-content{position:relative;padding:2rem;width:95%;max-width:1000px;animation:fadeIn 1.5s}
+.hero-title{font-family:var(--font-serif);font-size:clamp(2.5rem, 8vw, 5rem);margin-bottom:1.5rem;line-height:1.1}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.2);backdrop-filter:blur(5px);padding:0.6rem 1.5rem;border-radius:50px;margin-bottom:2rem;font-weight:600}
+.hero-rating i{color:#f1c40f}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1rem 2.5rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:0.9rem;transition:all 0.3s;border:1px solid var(--white)}.btn-hero:hover{background:transparent;color:var(--white)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+@media(max-width:768px){section{padding:3rem 1.5rem}}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}.section-tagline{color:var(--primary);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:0.8rem;margin-bottom:1rem;display:block}.section-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);color:var(--primary-dark)}
+
+/* ABOUT & FEATURES */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}.about-img{order:2}}
+.about-img img{width:100%;display:block;box-shadow:20px 20px 0 var(--accent)}
+
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto}@media(max-width:900px){.features-split{grid-template-columns:1fr}}.feature-block{padding:4rem;display:flex;flex-direction:column;justify-content:center}@media(max-width:768px){.feature-block{padding:3rem 1.5rem}}.feature-bg-1{background:#f4f1ea}.feature-bg-2{background:var(--primary);color:var(--white)}.feature-bg-2 .section-tagline{color:var(--white);opacity:0.7}.feature-bg-2 .feature-title{color:var(--white)}.feature-img img{width:100%;height:100%;object-fit:cover;min-height:400px}
+
+/* ROOM CARD */
+.rooms-grid{max-width:1000px;margin:0 auto}
+.room-card{background:var(--white);box-shadow:0 15px 40px rgba(0,0,0,0.08);display:grid;grid-template-columns:1.2fr 1fr}
+@media(max-width:800px){.room-card{display:block;grid-template-columns:1fr}}
+.room-image{position:relative;cursor:pointer;overflow:hidden;height:400px}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;top:1.5rem;left:1.5rem;background:var(--white);padding:0.6rem 1.2rem;font-family:var(--font-serif);color:var(--text);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.room-price .amount{font-size:1.4rem;font-weight:700}.room-price .period{font-size:0.9rem;color:#666}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;opacity:0;transition:opacity 0.3s;pointer-events:none}.room-image:hover .zoom-icon{opacity:1}
+.room-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:800px){.room-content{padding:2rem}}
+.room-header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:1rem}
+.room-header-row h3{font-family:var(--font-serif);font-size:2rem;color:var(--primary-dark);margin:0}
+.room-cap-badge{background:var(--accent);padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:700;color:var(--primary-dark)}
+.room-features{list-style:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:0.8rem}.room-features li{font-size:0.9rem;color:var(--primary-dark);display:flex;align-items:center;gap:0.5rem}.room-features i{color:var(--primary)}
+.btn-room{padding:1rem 2rem;background:var(--primary);color:var(--white);border:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;font-size:0.85rem;transition:all 0.3s;align-self:start}.btn-room:hover{background:var(--primary-dark)}
+
+/* GALLERY & REVIEWS */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-width:1400px;margin:0 auto}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr 1fr;gap:0.5rem}}
+.gallery-item{height:300px;position:relative;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.gallery-item:hover img{transform:scale(1.05)}
+.reviews{background:var(--white)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}.review-card{background:#f4f4f4;padding:2rem;border-top:3px solid var(--primary)}.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.review-header img{width:50px;height:50px;border-radius:50%}
+
+/* CONTACT & MAP */
+.contact-section{background:var(--primary-dark);color:var(--white);padding:0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px}@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{padding:5rem}
+@media(max-width:768px){.contact-info{padding:3rem 1.5rem}}
+.contact-item{display:flex;gap:1.5rem;margin-bottom:2rem;font-size:1.1rem}.contact-item a{color:var(--white);text-decoration:none}
+.btn-itinerary{display:inline-block;margin-top:2rem;background:var(--white);color:var(--primary-dark);padding:1rem 2rem;text-decoration:none;font-weight:700;text-transform:uppercase;transition:all 0.3s}.btn-itinerary:hover{background:var(--accent);color:var(--primary-dark)}
+.map-container{position:relative;width:100%;height:100%;min-height:450px}.map-frame{position:absolute;top:0;left:0;width:100%;height:100%;border:none;filter:grayscale(0.2)}
+
+/* CTA */
+.cta{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqEGozSB_9ndtiX2kE8px5MB5OcuNejolFO5gaY6XHi1nW2d27vrLiNdRDTAH7wqIpSJ6c144B3VbnZCR5K_Hml4Xd4DUFVL96jPR8GVIUa5r1edh9p6NMO5lp41EHSRWlfupEXXWpkLY7Y6TdoxXULhfuCFFgkqPVXPDOr_vRkdSBQmWDE0QHFYhvpEGQpnkAq2PXz5Ar-cxr377p4KWIXw0Sa6VeUEjqhs46au796YAiogcSH6CWf6-UOXp62ZLMXMiy0-tTkcvYR1t_9uH0dwQ72c6uBCEmjEcbFDvJWmw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed;text-align:center;color:var(--white);padding:8rem 2rem}
+.cta-content{max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)}
+
+/* SELL SECTION (PRIX & OFFRES) */
+.sell-section{background:#1a4d2e;color:var(--white);padding:6rem 2rem;text-align:center;border-top:10px solid #143d24}
+.sell-container{max-width:900px;margin:0 auto}
+.sell-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);margin-bottom:1rem;color:var(--white)}
+.sell-desc{font-size:1.1rem;opacity:0.9;max-width:700px;margin:0 auto 4rem;line-height:1.6}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem}
+@media(max-width:700px){.pricing-grid{grid-template-columns:1fr}}
+.sell-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:2.5rem;transition:transform 0.3s}
+.sell-card:hover{transform:translateY(-5px);background:rgba(255,255,255,0.08)}
+.card-header h3{font-size:1.5rem;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:2px;font-weight:400}
+.price-box{margin-bottom:1.5rem}
+.price-old{text-decoration:line-through;opacity:0.6;font-size:1.3rem;display:block;margin-bottom:0.5rem}
+.price-new{font-family:var(--font-serif);font-size:3.5rem;line-height:1;color:var(--white)}
+.price-sub{font-size:1rem;text-transform:uppercase;opacity:0.8}
+.sell-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-sell{padding:1rem 2rem;border:1px solid rgba(255,255,255,0.3);color:var(--white);text-decoration:none;text-transform:uppercase;font-size:0.8rem;letter-spacing:1px;font-weight:700;transition:all 0.3s}.btn-sell:hover{background:var(--white);color:#1a4d2e}.btn-sell.primary{background:var(--white);color:#1a4d2e}
+
+/* MODAL & LIGHTBOX */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(5px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);width:95%;max-width:600px;max-height:90vh;overflow-y:auto;border-radius:10px}
+.modal-header{background:var(--primary);color:var(--white);padding:2rem;text-align:center}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+.modal-body{padding:2.5rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}@media(max-width:500px){.form-grid{grid-template-columns:1fr}}
+.form-group label{display:block;margin-bottom:0.6rem;font-weight:700;font-size:0.85rem;text-transform:uppercase}
+.form-group input{width:100%;padding:1rem;border:1px solid #ddd}
+.btn-submit{width:100%;padding:1.2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;cursor:pointer}
+
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.98);z-index:99999;display:none;justify-content:center;align-items:center}
+.lightbox.active{display:flex}
+.lightbox-img{max-height:85vh;max-width:90vw}.lightbox-close{position:absolute;top:30px;right:30px;color:white;font-size:2.5rem;cursor:pointer}.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%}.prev{left:30px}.next{right:30px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">Gîtes de France, Allier en Auvergne</div><nav><a href="#about">Lieu</a><a href="#rooms">Hébergement</a><a href="#gallery">Galerie</a><a href="#contact">Accès</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Bienvenue en Auvergne !</div>
+        <h1 class="hero-title">Un Coin de Paradis Bourbonnais à Moulins</h1>
+        <div class="hero-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>4/5</span></div>
+        <div style="font-size:1.4rem;font-weight:300;margin-bottom:2.5rem;opacity:0.9">100€ / nuit</div>
+        <a href="#rooms" class="btn-hero">Découvrir le logement</a>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpVVXNZH6B2nT4InlQ3PabNwIJ02Dg4cm-5mDAvrLT57ruX100yCDRinHXNttnbnclvn_W4nZAwJ2eH-_lpRG84wiOmncj83OpPzPj0bxOp1nMolbEBA6WaymbR6qWDyh0DFJKFipgT7b3FQMfESYLh7ULn6KW5hQNxcgHlAV6sZJ-r6iRpH9YKm9WwCmd-Wn0A5F0U7ewrI-NYqijWRbZ_6iPpwZ8pH-6lwY3emzWmhBCiyIbiLf4nsbE1Ti7FKMltzXLmRhdydXPDpdIzdrL_BscvUfGArhShtUrO_nGwXDY7YwE7EfCuGDPr2CUfhZji1xIdxvUDiPpEt1XKdaVh6LQafdPzByDM1CeAyzhbJpRpnspKCY7CkTGX1klmT6xNM0bUGkDBZG1B21SJ59VYVfmMmJ1wZAoYCEWg54iEEbzO&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">L'âme d'une maison, une histoire à partager</p><h2 class="section-title">L'Esprit de la Maison</h2><p style="color:#666;line-height:1.8;margin-bottom:2rem">Bien plus qu'un simple gîte, c'est une maison de famille où l'on aime recevoir. Ici, l'accueil est chaleureux, l'ambiance conviviale et le temps semble suspendu. Laissez-vous bercer par la douceur de vivre et découvrez les secrets de notre belle région.</p><div style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;color:var(--primary)">"La nature est le meilleur des refuges."</div></div></div></section>
+
+<section id="rooms" style="background:#f9f9f9"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Votre Séjour</p><h2 class="section-title">L'Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image" onclick="openLightbox(2)">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHriC1La0TK-QpMlVNc6PFz2tN-IoZrfOCoyzz6OWN9Grn7ScBEzg1fHIRndy2oVgYFODOyhlOxb1-fNceDdNulHPXaf7WWDmvGls7PXFC5JkSo-4iagEphSwrDRQCbYLVHrsuN4pePihEG4st1K877rtrprlloJCcTKeNMvwWVNgabXlsN7W9Xikr0qpbCFgb7tUj-6NZT9uT_uKpKilxT28pJ2-I8dyhdd3__5TknlRcJc-RqMEwnhhEfnE67zkR9jevXfB0qGgZcz_vRzgIF8vu5iLBxzqqiLQQgaicRKGoMNDIoUoCW8EzRAIElKmPqz7lV6v0B_YaOyRmzbEcdM8SLYUW9DBx-fREPFirat6OR5WJs1TcE8FoEMdI7B4EMvu4-fF4pzyRTinTv5SNKY_0aLFfxU0g2slsadR1B_591U&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Gîtes de France, Allier en Auvergne" loading="lazy">
+            <div class="room-price">
+                <span class="amount">100€</span>
+                <span class="period">/ nuit</span>
+            </div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="room-content">
+            <div class="room-header-row">
+                <h3>Gîtes de France, Allier en Auvergne</h3>
+                <div class="room-cap-badge"><i class="fas fa-user-friends"></i> 4 pers.</div>
+            </div>
+            <p class="room-desc">Bien plus qu'un simple gîte, c'est une maison de famille où l'on aime recevoir. Ici, l'accueil est chaleureux, l'ambiance convivia...</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver maintenant</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--primary)">Saveurs</p><h2 class="feature-title" style="margin-bottom:1rem">La Table d'Hôtes & Saveurs Bourbonnaises</h2><p style="color:#666;line-height:1.8">Commencez la journée avec un petit-déjeuner gourmand composé de confitures maison, d'œufs frais de nos poules, de pain bio et de produits locaux sélectionnés avec soin chez nos producteurs voisins.</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqEGozSB_9ndtiX2kE8px5MB5OcuNejolFO5gaY6XHi1nW2d27vrLiNdRDTAH7wqIpSJ6c144B3VbnZCR5K_Hml4Xd4DUFVL96jPR8GVIUa5r1edh9p6NMO5lp41EHSRWlfupEXXWpkLY7Y6TdoxXULhfuCFFgkqPVXPDOr_vRkdSBQmWDE0QHFYhvpEGQpnkAq2PXz5Ar-cxr377p4KWIXw0Sa6VeUEjqhs46au796YAiogcSH6CWf6-UOXp62ZLMXMiy0-tTkcvYR1t_9uH0dwQ72c6uBCEmjEcbFDvJWmw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline">Grand Air</p><h2 class="feature-title" style="margin-bottom:1rem">Un Havre de Paix au Cœur de la Nature</h2><p style="opacity:0.9;line-height:1.8">Profitez de la piscine chauffée pour vous rafraîchir, détendez-vous à l'ombre des arbres centenaires ou partez explorer les sentiers de randonnée qui serpentent à travers la campagne environnante.</p></div></div></section>
+
+<section id="gallery"><div class="section-header"><p class="section-tagline">En Images</p><h2 class="section-title">Galerie Photos</h2></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox(0)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHovLXxJEjy-_y2X5ANBijKYEzvKGyoa9lf7RMgsOjfVAM2Q8bx9hpGVgCAbSSyg_iLuTtV2tL0yvAUYgFU9VBXnyXZHPaVAeLAiofUFMA81C-JFbJ7YmTOrDe_mHgnyfPVFVlg_5lrePjnp1HmG6qlVDzweKU9PzW6yDE74RLzhGQh2PiTj0IV_wpDUT5F-1hmyZCN2KGY-smsk_4bon8HkxWnLm5Dnu_aZMNh9BjDVa7Hg0Tk4Y2VRMafzvawMGtMUf8DmPAzkoNOdojgoey6eneM3omTwB9_pFGhpYI6vBg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(1)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpVVXNZH6B2nT4InlQ3PabNwIJ02Dg4cm-5mDAvrLT57ruX100yCDRinHXNttnbnclvn_W4nZAwJ2eH-_lpRG84wiOmncj83OpPzPj0bxOp1nMolbEBA6WaymbR6qWDyh0DFJKFipgT7b3FQMfESYLh7ULn6KW5hQNxcgHlAV6sZJ-r6iRpH9YKm9WwCmd-Wn0A5F0U7ewrI-NYqijWRbZ_6iPpwZ8pH-6lwY3emzWmhBCiyIbiLf4nsbE1Ti7FKMltzXLmRhdydXPDpdIzdrL_BscvUfGArhShtUrO_nGwXDY7YwE7EfCuGDPr2CUfhZji1xIdxvUDiPpEt1XKdaVh6LQafdPzByDM1CeAyzhbJpRpnspKCY7CkTGX1klmT6xNM0bUGkDBZG1B21SJ59VYVfmMmJ1wZAoYCEWg54iEEbzO&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(2)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHriC1La0TK-QpMlVNc6PFz2tN-IoZrfOCoyzz6OWN9Grn7ScBEzg1fHIRndy2oVgYFODOyhlOxb1-fNceDdNulHPXaf7WWDmvGls7PXFC5JkSo-4iagEphSwrDRQCbYLVHrsuN4pePihEG4st1K877rtrprlloJCcTKeNMvwWVNgabXlsN7W9Xikr0qpbCFgb7tUj-6NZT9uT_uKpKilxT28pJ2-I8dyhdd3__5TknlRcJc-RqMEwnhhEfnE67zkR9jevXfB0qGgZcz_vRzgIF8vu5iLBxzqqiLQQgaicRKGoMNDIoUoCW8EzRAIElKmPqz7lV6v0B_YaOyRmzbEcdM8SLYUW9DBx-fREPFirat6OR5WJs1TcE8FoEMdI7B4EMvu4-fF4pzyRTinTv5SNKY_0aLFfxU0g2slsadR1B_591U&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(3)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqEGozSB_9ndtiX2kE8px5MB5OcuNejolFO5gaY6XHi1nW2d27vrLiNdRDTAH7wqIpSJ6c144B3VbnZCR5K_Hml4Xd4DUFVL96jPR8GVIUa5r1edh9p6NMO5lp41EHSRWlfupEXXWpkLY7Y6TdoxXULhfuCFFgkqPVXPDOr_vRkdSBQmWDE0QHFYhvpEGQpnkAq2PXz5Ar-cxr377p4KWIXw0Sa6VeUEjqhs46au796YAiogcSH6CWf6-UOXp62ZLMXMiy0-tTkcvYR1t_9uH0dwQ72c6uBCEmjEcbFDvJWmw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(4)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqO1Wd1pqh2xhx0Eb2L4VM0twCEcW6lTI6vEfQuVmOm1jk0pxZcFoRa1OxJMVOpRmbuHhfv4Wb5Z3D9cGSf_oE1a69OFcbRMShNHMU1v4pAPoGZJSGhizGEaNwcqOyDhruFDBbqUKeCpy55nZbVdBcdOQnxcHUX7nxuF9v25MtWmYJS9iXZsaKtKm1ncJpKFw-F432pKHM_DP4lzFhPdqzt1RQ6JaIW-sx9DevQaW24zEpZ6FXNCczDu_89ia8porN4kF23r2QSx6xbn6PKU27nWy-3Oqx7niQSEmYc1TdnBA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(5)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpN50rA8PEtJJr9-cnHNndEPwcWMbERpyPUyvTlL2e2YpabXUCbjLp3uvJfJHO-ep6nFdhdeqEfbc9NH9nJM8aibupd0K2WTs0ogsjqbf17AguisfNwvDDhr8DgXqFbh22Y0QmcuWrstX6F14pQtzLQZpouY2Da6tne8-uyrPeaTrJAfDfMHq3qUcc6yLAo6fc2OVw5HRu4p3vu6xi-mozyk9t9BXoCo3EPkdzADA-3t4xs30jWj4dqrA2Th49JVACaYU6T2njd4hI6TCzW_fbXX-vlW8O67CL5l3Z63c_khw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(6)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpYQwp_TWjBUL2tHiG7QPHeMCiZ4uapmTx-CYGhHsSiVLF0_fv1jBX5yG3ghcxAFLRZ40GsVzwYL-YI7U9PtDD6LGcHq7TapFxQ0fud_DzDeUmfqpayt0_S8AUcLop3qL4-8eKJgMBEsi8ZID0-LCTQQprT-Pz2IDrdf7F98k7JROhGZPCOKz0vfz8jj0D1KAK6G_QC0alrTrD7vn6LPl3UDYyiyloaT1GA8fHqkQkaPjsZILOZ_f3Lf2fMQxFB_xc8-_v_Od_1Ox_9kWoeTBdRTDzcNxrsnWaHOrhALnP4pQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(7)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoo0hwXJa8-Fb7WO_0HrgnQ35mBC6FnvMcngaUtGOc1m0MlWQ01nKO81veqdmz7dtiT3mLtGVR-Mcfpmk6o2K8x_YJla4DZMCtJYKclPvhqr26oYDzgP48INgyJSzYsJvKRyCTrHT2Tr9AVPcSELNxLwTr9eigRkj1NBJqDQARNEkWsR1F6AOHfFSxcQymgYrSukRKgmcXKFx89bMoQJ6Oeb1e2wx2xMtThbhgLRULsM14hP2V4xrCtp55aed6N0pHAal0ce8GZQvQaL61MNAWEw6KX0RLHHGFU03wNKg8dzw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(8)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoauBDyLoOBR-LN2Ti5MVhT6KunLd16R9LJuAdxVPmqvqwTfqK4lkG4pR8jKkeiM_quHajgJckLohGtOz1VufmP9OLXkvzyqztoEuHlnP5GMDBbKrhWrz_1oSr0lLUF-NVrhrQZB7f_W2ZqSU4I6uwyEBJeDSiRG6BryldxXvAHxeON-o9H8ntQeed_mmQgiDcCpZFmHI4hVk2fFuO3oO70nKM8fwkIHfgqfzlno-4qI5n88N1n_mLlLWfzLrw8Wh9FTW9mwNeBpifmpe6DfbQsssroy0v4OovVmZ6K1vBfJnWbDLvNYRR8KiyzpbB1KF_W3SfdVsGHMJQt_fq3_wJoWUpuQTSELtuILlpP96jByGixSev5Gsyi9R72ka8fOfqaI54BiheYY6mMBQQUnRXkPKWqXtPMfSszaWeNcQ8afA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(9)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq6DYnshq2nucbjMLA6zCUrNyC-EDnKYhItA_YtBH6t4iVOsBc0J_SkXEoUphqudSEph78OvLdpJeSrPB7AzVIguC--rIFW47e7_Wmwu7KcRutnYAoz88VXQyA3qVeObdxSD6lPOV9a5-_xfImr9mKhvKxSiHWfVe5YwsGe8meQJkIzXO963wWMCI7RpnD0gd3TQOi1LQK8k54ZmvuEH3aux3JCzuQwOFhjWbi6t-I15mOqpgp23cyugqzLlPcpMdQxvH_SROLB-8YyCra86kDR1LTpVwkVAtsJI_y0BhXXXA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Livre d'or</p><h2 class="section-title">Expériences Voyageurs</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocJMQUOrJJi2C8O65J_4bmV5YYYWqmfVTtM1bZAT2poYLIf9jA=s128-c0x00000000-cc-rp-mo" alt="le maitre"><div><h4>le maitre</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 3 ans</span></div></div><p class="review-text">"Excellent contact avec le standard des gites de France Allier. N'hésitez pas à les appeler si vous voulez des renseignements, ils sont super."</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocKs5ZjCOe6llsYJndholAU5kevhDW5eCQX6H9OWK9OOTfPuKA=s128-c0x00000000-cc-rp-mo" alt="martine vineau"><div><h4>martine vineau</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 9 ans</span></div></div><p class="review-text">"je tenais a vous remercier .grace a vous,nous avons pu passer  nos vacances comme nous l'avions prévus .vous avez su réagir  rapidement a notre problème et notre nouveau gite était au de la de nos attentent , merci encore pour votre dévouement et votre gentillesse  et bravo pour votre professinalism"</p></div></div></section>
+
+<section class="cta">
+    <div class="cta-content" data-aos="zoom-in" style="position:relative;z-index:2;max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)">
+        <h2 style="font-family:var(--font-serif);font-size:3rem;margin-bottom:1rem;color:var(--white)">Offrez-vous une Pause Bien-Être</h2>
+        <p style="font-size:1.2rem;margin-bottom:2.5rem;opacity:0.9">Réservez dès maintenant et bénéficiez du meilleur tarif !</p>
+        <button class="btn-hero" onclick="openBooking()">Vérifier les disponibilités</button>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2 class="section-title" style="color:white;margin-bottom:3rem;text-align:left">Nous trouver</h2>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div>16 Rue de l'Horloge, 03000 Moulins, France</div></div>
+            <div class="contact-item"><i class="fas fa-phone"></i> <div><a href="tel:0482756856">04 82 75 68 56</a></div></div>
+            <a href="https://maps.google.com/maps?q=46.5657206,3.3329187" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Obtenir l'itinéraire</a>
+        </div>
+        <div class="map-container">
+            <iframe class="map-frame" src="https://maps.google.com/maps?q=46.5657206,3.3329187&hl=fr&z=13&output=embed" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="sell-section">
+    <div class="sell-container">
+        <h2 class="sell-title">Ce site peut être le vôtre</h2>
+        <p class="sell-desc">Site optimisé pour le référencement pour se placer dans le haut des résultats de recherche pour gîte à Moulins.</p>
+        
+        <div class="pricing-grid">
+            <div class="sell-card">
+                <div class="card-header"><h3>Achat Immédiat</h3></div>
+                <div class="price-box">
+                    <span class="price-old">790€</span>
+                    <div class="price-new">449€ <span class="price-sub">TTC</span></div>
+                </div>
+                <div>Paiement unique · Propriété 100%</div>
+            </div>
+            
+            <div class="sell-card">
+                <div class="card-header"><h3>Abonnement</h3></div>
+                <div class="price-box">
+                    <span class="price-old" style="visibility:hidden">00€</span>
+                    <div class="price-new">49€ <span class="price-sub">/mois</span></div>
+                </div>
+                <div>Sans engagement · Maintenance incluse</div>
+            </div>
+        </div>
+
+        <div class="sell-actions">
+            <a href="tel:33780954913" class="btn-sell primary"><i class="fas fa-phone"></i> Appeler</a>
+            <a href="https://wa.me/33780954913" class="btn-sell"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:contact@local-visibility.com" class="btn-sell"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </div>
+</section>
+
+<footer><p>© 2024 Gîtes de France, Allier en Auvergne - Site réalisé par Local Visibility</p></footer>
+
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+            <h3>Réservation</h3>
+            <p>Gîtes de France, Allier en Auvergne</p>
+        </div>
+        <div class="modal-body">
+            <form onsubmit="alert('Demande envoyée avec succès !');return false;">
+                <div class="form-grid">
+                    <div class="form-group"><label>Arrivée</label><input type="date" required id="checkin"></div>
+                    <div class="form-group"><label>Départ</label><input type="date" required id="checkout"></div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label>Prénom</label><input type="text" placeholder="Jean" required></div>
+                    <div class="form-group"><label>Nom</label><input type="text" placeholder="Dupont" required></div>
+                </div>
+                <div class="form-grid">
+                     <div class="form-group"><label>Email</label><input type="email" placeholder="email@exemple.com" required></div>
+                    <div class="form-group"><label>Téléphone <span style="font-weight:400;text-transform:none;font-size:0.7em">(facultatif)</span></label><input type="tel"></div>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer la demande</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+    <div class="lightbox-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+    <img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen">
+    <div class="lightbox-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({duration:800,once:true});
+    const modal = document.getElementById("bookingModal");
+    function openBooking(){modal.classList.add("active");document.body.style.overflow='hidden'}
+    function closeBooking(){modal.classList.remove("active");document.body.style.overflow='auto'}
+    modal.addEventListener('click', function(e){if(e.target===modal)closeBooking()});
+
+    const images = ["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHovLXxJEjy-_y2X5ANBijKYEzvKGyoa9lf7RMgsOjfVAM2Q8bx9hpGVgCAbSSyg_iLuTtV2tL0yvAUYgFU9VBXnyXZHPaVAeLAiofUFMA81C-JFbJ7YmTOrDe_mHgnyfPVFVlg_5lrePjnp1HmG6qlVDzweKU9PzW6yDE74RLzhGQh2PiTj0IV_wpDUT5F-1hmyZCN2KGY-smsk_4bon8HkxWnLm5Dnu_aZMNh9BjDVa7Hg0Tk4Y2VRMafzvawMGtMUf8DmPAzkoNOdojgoey6eneM3omTwB9_pFGhpYI6vBg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpVVXNZH6B2nT4InlQ3PabNwIJ02Dg4cm-5mDAvrLT57ruX100yCDRinHXNttnbnclvn_W4nZAwJ2eH-_lpRG84wiOmncj83OpPzPj0bxOp1nMolbEBA6WaymbR6qWDyh0DFJKFipgT7b3FQMfESYLh7ULn6KW5hQNxcgHlAV6sZJ-r6iRpH9YKm9WwCmd-Wn0A5F0U7ewrI-NYqijWRbZ_6iPpwZ8pH-6lwY3emzWmhBCiyIbiLf4nsbE1Ti7FKMltzXLmRhdydXPDpdIzdrL_BscvUfGArhShtUrO_nGwXDY7YwE7EfCuGDPr2CUfhZji1xIdxvUDiPpEt1XKdaVh6LQafdPzByDM1CeAyzhbJpRpnspKCY7CkTGX1klmT6xNM0bUGkDBZG1B21SJ59VYVfmMmJ1wZAoYCEWg54iEEbzO&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHriC1La0TK-QpMlVNc6PFz2tN-IoZrfOCoyzz6OWN9Grn7ScBEzg1fHIRndy2oVgYFODOyhlOxb1-fNceDdNulHPXaf7WWDmvGls7PXFC5JkSo-4iagEphSwrDRQCbYLVHrsuN4pePihEG4st1K877rtrprlloJCcTKeNMvwWVNgabXlsN7W9Xikr0qpbCFgb7tUj-6NZT9uT_uKpKilxT28pJ2-I8dyhdd3__5TknlRcJc-RqMEwnhhEfnE67zkR9jevXfB0qGgZcz_vRzgIF8vu5iLBxzqqiLQQgaicRKGoMNDIoUoCW8EzRAIElKmPqz7lV6v0B_YaOyRmzbEcdM8SLYUW9DBx-fREPFirat6OR5WJs1TcE8FoEMdI7B4EMvu4-fF4pzyRTinTv5SNKY_0aLFfxU0g2slsadR1B_591U&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqEGozSB_9ndtiX2kE8px5MB5OcuNejolFO5gaY6XHi1nW2d27vrLiNdRDTAH7wqIpSJ6c144B3VbnZCR5K_Hml4Xd4DUFVL96jPR8GVIUa5r1edh9p6NMO5lp41EHSRWlfupEXXWpkLY7Y6TdoxXULhfuCFFgkqPVXPDOr_vRkdSBQmWDE0QHFYhvpEGQpnkAq2PXz5Ar-cxr377p4KWIXw0Sa6VeUEjqhs46au796YAiogcSH6CWf6-UOXp62ZLMXMiy0-tTkcvYR1t_9uH0dwQ72c6uBCEmjEcbFDvJWmw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqO1Wd1pqh2xhx0Eb2L4VM0twCEcW6lTI6vEfQuVmOm1jk0pxZcFoRa1OxJMVOpRmbuHhfv4Wb5Z3D9cGSf_oE1a69OFcbRMShNHMU1v4pAPoGZJSGhizGEaNwcqOyDhruFDBbqUKeCpy55nZbVdBcdOQnxcHUX7nxuF9v25MtWmYJS9iXZsaKtKm1ncJpKFw-F432pKHM_DP4lzFhPdqzt1RQ6JaIW-sx9DevQaW24zEpZ6FXNCczDu_89ia8porN4kF23r2QSx6xbn6PKU27nWy-3Oqx7niQSEmYc1TdnBA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpN50rA8PEtJJr9-cnHNndEPwcWMbERpyPUyvTlL2e2YpabXUCbjLp3uvJfJHO-ep6nFdhdeqEfbc9NH9nJM8aibupd0K2WTs0ogsjqbf17AguisfNwvDDhr8DgXqFbh22Y0QmcuWrstX6F14pQtzLQZpouY2Da6tne8-uyrPeaTrJAfDfMHq3qUcc6yLAo6fc2OVw5HRu4p3vu6xi-mozyk9t9BXoCo3EPkdzADA-3t4xs30jWj4dqrA2Th49JVACaYU6T2njd4hI6TCzW_fbXX-vlW8O67CL5l3Z63c_khw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHpYQwp_TWjBUL2tHiG7QPHeMCiZ4uapmTx-CYGhHsSiVLF0_fv1jBX5yG3ghcxAFLRZ40GsVzwYL-YI7U9PtDD6LGcHq7TapFxQ0fud_DzDeUmfqpayt0_S8AUcLop3qL4-8eKJgMBEsi8ZID0-LCTQQprT-Pz2IDrdf7F98k7JROhGZPCOKz0vfz8jj0D1KAK6G_QC0alrTrD7vn6LPl3UDYyiyloaT1GA8fHqkQkaPjsZILOZ_f3Lf2fMQxFB_xc8-_v_Od_1Ox_9kWoeTBdRTDzcNxrsnWaHOrhALnP4pQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoo0hwXJa8-Fb7WO_0HrgnQ35mBC6FnvMcngaUtGOc1m0MlWQ01nKO81veqdmz7dtiT3mLtGVR-Mcfpmk6o2K8x_YJla4DZMCtJYKclPvhqr26oYDzgP48INgyJSzYsJvKRyCTrHT2Tr9AVPcSELNxLwTr9eigRkj1NBJqDQARNEkWsR1F6AOHfFSxcQymgYrSukRKgmcXKFx89bMoQJ6Oeb1e2wx2xMtThbhgLRULsM14hP2V4xrCtp55aed6N0pHAal0ce8GZQvQaL61MNAWEw6KX0RLHHGFU03wNKg8dzw&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoauBDyLoOBR-LN2Ti5MVhT6KunLd16R9LJuAdxVPmqvqwTfqK4lkG4pR8jKkeiM_quHajgJckLohGtOz1VufmP9OLXkvzyqztoEuHlnP5GMDBbKrhWrz_1oSr0lLUF-NVrhrQZB7f_W2ZqSU4I6uwyEBJeDSiRG6BryldxXvAHxeON-o9H8ntQeed_mmQgiDcCpZFmHI4hVk2fFuO3oO70nKM8fwkIHfgqfzlno-4qI5n88N1n_mLlLWfzLrw8Wh9FTW9mwNeBpifmpe6DfbQsssroy0v4OovVmZ6K1vBfJnWbDLvNYRR8KiyzpbB1KF_W3SfdVsGHMJQt_fq3_wJoWUpuQTSELtuILlpP96jByGixSev5Gsyi9R72ka8fOfqaI54BiheYY6mMBQQUnRXkPKWqXtPMfSszaWeNcQ8afA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq6DYnshq2nucbjMLA6zCUrNyC-EDnKYhItA_YtBH6t4iVOsBc0J_SkXEoUphqudSEph78OvLdpJeSrPB7AzVIguC--rIFW47e7_Wmwu7KcRutnYAoz88VXQyA3qVeObdxSD6lPOV9a5-_xfImr9mKhvKxSiHWfVe5YwsGe8meQJkIzXO963wWMCI7RpnD0gd3TQOi1LQK8k54ZmvuEH3aux3JCzuQwOFhjWbi6t-I15mOqpgp23cyugqzLlPcpMdQxvH_SROLB-8YyCra86kDR1LTpVwkVAtsJI_y0BhXXXA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    function openLightbox(index) {
+        if(!images || images.length === 0) return;
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    function changeImage(dir) {
+        currentIndex += dir;
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        lightboxImg.src = images[currentIndex];
+    }
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") changeImage(1);
+        if (e.key === "ArrowLeft") changeImage(-1);
+    });
+</script>
+</body></html>
