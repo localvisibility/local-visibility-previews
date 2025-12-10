@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>A l'Orée du Parc : Chambres Table d'hôtes, piscine, espace bien-être spa, Fitness, cinéma, jeux | Auvergne Puy-de-Dôme - Saint-Priest-des-Champs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root{--primary:#5c7c64;--primary-dark:#3a5240;--accent:#c68b59;--text:#2d2d2d;--bg:#fdfbf7;--white:#fff;--font-serif:"Playfair Display",serif;--font-sans:"Lato",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--text);line-height:1.6;background:var(--bg);padding-bottom:120px}
+@media(max-width:700px){body{padding-bottom:100px}}
+@media(max-width:400px){body{padding-bottom:75px}}
+img{max-width:100%;height:auto;display:block}
+.booking-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);box-shadow:0 2px 20px rgba(0,0,0,0.05);padding:0.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.booking-bar nav{display:flex;gap:2rem}@media(max-width:900px){.booking-bar nav{display:none}}.booking-bar nav a{color:var(--text);text-decoration:none;font-weight:700;font-size:0.85rem;text-transform:uppercase;transition:color 0.3s}.booking-bar nav a:hover{color:var(--accent)}.booking-bar .btn-book{background:var(--primary);color:var(--white);padding:0.7rem 1.8rem;border:none;border-radius:2px;font-weight:700;cursor:pointer;text-transform:uppercase;font-size:0.8rem;transition:background 0.3s}.booking-bar .btn-book:hover{background:var(--primary-dark)}
+.hero{position:relative;height:95vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+.hero-bg{position:absolute;inset:0;background:url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHp7x9tyaKNJT2PkamNV0h7gcEueXrFaJB3CFIEjFIuQtKVKHgW2FyErMgTFLCHDZHIuaQXvmdQk-ul6-BTa5IPu7zIPLrGB-C2nnpZkhtTUly8ylOiQZx-AJSGLN-kRHnGFvk-3crjDekb5_hRxNJksRmQO2FnyKrO2iZWcxJKbfqsWGPzQVOG2Ni1lM_XRlrqRn0AWoeRIilN2FBLZZiPrSUiqFPqmetHZQOeYY5pG_ldKlo5V4tSquvUYxmuZW3FYMV8vXU7QP9ITRX-B5y92mtm-HKeS7sofbhCv4bxkBg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed}
+@media(max-width:768px){.hero-bg{background-attachment:scroll}}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.4)}
+.hero-content{position:relative;padding:2rem;width:95%;max-width:1000px;animation:fadeIn 1.5s}
+.hero-tagline{font-size:0.9rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:1rem;color:rgba(255,255,255,0.9)}
+.hero-title{font-family:var(--font-serif);font-size:clamp(3rem, 8vw, 5.5rem);margin-bottom:1.5rem;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.2);backdrop-filter:blur(5px);padding:0.6rem 1.5rem;border-radius:50px;margin-bottom:2rem;font-weight:600}
+.hero-rating i{color:#f1c40f}
+.hero-price-tag{font-size:1.8rem;font-weight:700;margin-bottom:2.5rem;text-shadow:0 2px 5px rgba(0,0,0,0.3)}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-hero{display:inline-block;background:var(--white);color:var(--text);padding:1rem 2.5rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:0.9rem;transition:all 0.3s;border:1px solid var(--white)}.btn-hero:hover{background:transparent;color:var(--white)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.6)}.btn-outline:hover{background:var(--white);color:var(--primary)}
+section{padding:5rem 2rem}
+@media(max-width:768px){section{padding:3rem 1.5rem}}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}.section-tagline{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:0.8rem;margin-bottom:1rem;display:block}.section-title{font-family:var(--font-serif);font-size:clamp(2rem, 5vw, 3rem);color:var(--primary-dark)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}.about-img{order:2}}
+.about-img img{width:100%;display:block;box-shadow:20px 20px 0 var(--primary-dark)}
+.features-split{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1400px;margin:0 auto}@media(max-width:900px){.features-split{grid-template-columns:1fr}}.feature-block{padding:4rem;display:flex;flex-direction:column;justify-content:center}@media(max-width:768px){.feature-block{padding:3rem 1.5rem}}.feature-bg-1{background:#f4f1ea}.feature-bg-2{background:var(--primary-dark);color:var(--white)}.feature-bg-2 .section-tagline{color:var(--white);opacity:0.7}.feature-bg-2 .feature-title{color:var(--white)}.feature-img img{width:100%;height:100%;object-fit:cover;min-height:400px}
+.rooms-grid{max-width:1000px;margin:0 auto}
+.room-card{background:var(--white);box-shadow:0 15px 40px rgba(0,0,0,0.08);display:grid;grid-template-columns:1.2fr 1fr}
+@media(max-width:800px){.room-card{display:block}}
+.room-image{position:relative;cursor:pointer;overflow:hidden;height:350px}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.room-image:hover img{transform:scale(1.05)}
+.room-price{position:absolute;top:1.5rem;left:1.5rem;background:var(--white);padding:0.6rem 1.2rem;font-family:var(--font-serif);color:var(--text);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.room-price .amount{font-size:1.4rem;font-weight:700}
+.zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;opacity:0;transition:opacity 0.3s;pointer-events:none}.room-image:hover .zoom-icon{opacity:1}
+.room-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:800px){.room-content{padding:2rem}}
+.room-header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:1rem}
+.room-header-row h3{font-family:var(--font-serif);font-size:2rem;color:var(--primary-dark);margin:0}
+.room-cap-badge{background:var(--bg);padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:700;color:var(--primary)}
+.room-features{list-style:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:0.8rem}.room-features li{font-size:0.9rem;color:var(--primary-dark);display:flex;align-items:center;gap:0.5rem}.room-features i{color:var(--accent)}
+.btn-room{padding:1rem 2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;font-size:0.85rem;transition:all 0.3s;align-self:start}.btn-room:hover{background:var(--accent)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-width:1400px;margin:0 auto}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr 1fr;gap:0.5rem}}
+.gallery-item{height:300px;position:relative;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.gallery-item:hover img{transform:scale(1.05)}
+.reviews{background:var(--white)}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}.review-card{background:var(--bg);padding:2rem;border-top:3px solid var(--accent)}.review-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.review-header img{width:50px;height:50px;border-radius:50%}
+.contact-section{background:var(--primary-dark);color:var(--white);padding:0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px}@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{padding:5rem}
+@media(max-width:768px){.contact-info{padding:3rem 1.5rem}}
+.contact-item{display:flex;gap:1.5rem;margin-bottom:2rem;font-size:1.1rem}.contact-item a{color:var(--white);text-decoration:none}
+.btn-itinerary{display:inline-block;margin-top:2rem;background:var(--white);color:var(--primary-dark);padding:1rem 2rem;text-decoration:none;font-weight:700;text-transform:uppercase;transition:all 0.3s}.btn-itinerary:hover{background:var(--accent)}
+.map-container{position:relative;width:100%;height:100%;min-height:450px}.map-frame{position:absolute;top:0;left:0;width:100%;height:100%;border:none;filter:grayscale(0.2)}
+.cta{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqX-gJd2fClB262a92gwZmZiwu6zJn_pO2eh-T5jFvjOBCLwRcjPZTyEw9VFBLmu0wa7Mp4tqyeULHU4BWGi4GbY8ybch7nQZOILERNVHTYSS_2Lew5WDWNRlJv6ZXWXKJTdXVNS3T9DbX6NObGLiJGzWFtrtP7w8uYevBuwX6aPHuCHLwJkBLRO91DFHhKuVTBt9Enk58J3c7SpB8frfMwPreY0lWiHzfFAbRj0hA6SQfGvgWtz986I0ab5aOclDKd4sXmGrUlDgFqCtX6xxOyKHRlteMAva1WMAWePsi-lg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY") center/cover fixed;text-align:center;color:var(--white);padding:8rem 2rem}
+.cta-content{max-width:800px;margin:0 auto;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);padding:3rem;border:1px solid rgba(255,255,255,0.2)}
+.purchase-bar{position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#f5f6f8;box-shadow:0 -2px 20px rgba(0,0,0,0.08);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+.progress-steps{display:flex;justify-content:center;align-items:center;padding:0.7rem 2rem;gap:0;border-bottom:3px solid #0ea5e9;background:#f8f9fb}
+.progress-step{flex:1;text-align:center;font-size:0.95rem;font-weight:600;color:#1f2937;letter-spacing:-0.01em}
+.purchase-bar-inner{max-width:1400px;margin:0 auto;padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem}
+.pb-check{width:44px;height:44px;background:#d1fae5;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pb-check i{color:#10b981;font-size:1.3rem}
+.pb-text{flex:1;min-width:0}
+.pb-title{font-weight:700;font-size:1.2rem;color:#111827;margin-bottom:2px}
+.pb-subtitle{font-size:0.9rem;color:#6b7280;font-weight:400}
+.pb-pricing{text-align:center;flex-shrink:0}
+.pb-old-price{text-decoration:line-through;color:#0d9488;font-size:0.95rem;font-weight:500;margin-bottom:1px}
+.pb-offer{color:#0d9488;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.3px}
+.pb-cta{flex-shrink:0}
+.pb-btn{display:flex;align-items:center;gap:0;background:linear-gradient(135deg,#1e3a5f 0%,#152a45 100%);color:white;padding:0;border-radius:10px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 15px rgba(30,58,95,0.25);cursor:pointer;border:none;overflow:hidden}
+.pb-btn:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(30,58,95,0.35)}
+.pb-btn-content{display:flex;flex-direction:column;align-items:flex-start;padding:0.7rem 1.2rem;line-height:1.15}
+.pb-btn-label{font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;opacity:0.85;margin-bottom:2px}
+.pb-btn-price{font-size:1.5rem;font-weight:800;display:flex;align-items:baseline;gap:1px}
+.pb-btn-price .currency{font-size:0.9rem;font-weight:700;margin-left:2px}
+.pb-btn-arrow{background:rgba(255,255,255,0.1);padding:0 1rem;display:flex;align-items:center;justify-content:center;align-self:stretch;font-size:1.1rem;border-left:1px solid rgba(255,255,255,0.1)}
+@media(max-width:900px){.progress-steps{padding:0.6rem 1rem}.progress-step{font-size:0.85rem}.purchase-bar-inner{padding:0.9rem 1.5rem;gap:1.2rem}.pb-title{font-size:1.05rem}.pb-subtitle{font-size:0.8rem}}
+@media(max-width:700px){.progress-steps{padding:0.5rem 0.8rem}.progress-step{font-size:0.75rem}.purchase-bar-inner{padding:0.7rem 1rem;gap:1rem}.pb-check{display:none}.pb-text{display:none}.pb-pricing{text-align:left}.pb-old-price{font-size:0.85rem}.pb-offer{font-size:0.7rem}.pb-btn-content{padding:0.6rem 1rem}.pb-btn-label{font-size:0.6rem}.pb-btn-price{font-size:1.3rem}.pb-btn-arrow{padding:0 0.8rem;font-size:1rem}}
+@media(max-width:400px){.progress-steps{display:none}}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(5px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);width:95%;max-width:600px;max-height:90vh;overflow-y:auto;border-radius:10px}
+.modal-header{background:var(--primary);color:var(--white);padding:2rem;text-align:center}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+.modal-body{padding:2.5rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}@media(max-width:500px){.form-grid{grid-template-columns:1fr}}
+.form-group label{display:block;margin-bottom:0.6rem;font-weight:700;font-size:0.85rem;text-transform:uppercase}
+.form-group input{width:100%;padding:1rem;border:1px solid #ddd}
+.btn-submit{width:100%;padding:1.2rem;background:var(--primary-dark);color:var(--white);border:none;font-weight:700;text-transform:uppercase;cursor:pointer}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.98);z-index:99999;display:none;justify-content:center;align-items:center}
+.lightbox.active{display:flex}
+.lightbox-img{max-height:85vh;max-width:90vw}.lightbox-close{position:absolute;top:30px;right:30px;color:white;font-size:2.5rem;cursor:pointer}.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%}.prev{left:30px}.next{right:30px}
+footer{background:#1a1a1a;color:#999;text-align:center;padding:2rem;font-size:0.85rem}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.activated-bar{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#10b981,#059669);color:white;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;font-family:'Inter',-apple-system,sans-serif;font-size:14px;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,0.15)}
+.activated-bar .status{display:flex;align-items:center;gap:8px;font-weight:600}
+.activated-bar .buttons{display:flex;gap:12px}
+.activated-bar .btn-edit{padding:8px 16px;background:white;color:#059669;border-radius:6px;text-decoration:none;font-weight:600;font-size:13px}
+.activated-bar .btn-dashboard{padding:8px 16px;background:rgba(255,255,255,0.2);color:white;border-radius:6px;text-decoration:none;font-weight:600;font-size:13px;border:1px solid rgba(255,255,255,0.3)}
+@media(max-width:600px){.activated-bar{flex-direction:column;gap:10px;padding:10px 16px}.activated-bar .buttons{width:100%;justify-content:center}}
+</style></head><body>
+
+<div class="booking-bar"><div class="logo">A l'Orée du Parc : Chambres Table d'hôtes, piscine, espace bien-être spa, Fitness, cinéma, jeux | Auvergne Puy-de-Dôme</div><nav><a href="#about">Lieu</a><a href="#rooms">Hébergement</a><a href="#gallery">Galerie</a><a href="#contact">Accès</a></nav><button class="btn-book" onclick="openBooking()">Réserver</button></div>
+
+<header class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-tagline">Calme, Nature, Authenticité</div>
+        <h1 class="hero-title">A l'Orée du Parc, le Bonheur est Simple</h1>
+        <div class="hero-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>4.9/5</span></div>
+        <div class="hero-price-tag">200€ <span style="font-size:0.6em;vertical-align:middle">/ nuit</span></div>
+        <div class="hero-actions">
+            <a href="#rooms" class="btn-hero">Découvrir le logement</a>
+            <a href="tel:0649193166" class="btn-hero btn-outline"><i class="fas fa-phone"></i> Appeler</a>
+        </div>
+    </div>
+</header>
+
+<section id="about"><div class="about-grid"><div class="about-img" data-aos="fade-right"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHouJud-dcakNRC25dQ_hLn8QSx3f-cNUxUjJugxuBGpCEqm7gw8G4XPRtFdRCH3xKc4H3a4FQRuNEdmtPRwzFIudT1V-eTW7ZgJQpTn3Ypjh7MO6yD8ODKprNMQb6PgX4cRClzyEAdURDK9v5q24MehIGhbV1_9Kuq0Xo0_g-1-dvH3e1Vn77ySi4X8-bMXcSHLUH9w11_W_eI5QZENHiWXQ5wYn5KmYAZrx0LfPZXZD_Rs527L3v24yEXxxpWmZ9Vv_kQZ3MxKzbBiy7SuCPgDH_1Vda5uv0F7NhXLTiwgSej89NBhOISwklmf-bx_nPR-IzpTzkhy-dvJH74RrIlJeedNdqCGit9pBYch--8uBVC8iXGSDoOuMJhM83G-26wY_xBTT1h6k5G1tmA8pkPPxaURgwy6k-fat3HNTPWyrQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Notre maison"></div><div class="about-content" data-aos="fade-left"><p class="section-tagline">Une Histoire de Famille et de Passion</p><h2 class="section-title">L'Esprit de la Maison</h2><p style="color:#666;line-height:1.8;margin-bottom:2rem">Bienvenue à l'Orée du Parc, notre maison de famille transformée avec amour en un lieu de partage et de convivialité. Ici, l'accueil est chaleureux et sincère, et nous mettons tout en œuvre pour que votre séjour soit inoubliable. Laissez-vous charmer par l'atmosphère paisible et authentique de notre coin de paradis.</p><div style="font-family:var(--font-serif);font-size:1.2rem;font-style:italic;color:var(--primary)">"La nature est le plus beau des refuges."</div></div></div></section>
+
+<section id="rooms" style="background:#f9f9f9"><div class="section-header" data-aos="fade-up"><p class="section-tagline">Votre Séjour</p><h2 class="section-title">L'Hébergement</h2></div><div class="rooms-grid">
+    <div class="room-card" data-aos="fade-up">
+        <div class="room-image" onclick="openLightbox(2)">
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqwZEPIfzcPckfuxnWxvvU_Fv1od8zckCPFeKhmJOT0VLAF2934Thg0taP6sjjafM4KraOep35ARhV5u70-PssQEkJP2274i87bnpOco78UK-oT8ZvFj6Og6bTIPEKZGl6DNAdZq5MuoRsFA6gfpD-tUNA9b3Rqas6Ia-lW4Y5A35ArRHUQDpK2YAyn8JBQgwxG96ut0J7vLYIE3DDDCAo4KM8-zJcsrNSA6xSGp3cKVOZ-qaxmigUgRtWkAUQPdOjwh7bUjXIU5TP6H3Mm0ZHLk8XcIy0JsCzia98kT_Y7xA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="A l'Orée du Parc : Chambres Table d'hôtes, piscine, espace bien-être spa, Fitness, cinéma, jeux | Auvergne Puy-de-Dôme" loading="lazy">
+            <div class="room-price"><span class="amount">200€ <span style="font-size:0.6em;vertical-align:middle">/ nuit</span></span></div>
+            <div class="zoom-icon"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="room-content">
+            <div class="room-header-row">
+                <h3>A l'Orée du Parc : Chambres Table d'hôtes, piscine, espace bien-être spa, Fitness, cinéma, jeux | Auvergne Puy-de-Dôme</h3>
+                <div class="room-cap-badge"><i class="fas fa-user-friends"></i> 4 pers.</div>
+            </div>
+            <p class="room-desc">Bienvenue à l'Orée du Parc, notre maison de famille transformée avec amour en un lieu de partage et de convivialité. Ici, l'accuei...</p>
+            <ul class="room-features"><li><i class="fas fa-check"></i> WiFi gratuit</li><li><i class="fas fa-check"></i> Parking gratuit</li><li><i class="fas fa-check"></i> Cuisine équipée</li><li><i class="fas fa-check"></i> Jardin</li><li><i class="fas fa-check"></i> Vue panoramique</li></ul>
+            <button class="btn-room" onclick="openBooking()">Réserver maintenant</button>
+        </div>
+    </div></div></section>
+
+<section id="food" style="padding:0"><div class="features-split"><div class="feature-block feature-bg-1" data-aos="fade-right"><p class="section-tagline" style="color:var(--accent)">Saveurs</p><h2 class="feature-title" style="margin-bottom:1rem">La Table & Le Terroir</h2><p style="color:#666;line-height:1.8">Savourez chaque matin un petit-déjeuner fait maison avec des confitures artisanales, des œufs frais de nos poules, du pain bio et des produits locaux sélectionnés avec soin auprès de nos voisins producteurs.</p></div><div class="feature-img"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=800" alt="Food"></div></div></section>
+
+<section id="exterior" style="padding:0"><div class="features-split"><div class="feature-img"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqX-gJd2fClB262a92gwZmZiwu6zJn_pO2eh-T5jFvjOBCLwRcjPZTyEw9VFBLmu0wa7Mp4tqyeULHU4BWGi4GbY8ybch7nQZOILERNVHTYSS_2Lew5WDWNRlJv6ZXWXKJTdXVNS3T9DbX6NObGLiJGzWFtrtP7w8uYevBuwX6aPHuCHLwJkBLRO91DFHhKuVTBt9Enk58J3c7SpB8frfMwPreY0lWiHzfFAbRj0hA6SQfGvgWtz986I0ab5aOclDKd4sXmGrUlDgFqCtX6xxOyKHRlteMAva1WMAWePsi-lg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Exterior"></div><div class="feature-block feature-bg-2" data-aos="fade-left"><p class="section-tagline" style="color:var(--white)">Nature</p><h2 class="feature-title" style="margin-bottom:1rem">Jardin & Détente</h2><p style="opacity:0.9;line-height:1.8">Plongez dans la piscine rafraîchissante, détendez-vous à l'ombre des arbres centenaires ou partez à la découverte des sentiers de randonnée environnants. Le calme et la sérénité vous attendent.</p></div></div></section>
+
+<section id="gallery"><div class="section-header"><p class="section-tagline">En Images</p><h2 class="section-title">Galerie Photos</h2></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox(0)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHp7x9tyaKNJT2PkamNV0h7gcEueXrFaJB3CFIEjFIuQtKVKHgW2FyErMgTFLCHDZHIuaQXvmdQk-ul6-BTa5IPu7zIPLrGB-C2nnpZkhtTUly8ylOiQZx-AJSGLN-kRHnGFvk-3crjDekb5_hRxNJksRmQO2FnyKrO2iZWcxJKbfqsWGPzQVOG2Ni1lM_XRlrqRn0AWoeRIilN2FBLZZiPrSUiqFPqmetHZQOeYY5pG_ldKlo5V4tSquvUYxmuZW3FYMV8vXU7QP9ITRX-B5y92mtm-HKeS7sofbhCv4bxkBg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(1)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHouJud-dcakNRC25dQ_hLn8QSx3f-cNUxUjJugxuBGpCEqm7gw8G4XPRtFdRCH3xKc4H3a4FQRuNEdmtPRwzFIudT1V-eTW7ZgJQpTn3Ypjh7MO6yD8ODKprNMQb6PgX4cRClzyEAdURDK9v5q24MehIGhbV1_9Kuq0Xo0_g-1-dvH3e1Vn77ySi4X8-bMXcSHLUH9w11_W_eI5QZENHiWXQ5wYn5KmYAZrx0LfPZXZD_Rs527L3v24yEXxxpWmZ9Vv_kQZ3MxKzbBiy7SuCPgDH_1Vda5uv0F7NhXLTiwgSej89NBhOISwklmf-bx_nPR-IzpTzkhy-dvJH74RrIlJeedNdqCGit9pBYch--8uBVC8iXGSDoOuMJhM83G-26wY_xBTT1h6k5G1tmA8pkPPxaURgwy6k-fat3HNTPWyrQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(2)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqwZEPIfzcPckfuxnWxvvU_Fv1od8zckCPFeKhmJOT0VLAF2934Thg0taP6sjjafM4KraOep35ARhV5u70-PssQEkJP2274i87bnpOco78UK-oT8ZvFj6Og6bTIPEKZGl6DNAdZq5MuoRsFA6gfpD-tUNA9b3Rqas6Ia-lW4Y5A35ArRHUQDpK2YAyn8JBQgwxG96ut0J7vLYIE3DDDCAo4KM8-zJcsrNSA6xSGp3cKVOZ-qaxmigUgRtWkAUQPdOjwh7bUjXIU5TP6H3Mm0ZHLk8XcIy0JsCzia98kT_Y7xA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(3)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqX-gJd2fClB262a92gwZmZiwu6zJn_pO2eh-T5jFvjOBCLwRcjPZTyEw9VFBLmu0wa7Mp4tqyeULHU4BWGi4GbY8ybch7nQZOILERNVHTYSS_2Lew5WDWNRlJv6ZXWXKJTdXVNS3T9DbX6NObGLiJGzWFtrtP7w8uYevBuwX6aPHuCHLwJkBLRO91DFHhKuVTBt9Enk58J3c7SpB8frfMwPreY0lWiHzfFAbRj0hA6SQfGvgWtz986I0ab5aOclDKd4sXmGrUlDgFqCtX6xxOyKHRlteMAva1WMAWePsi-lg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(4)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrj5CQYUti3rbzu1_NdMPCO47c2wjOkQRihapaFBcY110bTgLRd5a0ZUp0jILEeL8MeeI41xbzjZUHRxbvN-OPvBZ4SHpU5gMvM19QOc_AqMBSUWSj4-4Q94laBsyeVGgRKvVKllU53TaM3mWkO9yKPVaqTdfF6jyX1OoOxfZtLGPy5-fCeSf1TfOPz81oy8uJLd5vNVxXwulKlvR-oCYeXR8oR9vL5BhpFsRHDa-MxUNbR6tvvXNiku4OK80sWFEyhd0MydnmqZwkIvVDut7lJEfqkC6VbdNiVnWVAxnwicA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(5)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHquZbswQ31tSfcKlKd8unJNhQ8W183C_nBnFX95co2eNEOa4U1JWE5q-06Cz8lQlCFzJEFyNf5drchltTvmpl7UEUgq6k_Mzgov2F_fyXQqdKMWhvz-2UpmfOBKkOf5jQXV11m4S6ylr5WVJbc3YfLBwvNmyo6mBeeojvFAHf7n2b2RygYyV7s-POX-0T3gMjOsBZghRf3k5L4rjytDSAGNXcNWaGp9IwGpGa8G2pe-dnXsMOZ6MDxVhgKL0uEu-77NgJZQF78a3VHwgd_6-HT1MRC-XsKJotzIPRWHueMDgQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(6)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoGEXkauKfbALkpnWaSVg_01uyJhvMmw1rwZNEuRXnn0sexl510pKDRqMfP2uo7HdovwMfjBplLuzMecNuxNMGkY8m5MyIKtk2ezrnHqMTYnEt_c7WfTsBInun765Irel63adx8TpimMR_MEQR2xr8rSxldqT6zreZGK7GZI9D3izFVq-F-gAWxvbDy95BLaZi_mwH420GOruU2lPh6pxJxmL8coJX6ruLVSmMqeK2kvzi1Fkln1c4QU_QUzjHEnOsR_sy0EP22tyCPn0dtT08X6LpeG1hjaNb87sDgt9nMqA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(7)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq8zlEWU9gj3hPiQ481ORCYv2G0WA60Oe7yFfAqM9RwbVcWYmYliCc7_KBSOA9HvroJgR3QolMukACqy466ZdXlV1Hd7YsTq8uxZzq57eu6yQwh6Ag9FUNnAQ2ZwYZUn2noMovJf77PI2SPDqNDPZv9_EmrCwJcb4m1I1YQITqBqcSHdAhxC441-5qNaCy5OhqAb4A45QquRdqr8ncrOcSh3xmMF4J0CWgnaMsIPwfbXz9w9mzl-98FkHPip254BI1vtHVRK_v01nF0smmG11gYNlqTPMvBADaUabVc593i8A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(8)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrR1nV1csEjH7Cj6MS2t-8OM8QBJGE-Zks5sucDvO44E9KK27XJiP6lNkxO-ZUCvxWCZltZIwyzsJhVLKJcMDyKH0GMv7TJ-gsM5x72GQCrnyC6y2OKbU6AiZnQbNXBpU4VHhv27E8eNMozsG5A4pA6g8jBXebUlNz129uOzvddxrnQWv7al0ePuRA-m2cWv6_u5WbbdEv_UNbChyfXWTFAQzw5fGSVylOXxEPRmXHsJro56ohwZSFNNUNpnQCB0slm9UAt1dS0hc0krExv3EZf-OZSMlbTyPnmcw08KZOLQQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div><div class="gallery-item" onclick="openLightbox(9)"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoZnY4p9lX56n8Y3J_d3nL9h-n79G7WaVNlBovMo1GbSd_If2bvVWtnuATm6whVjyZk11R5CCxLm0dsnSoBmiMkIVeOD3_jQ-kXzqpfdd9oKCCPEi3xpTWvIOdiDcSLrC80VlkprtThk6qhiQImjl432CBfBEJlj2CgCHg-K_4BgZW7hvdhMfiZPvhRGUFbGmSqp5NWtiz-7rOibFyGiF0K3iII-NLf2KU0esP5VuowMab9rwR3kjUnGBaJrS7dCLiRHDB-TOvMHH1lkD136IT3QiAowdVZ5XkU6J47q34t7g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY" alt="Galerie" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div></div></section>
+
+<section class="reviews"><div class="section-header"><p class="section-tagline">Livre d'or</p><h2 class="section-title">Expériences Voyageurs</h2></div><div class="reviews-grid"><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a-/ALV-UjWz10cft4JftgWcDYT4LxuYAouHRt-ADX_gdYj6v0Bw6z83lY4V=s128-c0x00000000-cc-rp-mo-ba2" alt="Rodier Magali"><div><h4>Rodier Magali</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 3 mois</span></div></div><p class="review-text">"Dès notre arrivée, nous avons été accueilli par Nathalie, qui nous a présenté le domaine.
+Un lieu magnifique, pour les grands enfants que nous sommes, un parc arboré avec piscine, mini golf, parcours accrobranche, avec table de ping pong, terrain de boules, jeux de dames géant, espace hamac, balanço"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocJhVSqf4e_Enn_2fT77u7YSifb5qCANy6kvgOafDyPrVmb8cQ=s128-c0x00000000-cc-rp-mo-ba2" alt="elytist coaching"><div><h4>elytist coaching</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a un mois</span></div></div><p class="review-text">"L appellation de chambre et table d’hôtes prend toute sa dimension….
+Un accueil dynamique,  chaleureux et souriant.
+
+Situation privilégiée et un parc exceptionnel .Des activités et animations surprenantes et inattendues, particulièrement la salle de jeux . Nous nous sommes « éclatés » .
+La cuisine d"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocL94lbj6fYOm6nllsnRd3s5OoReXE-q7nKo72EkFVyCjD8Exw=s128-c0x00000000-cc-rp-mo" alt="M.B."><div><h4>M.B.</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 5 mois</span></div></div><p class="review-text">"Endroit unique et incroyable. Calme et magnifiquement entretenu par Nathalie et Philippe. C'est un petit coin de paradis. Toute la famille est ravie des multiples activités possibles dans la maison et le jardin. Pas facile de conquérir tous les goûts différents de nous 4 mais entre les sports multip"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocK4Ox-5QsneN0TDliOiKiGjs7W7273WqLapEQUyMnQkL0D4=s128-c0x00000000-cc-rp-mo" alt="jean Paul ROUSIERE"><div><h4>jean Paul ROUSIERE</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a un mois</span></div></div><p class="review-text">"A la recherche d'une chambre d'hôte, le hasard nous a conduit à l'orée du parc. C'est probablement notre meilleure expérience des chambres d'hôte. Nous avons été très bien accueillis par Nathalie et Philippe qui nous ont fait découvrir le domaine avec ce magnifique parc et toutes les installations à"</p></div><div class="review-card" data-aos="fade-up"><div class="review-header"><img src="https://lh3.googleusercontent.com/a/ACg8ocJmZ6em4sKs35ehNGjgZApVP7N5zveDSEkyBXbPMr94QwcASA=s128-c0x00000000-cc-rp-mo" alt="Dobolol 18"><div><h4>Dobolol 18</h4><div class="review-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-time">il y a 2 semaines</span></div></div><p class="review-text">"Tout était parfait, c'était notre premier petit séjour en chambres d'hôtes et nous avons eu une bonne explication du fonctionnement, un accueil parfait par des gens honnêtes qui se soucient avant tout du bien-être de leurs invités. Tout est réunis pour passer de bons moments, le confort, l'espace, l"</p></div></div></section>
+
+<section class="cta"><div class="cta-content" data-aos="zoom-in"><h2 style="font-family:var(--font-serif);font-size:3rem;margin-bottom:1rem;color:var(--white)">Réservez votre parenthèse enchantée</h2><p style="font-size:1.2rem;margin-bottom:2.5rem;opacity:0.9">Meilleur tarif garanti en direct</p><button class="btn-hero" onclick="openBooking()">Vérifier les disponibilités</button></div></section>
+
+<section id="contact" class="contact-section"><div class="contact-grid"><div class="contact-info"><h2 class="section-title" style="color:white;margin-bottom:3rem;text-align:left">Nous trouver</h2><div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div>9 Gandichoux Lieu dit, 63640 Saint-Priest-des-Champs, France</div></div><div class="contact-item"><i class="fas fa-phone"></i> <div><a href="tel:0649193166">06 49 19 31 66</a></div></div><a href="https://maps.google.com/?q=45.9672709,2.736225" target="_blank" class="btn-itinerary"><i class="fas fa-location-arrow"></i> Obtenir l'itinéraire</a></div><div class="map-container"><iframe class="map-frame" src="https://maps.google.com/maps?q=45.9672709,2.736225&hl=fr&z=13&output=embed" allowfullscreen></iframe></div></div></section>
+
+<footer><p>© 2024 A l'Orée du Parc : Chambres Table d'hôtes, piscine, espace bien-être spa, Fitness, cinéma, jeux | Auvergne Puy-de-Dôme - Aperçu généré par Local Visibility</p></footer>
+
+<div class="purchase-bar" data-site-id="a-l-oree-du-parc-chambres-table-d-hotes-piscine-es-weh4">
+    <div class="progress-steps">
+        <div class="progress-step">Rapidité</div>
+        <div class="progress-step">Qualité</div>
+        <div class="progress-step">Transparence</div>
+    </div>
+    <div class="purchase-bar-inner">
+        <div class="pb-check"><i class="fas fa-check"></i></div>
+        <div class="pb-text">
+            <div class="pb-title">Votre site est prêt à l'emploi.</div>
+            <div class="pb-subtitle">Débloquez-le pour modifier les textes, changer les photos et le mettre en ligne.</div>
+        </div>
+        <div class="pb-pricing">
+            <div class="pb-old-price">Prix public : 990€</div>
+            <div class="pb-offer">Offre spéciale</div>
+        </div>
+        <div class="pb-cta">
+            <a href="https://local-visibility.com/paiement/checkout?name=A%20l'Or%C3%A9e%20du%20Parc%20%3A%20Chambres%20Table%20d'h%C3%B4tes%2C%20piscine%2C%20espace%20bien-%C3%AAtre%20spa%2C%20Fitness%2C%20cin%C3%A9ma%2C%20jeux%20%7C%20Auvergne%20Puy-de-D%C3%B4me&preview=https%3A%2F%2Flocalvisibility.github.io%2Flocal-visibility-previews%2Fa-l-oree-du-parc-chambres-table-d-hotes-piscine-es-weh4%2F&checkout=https%3A%2F%2Fcheckout.stripe.com%2Fc%2Fpay%2Fcs_test_b1WmycadLENHhmiLGLI1gPANwtVOiiAdXuKPb3ZgzGGSnoM9TIYkGP3u0O%23fidnandhYHdWcXxpYCc%252FJ2FgY2RwaXEnKSdkdWxOYHwnPyd1blpxYHZxWjA0S1RcTEROPFwxczxPYU9kc01cSlROT2BdMkhkSld1PVNcTm5xcVw3TE0ydG1HVDRUZnZ1UzNuPGRSNGNgbk9EbEY1al1HNnFQcnF2aUlOSjc8UXJCTHVvNTVJNEJBU0t2dCcpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%252FJyZjY2NjY2MnKSdpZHxqcHFRfHVgJz8naHBpcWxabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%252FcXdwYHgl&slug=a-l-oree-du-parc-chambres-table-d-hotes-piscine-es-weh4" class="pb-btn" id="buyButton">
+                <div class="pb-btn-content">
+                    <span class="pb-btn-label">Débloquer pour</span>
+                    <span class="pb-btn-price">349<span class="currency">€</span></span>
+                </div>
+                <div class="pb-btn-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="bookingModal"><div class="modal"><div class="modal-header"><button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button><h3>Réservation</h3><p>A l'Orée du Parc : Chambres Table d'hôtes, piscine, espace bien-être spa, Fitness, cinéma, jeux | Auvergne Puy-de-Dôme</p></div><div class="modal-body"><form onsubmit="alert('Demande envoyée avec succès !');return false;"><div class="form-grid"><div class="form-group"><label>Arrivée</label><input type="date" required></div><div class="form-group"><label>Départ</label><input type="date" required></div></div><div class="form-grid"><div class="form-group"><label>Prénom</label><input type="text" placeholder="Jean" required></div><div class="form-group"><label>Nom</label><input type="text" placeholder="Dupont" required></div></div><div class="form-grid"><div class="form-group"><label>Email</label><input type="email" placeholder="email@exemple.com" required></div><div class="form-group"><label>Téléphone</label><input type="tel"></div></div><button type="submit" class="btn-submit">Envoyer la demande</button></form></div></div></div>
+
+<div class="lightbox" id="lightbox"><span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span><div class="lightbox-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div><img src="" class="lightbox-img" id="lightbox-img" alt="Fullscreen"><div class="lightbox-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({duration:800,once:true});
+const modal=document.getElementById("bookingModal");
+function openBooking(){modal.classList.add("active");document.body.style.overflow='hidden'}
+function closeBooking(){modal.classList.remove("active");document.body.style.overflow='auto'}
+modal.addEventListener('click',function(e){if(e.target===modal)closeBooking()});
+const images=["https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHp7x9tyaKNJT2PkamNV0h7gcEueXrFaJB3CFIEjFIuQtKVKHgW2FyErMgTFLCHDZHIuaQXvmdQk-ul6-BTa5IPu7zIPLrGB-C2nnpZkhtTUly8ylOiQZx-AJSGLN-kRHnGFvk-3crjDekb5_hRxNJksRmQO2FnyKrO2iZWcxJKbfqsWGPzQVOG2Ni1lM_XRlrqRn0AWoeRIilN2FBLZZiPrSUiqFPqmetHZQOeYY5pG_ldKlo5V4tSquvUYxmuZW3FYMV8vXU7QP9ITRX-B5y92mtm-HKeS7sofbhCv4bxkBg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHouJud-dcakNRC25dQ_hLn8QSx3f-cNUxUjJugxuBGpCEqm7gw8G4XPRtFdRCH3xKc4H3a4FQRuNEdmtPRwzFIudT1V-eTW7ZgJQpTn3Ypjh7MO6yD8ODKprNMQb6PgX4cRClzyEAdURDK9v5q24MehIGhbV1_9Kuq0Xo0_g-1-dvH3e1Vn77ySi4X8-bMXcSHLUH9w11_W_eI5QZENHiWXQ5wYn5KmYAZrx0LfPZXZD_Rs527L3v24yEXxxpWmZ9Vv_kQZ3MxKzbBiy7SuCPgDH_1Vda5uv0F7NhXLTiwgSej89NBhOISwklmf-bx_nPR-IzpTzkhy-dvJH74RrIlJeedNdqCGit9pBYch--8uBVC8iXGSDoOuMJhM83G-26wY_xBTT1h6k5G1tmA8pkPPxaURgwy6k-fat3HNTPWyrQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqwZEPIfzcPckfuxnWxvvU_Fv1od8zckCPFeKhmJOT0VLAF2934Thg0taP6sjjafM4KraOep35ARhV5u70-PssQEkJP2274i87bnpOco78UK-oT8ZvFj6Og6bTIPEKZGl6DNAdZq5MuoRsFA6gfpD-tUNA9b3Rqas6Ia-lW4Y5A35ArRHUQDpK2YAyn8JBQgwxG96ut0J7vLYIE3DDDCAo4KM8-zJcsrNSA6xSGp3cKVOZ-qaxmigUgRtWkAUQPdOjwh7bUjXIU5TP6H3Mm0ZHLk8XcIy0JsCzia98kT_Y7xA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHqX-gJd2fClB262a92gwZmZiwu6zJn_pO2eh-T5jFvjOBCLwRcjPZTyEw9VFBLmu0wa7Mp4tqyeULHU4BWGi4GbY8ybch7nQZOILERNVHTYSS_2Lew5WDWNRlJv6ZXWXKJTdXVNS3T9DbX6NObGLiJGzWFtrtP7w8uYevBuwX6aPHuCHLwJkBLRO91DFHhKuVTBt9Enk58J3c7SpB8frfMwPreY0lWiHzfFAbRj0hA6SQfGvgWtz986I0ab5aOclDKd4sXmGrUlDgFqCtX6xxOyKHRlteMAva1WMAWePsi-lg&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrj5CQYUti3rbzu1_NdMPCO47c2wjOkQRihapaFBcY110bTgLRd5a0ZUp0jILEeL8MeeI41xbzjZUHRxbvN-OPvBZ4SHpU5gMvM19QOc_AqMBSUWSj4-4Q94laBsyeVGgRKvVKllU53TaM3mWkO9yKPVaqTdfF6jyX1OoOxfZtLGPy5-fCeSf1TfOPz81oy8uJLd5vNVxXwulKlvR-oCYeXR8oR9vL5BhpFsRHDa-MxUNbR6tvvXNiku4OK80sWFEyhd0MydnmqZwkIvVDut7lJEfqkC6VbdNiVnWVAxnwicA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHquZbswQ31tSfcKlKd8unJNhQ8W183C_nBnFX95co2eNEOa4U1JWE5q-06Cz8lQlCFzJEFyNf5drchltTvmpl7UEUgq6k_Mzgov2F_fyXQqdKMWhvz-2UpmfOBKkOf5jQXV11m4S6ylr5WVJbc3YfLBwvNmyo6mBeeojvFAHf7n2b2RygYyV7s-POX-0T3gMjOsBZghRf3k5L4rjytDSAGNXcNWaGp9IwGpGa8G2pe-dnXsMOZ6MDxVhgKL0uEu-77NgJZQF78a3VHwgd_6-HT1MRC-XsKJotzIPRWHueMDgQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoGEXkauKfbALkpnWaSVg_01uyJhvMmw1rwZNEuRXnn0sexl510pKDRqMfP2uo7HdovwMfjBplLuzMecNuxNMGkY8m5MyIKtk2ezrnHqMTYnEt_c7WfTsBInun765Irel63adx8TpimMR_MEQR2xr8rSxldqT6zreZGK7GZI9D3izFVq-F-gAWxvbDy95BLaZi_mwH420GOruU2lPh6pxJxmL8coJX6ruLVSmMqeK2kvzi1Fkln1c4QU_QUzjHEnOsR_sy0EP22tyCPn0dtT08X6LpeG1hjaNb87sDgt9nMqA&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHq8zlEWU9gj3hPiQ481ORCYv2G0WA60Oe7yFfAqM9RwbVcWYmYliCc7_KBSOA9HvroJgR3QolMukACqy466ZdXlV1Hd7YsTq8uxZzq57eu6yQwh6Ag9FUNnAQ2ZwYZUn2noMovJf77PI2SPDqNDPZv9_EmrCwJcb4m1I1YQITqBqcSHdAhxC441-5qNaCy5OhqAb4A45QquRdqr8ncrOcSh3xmMF4J0CWgnaMsIPwfbXz9w9mzl-98FkHPip254BI1vtHVRK_v01nF0smmG11gYNlqTPMvBADaUabVc593i8A&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHrR1nV1csEjH7Cj6MS2t-8OM8QBJGE-Zks5sucDvO44E9KK27XJiP6lNkxO-ZUCvxWCZltZIwyzsJhVLKJcMDyKH0GMv7TJ-gsM5x72GQCrnyC6y2OKbU6AiZnQbNXBpU4VHhv27E8eNMozsG5A4pA6g8jBXebUlNz129uOzvddxrnQWv7al0ePuRA-m2cWv6_u5WbbdEv_UNbChyfXWTFAQzw5fGSVylOXxEPRmXHsJro56ohwZSFNNUNpnQCB0slm9UAt1dS0hc0krExv3EZf-OZSMlbTyPnmcw08KZOLQQ&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY","https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AZLasHoZnY4p9lX56n8Y3J_d3nL9h-n79G7WaVNlBovMo1GbSd_If2bvVWtnuATm6whVjyZk11R5CCxLm0dsnSoBmiMkIVeOD3_jQ-kXzqpfdd9oKCCPEi3xpTWvIOdiDcSLrC80VlkprtThk6qhiQImjl432CBfBEJlj2CgCHg-K_4BgZW7hvdhMfiZPvhRGUFbGmSqp5NWtiz-7rOibFyGiF0K3iII-NLf2KU0esP5VuowMab9rwR3kjUnGBaJrS7dCLiRHDB-TOvMHH1lkD136IT3QiAowdVZ5XkU6J47q34t7g&key=AIzaSyBCjcq3NwJn7Beus0P33L-_JlfoNVmF_FY"];
+let currentIndex=0;
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightbox-img');
+function openLightbox(index){if(!images||images.length===0)return;currentIndex=index;lightboxImg.src=images[currentIndex];lightbox.classList.add('active');document.body.style.overflow='hidden'}
+function closeLightbox(){lightbox.classList.remove('active');document.body.style.overflow='auto'}
+function changeImage(dir){currentIndex+=dir;if(currentIndex>=images.length)currentIndex=0;if(currentIndex<0)currentIndex=images.length-1;lightboxImg.src=images[currentIndex]}
+document.addEventListener('keydown',function(e){if(!lightbox.classList.contains('active'))return;if(e.key==="Escape")closeLightbox();if(e.key==="ArrowRight")changeImage(1);if(e.key==="ArrowLeft")changeImage(-1)});
+</script>
+
+<!-- ✅ SCRIPT DE VERIFICATION DYNAMIQUE DU PAIEMENT -->
+<script>
+(async function() {
+    const slug = 'a-l-oree-du-parc-chambres-table-d-hotes-piscine-es-weh4';
+    const SUPABASE_URL = 'https://ukxyacwcopmkypnpfxmo.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVreHlhY3djb3Bta3lwbnBmeG1vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzMDIzMDYsImV4cCI6MjA4MDg3ODMwNn0.mLaONTrGZqNB6RVriQ8eOuyp26EdQABdOAFqujqNfrQ';
+    
+    try {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/sites?slug=eq.' + slug + '&select=status', {
+            headers: { 'apikey': SUPABASE_ANON_KEY }
+        });
+        const sites = await res.json();
+        
+        if (sites[0]?.status === 'paid') {
+            // Supprimer le bandeau d'achat
+            const purchaseBar = document.querySelector('.purchase-bar');
+            if (purchaseBar) purchaseBar.remove();
+            
+            // Remettre le padding-bottom normal
+            document.body.style.paddingBottom = '60px';
+            
+            // Ajouter le bandeau "Site Activé"
+            const activatedBar = document.createElement('div');
+            activatedBar.className = 'activated-bar';
+            activatedBar.innerHTML = '<div class="status"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Site Activé</div><div class="buttons"><a href="https://local-visibility.com/editeur?site=' + slug + '" class="btn-edit">✏️ Modifier mon site</a><a href="https://local-visibility.com/dashboard" class="btn-dashboard">📊 Mon espace</a></div>';
+            document.body.appendChild(activatedBar);
+        }
+    } catch(e) { 
+        console.log('Erreur vérification paiement:', e); 
+    }
+})();
+</script>
+
+</body></html>
