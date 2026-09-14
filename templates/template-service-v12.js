@@ -51,8 +51,8 @@ const DATA = {
   categorized_photos: visionData.categorized_photos || {},
   horaires: prepData.horaires_formated || 'Lun-Ven : 9h-19h',
   slug: prepData.slug || generateSlug(prepData.name || 'cabinet'),
-  category: prepData.category || prepData.categorie || prepData.google_type || '',
-  types: Array.isArray(prepData.types) ? prepData.types.join(' ') : (prepData.types || ''),
+  category: prepData.category || prepData.categorie || prepData.google_type || prepData.sector?.name || '',
+  types: [prepData.google_types, prepData.types].flat().filter(Boolean).join(' '),
   description: prepData.description || prepData.editorial_summary || ''
 };
 const phoneHref = DATA.phone ? 'tel:' + DATA.phone.replace(/\s/g, '') : '';
@@ -71,7 +71,20 @@ const SECTOR_KEYWORDS = {
   conseil:    ['conseil', 'consulting', 'consultant', 'strategie', 'coaching', 'coach', 'formation', 'management', 'rh ', 'ressources humaines', 'marketing', 'agence digitale', 'communication']
 };
 
+// sector.id est déjà résolu en amont par "CONFIG + SECTORS" (ex: avocat, notaire, courtier, immobilier…)
+const UPSTREAM_SECTOR_MAP = {
+  avocat: 'avocat', notaire: 'avocat', huissier: 'avocat', juriste: 'avocat',
+  immobilier: 'immobilier', agence_immobiliere: 'immobilier', syndic: 'immobilier',
+  courtier: 'assurance', assurance: 'assurance', assureur: 'assurance', mutuelle: 'assurance',
+  comptable: 'comptable', expert_comptable: 'comptable', fiduciaire: 'comptable',
+  architecte: 'architecte', decorateur: 'architecte', architecte_interieur: 'architecte',
+  medecin: 'medical', dentiste: 'medical', kine: 'medical', osteopathe: 'medical', podologue: 'medical', psychologue: 'medical', infirmier: 'medical',
+  conseil: 'conseil', consultant: 'conseil', coach: 'conseil', formation: 'conseil', formateur: 'conseil'
+};
+
 const detectSector = () => {
+  const upstream = norm(prepData.sector?.id || '').replace(/[^a-z_]/g, '');
+  if (UPSTREAM_SECTOR_MAP[upstream]) return UPSTREAM_SECTOR_MAP[upstream];
   const haystackStrong = norm(DATA.name + ' ' + DATA.category + ' ' + DATA.types);
   const haystackWeak = norm(DATA.description + ' ' + (content.sector || content.secteur || ''));
   const scores = {};
